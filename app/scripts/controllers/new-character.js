@@ -85,7 +85,7 @@ angular.module('dunTomeApp')
     //update subrace select
     $rootScope.updateSubrace = function(selectedRace){      
       //for each race in the raceList
-      for (var race of raceList) {
+      for (var race in raceList) {
         //if the race name = the selected race
         if(race.name == selectedRace && race.subraces){
           $rootScope.subraceArray = race.subraces.split(',');
@@ -156,7 +156,6 @@ angular.module('dunTomeApp')
       
       // Add a custom race
       $scope.addCustomRace = function(name, description, subraces) {
-        console.log('lol races');
         db.race.add({name: name, description: description, subraces: subraces});
         
         raceList.push({name: name, description: description, subraces: subraces});
@@ -174,7 +173,7 @@ angular.module('dunTomeApp')
           theRace.subraces += ','+name;
           console.log('subraces: '+ theRace.subraces);
           db.race.update(theRace.id, {subraces: theRace.subraces}).then(function () {
-            for (var index of raceList){
+            for (var index in raceList){
               console.log('the ' + index );
               if(index.name == race){
                 console.log('update ' + index );
