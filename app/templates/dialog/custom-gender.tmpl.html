@@ -1,0 +1,29 @@
+<md-dialog aria-label="Add Custom Race">
+  <form>
+  <md-toolbar>
+    <div class="md-toolbar-tools">
+      <h2>Add Custom Gender</h2>
+      <span flex></span>
+      <md-button class="md-icon-button" ng-click="cancel('gender')">
+        <i class="material-icons">close</i>
+      </md-button>
+    </div>
+  </md-toolbar>
+  <md-dialog-content style="max-width:800px;max-height:810px;">
+    <div>
+      <md-input-container>
+        <label class="md-accent">Gender Name</label>
+        <input class="md-accent" ng-model="customGender.name" type="text">
+      </md-input-container>  
+    </div>
+  </md-dialog-content>
+  <div class="md-actions" layout="row">
+    <md-button ng-click="cancel('gender')">
+     Cancel
+    </md-button>
+    <md-button ng-click="addCustomGender(customGender.name)">
+      Confirm
+    </md-button>
+  </div>
+  </form>
+</md-dialog>

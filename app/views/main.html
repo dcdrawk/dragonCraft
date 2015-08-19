@@ -1,8 +1,31 @@
-<div class="page-title">
+<!-- Title -->
+<div id="top" class="page-title">
   <div class="container md-padding">
     <h2>Characters</h2>
   </div>
 </div>
-<div class="container md-padding">
-<md-button class="md-raised">New Character<i class="material-icons">add circle</i></md-button>
+<div class="content-wrapper">
+  <div class="container">
+  <!--  <p>Select a character to view/edit information.</p>-->
+  
+    <!-- Loading Circle-->
+    <div layout="row" layout-sm="column" layout-align="space-around" ng-hide="!gettingCharacters">
+        <md-progress-circular md-mode="indeterminate"></md-progress-circular>
+    </div>
+    
+    <!--  Character List -->
+    <md-list id="characterList" ng-if="showCharacters" class="animate-test">
+      <p class="md-padding">Select a character for more details, tap and hold for options.</p>
+      <md-list-item class="md-3-line" ng-repeat="character in characterList" ng-click="selectCharacter(character.id)">
+        <div class="md-list-item-text">
+          <h3>{{character.id}} {{character.name}}</h3>
+          <h4>{{character.race}} {{character.class}}</h4>
+        </div>        
+        <md-divider ng-if="!$last"></md-divider>
+      </md-list-item>
+      
+<!--      <md-button id="toTop" ng-controller="AppCtrl" class="md-raised md-primary" ng-click="scrollTo('top')">To Top</md-button>-->
+      <md-button id="newChar" ng-controller="AppCtrl" class="md-raised md-primary" ng-click="go('/new-character', 'modal')">New Character</md-button>
+    </md-list>
+  </div>
 </div>

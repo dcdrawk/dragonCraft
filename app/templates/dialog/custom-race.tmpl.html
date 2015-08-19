@@ -1,0 +1,40 @@
+<md-dialog aria-label="Add Custom Race">
+  <form>
+  <md-toolbar>
+    <div class="md-toolbar-tools">
+      <h2>Add Custom Race</h2>
+      <span flex></span>
+      <md-button class="md-icon-button" ng-click="cancel('race')">
+        <i class="material-icons">close</i>
+      </md-button>
+    </div>
+  </md-toolbar>
+  <md-dialog-content style="max-width:800px;max-height:810px; ">
+    <div>
+      <md-input-container>
+        <label class="md-accent">Race Name</label>
+        <input class="md-accent" ng-model="customRace.name" type="text">
+      </md-input-container>
+
+      <md-input-container>
+        <label class="md-accent">Description (optional)</label>
+        <textarea class="md-accent" ng-model="customRace.description" type="text" md-maxlength="200"></textarea>
+      </md-input-container>
+      
+      <md-input-container>
+        <label class="md-accent">Subraces (optional)*</label>
+        <textarea class="md-accent" ng-model="customRace.subraces" type="text" md-maxlength="200"></textarea>
+      </md-input-container>
+      <p class="sub-text">*Seperate subraces with a ',' (no spaces).</p>
+    </div>
+  </md-dialog-content>
+  <div class="md-actions" layout="row">
+    <md-button ng-click="cancel('race')">
+     Cancel
+    </md-button>
+    <md-button ng-click="addCustomRace(customRace.name, customRace.description, customRace.subraces)">
+      Confirm
+    </md-button>
+  </div>
+  </form>
+</md-dialog>

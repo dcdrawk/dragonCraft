@@ -68,15 +68,26 @@ body {
   max-width:1200px;
   margin:auto;
 }
-
+.content-wrapper .container{
+  background-color:#fff;
+}
 .page-title{
-  background-color: #78909C
-;
+  background-color: #616161;
   color:#fff;
+}
+.main{
+  overflow-x:hidden;
+}
+.mb-page{
+  background-color:#fff;
 }
 /* /view content */
 
-
+/* Sidenav */
+md-sidenav button{
+  margin: 0!important;
+  width: 100%;
+}
 
 /* toolbar */
 #menu{
@@ -84,16 +95,54 @@ body {
   min-width: 48px;
 }
 #menu i{
-  vertical-align: middle;
+  vertical-align: text-top;
+}
+md-menu-content i{
+  margin-top:6px;
 }
 /* /toolbar */
 
 /* button */
+.md-button{
+/*  font-weight:600;*/
+  font-size:16px;
+  padding:0 12px;
+}
 .md-button span{
   vertical-align: middle;
-  margin-right:6px;
+}
+.btn-icon{
+  margin-left:6px;
 }
 /* /button */
+
+
+/* Characters Page */
+
+#newChar{
+  float:left;
+}
+
+#characterList md-list-item{
+  background-color:rgba(0,0,0,0);
+  transition: all 400ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  cursor:pointer;
+}
+#characterList md-list-item:hover{
+  background-color:rgba(0,0,0,.05);
+  transition: all .5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+md-progress-circular{
+  margin:48px 0 48px 0;
+}
+/* /Characters Page */
+
+/* Dialog */
+.sub-text{
+  font-size:12px;
+  margin-bottom:0;
+}
+
 
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {

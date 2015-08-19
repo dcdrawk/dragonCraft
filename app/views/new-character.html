@@ -1,0 +1,76 @@
+<div id="top" class="page-title">
+  <div class="container md-padding">
+    <h2>New Character</h2>
+  </div>
+</div>
+<div class="content-wrapper">
+  <div class="container md-padding">
+    <p>Let's get started by filling out some basic information about your character. You can edit this information later.</p>
+    <form name="newCharacter">
+      <md-input-container>
+          <label class="md-accent" >Character Name</label>
+          <input class="md-accent" name="name"  ng-model="char.name" type="text" required>
+          <div ng-messages="newCharacter.name.$error" ng-if="newCharacter.name.$dirty">
+            <div ng-message="required">This is required.</div>
+          </div>
+      </md-input-container>
+
+      <md-input-container>
+        <label>Race</label>
+        <md-select name="race" ng-model="char.race" ng-model="size" ng-change="updateSubrace(char.race)" required>
+          <md-option ng-repeat="race in raceArray" value="{{race.name}}" >{{race.name}}</md-option>
+          <md-option ng-click="showDialog($event, 'race')" value="custom">Add Custom Race...</md-option>
+        </md-select>
+        
+        <div ng-messages="newCharacter.race.$error" ng-if="newCharacter.race.$dirty">
+          <div ng-message="required">This is required.</div>
+        </div>
+      </md-input-container>
+
+      <md-input-container ng-hide="!char.race || char.race == 'Tiefling' || char.race == 'Half-Orc' || char.race == 'Half-Elf'">
+        <label>Subrace</label>
+        <md-select ng-model="char.subrace" ng-model="size">
+          <md-option ng-repeat="subrace in subraceArray" value="{{subrace}}">{{subrace}}</md-option>
+          <md-option ng-click="showDialog($event, 'subrace')" value="custom">Add Custom Subrace...</md-option>
+        </md-select>
+      </md-input-container>
+
+      <md-input-container>
+        <label>Class</label>
+        <md-select name="class" ng-model="char.class" ng-model="size" required>
+          <md-option ng-repeat="class in classArray" value="{{class}}">{{class}}</md-option>
+          <md-option ng-click="showDialog($event, 'class')" value="custom">Add Custom Class...</md-option>
+        </md-select>
+        
+        <div ng-messages="newCharacter.class.$error" ng-if="newCharacter.class.$dirty">
+          <div ng-message="required">This is required.</div>
+        </div>
+      </md-input-container>
+
+
+      <md-input-container>
+        <label>Level</label>
+        <input name="level" class="md-accent" ng-model="char.level" type="number" min="0" max="20" placeholder="1" required>
+        
+        <div ng-messages="newCharacter.level.$error" ng-if="newCharacter.level.$dirty">
+          <div ng-message="required">This is required.</div>
+        </div>
+      </md-input-container> 
+
+      <md-input-container>
+        <label>Gender</label>
+        <md-select name="gender" ng-model="char.gender" ng-model="size" required>
+          <md-option ng-repeat="gender in genderArray" value="{{gender.name}}">{{gender.name}}</md-option>
+          <md-option ng-click="showDialog($event, 'gender')" value="custom">Add Custom Gender...</md-option>
+        </md-select>
+        
+        <div ng-messages="newCharacter.gender.$error" ng-if="newCharacter.gender.$dirty">
+          <div ng-message="required">This is required.</div>
+        </div>
+      </md-input-container>
+    </form>
+    
+    <md-button ng-disabled="newCharacter.$invalid" ng-controller="AppCtrl" class="md-primary md-raised" ng-click="addCharacter(char.name, char.race, char.subrace, char.class, char.level, char.gender); go('/')">Create Character</md-button>
+    <md-button ng-controller="AppCtrl" class="md-primary" ng-click="go('/');">Cancel</md-button>
+  </div>
+</div>

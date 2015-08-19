@@ -1,0 +1,30 @@
+<md-dialog aria-label="Add Custom Race">
+  <form>
+  <md-toolbar>
+    <div class="md-toolbar-tools">
+      <h2>Add Custom Subrace</h2>
+      <span flex></span>
+      <md-button class="md-icon-button" ng-click="cancel('subrace')">
+        <i class="material-icons">close</i>
+      </md-button>
+    </div>
+  </md-toolbar>
+  <md-dialog-content style="max-width:800px;max-height:810px; ">
+    <div>
+      <p>Add a new {{$root.char.race}} subrace.</p>
+      <md-input-container>
+        <label class="md-accent">Subrace Name</label>
+        <input class="md-accent" ng-model="customSubrace.name" type="text">
+      </md-input-container>
+    </div>
+  </md-dialog-content>
+  <div class="md-actions" layout="row">
+    <md-button ng-click="cancel('subrace')">
+     Cancel
+    </md-button>
+    <md-button ng-click="addCustomSubrace(customSubrace.name, $root.char.race)">
+      Confirm
+    </md-button>
+  </div>
+  </form>
+</md-dialog>

@@ -1,0 +1,98 @@
+.animate-fadein {
+/*  background:white;*/
+/*  border:1px solid black;*/
+/*  padding:10px;*/
+  
+}
+
+.animate-fadein.ng-enter, .animate-fadein.ng-leave {
+  -webkit-transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.5s;
+  transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.5s;
+}
+
+.animate-fadein.ng-enter,
+.animate-fadein.ng-leave.ng-leave-active {
+  opacity:0;
+}
+
+.animate-fadein.ng-leave,
+.animate-fadein.ng-enter.ng-enter-active {
+  opacity:1;
+}
+
+.animate-test{
+/*  opacity:0; */
+}
+
+.animate-test.ng-enter, .animate-test.ng-leave {
+  -webkit-transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.5s;
+  transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.5s;
+}
+
+.animate-test.ng-enter,
+.animate-test.ng-leave.ng-leave-active {
+  opacity:0;
+}
+
+.animate-test.ng-leave,
+.animate-test.ng-enter.ng-enter-active {
+  opacity:1;
+}
+
+/*-- View Animate --*/
+
+.main {
+  position:relative;
+  height:calc(100vh - 64px)!important;
+/*  background:white;*/
+/*  border:1px solid black;*/
+/*  height:40px;*/
+/*  overflow:hidden;*/
+}
+
+.ng-animate {
+ position:absolute; 
+}
+
+.view-animate {
+  position: absolute;
+  width:100%;
+/*  padding:10px;*/
+-webkit-transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) .5s;
+  transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) .5s;
+}
+main.view-animate.ng-enter, main.view-animate.ng-leave {
+  overflow-y: hidden;
+}
+.view-animate.ng-enter, .view-animate.ng-leave {
+/*
+  -webkit-transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 1s;
+  transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 1s;
+*/
+  overflow-y:hidden;
+  display:block;
+  width:100%;
+/*  border-left:1px solid black;*/
+/*  position: relative;*/
+/*
+  position:absolute;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+*/
+/*  padding:10px;*/
+}
+.view-animate.ng-leave {
+  transform: translateX(100%);
+}
+.view-animate.ng-enter {
+/*  left:100%;*/
+  transform: translateX(100%);
+}
+.view-animate.ng-enter.ng-enter-active {
+  left:0;
+}
+.view-animate.ng-leave.ng-leave-active {
+  left:-100%;
+}
