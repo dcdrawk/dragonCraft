@@ -16,8 +16,8 @@
     </div>
     
     <!--  Character List -->
+<!--
     <md-list id="characterList" ng-if="showCharacters" class="animate-test">
-<!--      <p >Select a character for more details, tap and hold for options.</p>-->
       <h3 class="md-padding">Characters</h3>
       <md-list-item class="md-3-line" ng-repeat="character in characterList" ng-click="selectCharacter(character.id)">
         <div class="md-list-item-text">
@@ -27,8 +27,37 @@
         <md-divider ng-if="!$last"></md-divider>
       </md-list-item>
       
-<!--      <md-button id="toTop" ng-controller="AppCtrl" class="md-raised md-primary" ng-click="scrollTo('top')">To Top</md-button>-->
       <md-button id="newChar" ng-controller="AppCtrl" class="md-raised md-primary" ng-click="go('/new-character', 'modal')">New Character</md-button>
     </md-list>
+-->
+    
+<!--
+    <md-card md-ripple-ink flex="100" ng-if="showCharacters" class="animate-test" ng-repeat="character in characterList">
+      <md-card-content >
+      <div class="char-text">
+        <h3>{{character.id}} {{character.name}}</h3>
+        <h4>{{character.race}} {{character.class}}</h4>
+      </div> 
+      </md-card-content>
+    </md-card>
+-->
+    
+    <md-card md-ink-ripple ng-if="showCharacters" class="char-card" ng-repeat="character in characterList" ng-click="selectCharacter(character.id)">
+      <md-card-content layout="row">
+        <i class="card-icon material-icons">person</i>
+        <div class="charInfo">
+          <h3>{{character.name}}</h3>
+          <p>Level {{character.level}} {{character.race}} {{character.class}}</p>
+        </div>
+      </md-card-content>
+    </md-card>
+    
+    <md-card md-ink-ripple ng-if="showCharacters" class="add-new" ng-click="go('/new-character')">
+      <md-card-content layout="row">
+          <h3 flex="100">New Character<i class="material-icons">person_add</i></h3>
+          
+      </md-card-content>
+    </md-card>
+    
   </div>
 </div>

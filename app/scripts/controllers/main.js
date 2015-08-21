@@ -45,7 +45,7 @@ angular.module('dCraftApp')
         db.characters.each(function(char) {
           console.log('runnisng!');
           console.log("class: " + JSON.stringify(char.class));
-          $rootScope.characterList.push({id:char["id"], name:char["name"], race:char["race"], class:char["class"]});  
+          $rootScope.characterList.push({id:char["id"], name:char["name"], level:char["level"], race:char["race"], class:char["class"]});  
           console.log($rootScope.characterList);
         }).then(function(){
           $scope.showCharacters = true;
