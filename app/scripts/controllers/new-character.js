@@ -3,12 +3,12 @@
 
 /**
  * @ngdoc function
- * @name dunTomeApp.controller:MainCtrl
+ * @name dCraftApp.controller:MainCtrl
  * @description
  * # MainCtrl
- * Controller of the dunTomeApp
+ * Controller of the dCraftApp
  */
-angular.module('dunTomeApp')
+angular.module('dCraftApp')
   .controller('NewCharCtrl', function ($scope, $rootScope, $mdDialog) {
   
     //set up some empty arrays;

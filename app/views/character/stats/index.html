@@ -1,0 +1,50 @@
+<!-- Title -->
+<div id="top" class="page-title">
+  <div class="container md-padding">
+    <h2>{{selectedCharacter.name}} - Stats</h2>
+    <h3>Level {{selectedCharacter.level}} {{selectedCharacter.race}} {{selectedCharacter.class}}</h3>
+  </div>
+</div>
+
+<!-- Menu Options -->
+<!-- Content -->
+<div class="content-wrapper">
+  <div class="container">
+  
+    <!--  Character Home Nav -->
+    <md-list id="homeNav" class="animate-test">
+      <md-list-item class="md-3-line" ng-click="go('/character/stats/base')">
+        <div class="md-list-item-text">
+          <h3>Base Stats</h3>
+          <h4>Str, Dex, Con, Int, Wis, Cha</h4>
+        </div>        
+        <md-divider ng-if="!$last"></md-divider>
+      </md-list-item>
+      
+      <md-list-item class="md-3-line" ng-click="go('/character/stats/saving-throws')">
+        <div class="md-list-item-text">
+          <h3>Saving Throws</h3>
+          <h4>Str, Dex, Con, Int, Wis, Cha</h4>
+        </div>        
+        <md-divider ng-if="!$last"></md-divider>
+      </md-list-item>
+      
+      <md-list-item class="md-3-line" ng-click="go('/character/stats/skills')">
+        <div class="md-list-item-text">
+          <h3>Skills</h3>
+          <h4>Test label please ignore</h4>
+        </div>        
+        <md-divider ng-if="!$last"></md-divider>
+      </md-list-item>
+      
+      <md-list-item class="md-3-line" ng-click="go('/character/stats/combat')">
+        <div class="md-list-item-text">
+          <h3>Combat</h3>
+          <h4>AC, Initiative, Speed, HP, Death Saves</h4>
+        </div>        
+        <md-divider ng-if="!$last"></md-divider>
+      </md-list-item>
+    </md-list>
+    
+  </div>
+</div>

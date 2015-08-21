@@ -2,12 +2,12 @@
 
 /**
  * @ngdoc function
- * @name dunTomeApp.controller:AboutCtrl
+ * @name dCraftApp.controller:AboutCtrl
  * @description
  * # AboutCtrl
- * Controller of the dunTomeApp
+ * Controller of the dCraftApp
  */
-angular.module('dunTomeApp')
+angular.module('dCraftApp')
   .controller('AboutCtrl', function () {
     this.awesomeThings = [
       'HTML5 Boilerplate',
