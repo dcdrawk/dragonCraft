@@ -2,13 +2,13 @@
 
 /**
  * @ngdoc function
- * @name dunTomeApp.controller:MainCtrl
+ * @name dCraftApp.controller:MainCtrl
  * @description
  * # MainCtrl
- * Controller of the dunTomeApp
+ * Controller of the dCraftApp
  */
  /* jshint ignore:start */
-angular.module('dunTomeApp')
+angular.module('dCraftApp')
   .controller('AdminCtrl', function ($scope, $rootScope) {
     this.awesomeThings = [
       'HTML5 Boilerplate',

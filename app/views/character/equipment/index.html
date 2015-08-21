@@ -1,0 +1,51 @@
+<!-- Title -->
+<div id="top" class="page-title">
+  <div class="container md-padding">
+    <h2>{{selectedCharacter.name}} - Equipment</h2>
+    <h3>Level {{selectedCharacter.level}} {{selectedCharacter.race}} {{selectedCharacter.class}}</h3>
+  </div>
+</div>
+
+<!-- Menu Options -->
+<!-- Content -->
+<div class="content-wrapper">
+  <div class="container">
+  
+    <!--  Character Home Nav -->
+    <md-list>
+      <md-list-item class="md-3-line" ng-click="go('/character/equipment/weapons')">
+        <div class="md-list-item-text">
+          <h3>Weapons</h3>
+          <h4>List of weapons in your inventory</h4>
+        </div>        
+        <md-divider ng-if="!$last"></md-divider>
+      </md-list-item>
+      
+      <md-list-item class="md-3-line" ng-click="go('/character/equipment/armor')">
+        <div class="md-list-item-text">
+          <h3>Armor</h3>
+          <h4>List of armor in your inventory</h4>
+        </div>        
+        <md-divider ng-if="!$last"></md-divider>
+      </md-list-item>
+      
+      <md-list-item class="md-3-line" ng-click="go('/character/equipment/inventory')">
+        <div class="md-list-item-text">
+          <h3>Inventory</h3>
+          <h4>List of your character's items</h4>
+        </div>        
+        <md-divider ng-if="!$last"></md-divider>
+      </md-list-item>
+      
+      <md-list-item class="md-3-line" ng-click="go('/character/equipment/currency')">
+        <div class="md-list-item-text">
+          <h3>Currency</h3>
+          <h4>Your character's wealth</h4>
+        </div>        
+        <md-divider ng-if="!$last"></md-divider>
+      </md-list-item>
+      
+    </md-list>
+    
+  </div>
+</div>

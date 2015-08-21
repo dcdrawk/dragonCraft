@@ -17,28 +17,17 @@
     <link rel="stylesheet" href="styles/animations.css">
     <!-- endbuild -->
   </head>
-  <body ng-app="dunTomeApp">
+  <body ng-app="dCraftApp">
     <!--[if lte IE 8]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
     <!-- Add your site or application content here -->
-<!--
-    <md-toolbar class="md-whiteframe-z1">
-      <div class="md-toolbar-tools">
-        <md-button ng-controller="AppCtrl" ng-click="toggleLeft()" id="menu"><i class="material-icons">menu</i></md-button>
-        <h3>
-          <span>DragonCraft 5e</span>
-        </h3>
-        <md-button ng-controller="AppCtrl" ng-click="toggleLeft()" id="more"><i class="material-icons">more</i></md-button>
-      </div>
-    </md-toolbar>
--->
     <md-toolbar>
       <div class="md-toolbar-tools container">
-        <md-button ng-controller="AppCtrl" ng-click="back()" id="menu"><i class="material-icons">keyboard_arrow_left</i></md-button>
+        <md-button ng-controller="AppCtrl" ng-click="goBack()" id="menu"><i class="material-icons">keyboard_arrow_left</i></md-button>
         <h2>
-          <span>Dragoncraft 5e</span>
+          <span>DragonCraft 5e</span>
         </h2>
         <span flex></span>
         <md-menu ng-controller="AppCtrl" md-position-mode="target-right target" >
@@ -114,7 +103,7 @@
         <script src="scripts/controllers/main.js"></script>
         <script src="scripts/controllers/about.js"></script>
         <script src="scripts/controllers/new-character.js"></script>
-        <script src="scripts/controllers/test.js"></script>
+        <script src="scripts/controllers/character.js"></script>
         <script src="scripts/controllers/admin.js"></script>
         <script src="scripts/db.js"></script>
         <!-- endbuild -->

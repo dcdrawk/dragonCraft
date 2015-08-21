@@ -1,0 +1,50 @@
+<!-- Title -->
+<div id="top" class="page-title">
+  <div class="container md-padding">
+    <h2>{{selectedCharacter.name}}</h2>
+    <h3>Level {{selectedCharacter.level}} {{selectedCharacter.race}} {{selectedCharacter.class}}</h3>
+  </div>
+</div>
+
+<!-- Menu Options -->
+<!-- Content -->
+<div class="content-wrapper">
+  <div class="container">
+  
+    <!--  Character Home Nav -->
+    <md-list id="homeNav" class="animate-test">
+      <md-list-item class="md-3-line" ng-click="go('/character/profile')">
+        <div class="md-list-item-text">
+          <h3>Character Profile</h3>
+          <h4>Profile, Appearance, History, Proficiency, Traits, Feats</h4>
+        </div>        
+        <md-divider ng-if="!$last"></md-divider>
+      </md-list-item>
+      
+      <md-list-item class="md-3-line" ng-click="go('/character/stats')">
+        <div class="md-list-item-text">
+          <h3>Stats</h3>
+          <h4>Base Stats, Saving Throws, Skills</h4>
+        </div>        
+        <md-divider ng-if="!$last"></md-divider>
+      </md-list-item>
+      
+      <md-list-item class="md-3-line" ng-click="go('/character/spells')">
+        <div class="md-list-item-text">
+          <h3>Spells & Abilities</h3>
+          <h4>My Spells, Class Spells, All Spells</h4>
+        </div>        
+        <md-divider ng-if="!$last"></md-divider>
+      </md-list-item>
+      
+      <md-list-item class="md-3-line" ng-click="go('/character/equipment')">
+        <div class="md-list-item-text">
+          <h3>Equipment</h3>
+          <h4>Weapons, Armor, Inventory, Currency</h4>
+        </div>        
+        <md-divider ng-if="!$last"></md-divider>
+      </md-list-item>
+    </md-list>
+    
+  </div>
+</div>

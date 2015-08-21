@@ -1,9 +1,11 @@
 <!-- Title -->
 <div id="top" class="page-title">
   <div class="container md-padding">
-    <h2>Characters</h2>
+    <h2>DragonCraft 5e</h2>
   </div>
 </div>
+
+<!-- Content -->
 <div class="content-wrapper">
   <div class="container">
   <!--  <p>Select a character to view/edit information.</p>-->
@@ -15,7 +17,8 @@
     
     <!--  Character List -->
     <md-list id="characterList" ng-if="showCharacters" class="animate-test">
-      <p class="md-padding">Select a character for more details, tap and hold for options.</p>
+<!--      <p >Select a character for more details, tap and hold for options.</p>-->
+      <h3 class="md-padding">Characters</h3>
       <md-list-item class="md-3-line" ng-repeat="character in characterList" ng-click="selectCharacter(character.id)">
         <div class="md-list-item-text">
           <h3>{{character.id}} {{character.name}}</h3>

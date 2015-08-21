@@ -1,0 +1,66 @@
+<!-- Title -->
+<div id="top" class="page-title">
+  <div class="container md-padding">
+    <h2>{{selectedCharacter.name}} - Profile</h2>
+    <h3>Level {{selectedCharacter.level}} {{selectedCharacter.race}} {{selectedCharacter.class}}</h3>
+  </div>
+</div>
+
+<!-- Menu Options -->
+<!-- Content -->
+<div class="content-wrapper">
+  <div class="container">
+  
+    <!--  Character Home Nav -->
+    <md-list id="homeNav" class="animate-test">
+      <md-list-item class="md-3-line" ng-click="go('/character/profile/basic-info')">
+        <div class="md-list-item-text">
+          <h3>Basic Info</h3>
+          <h4>Name, Level, Race, Class, Alignment, Gender</h4>
+        </div>        
+        <md-divider ng-if="!$last"></md-divider>
+      </md-list-item>
+      
+      <md-list-item class="md-3-line" ng-click="go('/character/profile/appearance')">
+        <div class="md-list-item-text">
+          <h3>Appearance</h3>
+          <h4>Description, Height, Weight</h4>
+        </div>        
+        <md-divider ng-if="!$last"></md-divider>
+      </md-list-item>
+      
+      <md-list-item class="md-3-line" ng-click="go('/character/profile/history')">
+        <div class="md-list-item-text">
+          <h3>History</h3>
+          <h4>Backgrond, Ideals, Bonds, Flaws, Past</h4>
+        </div>        
+        <md-divider ng-if="!$last"></md-divider>
+      </md-list-item>
+      
+      <md-list-item class="md-3-line" ng-click="go('/character/profile/proficiency')">
+        <div class="md-list-item-text">
+          <h3>Proficiency</h3>
+          <h4>Proficiency Bonus, Weapons, Armor, Tools, Equipment, Saving Throws, Skills</h4>
+        </div>        
+        <md-divider ng-if="!$last"></md-divider>
+      </md-list-item>
+      
+      <md-list-item class="md-3-line"  ng-click="go('/character/profile/traits')">
+        <div class="md-list-item-text">
+          <h3>Traits</h3>
+          <h4>Racial Traits, Class Traits</h4>
+        </div>        
+        <md-divider ng-if="!$last"></md-divider>
+      </md-list-item>
+      
+      <md-list-item class="md-3-line"  ng-click="go('/character/profile/feats')">
+        <div class="md-list-item-text">
+          <h3>Feats</h3>
+          <h4>My Feats, All Feats</h4>
+        </div>        
+        <md-divider ng-if="!$last"></md-divider>
+      </md-list-item>
+    </md-list>
+    
+  </div>
+</div>

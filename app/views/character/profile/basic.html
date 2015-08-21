@@ -1,0 +1,29 @@
+<!-- Title -->
+<div id="top" class="page-title">
+  <div class="container md-padding">
+    <h2>{{selectedCharacter.name}} - Basic Info</h2>
+    <h3>Level {{selectedCharacter.level}} {{selectedCharacter.race}} {{selectedCharacter.class}}</h3>
+  </div>
+</div>
+
+<!-- Content -->
+<div class="content-wrapper">
+  <div class="container md-padding">
+  
+    <!-- Character Name -->
+    <md-input-container>
+      <label>Name</label>
+      <input type="text" ng-model="char.name">
+    </md-input-container>
+    
+    <!-- Character Race -->
+    <md-input-container>
+      <label>Race</label>
+      <md-select name="race" ng-model="char.race" ng-model="size" ng-change="updateSubrace(char.race)" required>
+        <md-option ng-repeat="race in raceArray" value="{{race.name}}" >{{race.name}}</md-option>
+        <md-option ng-click="showDialog($event, 'race')" value="custom">Add Custom Race...</md-option>
+      </md-select>
+    </md-input-container>  
+    
+  </div>
+</div>

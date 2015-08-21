@@ -1,0 +1,43 @@
+<!-- Title -->
+<div id="top" class="page-title">
+  <div class="container md-padding">
+    <h2>{{selectedCharacter.name}} - Spells &amp; Abilities</h2>
+    <h3>Level {{selectedCharacter.level}} {{selectedCharacter.race}} {{selectedCharacter.class}}</h3>
+  </div>
+</div>
+
+<!-- Menu Options -->
+<!-- Content -->
+<div class="content-wrapper">
+  <div class="container">
+  
+    <!--  Character Home Nav -->
+    <md-list id="homeNav" class="animate-test">
+      <md-list-item class="md-3-line" ng-click="go('/character/spells/my-spells')">
+        <div class="md-list-item-text">
+          <h3>My Spells</h3>
+          <h4>A list of all known spells</h4>
+        </div>        
+        <md-divider ng-if="!$last"></md-divider>
+      </md-list-item>
+      
+      <md-list-item class="md-3-line" ng-click="go('/character/spells/class-spells')">
+        <div class="md-list-item-text">
+          <h3>Class Spells</h3>
+          <h4>Spells for your character's class</h4>
+        </div>        
+        <md-divider ng-if="!$last"></md-divider>
+      </md-list-item>
+      
+      <md-list-item class="md-3-line" ng-click="go('/character/spells/all-spells')">
+        <div class="md-list-item-text">
+          <h3>All Spells</h3>
+          <h4>Browse a list of all spells</h4>
+        </div>        
+        <md-divider ng-if="!$last"></md-divider>
+      </md-list-item>
+      
+    </md-list>
+    
+  </div>
+</div>
