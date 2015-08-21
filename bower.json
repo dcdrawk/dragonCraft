@@ -1,5 +1,5 @@
 {
-  "name": "dun-tome",
+  "name": "dragon-craft",
   "version": "0.0.0",
   "dependencies": {
     "angular": "^1.3.0",
@@ -19,5 +19,5 @@
     "angular-mocks": "^1.3.0"
   },
   "appPath": "app",
-  "moduleName": "dunTomeApp"
+  "moduleName": "dCraftApp"
 }
