@@ -109,16 +109,16 @@ angular.module('dCraftApp')
       //find the template
       switch (selection) {
         case "race":
-          tmpl = '../views/templates/dialog/custom-race.html';
+          tmpl = '/views/templates/dialog/custom-race.html';
           break;
         case "subrace":
-          tmpl = '../views/templates/dialog/custom-subrace.html';
+          tmpl = '/views/templates/dialog/custom-subrace.html';
           break;
         case "class":
-          tmpl = '../views/templates/dialog/custom-class.html';
+          tmpl = '/views/templates/dialog/custom-class.html';
           break;
         case "gender":
-          tmpl = '../views/templates/dialog/custom-gender.html';
+          tmpl = '/views/templates/dialog/custom-gender.html';
           break;
       }
       
