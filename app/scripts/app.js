@@ -17,7 +17,8 @@ angular
     'ngSanitize',
     'ngTouch',
     'ngMaterial',
-    'ngMessages'
+    'ngMessages',
+    'angularScreenfull'
   ])
   .config(function($mdThemingProvider) {
     $mdThemingProvider.theme('default')

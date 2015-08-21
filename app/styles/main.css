@@ -60,6 +60,12 @@ body {
   margin-top: 28px;
 }
 
+/* Fullscreen */
+.fullscreen {
+    width: 100%;
+    height: 100%;
+}
+
 /* view content */
 .view-content{
 
@@ -117,6 +123,9 @@ md-menu-content i{
 /* /button */
 
 /* List Items */
+.md-list-item-text{
+  padding: 16px 0 8px 0!important;
+}
 md-list-item h3{
   font-weight: 600!important;
 }

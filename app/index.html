@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="styles/animations.css">
     <!-- endbuild -->
   </head>
-  <body ng-app="dCraftApp">
+  <body ng-app="dCraftApp" ngsf-fullscreen>
     <!--[if lte IE 8]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
@@ -31,20 +31,31 @@
         </h2>
         <span flex></span>
         <md-menu ng-controller="AppCtrl" md-position-mode="target-right target" >
-        <md-button class="md-icon-button" ng-controller="AppCtrl" ng-click="$mdOpenMenu($event)" id="more">
-          <i class="material-icons">more_vert</i>
-        </md-button>
-        <md-menu-content width="4" >
+          <md-button class="md-icon-button" ng-controller="AppCtrl" ng-click="$mdOpenMenu($event)" id="more">
+            <i class="material-icons">more_vert</i>
+          </md-button>
+          <md-menu-content width="4" >
+          
             <md-menu-item ng-repeat="item in menu">
               <md-button ng-click="go(item.href)">
-                  <div layout="row">
-                    <p flex>{{item.text}}</p>
-                    <i class="material-icons">{{item.icon}}</i>
-                  </div>
+                <div layout="row">
+                  <p flex>{{item.text}}</p>
+                  <i class="material-icons">{{item.icon}}</i>
+                </div>
               </md-button>
             </md-menu-item>
+            
+            <md-menu-item>
+              <md-button ngsf-toggle-fullscreen >
+                <div layout="row">
+                  <p flex>Fullscreen</p>
+                  <i class="material-icons">fullscreen</i>
+                </div>
+              </md-button>
+            </md-menu-item>
+            
           </md-menu-content>
-          </md-menu>
+        </md-menu>
       </div>
     </md-toolbar>
     
@@ -95,6 +106,8 @@
     <script src="bower_components/angular-material/angular-material.js"></script>
     <script src="bower_components/dexie/dist/latest/Dexie.min.js"></script>
     <script src="bower_components/ng-messages/angular-messages.js"></script>
+    <script src="bower_components/screenfull/dist/screenfull.js"></script>
+    <script src="bower_components/angular-screenfull/dist/angular-screenfull.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 

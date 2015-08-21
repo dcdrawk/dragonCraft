@@ -34,6 +34,8 @@ module.exports = function(config) {
       'bower_components/angular-material/angular-material.js',
       'bower_components/dexie/dist/latest/Dexie.min.js',
       'bower_components/ng-messages/angular-messages.js',
+      'bower_components/screenfull/dist/screenfull.js',
+      'bower_components/angular-screenfull/dist/angular-screenfull.js',
       'bower_components/angular-mocks/angular-mocks.js',
       // endbower
       "app/scripts/**/*.js",
