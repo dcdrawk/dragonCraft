@@ -85,11 +85,7 @@ angular.module('dCraftApp')
     
     //update subrace select
     $rootScope.updateSubrace = function(selectedRace){
-      //console.log(raceList);
-      //for each race in the raceList
       for (var index in raceList) {
-        //console.log('race = ' + raceList[index].name);
-        //if the race name = the selected race
         if(raceList[index].name == selectedRace && raceList[index].subraces){
           $rootScope.subraceArray = raceList[index].subraces.split(',');
         }

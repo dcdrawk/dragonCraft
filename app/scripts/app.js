@@ -214,11 +214,18 @@ angular
     $rootScope.$on('$locationChangeSuccess', function(event, newUrl, oldUrl, oldState) {
       console.log('Location change success!');
       //console.log('path: ' + $location.path());
-      console.log('old URL: ' + oldUrl);
-      console.log('new URL: ' + newUrl);
+      console.log('PATH');
+      console.log($location.path());
       //console.log('Old State: ' + newUrl);
       $rootScope.scrollTo('top');
       $rootScope.lastPage = oldUrl;
+      
+      
+      if($location.path() == '/'){
+        $rootScope.home = true;
+      } else {
+        $rootScope.home = false;
+      }
     });        
 
 

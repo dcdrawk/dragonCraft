@@ -106,6 +106,9 @@ md-sidenav button{
 md-menu-content i{
   margin-top:6px;
 }
+.hide{
+  display:none;
+}
 /* /toolbar */
 
 /* button */
@@ -201,6 +204,17 @@ md-card md-card-content{
   margin-bottom:0;
 }
 
+/* Page items */
+.page-settings{
+  margin:auto 12px auto auto;
+}
+.page-settings-content i{
+  vertical-align: baseline;
+  margin-top:0!important;
+}
+.page-settings-content button{
+  max-height: 48px!important;
+}
 
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
