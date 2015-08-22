@@ -46,6 +46,7 @@ angular.module('dCraftApp')
       }).then(function (result) {
         //after the loop, update the race
         raceList = $rootScope.raceArray;
+        //console.log(raceList);
       });
     }
     
@@ -83,12 +84,10 @@ angular.module('dCraftApp')
     }
     
     //update subrace select
-    $rootScope.updateSubrace = function(selectedRace){      
-      //for each race in the raceList
-      for (var race in raceList) {
-        //if the race name = the selected race
-        if(race.name == selectedRace && race.subraces){
-          $rootScope.subraceArray = race.subraces.split(',');
+    $rootScope.updateSubrace = function(selectedRace){
+      for (var index in raceList) {
+        if(raceList[index].name == selectedRace && raceList[index].subraces){
+          $rootScope.subraceArray = raceList[index].subraces.split(',');
         }
       }
     }
@@ -174,10 +173,10 @@ angular.module('dCraftApp')
           console.log('subraces: '+ theRace.subraces);
           db.race.update(theRace.id, {subraces: theRace.subraces}).then(function () {
             for (var index in raceList){
-              console.log('the ' + index );
-              if(index.name == race){
-                console.log('update ' + index );
-                index.subraces = theRace.subraces;
+              //console.log('the ' + index );
+              if(raceList[index].name == race){
+                console.log('update ' + raceList[index].name);
+                raceList[index].subraces = theRace.subraces;
               }
             }
             $rootScope.updateSubrace(race);

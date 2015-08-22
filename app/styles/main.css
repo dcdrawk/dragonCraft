@@ -60,6 +60,12 @@ body {
   margin-top: 28px;
 }
 
+/* Fullscreen */
+.fullscreen {
+    width: 100%;
+    height: 100%;
+}
+
 /* view content */
 .view-content{
 
@@ -100,6 +106,9 @@ md-sidenav button{
 md-menu-content i{
   margin-top:6px;
 }
+.hide{
+  display:none;
+}
 /* /toolbar */
 
 /* button */
@@ -117,6 +126,9 @@ md-menu-content i{
 /* /button */
 
 /* List Items */
+.md-list-item-text{
+  padding: 16px 0 8px 0!important;
+}
 md-list-item h3{
   font-weight: 600!important;
 }
@@ -142,6 +154,48 @@ md-list-item h3{
 md-progress-circular{
   margin:48px 0 48px 0;
 }
+md-card[md-ink-ripple] {
+  position: relative;
+}
+md-card{
+  -webkit-user-select: none;  /* Chrome all / Safari all */
+  -moz-user-select: none;     /* Firefox all */
+  -ms-user-select: none;      /* IE 10+ */
+  user-select: none;          /* Likely future */ 
+  background-color:rgba(0,0,0,.05)!important;
+  cursor:pointer;
+  padding:0!important;
+}
+.char-card h3{
+  margin-bottom:6px;
+}
+md-list-item h4{
+  line-height:1.25em!important;
+}
+md-card p{
+  margin-top:6px;
+}
+md-card:focus {
+    outline: none!important;
+}
+md-card md-card-content{
+  padding:0;
+}
+.card-icon{
+  font-size:32px;
+  margin:auto 12px auto 12px;
+  padding:12px;
+  background-color:rgba(0,0,0,.1);
+/*  border:1px solid rgba(0,0,0,.2);*/
+  border-radius: 50%;
+}
+
+.add-new h3{
+  text-align: center;
+}
+.add-new i{
+  margin-left:12px;
+}
 /* /Characters Page */
 
 /* Dialog */
@@ -150,6 +204,17 @@ md-progress-circular{
   margin-bottom:0;
 }
 
+/* Page items */
+.page-settings{
+  margin:auto 12px auto auto;
+}
+.page-settings-content i{
+  vertical-align: baseline;
+  margin-top:0!important;
+}
+.page-settings-content button{
+  max-height: 48px!important;
+}
 
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {

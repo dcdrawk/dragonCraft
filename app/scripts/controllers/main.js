@@ -37,15 +37,15 @@ angular.module('dCraftApp')
     $scope.getCharacters = function(){
       console.log('charList:');
       console.log($rootScope.characterList.length);
-      if($rootScope.characterList == undefined || $rootScope.characterList.length == 0){
+      if($rootScope.characterList == undefined || $rootScope.characterList.length == 0 || $rootScope.updateList == true){
         console.log('EMPTY!!!');
         $scope.gettingCharacters = true;
         $rootScope.characterList = [];
-      
+        $rootScope.updateList = false;
         db.characters.each(function(char) {
           console.log('runnisng!');
           console.log("class: " + JSON.stringify(char.class));
-          $rootScope.characterList.push({id:char["id"], name:char["name"], race:char["race"], class:char["class"]});  
+          $rootScope.characterList.push({id:char["id"], name:char["name"], level:char["level"], race:char["race"], class:char["class"]});  
           console.log($rootScope.characterList);
         }).then(function(){
           $scope.showCharacters = true;
