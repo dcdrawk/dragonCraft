@@ -12,15 +12,16 @@ angular.module('dCraftApp')
   .controller('CharacterCtrl', function ($scope, $rootScope) {
     
     //Define the DB
-    var db = new Dexie("test-database");
+    var db = new Dexie("test-db-2");
     db.version(1).stores({
-      charClasses: 'name,description',
+      charClasses: 'name',
       characters: 'id++,name,race,subrace,class,level,gender',
       race:'id++,name,subraces',
       gender:'name',
       // ...add more stores (tables) here...
     });
     
+    db.open();
     //Character Functions
 
     // Get Races
@@ -41,8 +42,11 @@ angular.module('dCraftApp')
         $rootScope.$digest();
         //console.log('selectedRace');
         //$rootScope.updateSubrace(race);
+      }).catch(function (error) {
+      // Handle error
+        console.log(error);
       });
-       db.close();
+      db.close();
     }
     
     //update subrace select
@@ -70,48 +74,48 @@ angular.module('dCraftApp')
     }
     
     //update character info
-    $scope.updateChar = function(id, field, value){
-      switch (field) {
-        case "name":
-          db.characters.update(id, {name: value});
-          $rootScope.updateList = true;
-          $scope.updateStorage(id);
-          break;
-        case "race":
-          db.characters.update(id, {race: value});
-          $rootScope.updateList = true;
-          $scope.updateStorage(id);
-          break;
-        case "subrace":
-          db.characters.update(id, {subrace: value});
-          //$rootScope.updateList = true;
-          $scope.updateStorage(id);
-          break;
-        case "class":
-          db.characters.update(id, {class: value});
-          //$rootScope.updateList = true;
-          $scope.updateStorage(id);
-          break;
-      }
-
-    }
+//    $scope.updateChar = function(id, field, value){
+//      switch (field) {
+//        case "name":
+//          db.characters.update(id, {name: value});
+//          $rootScope.updateList = true;
+//          $scope.updateStorage(id);
+//          break;
+//        case "race":
+//          db.characters.update(id, {race: value});
+//          $rootScope.updateList = true;
+//          $scope.updateStorage(id);
+//          break;
+//        case "subrace":
+//          db.characters.update(id, {subrace: value});
+//          //$rootScope.updateList = true;
+//          $scope.updateStorage(id);
+//          break;
+//        case "class":
+//          db.characters.update(id, {class: value});
+//          //$rootScope.updateList = true;
+//          $scope.updateStorage(id);
+//          break;
+//      }
+//
+//    }
     
-    $scope.updateStorage = function(id){
-      console.log('update storage');
-      db.open();
-      
-      //find the character that matches the selected id
-      db.characters.where('id').equals(id).each(function (character) {
-        console.log('CHARACTER:');
-        $rootScope.selectedCharacter = character;
-      }).then(function(){
-        localStorage.setObject('character', $rootScope.selectedCharacter);
-        console.log('CHARACTER:');
-        console.log(localStorage.getObject('character'));
-        $rootScope.$digest();
-      });
-      db.close();
-    }
+//    $scope.updateStorage = function(id){
+//      console.log('update storage');
+//      db.open();
+//      
+//      //find the character that matches the selected id
+//      db.characters.where('id').equals(id).each(function (character) {
+//        console.log('CHARACTER:');
+//        $rootScope.selectedCharacter = character;
+//      }).then(function(){
+//        localStorage.setObject('character', $rootScope.selectedCharacter);
+//        console.log('CHARACTER:');
+//        console.log(localStorage.getObject('character'));
+//        $rootScope.$digest();
+//      });
+//      db.close();
+//    }
     //unlock the page
     $scope.lockBasic = false;
     
@@ -138,9 +142,7 @@ angular.module('dCraftApp')
       //console.log('character is undefined');
       //console.log(localCharacter);
       $rootScope.selectedCharacter = localCharacter;
-    }
-    
-    
+    }    
 
     $scope.char = $rootScope.selectedCharacter;
 
@@ -148,6 +150,79 @@ angular.module('dCraftApp')
     $rootScope.getRaces();
     //$rootScope.updateSubrace($scope.char.race);
     $rootScope.getClasses();
-  });
+  })
   
+  .controller('AppearanceCtrl', function ($scope, $rootScope) {
+    //Define the DB
+    var db = new Dexie("test-database");
+    db.version(1).stores({
+      characters: 'id++,name,race,subrace,class,level,height,weight,description'
+      // ...add more stores (tables) here...
+    });
+    
+    //let's see if there's a local character set
+    var localCharacter = JSON.parse(localStorage.getObject('character'));
+
+    //if there is no local character, let's try to set it to the selectedCharacter
+    if(localCharacter == 'undefined'){
+      console.log('adding character to localstorage')
+      localStorage.setObject('character', $rootScope.selectedCharacter);
+
+    //else, if the selected character is undefined (e.g. reload)
+    } else if($rootScope.selectedCharacter == undefined){
+      //console.log('character is undefined');
+      //console.log(localCharacter);
+      $rootScope.selectedCharacter = localCharacter;
+    }    
+
+    $scope.char = $rootScope.selectedCharacter;
+    
+    
+  })
+  
+  .controller('HistoryCtrl', function ($scope, $rootScope) {
+    //Define the DB
+    var db = new Dexie("test-db-2");
+    db.version(1).stores({
+      characters: 'id++,name,race,subrace,class,level,background,personality,ideals,bonds,flaws',
+      //charHistory: 'id,background,personality,ideals,bonds,flaws',
+      backgrounds: 'name,skills,tools,feat,featInfo'
+      // ...add more stores (tables) here...
+    });
+    
+    //let's see if there's a local character set
+    var localCharacter = JSON.parse(localStorage.getObject('character'));
+
+    //if there is no local character, let's try to set it to the selectedCharacter
+    if(localCharacter == 'undefined'){
+      console.log('adding character to localstorage')
+      localStorage.setObject('character', $rootScope.selectedCharacter);
+
+    //else, if the selected character is undefined (e.g. reload)
+    } else if($rootScope.selectedCharacter == undefined){
+      //console.log('character is undefined');
+      //console.log(localCharacter);
+      $rootScope.selectedCharacter = localCharacter;
+    }
+    
+    $scope.char = $rootScope.selectedCharacter;
+    $scope.backgroundArray = [];
+    
+    console.log($scope.char.background)
+    $scope.getBackgrounds = function(){
+      db.open();
+      console.log('Get Backgrounds:');      
+      
+      db.backgrounds.each(function(background){
+        console.log(background.name);
+        $scope.backgroundArray.push(background);
+      }).then(function(){
+        $scope.$digest();
+      });
+      db.close();
+    }
+    
+    $scope.getBackgrounds();
+    
+  });
 /* jshint ignore:end */

@@ -21,12 +21,15 @@ angular.module('dCraftApp')
     //
     // Define the database
     //
-    var db = new Dexie("test-database");
+    var db = new Dexie("test-db-2");
     db.version(1).stores({
-        charClasses: 'name,description',
-        characters: 'name,race,subrace,class,level,gender',
+        charClasses: 'name',
+        characters: 'id++,name,race,subrace,class,level,gender,height,weight,description',
+        charHistory: 'id++,background,personality,ideals,bonds,flaws',
         race:'id++,name,subraces',
         gender:'name',
+        alignments: 'name',
+        backgrounds: 'name,skills,tools,feat,featInfo'
         // ...add more stores (tables) here...
     });
 
@@ -37,10 +40,14 @@ angular.module('dCraftApp')
     
     // Get Races
     $rootScope.getRaces = function(){
+      console.log('GETTING RACES');
+      
+      console.log(db.race);
       $rootScope.raceArray = [];
       
       //for each race in the table
       db.race.each(function(race) {
+        console.log('races');
         //push each into an array
         $rootScope.raceArray.push({name:race["name"], subraces:race["subraces"]});
       }).then(function (result) {
@@ -79,7 +86,9 @@ angular.module('dCraftApp')
     
     //add Character to database
     $scope.addCharacter = function(name, race, subrace, charClass, level, gender){
+      console.log('Adding Character' + name + ' ' + race + ' ' + subrace + ' ' + charClass + ' ' + level + ' ' + gender + ' ')
       db.characters.add({name: name, race: race, subrace: subrace, class: charClass, level: level, gender: gender});
+      //db.charHistory.add({background: '', personality: '', ideals: '', bonds: '', flaws: ''});
       $rootScope.characterList = [];
     }
     

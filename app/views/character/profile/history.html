@@ -10,6 +10,37 @@
 <div class="content-wrapper">
   <div class="container md-padding">
   
-  
+    <!-- Background -->
+    <md-input-container>
+      <label>Background</label>
+      <md-select name="background" ng-model="char.background" ng-change="updateChar(char.id, 'background', char.background);">
+        <md-option ng-repeat="background in backgroundArray" value="{{background.name}}" >{{background.name}}</md-option>
+        <md-option ng-click="showDialog($event, 'background')" value="custom">Add Custom Background...</md-option>
+      </md-select>
+    </md-input-container>
+    
+    <!-- Personality -->
+    <md-input-container>
+      <label>Personality Traits</label>
+      <textarea type="text" ng-model="char.personality" ng-disabled="lockAppearance" ng-change="updateChar(char.id, 'personality', char.personality)"></textarea>
+    </md-input-container>
+    
+    <!-- Ideals -->
+    <md-input-container>
+      <label>Ideals</label>
+      <input type="text" ng-model="char.ideals" ng-disabled="lockAppearance" ng-change="updateChar(char.id, 'ideals', char.ideals)">
+    </md-input-container>
+    
+    <!-- Height -->
+    <md-input-container>
+      <label>Bonds</label>
+      <input type="text" ng-model="char.bonds" ng-disabled="lockAppearance" ng-change="updateChar(char.id, 'bonds', char.bonds)">
+    </md-input-container>
+    
+    <!-- Height -->
+    <md-input-container>
+      <label>Flaws</label>
+      <input type="text" ng-model="char.flaws" ng-disabled="lockAppearance" ng-change="updateChar(char.id, 'flaws', char.flaws)">
+    </md-input-container>
   </div>
 </div>
