@@ -9,8 +9,9 @@
  */
  /* jshint ignore:start */
 angular.module('dCraftApp')
-  .controller('CharacterCtrl', function ($scope, $rootScope) {
+  .controller('CharacterCtrl', function ($scope, $rootScope, ClassSrv, RaceSrv) {
     
+    console.log(ClassSrv.classes);
     //Define the DB
     var db = new Dexie("test-db-2");
     db.version(1).stores({
@@ -48,20 +49,35 @@ angular.module('dCraftApp')
       });
       db.close();
     }
-    
+        
     //update subrace select
     $rootScope.updateSubrace = function(selectedRace){
-      console.log('Updating subraces for:' + selectedRace);
-      for (var index in $rootScope.raceArray) {
-        console.log($rootScope.raceArray);
-        
-        if($rootScope.raceArray[index].name == selectedRace && $rootScope.raceArray[index].subraces){
-          $rootScope.subraceArray = $rootScope.raceArray[index].subraces.split(',');
+      $rootScope.subraceArray = [];
+      db.race.where("name").equalsIgnoreCase(selectedRace).each(function(theRace) {
+        console.log('the race:')
+        console.log(theRace.subraces);
+        if(theRace.subraces !== 'None'){        
+          for (var index in theRace.subraces){
+            $rootScope.subraceArray.push(theRace.subraces[index].name);
+            console.log($rootScope.subraceArray);
+          }
+        } else {
+          $rootScope.subraceArray.push('n/a');
         }
-      }
-      console.log($rootScope.subraceArray);
-      //$rootScope.$digest();
+      });
     }
+//    $rootScope.updateSubrace = function(selectedRace){
+//      console.log('Updating subraces for:' + selectedRace);
+//      for (var index in $rootScope.raceArray) {
+//        console.log($rootScope.raceArray);
+//        
+//        if($rootScope.raceArray[index].name == selectedRace && $rootScope.raceArray[index].subraces){
+//          $rootScope.subraceArray = $rootScope.raceArray[index].subraces.split(',');
+//        }
+//      }
+//      console.log($rootScope.subraceArray);
+//      //$rootScope.$digest();
+//    }
     
     // Get Classes
     $rootScope.getClasses = function(){
@@ -154,7 +170,7 @@ angular.module('dCraftApp')
   
   .controller('AppearanceCtrl', function ($scope, $rootScope) {
     //Define the DB
-    var db = new Dexie("test-database");
+    var db = new Dexie("test-db-2");
     db.version(1).stores({
       characters: 'id++,name,race,subrace,class,level,height,weight,description'
       // ...add more stores (tables) here...
@@ -224,5 +240,52 @@ angular.module('dCraftApp')
     
     $scope.getBackgrounds();
     
-  });
+  })
+  
+  .controller('TraitsCtrl', function ($scope, $rootScope) {
+    //Define the DB
+    var db = new Dexie("test-db-2");
+    db.version(1).stores({
+      characters: 'id++,name,race,subrace,class,level',
+      race: 'id++,name,traits,subraces'
+      // ...add more stores (tables) here...
+    });
+    
+    //let's see if there's a local character set
+    var localCharacter = JSON.parse(localStorage.getObject('character'));
+    
+    //if there is no local character, let's try to set it to the selectedCharacter
+    if(localCharacter == 'undefined'){
+      console.log('adding character to localstorage')
+      localStorage.setObject('character', $rootScope.selectedCharacter);
+
+    //else, if the selected character is undefined (e.g. reload)
+    } else if($rootScope.selectedCharacter == undefined){
+      //console.log('character is undefined');
+      //console.log(localCharacter);
+      $rootScope.selectedCharacter = localCharacter;
+    }
+    
+    $scope.char = $rootScope.selectedCharacter;
+    $scope.raceTraitList = [];
+    
+    $scope.getRaceTraits = function(race){
+      db.open();
+      console.log('off to the races' + race);
+      db.race.where('name').equalsIgnoreCase(race).each(function(theRace) {
+        $scope.raceTraitList = theRace.traits;
+        console.log($scope.raceTraitList);
+      }).then(function(){
+        $scope.$digest();
+      }).catch(function(error){
+        console.log(error);
+      });
+      db.close();
+    }
+    
+    $scope.getRaceTraits($scope.char.race);
+    
+    
+    
+  })
 /* jshint ignore:end */

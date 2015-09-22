@@ -1,15 +1,27 @@
 <!-- Title -->
 <div id="top" class="page-title">
   <div class="container md-padding">
-    <h2>{{selectedCharacter.name}} - Traits</h2>
+    <h2>{{selectedCharacter.name}} - Racial Traits</h2>
     <h3>Level {{selectedCharacter.level}} {{selectedCharacter.race}} {{selectedCharacter.class}}</h3>
   </div>
 </div>
 
 <!-- Content -->
-<div class="content-wrapper">
+<div class="sub-title">
   <div class="container md-padding">
+    <h2>{{char.race}} Traits</h2>
+  </div>
+</div>
+
+<div class="content-wrapper">
+  <div class="container">
   
+  <div id="race-traits" class="md-padding">
+    <div class="trait" ng-repeat="trait in raceTraitList">
+      <h4>{{trait.title}}</h4>
+      <p>{{trait.description}}</p>
+    </div>
+  </div>
   
   </div>
 </div>

@@ -78,7 +78,7 @@ body {
   background-color:#fff;
 }
 .page-title{
-  background-color: #616161;
+  background-color: #2196F3;
   color:#fff;
 }
 .main{
@@ -96,6 +96,14 @@ md-sidenav button{
 }
 
 /* toolbar */
+/*
+.md-toolbar-tools{
+  padding:0;
+}
+.md-toolbar-tools > md-menu:last-child {
+    margin-right: 0px;
+}
+*/
 #menu{
   min-height: 48px;
   min-width: 48px;
@@ -123,6 +131,14 @@ md-menu-content i{
 .btn-icon{
   margin-left:6px;
 }
+.lock-button{
+  top: -42px;
+  float: right;
+  margin: 0 12px -55px 0!important;
+}
+.lock-button:hover{
+  background-color:rgb(0,151,167)!important;
+}
 /* /button */
 
 /* List Items */
@@ -131,6 +147,9 @@ md-menu-content i{
 }
 md-list-item h3{
   font-weight: 600!important;
+}
+.disabled{
+  opacity: .5;
 }
 #homeNav{
   padding:0;
@@ -204,6 +223,14 @@ md-card md-card-content{
   margin-bottom:0;
 }
 
+.trait{
+  margin-bottom:12px;
+  border-bottom:1px solid rgba(0,0,0,.1);
+}
+.trait h4{
+  margin:12px 0;
+}
+
 /* Page items */
 .page-settings{
   margin:auto 12px auto auto;
@@ -215,7 +242,9 @@ md-card md-card-content{
 .page-settings-content button{
   max-height: 48px!important;
 }
-
+.section-description{
+  margin-top:12px;
+}
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
 /*
@@ -239,4 +268,10 @@ md-card md-card-content{
   .jumbotron {
     border-bottom: 0;
   }
+}
+
+@media screen and (max-width: 600px) {
+ .lock-button{
+   top:-35px;
+ }
 }

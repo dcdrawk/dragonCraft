@@ -21,15 +21,15 @@
         <md-divider ng-if="!$last"></md-divider>
       </md-list-item>
       
-      <md-list-item class="md-3-line" ng-click="go('/character/stats')">
-        <div class="md-list-item-text">
-          <h3>Stats</h3>
+      <md-list-item class="md-3-line disabled" ng-disabled="true" ng-click="go('/character/stats')">
+        <div class="md-list-item-text" ng-disabled>
+          <h3>Statss</h3>
           <h4>Base Stats, Saving Throws, Skills</h4>
         </div>        
         <md-divider ng-if="!$last"></md-divider>
       </md-list-item>
       
-      <md-list-item class="md-3-line" ng-click="go('/character/spells')">
+      <md-list-item class="md-3-line disabled" ng-click="go('/character/spells')">
         <div class="md-list-item-text">
           <h3>Spells & Abilities</h3>
           <h4>My Spells, Class Spells, All Spells</h4>
@@ -37,7 +37,7 @@
         <md-divider ng-if="!$last"></md-divider>
       </md-list-item>
       
-      <md-list-item class="md-3-line" ng-click="go('/character/equipment')">
+      <md-list-item class="md-3-line disabled" ng-click="go('/character/equipment')">
         <div class="md-list-item-text">
           <h3>Equipment</h3>
           <h4>Weapons, Armor, Inventory, Currency</h4>

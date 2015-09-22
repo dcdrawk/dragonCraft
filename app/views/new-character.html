@@ -17,7 +17,7 @@
 
       <md-input-container>
         <label>Race</label>
-        <md-select name="race" ng-model="char.race" ng-model="size" ng-change="updateSubrace(char.race)" required>
+        <md-select name="race" ng-model="char.race" ng-model="size" ng-change="updateSubrace(char.race); setTraits(char.race)" required>
           <md-option ng-repeat="race in raceArray" value="{{race.name}}" >{{race.name}}</md-option>
           <md-option ng-click="showDialog($event, 'race')" value="custom">Add Custom Race...</md-option>
         </md-select>
@@ -70,7 +70,7 @@
       </md-input-container>
     </form>
     
-    <md-button ng-disabled="newCharacter.$invalid" ng-controller="AppCtrl" class="md-primary md-raised" ng-click="addCharacter(char.name, char.race, char.subrace, char.class, char.level, char.gender); go('/')">Create Character</md-button>
+    <md-button ng-disabled="newCharacter.$invalid" ng-controller="AppCtrl" class="md-primary md-raised" ng-click="addCharacter(char.name, char.race, char.subrace, char.class, char.level, char.gender, char.traits); go('/')">Create Character</md-button>
     <md-button ng-controller="AppCtrl" class="md-primary" ng-click="go('/');">Cancel</md-button>
   </div>
 </div>

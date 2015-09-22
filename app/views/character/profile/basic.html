@@ -1,5 +1,5 @@
 <!-- Title -->
-<div id="top" class="page-title">
+<div id="top" class="page-title md-primary">
   <div class="container md-padding">
     <h2>{{selectedCharacter.name}} - Basic Info</h2>
     <h3>Level {{selectedCharacter.level}} {{selectedCharacter.race}} {{selectedCharacter.class}}</h3>
@@ -9,9 +9,14 @@
 <!-- Content -->
 <div class="content-wrapper">
   <div class="container md-padding">
-    <div layout="row">
+  <md-button class="lock-button md-icon-button md-fab md-accent" ng-controller="AppCtrl" ng-click="$mdOpenMenu($event)" id="more">
+    <i ng-if="lockBasic" md-menu-origin class="material-icons">lock</i>
+    <i ng-if="!lockBasic" md-menu-origin class="material-icons">lock_open</i>
+  </md-button>
+  <div layout="row" class="section-description">
     
     <!-- Menu -->
+<!--
     <md-menu class="page-settings"  ng-controller="AppCtrl" >
     <md-button class="md-icon-button md-raised" ng-controller="AppCtrl" ng-click="$mdOpenMenu($event)" id="more">
       <i md-menu-origin class="material-icons">settings</i>
@@ -36,41 +41,45 @@
 
     </md-menu-content>
   </md-menu>
+-->
     <p flex>Basic information about your character. Provides the foundation for the rest of your character.</p>
+    
     </div>
-        
-    <!-- Name -->
-    <md-input-container>
-      <label>Name</label>
-      <input type="text" ng-model="char.name" ng-disabled="lockBasic" ng-change="updateChar(char.id, 'name', char.name)">
-    </md-input-container>
     
-    <!-- Race -->
-    <md-input-container>
-      <label>Race</label>
-      <md-select name="race" ng-model="char.race" ng-change="updateChar(char.id, 'race', char.race); updateSubrace(char.race)" ng-disabled="lockBasic">
-        <md-option ng-repeat="race in raceArray" value="{{race.name}}" >{{race.name}}</md-option>
-        <md-option ng-click="showDialog($event, 'race')" value="custom">Add Custom Race...</md-option>
-      </md-select>
-    </md-input-container>
-    
-    <!-- Subrace -->
-    <md-input-container>
-      <label>Subrace</label>
-      <md-select name="race" ng-model="char.subrace" ng-change="updateChar(char.id, 'subrace', char.subrace)" ng-disabled="lockBasic">
-        <md-option ng-repeat="subrace in subraceArray" value="{{subrace}}" >{{subrace}}</md-option>
-        <md-option ng-click="showDialog($event, 'subrace')" value="custom">Add Custom Subrace...</md-option>
-      </md-select>
-    </md-input-container>
-    
-    <!-- Class -->
-    <md-input-container>
-      <label>Class</label>
-      <md-select name="race" ng-model="char.class" ng-change="updateChar(char.id, 'class', char.class)" ng-disabled="lockBasic">
-        <md-option ng-repeat="class in classArray" value="{{class}}" >{{class}}</md-option>
-        <md-option ng-click="showDialog($event, 'class')" value="custom">Add Custom Class...</md-option>
-      </md-select>
-    </md-input-container>
+    <div layout="row" layout-wrap>
+      <!-- Name -->
+      <md-input-container flex-gt-sm="50" flex-sm="100">
+        <label>Name</label>
+        <input type="text" ng-model="char.name" ng-disabled="lockBasic" ng-change="updateChar(char.id, 'name', char.name)">
+      </md-input-container>
+
+      <!-- Race -->
+      <md-input-container flex-gt-sm="50" flex-sm="100">
+        <label>Race</label>
+        <md-select name="race" ng-model="char.race" ng-change="updateChar(char.id, 'race', char.race); updateSubrace(char.race)" ng-disabled="lockBasic">
+          <md-option ng-repeat="race in raceArray" value="{{race.name}}" >{{race.name}}</md-option>
+          <md-option ng-click="showDialog($event, 'race')" value="custom">Add Custom Race...</md-option>
+        </md-select>
+      </md-input-container>
+
+      <!-- Subrace -->
+      <md-input-container flex-gt-sm="50" flex-sm="100">
+        <label>Subrace</label>
+        <md-select name="race" ng-model="char.subrace" ng-change="updateChar(char.id, 'subrace', char.subrace)" ng-disabled="lockBasic">
+          <md-option ng-repeat="subrace in subraceArray" value="{{subrace}}" >{{subrace}}</md-option>
+          <md-option ng-click="showDialog($event, 'subrace')" value="custom">Add Custom Subrace...</md-option>
+        </md-select>
+      </md-input-container>
+
+      <!-- Class -->
+      <md-input-container flex-gt-sm="50" flex-sm="100">
+        <label>Class</label>
+        <md-select name="race" ng-model="char.class" ng-change="updateChar(char.id, 'class', char.class)" ng-disabled="lockBasic">
+          <md-option ng-repeat="class in classArray" value="{{class}}" >{{class}}</md-option>
+          <md-option ng-click="showDialog($event, 'class')" value="custom">Add Custom Class...</md-option>
+        </md-select>
+      </md-input-container>
+    </div>
     
   </div>
 </div>

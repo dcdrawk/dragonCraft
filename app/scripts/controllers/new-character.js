@@ -57,6 +57,24 @@ angular.module('dCraftApp')
       });
     }
     
+    // Set race traits    
+    $rootScope.setRaceTraits = function(race){
+      console.log('setting traits');
+      db.race.where("name").equalsIgnoreCase(race).each(function(theRace) {
+        $scope.char.traits = theRace.traits;
+        console.log($scope.char.traits);
+      });
+    }
+    
+    // Set subrace traits    
+    $rootScope.setSubraceTraits = function(subrace){
+      console.log('setting traits');
+      db.race.where("subrace").equalsIgnoreCase(subrace).each(function(theRace) {
+        $scope.char.traits = theRace.traits;
+        console.log($scope.char.traits);
+      });
+    }
+    
     // Get Classes
     $rootScope.getClasses = function(){    
       $scope.classArray = [];
@@ -79,13 +97,15 @@ angular.module('dCraftApp')
       });
     }
     
+    
+    
     // Call the get functions
     $rootScope.getRaces();
     $rootScope.getClasses();
     $rootScope.getGenders();
     
     //add Character to database
-    $scope.addCharacter = function(name, race, subrace, charClass, level, gender){
+    $scope.addCharacter = function(name, race, subrace, charClass, level, gender, traits){
       console.log('Adding Character' + name + ' ' + race + ' ' + subrace + ' ' + charClass + ' ' + level + ' ' + gender + ' ')
       db.characters.add({name: name, race: race, subrace: subrace, class: charClass, level: level, gender: gender});
       //db.charHistory.add({background: '', personality: '', ideals: '', bonds: '', flaws: ''});
@@ -94,11 +114,19 @@ angular.module('dCraftApp')
     
     //update subrace select
     $rootScope.updateSubrace = function(selectedRace){
-      for (var index in raceList) {
-        if(raceList[index].name == selectedRace && raceList[index].subraces){
-          $rootScope.subraceArray = raceList[index].subraces.split(',');
+      $rootScope.subraceArray = [];
+      db.race.where("name").equalsIgnoreCase(selectedRace).each(function(theRace) {
+        console.log('the race:')
+        console.log(theRace.subraces);
+        if(theRace.subraces !== 'None'){        
+          for (var index in theRace.subraces){
+            $rootScope.subraceArray.push(theRace.subraces[index].name);
+            console.log($rootScope.subraceArray);
+          }
+        } else {
+          $rootScope.subraceArray.push('n/a');
         }
-      }
+      });
     }
     
     //set some initial values
@@ -108,7 +136,8 @@ angular.module('dCraftApp')
       race: '',
       subrace: '',
       level: 1,
-      gender: ''
+      gender: '',
+      traits: ''
     }
     
     //show the 'add custom' dialog

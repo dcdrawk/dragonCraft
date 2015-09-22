@@ -23,15 +23,15 @@ angular
   .config(function($mdThemingProvider) {
     $mdThemingProvider.theme('default')
       .primaryPalette('light-blue', {
-      'default': '800', // by default use shade 400 from the pink palette for primary intentions
-      'hue-1': '300', // use shade 100 for the <code>md-hue-1</code> class
-      'hue-2': '500', // use shade 600 for the <code>md-hue-2</code> class
-      'hue-3': 'A100' // use shade A100 for the <code>md-hue-3</code> class
+      'default': '700', // by default use shade 400 from the pink palette for primary intentions
+      'hue-1': '300', // use shade 300 for the <code>md-hue-1</code> class
+      'hue-2': '500', // use shade 500 for the <code>md-hue-2</code> class
+      'hue-3': '600' // use shade 600 for the <code>md-hue-3</code> class
       })
       // If you specify less than all of the keys, it will inherit from the
       // default shades
-      .accentPalette('grey', {
-        'default': '600' // use shade 200 for default, and keep all other shades the same
+      .accentPalette('cyan', {
+        'default': '500' // use shade 200 for default, and keep all other shades the same
       });
   })
   .config(function ($routeProvider) {
@@ -87,8 +87,8 @@ angular
       })
       .when('/character/profile/traits', {
         templateUrl: 'views/character/profile/traits.html',
-        controller: 'CharacterCtrl',
-        controllerAs: 'character'
+        controller: 'TraitsCtrl',
+        controllerAs: 'traits'
       })
       .when('/character/profile/feats', {
         templateUrl: 'views/character/profile/feats.html',
@@ -236,9 +236,9 @@ angular
     var db = new Dexie('test-db-2');
     db.version(1).stores({
         charClasses: 'name',
-        characters: 'id++,name,race,subrace,class,level,gender,height,weight,description,background,personality,ideals,bonds,flaws',
+        characters: 'id++,name,race,subrace,class,level,gender,height,weight,description,background,personality,ideals,bonds,flaws,traits',
         //charHistory: 'id++,background,personality,ideals,bonds,flaws',
-        race:'id++,name,subraces',
+        race:'id++,name,traits,subraces',
         gender:'name',
         alignments: 'name',
         backgrounds: 'name,skills,tools,feat,featInfo'
@@ -272,72 +272,92 @@ angular
         db.charClasses.add({name: 'Wizard'});
         
         //Races
+        
+        // Dwarf
         db.race.add({name: 'Dwarf',
-                     subraces: 'Hill Dwarf,Mountain Dwarf'
-//                     traits: [{
-//                       title: 'Ability Score Increase',
-//                       description: 'Your Strength score increases by 2, and your Constitution score increases by 1.'
-//                     },{
-//                       title: 'Speed',
-//                       description: '30'
-//                     },{
-//                      title: 'Darkvision',
-//                       description: '30'
-//                     },{
-//                       title: 'Speed',
-//                       description: 'Thanks to your orc blood, you have superior vision in dark and dim conditions. You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can&#39t discern color in darkness, only shades of gray.'
-//                     },{
-//                       title: 'Menacing',
-//                       description: 'You gain proficiency in the Intimidation skill.'
-//                     },{
-//                      title: 'Relentless Endurance',
-//                       description: 'When you are reduced to 0 hit points but not killed outright, you can drop to 1 hit point instead. You can’t use this feature again until you finish a long rest.'
-//                     },{
-//                       title: 'Savage Attacks',
-//                       description: 'When you score a critical hit with a melee weapon attack, you can roll one of the weapon&#39s damage dice one additional time and add it to the extra damage of the critical hit.'
-//                     },{
-//                      title: 'Languages',
-//                       description: 'Common,Orc'
-//                     }]
-          
+                     //'Hill Dwarf,Mountain Dwarf',
+                     
+                     // Dwarf Traits
+                     traits: [{
+                       title: 'Ability Score Increase',
+                       description: 'Your Constitution score increases by 2.'
+                     },{
+                       title: 'Speed',
+                       description: '30'
+                     },{
+                       title: 'Dark Vision',
+                       description: 'Accustomed to life underground, you have superior vision in dark and dim conditions. You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can\u0027t discern color in darkness, only shades of gray.'
+                     },{
+                       title: 'Dwarven Resilience',
+                       description: 'You have advantage on saving throws against poison, and you have resistance against poison damage'
+                     },{
+                      title: 'Dwarven Combat Training',
+                       description: 'You have proficiency with the battleaxe, handaxe, throwing hammer, and warhammer.'
+                     },{
+                       title: 'Tool Proficiency',
+                       description: 'You gain proficiency with the artisan’s tools of your choice: smith’s tools, brewer’s supplies, or mason’s tools.'
+                     },{
+                      title: 'Stonecunning',
+                       description: 'Whenever you make an Intelligence (History) check related to the origin of stonework, you are considered proficient in the History skill and add double your proficiency bonus to the check, instead of your normal proficiency bonus.'
+                     },{
+                      title: 'Languages',
+                      description: 'Common,Dwarvish'
+                     }],
+                     
+                     //Dwarf Subraces
+                     subraces: [{
+                      name: 'Hill Dwarf',
+                      traits: [{
+                        title: 'Ability Score Increase',
+                        description: 'Your Wisdom score increases by 1.'
+                      },{
+                        title: 'Dwarven Toughness',
+                        description: 'Your hit point maximum increases by 1, and it increases by 1 every time you gain a level.'
+                      }],
+                     },{
+                      name: 'Mountain Dwarf',
+                      traits: [{
+                        title: 'Ability Score Increase',
+                        description: 'Your Strength score increases by 2.'
+                      },{
+                        title: 'Dwarven Toughness',
+                        description: 'You have proficiency with light and medium armor.'
+                      }],
+                     }]          
                     });
-        db.race.add({name: 'Elf', subraces: 'High Elf,Wood Elf,Dark Elf'});
-        db.race.add({name: 'Halfling', subraces: 'Lightfoot,Stout'});
-        db.race.add({name: 'Human', subraces: 'Calishite,Chondathan,Damaran,Mulan,Rashemi,Shou,Tethyrian,Turami'});
-        db.race.add({name: 'Dragonborn', subraces: 'Black,Blue,Brass,Bronze,Copper,Gold,Green,Red,Silver,White'});
-        db.race.add({name: 'Gnome', subraces: 'Forest Gnome,Rock Gnome'});
-        db.race.add({name: 'Half-Elf', subraces: 'None'});
+        // Elf            
+//        db.race.add({name: 'Elf', subraces: 'High Elf,Wood Elf,Dark Elf'});
+//        db.race.add({name: 'Halfling', subraces: 'Lightfoot,Stout'});
+//        db.race.add({name: 'Human', subraces: 'Calishite,Chondathan,Damaran,Mulan,Rashemi,Shou,Tethyrian,Turami'});
+//        db.race.add({name: 'Dragonborn', subraces: 'Black,Blue,Brass,Bronze,Copper,Gold,Green,Red,Silver,White'});
+//        db.race.add({name: 'Gnome', subraces: 'Forest Gnome,Rock Gnome'});
+//        db.race.add({name: 'Half-Elf', subraces: 'None'});
         db.race.add({name: 'Half-Orc',
-                     subraces: 'None'
-//                     traits: [{
-//                       title: 'Ability Score Increase',
-//                       description: 'Your Strength score increases by 2, and your Constitution score increases by 1.'
-//                     },{
-//                       title: 'Speed',
-//                       description: '30'
-//                     },{
-//                      title: 'Darkvision',
-//                       description: '30'
-//                     },{
-//                       title: 'Speed',
-//                       description: 'Thanks to your orc blood, you have superior vision in dark and dim conditions. You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can&#39t discern color in darkness, only shades of gray.'
-//                     },{
-//                       title: 'Menacing',
-//                       description: 'You gain proficiency in the Intimidation skill.'
-//                     },{
-//                      title: 'Relentless Endurance',
-//                       description: 'When you are reduced to 0 hit points but not killed outright, you can drop to 1 hit point instead. You can’t use this feature again until you finish a long rest.'
-//                     },{
-//                       title: 'Savage Attacks',
-//                       description: 'When you score a critical hit with a melee weapon attack, you can roll one of the weapon&#39s damage dice one additional time and add it to the extra damage of the critical hit.'
-//                     },{
-//                      title: 'Languages',
-//                       description: 'Common,Orc'
-//                     }]
-          
-                    //});
-                     });
-        db.race.add({name: 'Tiefling', subraces: 'None'});
+                     subraces: 'None',
+                     traits: [{
+                       title: 'Ability Score Increase',
+                       description: 'Your Strength score increases by 2, and your Constitution score increases by 1.'
+                     },{
+                       title: 'Speed',
+                       description: '30'
+                     },{
+                       title: 'Darkvision',
+                       description: 'Thanks to your orc blood, you have superior vision in dark and dim conditions. You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can&#39t discern color in darkness, only shades of gray.'
+                     },{
+                       title: 'Menacing',
+                       description: 'You gain proficiency in the Intimidation skill.'
+                     },{
+                      title: 'Relentless Endurance',
+                       description: 'When you are reduced to 0 hit points but not killed outright, you can drop to 1 hit point instead. You can’t use this feature again until you finish a long rest.'
+                     },{
+                       title: 'Savage Attacks',
+                       description: 'When you score a critical hit with a melee weapon attack, you can roll one of the weapon&#39s damage dice one additional time and add it to the extra damage of the critical hit.'
+                     },{
+                       title: 'Languages',
+                       description: 'Common,Orc'
+                     }]
+                    });
+        //db.race.add({name: 'Tiefling', subraces: 'None'});
         
         // Genders        
         db.gender.add({name: 'Male'});
@@ -382,10 +402,10 @@ angular
                             featInfo: 'You can always find a place to perform, usually in an inn or tavern but possibly with a circus, at a theater, or even in a noble’s court. At such a place, you receive free lodging and food of a modest or comfortable standard (depending on the quality of the establishment), as long as you perform each night. In addition, your performance makes you something of a local figure. When strangers recognize you in a town where you have performed, they typically take a liking to you.'});
                             
         db.backgrounds.add({name: 'Folk Hero',
-                              skills: 'Animal Handling, Survival',
-                              tools: 'One Type of Artisan&#39s Tools, Vehicles (land)',
-                              feat: 'Rustic Hospitality',
-                              featInfo: 'Since you come from the ranks of the common folk, you fit in among them with ease. You can find a place to hide, rest, or recuperate among other commoners, unless you have shown yourself to be a danger to them. They will shield you from the law or anyone else searching for you, though they w ill not risk their lives for you.'});
+                            skills: 'Animal Handling, Survival',
+                            tools: 'One Type of Artisan&#39s Tools, Vehicles (land)',
+                            feat: 'Rustic Hospitality',
+                            featInfo: 'Since you come from the ranks of the common folk, you fit in among them with ease. You can find a place to hide, rest, or recuperate among other commoners, unless you have shown yourself to be a danger to them. They will shield you from the law or anyone else searching for you, though they w ill not risk their lives for you.'});
                           
         db.backgrounds.add({name: 'Guild Artisan',
                             skills: 'Insight, Persuasion',
@@ -455,13 +475,13 @@ angular
       db.open();
       
       //find the character that matches the selected id
-      db.characters.where('id').equals(id).each(function (character) {
+      db.characters.where('id').equals(id).each(function (character, id) {
       
-        db.charHistory.where('id').equals(id).each(function (history) {
-          character.history = history;
-        });
+//        db.charHistory.where('id').equals(id).each(function (history) {
+//          character.history = history;
+//        });
         console.log('selected character: ' + character.name);
-        console.log('character history: ' + character.history.name);
+        //console.log('character history: ' + character.history.name);
         $rootScope.selectedCharacter = character;
         $rootScope.$digest();
       }).then(function(){

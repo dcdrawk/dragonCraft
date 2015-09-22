@@ -23,7 +23,7 @@
     <![endif]-->
 
     <!-- Add your site or application content here -->
-    <md-toolbar class="md-whiteframe-z1">
+    <md-toolbar>
       <div class="md-toolbar-tools container">
         <md-button ng-controller="AppCtrl" ng-click="goBack()" id="menu" ng-class="{hide:home}"><i class="material-icons">keyboard_arrow_left</i></md-button>
         <h2>
@@ -119,6 +119,10 @@
         <script src="scripts/controllers/character.js"></script>
         <script src="scripts/controllers/admin.js"></script>
         <script src="scripts/db.js"></script>
+        
+        <!-- Game data -->
+        <script src="scripts/services/game-data/classSrv.js"></script>
+        <script src="scripts/services/game-data/raceSrv.js"></script>
         <!-- endbuild -->
 </body>
 </html>
