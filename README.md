@@ -1,11 +1,10 @@
-# dun-tome
+# DragonCraft 5e
 
-This project is generated with [yo angular generator](https://github.com/yeoman/generator-angular)
-version 0.12.1.
+A Dungeons and Dragons character creation tool. Allows you to create a character using information from the Official Player's Handbook, as well as your own custom data. 
 
-## Build & development
+## Installation
 
-Run `grunt` for building and `grunt serve` for preview.
+Run `npm install`  and `bower install` to install dependencies. Run `grunt serve` for a live-reload preview and `grunt build` to create a build.
 
 ## Testing
 
