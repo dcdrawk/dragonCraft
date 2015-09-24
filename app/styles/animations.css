@@ -6,8 +6,8 @@
 }
 
 .animate-fadein.ng-enter, .animate-fadein.ng-leave {
-  -webkit-transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.5s;
-  transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.5s;
+  -webkit-transition:all 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) ;
+  transition:all 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) ;
 }
 
 .animate-fadein.ng-enter,
@@ -25,8 +25,8 @@
 }
 
 .animate-test.ng-enter, .animate-test.ng-leave {
-  -webkit-transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.5s;
-  transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.5s;
+  -webkit-transition:all 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) ;
+  transition:all 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) ;
 }
 
 .animate-test.ng-enter,
@@ -60,41 +60,28 @@
   position: absolute;
   width:100%;
 /*  padding:10px;*/
--webkit-transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) .5s;
-  transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) .5s;
+-webkit-transition:all .65s cubic-bezier(0.250, 0.460, 0.450, 0.940) ;
+  transition:all .65s cubic-bezier(0.250, 0.460, 0.450, 0.940);
 }
-main.view-animate.ng-enter, main.view-animate.ng-leave {
-  overflow-y: hidden;
+.main.view-animate.ng-enter, .main.view-animate.ng-leave {
+/*  overflow: hidden;*/
+/*  overflow-y: hidden;*/
 }
 .view-animate.ng-enter, .view-animate.ng-leave {
-/*
-  -webkit-transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 1s;
-  transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 1s;
-*/
-  overflow-y:hidden;
+/*  overflow:hidden;*/
   display:block;
   width:100%;
-/*  border-left:1px solid black;*/
-/*  position: relative;*/
-/*
-  position:absolute;
-  top:0;
-  left:0;
-  right:0;
-  bottom:0;
-*/
-/*  padding:10px;*/
 }
+
 .view-animate.ng-leave {
-  transform: translateX(100%);
+  transform: translateX(0%);
 }
 .view-animate.ng-enter {
-/*  left:100%;*/
   transform: translateX(100%);
 }
 .view-animate.ng-enter.ng-enter-active {
-  left:0;
+  transform: translateX(0%);
 }
 .view-animate.ng-leave.ng-leave-active {
-  left:-100%;
+  transform: translateX(-100%);
 }

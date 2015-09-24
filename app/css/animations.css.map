@@ -1,0 +1,10 @@
+{
+	"version": 3,
+	"file": "animations.css",
+	"sources": [
+		"../scss/animations.scss"
+	],
+	"sourcesContent": [],
+	"mappings": "",
+	"names": []
+}
