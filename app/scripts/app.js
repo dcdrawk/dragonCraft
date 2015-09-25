@@ -185,7 +185,7 @@ angular
     
   })
     /* jshint ignore:start */
-  .run(function($rootScope, $location){
+  .run(function($rootScope, $location, transitionSrv){
     console.log('running!');
     
     //set up the local storage for the selected Character
@@ -199,34 +199,50 @@ angular
     Storage.prototype.getObject = function(key) {
       var value = this.getItem(key);
       return value;
-    }
+    }    
     
-    //test the local storage
-    //localStorage.setItem('myCat', 'Tom');
-    
-    //console.log()
-    //alert( 'username = ' + localStorage.getItem('myCat'));
-    $rootScope.$on('$locationChangeStart', function(event, newUrl, oldUrl, oldState) {
+    $rootScope.$on('$locationChangeStart', function(event, next, current) {
       console.log('Location change start!');
-      console.log('path: ' + $location.path());
+      var curPath = current.slice( current.lastIndexOf('/')+1, current.length );
+      var nextPath = next.slice( next.lastIndexOf('/')+1, next.length );
+      transitionSrv.setTransition(curPath, nextPath);
+//      console.log(event);
+//      console.log(curPath);
+//      console.log(nextPath);
+//      if(curPath == 'profile'){
+//        console.log('basic info!!!');
+//        console.log(nextPath);
+//        switch(nextPath){
+//          case 'basic-info':
+//          case 'appearance':
+//          case 'history':
+//          case 'traits':
+//          case 'proficiency':
+//          case 'feats':
+//            console.log('slide Left!!!');
+//            $rootScope.transition = 'slide-left';
+//            break;
+//          case 'character':
+//            console.log('slide Left!!!');
+//            $rootScope.transition = 'slide-right';
+//            break;
+//        }
+//      }
+
     });
     
-    $rootScope.$on('$locationChangeSuccess', function(event, newUrl, oldUrl, oldState) {
-      console.log('Location change success!');
-      //console.log('path: ' + $location.path());
-      console.log('PATH');
-      console.log($location.path());
-      //console.log('Old State: ' + newUrl);
-      $rootScope.scrollTo('top');
-      $rootScope.lastPage = oldUrl;
-      
-      
+    $rootScope.$on('$locationChangeSuccess', function(event, current, next) {
+      console.log('success!!!');
       if($location.path() == '/'){
         $rootScope.home = true;
       } else {
         $rootScope.home = false;
       }
-    });        
+      
+//      var curPath = current.slice( current.lastIndexOf('/')+1, current.length );
+//      var nextPath = next.slice( next.lastIndexOf('/')+1, next.length );
+//      transitionSrv.setTransition(curPath, nextPath);
+    });
 
 
     //
@@ -256,7 +272,7 @@ angular
     
     $rootScope.populate = function(){    
       db.on('populate', function() {
-        console.log('populating the database');
+        //console.log('populating the database');
         // Classes        
         db.charClasses.add({name: 'Barbarian'});
         db.charClasses.add({name: 'Bard'});
@@ -454,8 +470,6 @@ angular
                             tools: 'Disguise kit, Thieves&#39 tools',
                             feat: 'City Secrets',
                             featInfo: 'You know the secret patterns and flow to cities and can find passages through the urban sprawl that others would miss. When you are not in combat, you (and companions you lead) can travel between any two locations in the city twice as fast as your speed would normally allow.'});  
-        console.log('finished populating!');
-        console.log(db.race);
       });
     }
     
@@ -486,9 +500,9 @@ angular
         $rootScope.$digest();
       }).then(function(){
         localStorage.setObject('character', $rootScope.selectedCharacter);
-        console.log(localStorage.getObject('character'));      
+        //console.log(localStorage.getObject('character'));      
       }).catch(function (error) {
-        console.error(error);
+        //console.error(error);
       });
       
       db.close();
@@ -551,17 +565,17 @@ angular
     }
     
     $rootScope.updateStorage = function(id){
-      console.log('update storage');
+      //console.log('update storage');
       db.open();
 
       //find the character that matches the selected id
       db.characters.where('id').equals(id).each(function (character) {
-        console.log('CHARACTER:');
+        //console.log('CHARACTER:');
         $rootScope.selectedCharacter = character;
       }).then(function(){
         localStorage.setObject('character', $rootScope.selectedCharacter);
-        console.log('CHARACTER:');
-        console.log(localStorage.getObject('character'));
+        //console.log('CHARACTER:');
+        //console.log(localStorage.getObject('character'));
         $rootScope.$digest();
       });
       

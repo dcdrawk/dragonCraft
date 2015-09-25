@@ -83,6 +83,8 @@ body {
 }
 .main{
   overflow-x:hidden;
+  position:relative;
+  height:calc(100vh - 64px)!important;
 }
 .mb-page{
   background-color:#fff;

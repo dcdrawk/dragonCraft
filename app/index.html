@@ -15,7 +15,8 @@
     <link rel="stylesheet" href="styles/material-icons.css">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="styles/main.css">
-    <link rel="stylesheet" href="styles/animations.css">
+<!--    <link rel="stylesheet" href="styles/animations.css">-->
+    <link rel="stylesheet" href="css/animations.css">
     <!-- endbuild -->
   </head>
   <body ng-app="dCraftApp" ngsf-fullscreen>
@@ -53,8 +54,7 @@
                   <i class="material-icons">fullscreen</i>
                 </div>
               </md-button>
-            </md-menu-item>
-            
+            </md-menu-item>            
           </md-menu-content>
         </md-menu>
       </div>
@@ -76,7 +76,7 @@
     <md-content class="main" flex>
 <!--    <mobile-view></mobile-view>-->
 <!--    <ng-view></ng-view>-->
-      <div ng-view="view-animate" class="view-content "></div>
+      <div ng-view class="view-content {{$root.transition}}"></div>
     </md-content>
 
 
@@ -122,6 +122,7 @@
         <script src="scripts/db.js"></script>
         
         <!-- Game data -->
+        <script src="scripts/services/transitionSrv.js"></script>
         <script src="scripts/services/game-data/classSrv.js"></script>
         <script src="scripts/services/game-data/raceSrv.js"></script>
         <!-- endbuild -->

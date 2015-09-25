@@ -6,8 +6,8 @@
 }
 
 .animate-fadein.ng-enter, .animate-fadein.ng-leave {
-  -webkit-transition:all 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) ;
-  transition:all 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) ;
+/*  -webkit-transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.5s ;*/
+  transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940)  0.5s;
 }
 
 .animate-fadein.ng-enter,
@@ -25,8 +25,8 @@
 }
 
 .animate-test.ng-enter, .animate-test.ng-leave {
-  -webkit-transition:all 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) ;
-  transition:all 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) ;
+/*  -webkit-transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.5s;*/
+  transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.5s;
 }
 
 .animate-test.ng-enter,
@@ -41,15 +41,6 @@
 
 /*-- View Animate --*/
 
-.main {
-  position:relative;
-  height:calc(100vh - 64px)!important;
-/*  background:white;*/
-/*  border:1px solid black;*/
-/*  height:40px;*/
-/*  overflow:hidden;*/
-}
-
 /*
 .ng-animate {
  position:absolute; 
@@ -60,8 +51,8 @@
   position: absolute;
   width:100%;
 /*  padding:10px;*/
--webkit-transition:all .65s cubic-bezier(0.250, 0.460, 0.450, 0.940) ;
-  transition:all .65s cubic-bezier(0.250, 0.460, 0.450, 0.940);
+-webkit-transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) .65s;
+  transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) .65s;
 }
 .main.view-animate.ng-enter, .main.view-animate.ng-leave {
 /*  overflow: hidden;*/
@@ -69,8 +60,8 @@
 }
 .view-animate.ng-enter, .view-animate.ng-leave {
 /*  overflow:hidden;*/
-  display:block;
-  width:100%;
+/*  display:block;*/
+/*  width:100%;*/
 }
 
 .view-animate.ng-leave {

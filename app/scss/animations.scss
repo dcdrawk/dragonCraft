@@ -1,0 +1,36 @@
+.view-content{
+  position: absolute;
+  width:100%;
+  -webkit-transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) .65s;
+  transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) .65s;
+}
+//Slide Left
+.slide-left{
+  &.ng-enter{
+  transform: translateX(100%);
+    &.ng-enter-active{
+      transform: translateX(0%);
+    }
+  }
+  &.ng-leave {
+    transform: translateX(0%);
+    &.ng-leave-active{
+      transform: translateX(-100%);
+    }
+  }
+}
+//Slide Right
+.slide-right{
+  &.ng-enter{
+  transform: translateX(-100%);
+    &.ng-enter-active{
+      transform: translateX(0%);
+    }
+  }
+  &.ng-leave {
+    transform: translateX(0%);
+    &.ng-leave-active{
+      transform: translateX(100%);
+    }
+  }
+}

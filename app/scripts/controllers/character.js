@@ -11,7 +11,7 @@
 angular.module('dCraftApp')
   .controller('CharacterCtrl', function ($scope, $rootScope, ClassSrv, RaceSrv) {
     
-    console.log(ClassSrv.classes);
+    //console.log(ClassSrv.classes);
     //Define the DB
     var db = new Dexie("test-db-2");
     db.version(1).stores({
@@ -54,12 +54,12 @@ angular.module('dCraftApp')
     $rootScope.updateSubrace = function(selectedRace){
       $rootScope.subraceArray = [];
       db.race.where("name").equalsIgnoreCase(selectedRace).each(function(theRace) {
-        console.log('the race:')
-        console.log(theRace.subraces);
+        //console.log('the race:')
+        //console.log(theRace.subraces);
         if(theRace.subraces !== 'None'){        
           for (var index in theRace.subraces){
             $rootScope.subraceArray.push(theRace.subraces[index].name);
-            console.log($rootScope.subraceArray);
+            //console.log($rootScope.subraceArray);
           }
         } else {
           $rootScope.subraceArray.push('n/a');
@@ -150,7 +150,7 @@ angular.module('dCraftApp')
 
     //if there is no local character, let's try to set it to the selectedCharacter
     if(localCharacter == 'undefined'){
-      console.log('adding character to localstorage')
+      //console.log('adding character to localstorage')
       localStorage.setObject('character', $rootScope.selectedCharacter);
 
     //else, if the selected character is undefined (e.g. reload)
@@ -181,7 +181,7 @@ angular.module('dCraftApp')
 
     //if there is no local character, let's try to set it to the selectedCharacter
     if(localCharacter == 'undefined'){
-      console.log('adding character to localstorage')
+      //console.log('adding character to localstorage')
       localStorage.setObject('character', $rootScope.selectedCharacter);
 
     //else, if the selected character is undefined (e.g. reload)
@@ -211,7 +211,7 @@ angular.module('dCraftApp')
 
     //if there is no local character, let's try to set it to the selectedCharacter
     if(localCharacter == 'undefined'){
-      console.log('adding character to localstorage')
+      //console.log('adding character to localstorage')
       localStorage.setObject('character', $rootScope.selectedCharacter);
 
     //else, if the selected character is undefined (e.g. reload)
@@ -224,10 +224,10 @@ angular.module('dCraftApp')
     $scope.char = $rootScope.selectedCharacter;
     $scope.backgroundArray = [];
     
-    console.log($scope.char.background)
+    //console.log($scope.char.background)
     $scope.getBackgrounds = function(){
       db.open();
-      console.log('Get Backgrounds:');      
+      //console.log('Get Backgrounds:');      
       
       db.backgrounds.each(function(background){
         console.log(background.name);
@@ -256,7 +256,7 @@ angular.module('dCraftApp')
     
     //if there is no local character, let's try to set it to the selectedCharacter
     if(localCharacter == 'undefined'){
-      console.log('adding character to localstorage')
+      //console.log('adding character to localstorage')
       localStorage.setObject('character', $rootScope.selectedCharacter);
 
     //else, if the selected character is undefined (e.g. reload)
@@ -271,7 +271,7 @@ angular.module('dCraftApp')
     
     $scope.getRaceTraits = function(race){
       db.open();
-      console.log('off to the races' + race);
+      //console.log('off to the races' + race);
       db.race.where('name').equalsIgnoreCase(race).each(function(theRace) {
         $scope.raceTraitList = theRace.traits;
         console.log($scope.raceTraitList);

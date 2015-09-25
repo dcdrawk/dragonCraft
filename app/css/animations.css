@@ -1,2 +1,27 @@
+.view-content {
+  position: absolute;
+  width: 100%;
+  -webkit-transition: all cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.65s;
+  transition: all cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.65s; }
+
+.slide-left.ng-enter {
+  transform: translateX(100%); }
+  .slide-left.ng-enter.ng-enter-active {
+    transform: translateX(0%); }
+
+.slide-left.ng-leave {
+  transform: translateX(0%); }
+  .slide-left.ng-leave.ng-leave-active {
+    transform: translateX(-100%); }
+
+.slide-right.ng-enter {
+  transform: translateX(-100%); }
+  .slide-right.ng-enter.ng-enter-active {
+    transform: translateX(0%); }
+
+.slide-right.ng-leave {
+  transform: translateX(0%); }
+  .slide-right.ng-leave.ng-leave-active {
+    transform: translateX(100%); }
 
 /*# sourceMappingURL=animations.css.map */
