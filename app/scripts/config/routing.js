@@ -45,7 +45,7 @@ angular.module('dCraftApp')
         }
       })
       
-      //Profile
+      //Profile info
       .when('/character/profile', {
         templateUrl: 'views/character/profile/index.html',
         controller: 'CharacterCtrl',
