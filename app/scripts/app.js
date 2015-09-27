@@ -20,7 +20,7 @@ angular
     'ngMessages',
     'angularScreenfull',
     'ngRouteAnimationManager'
-  ]);
+  ])
   
   /* jshint ignore:start */
   .run(function($rootScope, $location, transitionSrv){

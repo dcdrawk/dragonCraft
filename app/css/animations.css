@@ -1,57 +1,60 @@
 .view-content, .view-animate {
   position: absolute;
-  width: 100%;
-  -webkit-transition: all cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.65s;
-  transition: all cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.65s; }
+  width: 100%; }
 
 .view-animate-container {
   position: relative; }
 
 .slide-left .view-content.ng-enter {
-  transform: translateX(100%); }
-  .slide-left .view-content.ng-enter.ng-enter-active {
-    transform: translateX(0%); }
+  animation: slide-in-left 0.65s;
+  animation-timing-function: cubic-bezier(0.465, 0.183, 0.153, 0.946); }
 
 .slide-left .view-content.ng-leave {
-  transform: translateX(0%); }
-  .slide-left .view-content.ng-leave.ng-leave-active {
-    transform: translateX(-100%); }
+  animation: slide-out-left 0.65s;
+  animation-timing-function: cubic-bezier(0.465, 0.183, 0.153, 0.946); }
 
 .slide-right .view-content.ng-enter {
-  transform: translateX(-100%); }
-  .slide-right .view-content.ng-enter.ng-enter-active {
-    transform: translateX(0%); }
+  animation: slide-in-right 0.65s;
+  animation-timing-function: cubic-bezier(0.465, 0.183, 0.153, 0.946); }
 
 .slide-right .view-content.ng-leave {
-  transform: translateX(0%); }
-  .slide-right .view-content.ng-leave.ng-leave-active {
-    transform: translateX(100%); }
+  animation: slide-out-right 0.65s;
+  animation-timing-function: cubic-bezier(0.465, 0.183, 0.153, 0.946); }
 
-.fade .view-content {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 100%;
-  opacity: 1; }
+@keyframes slide-in-left {
+  0% {
+    transform: translateX(100%);
+    transform-origin: left; }
+  100% {
+    transform: translateX(0%); } }
 
-.fade .view-content.ng-enter,
-.fade .view-content.ng-leave {
-  -webkit-transition: all 1s ease;
-  -moz-transition: all 1s ease;
-  -o-transition: all 1s ease;
-  transition: all 1s ease; }
+@keyframes slide-out-left {
+  0% {
+    transform: translateX(0%);
+    transform-origin: left; }
+  100% {
+    transform: translateX(-100%); } }
 
-.fade .view-content.ng-enter {
-  opacity: 0; }
+@keyframes slide-in-right {
+  0% {
+    transform: translateX(-100%);
+    transform-origin: left; }
+  100% {
+    transform: translateX(0%); } }
 
-.fade .view-content.ng-enter-active {
-  opacity: 1; }
+@keyframes slide-out-right {
+  0% {
+    transform: translateX(0%);
+    transform-origin: left; }
+  100% {
+    transform: translateX(100%); } }
 
-.fade .view-content.ng-leave {
-  opacity: 1; }
-
-.fade .view-content.ng-leave-active {
-  opacity: 0; }
+@keyframes hinge {
+  0% {
+    transform: rotate(-120deg);
+    transform-origin: top left; }
+  100% {
+    transform: rotate(0deg) translateY(200%);
+    transform-origin: top left; } }
 
 /*# sourceMappingURL=animations.css.map */
