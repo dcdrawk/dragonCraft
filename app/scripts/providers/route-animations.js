@@ -39,9 +39,11 @@ app.provider('RouteAnimationManager', function()  {
       //find the current path
       name = name.slice( name.lastIndexOf('/')+1, name.length );
       //remove any hypens
+      console.log('Animation Config!');
+      console.log(name);
+      
       name = name.replace('-','');
       
-      console.log('Animation Config!');
       console.log(conf);
       console.log(name);
       _animationClass.name = conf[name] ||  conf.fallback || _defaultAnimation;

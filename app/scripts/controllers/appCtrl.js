@@ -80,6 +80,14 @@ angular.module('dCraftApp')
 //      var nextPath = next.slice( next.lastIndexOf('/')+1, next.length );
 //      transitionSrv.setTransition(curPath, nextPath);
 //    });
+
+//    $scope.$on('$routeChangeSuccess', function(next, current) { 
+//      $scope.overflow = 'hide-overflow';
+//      $timeout(function(){
+//        $scope.overflow = 'show-overflow';
+//      }, 700);
+//    });
+       
   })  
 
   .controller('LeftCtrl', function ($scope, $timeout, $mdSidenav, $log) {
