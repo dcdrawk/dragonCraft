@@ -1,36 +1,74 @@
-.view-content{
+.view-content, .view-animate{
   position: absolute;
   width:100%;
   -webkit-transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) .65s;
   transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) .65s;
 }
+.view-animate-container {
+  position:relative;
+}
 //Slide Left
 .slide-left{
-  &.ng-enter{
-  transform: translateX(100%);
-    &.ng-enter-active{
-      transform: translateX(0%);
+  .view-content{  
+    &.ng-enter{
+    transform: translateX(100%);
+      &.ng-enter-active{
+        transform: translateX(0%);
+      }
     }
-  }
-  &.ng-leave {
-    transform: translateX(0%);
-    &.ng-leave-active{
-      transform: translateX(-100%);
+    &.ng-leave {
+      transform: translateX(0%);
+      &.ng-leave-active{
+        transform: translateX(-100%);
+      }
     }
   }
 }
 //Slide Right
 .slide-right{
-  &.ng-enter{
-  transform: translateX(-100%);
-    &.ng-enter-active{
+  .view-content{
+    &.ng-enter{
+    transform: translateX(-100%);
+      &.ng-enter-active{
+        transform: translateX(0%);
+      }
+    }
+    &.ng-leave {
       transform: translateX(0%);
+      &.ng-leave-active{
+        transform: translateX(100%);
+      }
     }
   }
-  &.ng-leave {
-    transform: translateX(0%);
-    &.ng-leave-active{
-      transform: translateX(100%);
-    }
-  }
+}
+
+
+
+//Fade 
+.fade .view-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    opacity: 1;
+}
+.fade .view-content.ng-enter,
+.fade .view-content.ng-leave {
+    -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    transition: all 1s ease;
+}
+.fade .view-content.ng-enter {
+    opacity: 0;
+}
+.fade .view-content.ng-enter-active {
+    opacity: 1;
+}
+.fade .view-content.ng-leave {
+    opacity: 1;
+}
+.fade .view-content.ng-leave-active {
+    opacity: 0;
 }

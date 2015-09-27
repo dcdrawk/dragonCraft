@@ -18,173 +18,11 @@ angular
     'ngTouch',
     'ngMaterial',
     'ngMessages',
-    'angularScreenfull'
-  ])
-  .config(function($mdThemingProvider) {
-    $mdThemingProvider.theme('default')
-      .primaryPalette('light-blue', {
-      'default': '700', // by default use shade 400 from the pink palette for primary intentions
-      'hue-1': '300', // use shade 300 for the <code>md-hue-1</code> class
-      'hue-2': '500', // use shade 500 for the <code>md-hue-2</code> class
-      'hue-3': '600' // use shade 600 for the <code>md-hue-3</code> class
-      })
-      // If you specify less than all of the keys, it will inherit from the
-      // default shades
-      .accentPalette('cyan', {
-        'default': '500' // use shade 200 for default, and keep all other shades the same
-      });
-  })
-  .config(function ($routeProvider) {
-    $routeProvider
-      .when('/', {
-        templateUrl: 'views/main.html',
-        controller: 'MainCtrl',
-        controllerAs: 'main'
-      })
-      .when('/about', {
-        templateUrl: 'views/about.html',
-        controller: 'AboutCtrl',
-        controllerAs: 'about'
-      })
-      .when('/new-character', {
-        templateUrl: 'views/new-character.html',
-        controller: 'NewCharCtrl',
-        controllerAs: 'newChar'
-      })
-      
-      //Character Navigation
-      .when('/character', {
-        templateUrl: 'views/character/home.html',
-        controller: 'CharacterCtrl',
-        controllerAs: 'character'
-      })
-      
-      //Profile
-      .when('/character/profile', {
-        templateUrl: 'views/character/profile/index.html',
-        controller: 'CharacterCtrl',
-        controllerAs: 'character'
-      })
-      .when('/character/profile/basic-info', {
-        templateUrl: 'views/character/profile/basic.html',
-        controller: 'CharacterCtrl',
-        controllerAs: 'character'
-      })
-      .when('/character/profile/appearance', {
-        templateUrl: 'views/character/profile/appearance.html',
-        controller: 'AppearanceCtrl',
-        controllerAs: 'appearance'
-      })
-      .when('/character/profile/history', {
-        templateUrl: 'views/character/profile/history.html',
-        controller: 'HistoryCtrl',
-        controllerAs: 'history'
-      })
-      .when('/character/profile/proficiency', {
-        templateUrl: 'views/character/profile/proficiency.html',
-        controller: 'CharacterCtrl',
-        controllerAs: 'character'
-      })
-      .when('/character/profile/traits', {
-        templateUrl: 'views/character/profile/traits.html',
-        controller: 'TraitsCtrl',
-        controllerAs: 'traits'
-      })
-      .when('/character/profile/feats', {
-        templateUrl: 'views/character/profile/feats.html',
-        controller: 'CharacterCtrl',
-        controllerAs: 'character'
-      })
-      
-      //Stats
-      .when('/character/stats', {
-        templateUrl: 'views/character/stats/index.html',
-        controller: 'CharacterCtrl',
-        controllerAs: 'character'
-      })
-      .when('/character/stats/base', {
-        templateUrl: 'views/character/stats/base.html',
-        controller: 'CharacterCtrl',
-        controllerAs: 'character'
-      })
-      .when('/character/stats/saving-throws', {
-        templateUrl: 'views/character/stats/saving-throws.html',
-        controller: 'CharacterCtrl',
-        controllerAs: 'character'
-      })
-      .when('/character/stats/skills', {
-        templateUrl: 'views/character/stats/skills.html',
-        controller: 'CharacterCtrl',
-        controllerAs: 'character'
-      })
-      .when('/character/stats/combat', {
-        templateUrl: 'views/character/stats/combat.html',
-        controller: 'CharacterCtrl',
-        controllerAs: 'character'
-      })
-      
-      //Stats
-      .when('/character/spells', {
-        templateUrl: 'views/character/spells/index.html',
-        controller: 'CharacterCtrl',
-        controllerAs: 'character'
-      })
-      .when('/character/spells/my-spells', {
-        templateUrl: 'views/character/spells/my-spells.html',
-        controller: 'CharacterCtrl',
-        controllerAs: 'character'
-      })
-      .when('/character/spells/class-spells', {
-        templateUrl: 'views/character/spells/class-spells.html',
-        controller: 'CharacterCtrl',
-        controllerAs: 'character'
-      })
-      .when('/character/spells/all-spells', {
-        templateUrl: 'views/character/spells/all-spells.html',
-        controller: 'CharacterCtrl',
-        controllerAs: 'character'
-      })
-      
-      //Equipment
-      .when('/character/equipment', {
-        templateUrl: 'views/character/equipment/index.html',
-        controller: 'CharacterCtrl',
-        controllerAs: 'character'
-      })
-      .when('/character/equipment/weapons', {
-        templateUrl: 'views/character/equipment/weapons.html',
-        controller: 'CharacterCtrl',
-        controllerAs: 'character'
-      })
-      .when('/character/equipment/armor', {
-        templateUrl: 'views/character/equipment/armor.html',
-        controller: 'CharacterCtrl',
-        controllerAs: 'character'
-      })
-      .when('/character/equipment/inventory', {
-        templateUrl: 'views/character/equipment/inventory.html',
-        controller: 'CharacterCtrl',
-        controllerAs: 'character'
-      })
-      
-      .when('/character/equipment/currency', {
-        templateUrl: 'views/character/equipment/currency.html',
-        controller: 'CharacterCtrl',
-        controllerAs: 'character'
-      })
-      
-      //Settings
-      .when('/settings', {
-        templateUrl: 'views/settings.html',
-        controller: 'AdminCtrl',
-        controllerAs: 'settings'
-      })
-      .otherwise({
-        redirectTo: '/'
-      });
-    
-  })
-    /* jshint ignore:start */
+    'angularScreenfull',
+    'ngRouteAnimationManager'
+  ]);
+  
+  /* jshint ignore:start */
   .run(function($rootScope, $location, transitionSrv){
     console.log('running!');
     
@@ -201,35 +39,12 @@ angular
       return value;
     }    
     
-    $rootScope.$on('$locationChangeStart', function(event, next, current) {
-      console.log('Location change start!');
-      var curPath = current.slice( current.lastIndexOf('/')+1, current.length );
-      var nextPath = next.slice( next.lastIndexOf('/')+1, next.length );
-      transitionSrv.setTransition(curPath, nextPath);
-//      console.log(event);
-//      console.log(curPath);
-//      console.log(nextPath);
-//      if(curPath == 'profile'){
-//        console.log('basic info!!!');
-//        console.log(nextPath);
-//        switch(nextPath){
-//          case 'basic-info':
-//          case 'appearance':
-//          case 'history':
-//          case 'traits':
-//          case 'proficiency':
-//          case 'feats':
-//            console.log('slide Left!!!');
-//            $rootScope.transition = 'slide-left';
-//            break;
-//          case 'character':
-//            console.log('slide Left!!!');
-//            $rootScope.transition = 'slide-right';
-//            break;
-//        }
-//      }
-
-    });
+//    $rootScope.$on('$locationChangeStart', function(event, next, current) {
+//      console.log('Location change start!');
+//      var curPath = current.slice( current.lastIndexOf('/')+1, current.length );
+//      var nextPath = next.slice( next.lastIndexOf('/')+1, next.length );
+//      transitionSrv.setTransition(curPath, nextPath);
+//    });
     
     $rootScope.$on('$locationChangeSuccess', function(event, current, next) {
       console.log('success!!!');
@@ -238,12 +53,7 @@ angular
       } else {
         $rootScope.home = false;
       }
-      
-//      var curPath = current.slice( current.lastIndexOf('/')+1, current.length );
-//      var nextPath = next.slice( next.lastIndexOf('/')+1, next.length );
-//      transitionSrv.setTransition(curPath, nextPath);
     });
-
 
     //
     // Define your database
@@ -581,87 +391,5 @@ angular
       
       db.close();
     }
-  })
-    /* jshint ignore:end */
-  .controller('AppCtrl', function($scope, $rootScope, $location, $timeout, $mdSidenav, $mdUtil, $log, $mdDialog, $anchorScroll) {
-    /**
-     * Build handler to open/close a SideNav; when animation finishes
-     * report completion in console
-     */
-     $rootScope.selectedID = '';
-     
-    function buildToggler(navID) {
-      var debounceFn =  $mdUtil.debounce(function(){
-            $mdSidenav(navID)
-              .toggle()
-              .then(function () {
-                $log.debug('toggle ' + navID + ' is done');
-              });
-          },200);
-      return debounceFn;
-    }
-    $scope.toggleLeft = buildToggler('left');
-    $scope.toggleRight = buildToggler('right');
-    $scope.toggleLeft = function() {
-      $mdSidenav('left').toggle()
-      .then(function(){
-        $log.debug('toggle left is done');
-      });
-    };
-    
-    //Go function
-    $rootScope.go = function ( path ) {
-      $location.path( path );
-      //$rootScope.scrollTo('top');
-    };
-    
-    //back function
-    $rootScope.goBack = function () {
-      window.history.back();
-      //$rootScope.scrollTo('top');
-    };
-
-    //Scrolls to a hash element
-    $rootScope.scrollTo = function ( hash ) {
-      $anchorScroll(hash);
-    };  
-    
-    //Toolbar menu code:
-    var originatorEv;
-    this.openMenu = function($mdOpenMenu, ev) {
-      originatorEv = ev;
-      $mdOpenMenu(ev);
-    };
-    
-    this.announceClick = function(index) {
-      $mdDialog.show(
-        $mdDialog.alert()
-          .title('You clicked!')
-          .content('You clicked the menu item at index ' + index)
-          .ok('Nice')
-          .targetEvent(originatorEv)
-      );
-      originatorEv = null;
-    };
-    
-    //Top-right Menu Items
-    $scope.menu = [{
-      text:'Characters',
-      icon:'people',
-      href:'/'
-    },
-    {
-      text:'Settings',
-      icon:'settings',
-      href:'/settings'
-    }];
-  })  
-
-  .controller('LeftCtrl', function ($scope, $timeout, $mdSidenav, $log) {
-    $scope.close = function () {
-      $mdSidenav('left').close()
-        .then(function () {
-          $log.debug('close LEFT is done');
-        });
-    };
   });
+  /* jshint ignore:end */

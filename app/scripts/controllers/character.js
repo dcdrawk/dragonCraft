@@ -9,8 +9,15 @@
  */
  /* jshint ignore:start */
 angular.module('dCraftApp')
-  .controller('CharacterCtrl', function ($scope, $rootScope, ClassSrv, RaceSrv) {
+  .controller('CharacterCtrl', function ($scope, $rootScope, ClassSrv, RaceSrv, transitionSrv) {
     
+//    $rootScope.$on('$locationChangeStart', function(event, next, current) {
+//      console.log('Location change start!!!');
+//      var curPath = current.slice( current.lastIndexOf('/')+1, current.length );
+//      var nextPath = next.slice( next.lastIndexOf('/')+1, next.length );
+//      //transitionSrv.setTransition(curPath, nextPath);
+//      
+//      });
     //console.log(ClassSrv.classes);
     //Define the DB
     var db = new Dexie("test-db-2");
