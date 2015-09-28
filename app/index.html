@@ -11,20 +11,17 @@
     <link rel="stylesheet" href="bower_components/angular-material/angular-material.css" />
     <!-- endbower -->
     <!-- endbuild -->
-    <!-- build:css(.tmp) styles/main.css -->
-    <link rel="stylesheet" href="styles/material-icons.css">
     <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="styles/main.css">
-<!--    <link rel="stylesheet" href="styles/animations.css">-->
     <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/material-icons.css">
     <!-- endbuild -->
   </head>
-  <body ng-app="dCraftApp" ngsf-fullscreen>
+  <body ng-app="dCraftApp" ngsf-fullscreen ng-cloak>
     <!--[if lte IE 8]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
-    <!-- Add your site or application content here -->
+    <!-- App Content -->
     <md-toolbar>
       <div class="md-toolbar-tools container">
         <md-button ng-controller="AppCtrl" ng-click="goBack()" id="menu" ng-class="{hide:home}"><i class="material-icons">keyboard_arrow_left</i></md-button>
@@ -60,7 +57,7 @@
       </div>
     </md-toolbar>
     
-    <!--SIDENAV-->
+    <!-- Sidenav -->
     <md-sidenav class="md-sidenav-left md-whiteframe-z2" md-component-id="left">
       <md-toolbar class="md-theme-indigo">
         <h1 class="md-toolbar-tools">Menu</h1>
@@ -74,26 +71,10 @@
     
     
     <md-content id="main-content" class="main" flex>
-<!--    <mobile-view></mobile-view>-->
-<!--    <ng-view></ng-view>-->
       <div route-animation-manager>
         <div ng-view class="view-content"></div>
       </div>
     </md-content>
-
-
-    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
-<!--
-     <script>
-       !function(A,n,g,u,l,a,r){A.GoogleAnalyticsObject=l,A[l]=A[l]||function(){
-       (A[l].q=A[l].q||[]).push(arguments)},A[l].l=+new Date,a=n.createElement(g),
-       r=n.getElementsByTagName(g)[0],a.src=u,r.parentNode.insertBefore(a,r)
-       }(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-       ga('create', 'UA-XXXXX-X');
-       ga('send', 'pageview');
-    </script>
--->
 
     <!-- build:js(.) scripts/vendor.js -->
     <!-- bower:js -->
@@ -114,26 +95,26 @@
     <!-- endbower -->
     <!-- endbuild -->
 
-        <!-- build:js({.tmp,app}) scripts/scripts.js -->
-        <script src="scripts/providers/route-animations.js"></script>
-        <script src="scripts/app.js"></script>
-        <script src="scripts/config/theming.js"></script>     
-        <script src="scripts/config/routing.js"></script>
-        <script src="scripts/controllers/appCtrl.js"></script>
+    <!-- build:js({.tmp,app}) scripts/scripts.js -->
+    <script src="scripts/providers/route-animations.js"></script>
+    <script src="scripts/app.js"></script>
+    <script src="scripts/config/theming.js"></script>     
+    <script src="scripts/config/routing.js"></script>
+    <script src="scripts/controllers/appCtrl.js"></script>
 
-        <script src="scripts/controllers/main.js"></script>
-        <script src="scripts/controllers/about.js"></script>
-        <script src="scripts/controllers/new-character.js"></script>
-        <script src="scripts/controllers/character.js"></script>
-        <script src="scripts/controllers/admin.js"></script>
-        <script src="scripts/db.js"></script>
-        
-        
-        
-        <!-- Game data -->
-        <script src="scripts/services/transitionSrv.js"></script>
-        <script src="scripts/services/game-data/classSrv.js"></script>
-        <script src="scripts/services/game-data/raceSrv.js"></script>
-        <!-- endbuild -->
-</body>
+    <script src="scripts/controllers/main.js"></script>
+    <script src="scripts/controllers/about.js"></script>
+    <script src="scripts/controllers/new-character.js"></script>
+    <script src="scripts/controllers/character.js"></script>
+    <script src="scripts/controllers/admin.js"></script>
+    <script src="scripts/db.js"></script>
+
+
+
+    <!-- Game data -->
+    <script src="scripts/services/transitionSrv.js"></script>
+    <script src="scripts/services/game-data/classSrv.js"></script>
+    <script src="scripts/services/game-data/raceSrv.js"></script>
+    <!-- endbuild -->
+  </body>
 </html>
