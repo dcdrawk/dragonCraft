@@ -24,10 +24,10 @@
     <!-- App Content -->
     <md-toolbar>
       <div class="md-toolbar-tools container">
-        <md-button ng-controller="AppCtrl" ng-click="goBack()" id="menu" ng-class="{hide:home}"><i class="material-icons">keyboard_arrow_left</i></md-button>
-        <h2>
-          <span>DragonCraft 5e</span>
-        </h2>
+        <div class="toolbar-left" flex="80" ng-class="{hideback: home, showback: !home}">
+          <md-button ng-controller="AppCtrl" ng-click="goBack()" id="back" ng-hide="home"><i class="material-icons">keyboard_arrow_left</i></md-button>
+          <h2>DragonCraft 5e</h2>
+        </div>
         <span flex></span>
         <md-menu ng-controller="AppCtrl" md-position-mode="target-right target" >
           <md-button class="md-icon-button" ng-controller="AppCtrl" ng-click="$mdOpenMenu($event)" id="more">

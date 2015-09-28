@@ -34,13 +34,19 @@ body {
 .section-description {
   margin-top: 12px; }
 
-#menu {
+md-toolbar .toolbar-left h2 {
+  display: inline-block;
+  margin: 18px 0;
+  vertical-align: middle; }
+
+md-toolbar .toolbar-left #back {
   min-height: 48px;
-  min-width: 48px; }
-  #menu i {
+  min-width: 48px;
+  margin-left: 0px; }
+  md-toolbar .toolbar-left #back i {
     vertical-align: text-top; }
 
-md-menu-content i {
+md-toolbar md-menu-content i {
   margin-top: 6px; }
 
 .md-button {

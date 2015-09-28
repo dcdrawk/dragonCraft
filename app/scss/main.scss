@@ -48,16 +48,26 @@ body{
 }
 
 //Menu
-#menu{
-  min-height: 48px;
-  min-width: 48px;
-  i{
-    vertical-align: text-top;
+md-toolbar{
+  .toolbar-left{
+    h2{    
+      display: inline-block;
+      margin: 18px 0;
+      vertical-align: middle;
+    }
+    #back{
+      min-height: 48px;
+      min-width: 48px;
+      margin-left: 0px;
+      i{
+        vertical-align: text-top;
+      }
+    }
   }
-}
-md-menu-content{
-  i{
-    margin-top:6px;
+  md-menu-content{
+    i{
+      margin-top:6px;
+    }
   }
 }
 
