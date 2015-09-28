@@ -66,6 +66,9 @@ md-list-item .md-list-item-text {
 md-list-item h3 {
   font-weight: 600 !important; }
 
+md-list-item h4 {
+  line-height: 1em !important; }
+
 md-list-item .disabled {
   opacity: .5; }
 

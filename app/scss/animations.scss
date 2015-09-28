@@ -26,10 +26,19 @@ main{
     &.ng-enter{
       animation: slide-in-left .65s;
       animation-timing-function: $ease-in-out;
+      h2, h3, .content-wrapper .container{
+        animation: fade-in .65s;
+        animation-timing-function: $ease-in-out;
+      }
     }
+    
     &.ng-leave {
       animation: slide-out-left .65s;
       animation-timing-function: $ease-in-out;
+      h2, h3, .content-wrapper .container{
+        animation: fade-out .65s;
+        animation-timing-function: $ease-in-out;
+      }
     }
   }
 }
@@ -37,12 +46,20 @@ main{
 .slide-right{  
   .view-content{
     &.ng-enter{
-    animation: slide-in-right .65s;
-    animation-timing-function: $ease-in-out;
+      animation: slide-in-right .65s;
+      animation-timing-function: $ease-in-out;
+      h2, h3, .content-wrapper .container{
+        animation: fade-in .65s;
+        animation-timing-function: $ease-in-out;
+      }
     }
     &.ng-leave {
       animation: slide-out-right .65s;
       animation-timing-function: $ease-in-out;
+      h2, h3, .content-wrapper .container{
+        animation: fade-out .65s;
+        animation-timing-function: $ease-in-out;
+      }
     }
   }
 }
@@ -50,8 +67,8 @@ main{
 .slide-up{  
   .view-content{
     &.ng-enter{
-    animation: slide-in-up .65s;
-    animation-timing-function: $ease-in-out;
+      animation: slide-in-up .65s;
+      animation-timing-function: $ease-in-out;
     }
     &.ng-leave {
       animation: slide-out-up .65s;
@@ -76,8 +93,8 @@ main{
 .fade{  
   .view-content{
     &.ng-enter{
-    animation: fade-in .65s;
-    animation-timing-function: $ease-in-out;
+      animation: fade-in .65s;
+      animation-timing-function: $ease-in-out;
     }
     &.ng-leave {
       animation: fade-out .65s;
@@ -109,24 +126,25 @@ main{
 
 @keyframes slide-in-right {
   0% {
-      transform: translateX(-100%);
-      transform-origin: left;
+    transform: translateX(-100%);
+    transform-origin: left;
   }
   100% {
-      transform: translateX(0%);
+    transform: translateX(0%);
   }
 }
 
 @keyframes slide-out-right {
   0% {
-      transform: translateX(0%);
-      transform-origin: left;
+    transform: translateX(0%);
+    transform-origin: left;
   }
   100% {
-      transform: translateX(100%);
+    transform: translateX(100%);
   }
 }
 
+//Slide up/down
 @keyframes slide-in-up {
   0% {
     opacity: 0;
@@ -194,10 +212,10 @@ main{
 
 @keyframes fade-out {
     0% {
-        opacity: 0;
+        opacity: 1;
     }
     100% {
-        opacity: 1;
+        opacity: 0;
     }
 }
 //Fade 

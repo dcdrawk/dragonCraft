@@ -17,18 +17,30 @@ main {
 .slide-left .view-content.ng-enter {
   animation: slide-in-left 0.65s;
   animation-timing-function: cubic-bezier(0.465, 0.183, 0.153, 0.946); }
+  .slide-left .view-content.ng-enter h2, .slide-left .view-content.ng-enter h3, .slide-left .view-content.ng-enter .content-wrapper .container {
+    animation: fade-in 0.65s;
+    animation-timing-function: cubic-bezier(0.465, 0.183, 0.153, 0.946); }
 
 .slide-left .view-content.ng-leave {
   animation: slide-out-left 0.65s;
   animation-timing-function: cubic-bezier(0.465, 0.183, 0.153, 0.946); }
+  .slide-left .view-content.ng-leave h2, .slide-left .view-content.ng-leave h3, .slide-left .view-content.ng-leave .content-wrapper .container {
+    animation: fade-out 0.65s;
+    animation-timing-function: cubic-bezier(0.465, 0.183, 0.153, 0.946); }
 
 .slide-right .view-content.ng-enter {
   animation: slide-in-right 0.65s;
   animation-timing-function: cubic-bezier(0.465, 0.183, 0.153, 0.946); }
+  .slide-right .view-content.ng-enter h2, .slide-right .view-content.ng-enter h3, .slide-right .view-content.ng-enter .content-wrapper .container {
+    animation: fade-in 0.65s;
+    animation-timing-function: cubic-bezier(0.465, 0.183, 0.153, 0.946); }
 
 .slide-right .view-content.ng-leave {
   animation: slide-out-right 0.65s;
   animation-timing-function: cubic-bezier(0.465, 0.183, 0.153, 0.946); }
+  .slide-right .view-content.ng-leave h2, .slide-right .view-content.ng-leave h3, .slide-right .view-content.ng-leave .content-wrapper .container {
+    animation: fade-out 0.65s;
+    animation-timing-function: cubic-bezier(0.465, 0.183, 0.153, 0.946); }
 
 .slide-up .view-content.ng-enter {
   animation: slide-in-up 0.65s;
@@ -132,8 +144,8 @@ main {
 
 @keyframes fade-out {
   0% {
-    opacity: 0; }
+    opacity: 1; }
   100% {
-    opacity: 1; } }
+    opacity: 0; } }
 
 /*# sourceMappingURL=animations.css.map */
