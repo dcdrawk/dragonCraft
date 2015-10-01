@@ -44,7 +44,7 @@ md-toolbar .toolbar-left #back {
   min-width: 48px;
   margin-left: 0px; }
   md-toolbar .toolbar-left #back i {
-    vertical-align: text-top; }
+    vertical-align: middle; }
 
 md-toolbar md-menu-content i {
   margin-top: 6px; }
