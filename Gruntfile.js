@@ -66,6 +66,19 @@ module.exports = function (grunt) {
           ext: '.css'
         }]
       },
+      dist: {
+        // Takes every file that ends with .scss from the scss 
+        // directory and compile them into the css directory. 
+        // Also changes the extension from .scss into .css. 
+        // Note: file name that begins with _ are ignored automatically
+        files: [{
+          expand: true,
+          cwd: '<%= yeoman.app %>/scss',
+          src: ['*.scss'],
+          dest: 'dist/css',
+          ext: '.css'
+        }]
+      },
       options: {
         sourceMap: true, 
         outputStyle: 'nested', 
@@ -515,6 +528,7 @@ module.exports = function (grunt) {
     'ngtemplates',
     'concat',
     'ngAnnotate',
+    'sass:dist',
     'copy:dist',
     //'cdnify',
     'cssmin',
