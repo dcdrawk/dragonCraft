@@ -204,18 +204,22 @@ main{
 @keyframes fade-in {
   0% {
     opacity: 0;
+//    transform: scaleX(0);
   }
   100% {
     opacity: 1;
+//    transform: scaleX(1);
   }
 }
 
 @keyframes fade-out {
   0% {
     opacity: 1;
+//    transform: scaleX(1);
   }
   100% {
     opacity: 0;
+//    transform: scaleX(0);
   }
 }
 @keyframes hide-back {
@@ -223,12 +227,12 @@ main{
     transform: translateX(0px);
   }
   100% {
-    transform: translateX(-60px);
+    transform: translateX(-62px);
   }
 }
 @keyframes show-back {
   0% {
-    transform: translateX(-60px);
+    transform: translateX(-62px);
   }
   100% {
     transform: translateX(0px);
@@ -237,21 +241,29 @@ main{
 //Back Button
 .toolbar-left{
   &.showback{
-    animation: show-back .65s;
-    animation-timing-function: $ease-in-out;  
+    animation: show-back .7s;
+    animation-timing-function: $ease-in-out;
+    #back{
+      animation: fade-in .7s;
+      animation-timing-function: $ease-in-out;
+    }
   }
   &.hideback{
-    animation: hide-back .65s;
+    animation: hide-back .7s;
     animation-timing-function: $ease-in-out;  
-  }
-  #back{
-    &.ng-animate{
-      animation: fade-in .65s;
-      animation-timing-function: $ease-in-out;
-    }
-    &.ng-hide{
-      animation: fade-out .65s;
+    #back{
+      animation: fade-out .7s;
       animation-timing-function: $ease-in-out;
     }
   }
+//  #back{
+//    &.ng-animate{
+//      animation: fade-in .8s;
+//      animation-timing-function: $ease-in-out;
+//    }
+//    &.ng-hide{
+//      animation: fade-out .8s;
+//      animation-timing-function: $ease-in-out;
+//    }
+//  }
 }

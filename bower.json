@@ -20,5 +20,8 @@
     "angular-mocks": "^1.3.0"
   },
   "appPath": "app",
-  "moduleName": "dunTomeApp"
+  "moduleName": "dunTomeApp",
+  "resolutions": {
+    "angular": "1.4.7"
+  }
 }

@@ -152,28 +152,26 @@ main {
   0% {
     transform: translateX(0px); }
   100% {
-    transform: translateX(-60px); } }
+    transform: translateX(-62px); } }
 
 @keyframes show-back {
   0% {
-    transform: translateX(-60px); }
+    transform: translateX(-62px); }
   100% {
     transform: translateX(0px); } }
 
 .toolbar-left.showback {
-  animation: show-back 0.65s;
+  animation: show-back 0.7s;
   animation-timing-function: cubic-bezier(0.465, 0.183, 0.153, 0.946); }
+  .toolbar-left.showback #back {
+    animation: fade-in 0.7s;
+    animation-timing-function: cubic-bezier(0.465, 0.183, 0.153, 0.946); }
 
 .toolbar-left.hideback {
-  animation: hide-back 0.65s;
+  animation: hide-back 0.7s;
   animation-timing-function: cubic-bezier(0.465, 0.183, 0.153, 0.946); }
-
-.toolbar-left #back.ng-animate {
-  animation: fade-in 0.65s;
-  animation-timing-function: cubic-bezier(0.465, 0.183, 0.153, 0.946); }
-
-.toolbar-left #back.ng-hide {
-  animation: fade-out 0.65s;
-  animation-timing-function: cubic-bezier(0.465, 0.183, 0.153, 0.946); }
+  .toolbar-left.hideback #back {
+    animation: fade-out 0.7s;
+    animation-timing-function: cubic-bezier(0.465, 0.183, 0.153, 0.946); }
 
 /*# sourceMappingURL=animations.css.map */
