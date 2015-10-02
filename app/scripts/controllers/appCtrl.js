@@ -7,7 +7,7 @@ angular.module('dCraftApp')
      * report completion in console
      */
      $rootScope.selectedID = '';
-     
+     $rootScope.loading = true;
     function buildToggler(navID) {
       var debounceFn =  $mdUtil.debounce(function(){
             $mdSidenav(navID)
