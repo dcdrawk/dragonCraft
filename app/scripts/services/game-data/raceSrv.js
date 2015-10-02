@@ -132,226 +132,217 @@ angular.module('dCraftApp').service( 'RaceSrv', function(){
       }]
     },{
       name: 'Human',
-      abilityScoreIncease: '',
-      speed: '',
-      languages: '',
-      traits: [{
-        title: '',
-        description: ''
-      },{
-        title: '',
-        description: ''
-      },{
-        title: '',
-        description: ''
-      },{
-        title: '',
-        description: ''
-      },{
-        title: '',
-        description: ''
-      }],
+      abilityScoreIncease: 'Your ability scores each increase by 1.',
+      speed: '30',
+      languages: 'Common',
+      traits: [],
       //Subraces
       subraces: [{
-        name: '',
-        abilityScoreIncease: '',
-        traits: [{
-          title: '',
-          description: '.'
-          }]
-        },{
-        name: '',
-        abilityScoreIncease: '',
-        traits: [{
-          title: '',
-          description: ''
-        }]
+        name: 'Calishite'
+      },{
+        name: 'Chondathan',
+      },{
+        name: 'Damaran',
+      },{
+        name: 'Illuskan',
+      },{
+        name: 'Mulan',
+      },{
+        name: 'Rashemi',
+      },{
+        name: 'Shou ',
+      },{
+        name: 'Tethyrian',
+      },{
+        name: 'Turami',
       }]
     },{
       name: 'Dragonborn',
-      abilityScoreIncease: '',
-      speed: '',
-      languages: '',
+      abilityScoreIncease: 'Your Strength score increases by 2, and your Charisma score increases by 1.',
+      speed: '30',
+      languages: 'Common,Draconic',
       traits: [{
-        title: '',
-        description: ''
+        title: 'Draconic Ancestry',
+        description: ' You have draconic ancestry. Choose one type of dragon from the Draconic Ancestry table. Your breath weapon and damage resistance are determined by the dragon type, as shown in the table.'
       },{
-        title: '',
-        description: ''
-      },{
-        title: '',
-        description: ''
-      },{
-        title: '',
-        description: ''
-      },{
-        title: '',
-        description: ''
+        title: 'Breath Weapon',
+        description: 'You can use your action to exhale destructive energy. Your draconic ancestry determines the size, shape, and damage type of the exhalation.'
       }],
       //Subraces
       subraces: [{
-        name: '',
-        abilityScoreIncease: '',
+        name: 'Black',
         traits: [{
-          title: '',
-          description: '.'
+          title: 'Damage Type',
+          description: 'Acid'
+          },{
+          title: 'Breath Weapon',
+          description: '5 by 30 ft. line (Dex. save) '
           }]
         },{
-        name: '',
-        abilityScoreIncease: '',
+        name: 'Blue',
         traits: [{
-          title: '',
-          description: ''
+          title: 'Damage Type',
+          description: 'Lightning'
+          },{
+          title: 'Breath Weapon',
+          description: '5 by 30 ft. line (Dex. save)'
+          }]
+        },{
+        name: 'Brass',
+        traits: [{
+          title: 'Damage Type',
+          description: 'Fire'
+          },{
+          title: 'Breath Weapon',
+          description: '5 by 30 ft. line (Dex. save)'
+          }]
+        },{
+        name: 'Bronze',
+        traits: [{
+          title: 'Damage Type',
+          description: 'Lightning'
+          },{
+          title: 'Breath Weapon',
+          description: '5 by 30 ft. line (Dex. save)'
+          }]
+        },{
+        name: 'Copper',
+        traits: [{
+          title: 'Damage Type',
+          description: 'Acid'
+          },{
+          title: 'Breath Weapon',
+          description: '5 by 30 ft. line (Dex. save)'
+          }]
+        },{
+        name: 'Gold',
+        traits: [{
+          title: 'Damage Type',
+          description: 'Fire'
+          },{
+          title: 'Breath Weapon',
+          description: '5 by 30 ft. line (Dex. save)'
+          }]
+        },{
+        name: 'Green',
+        traits: [{
+          title: 'Damage Type',
+          description: 'Poison'
+          },{
+          title: 'Breath Weapon',
+          description: '15 ft. cone (Dex. save)'
+          }]
+        },{
+        name: 'Red',
+        traits: [{
+          title: 'Damage Type',
+          description: 'Fire'
+          },{
+          title: 'Breath Weapon',
+          description: '15 ft. cone (Dex. save)'
+          }]
+        },{
+        name: 'Silver',
+        traits: [{
+          title: 'Damage Type',
+          description: 'Cold'
+          },{
+          title: 'Breath Weapon',
+          description: '15 ft. cone (Dex. save)'
+          }]
+        },{
+        name: 'White',
+        traits: [{
+          title: 'Damage Type',
+          description: 'Cold'
+          },{
+          title: 'Breath Weapon',
+          description: '15 ft. cone (Dex. save)'
+          }]
         }]
-      }]
     },{
       name: 'Gnome',
-      abilityScoreIncease: '',
-      speed: '',
-      languages: '',
+      abilityScoreIncease: 'Your Intelligence score increases by 2. ',
+      speed: '25',
+      languages: 'Common, Gnomish',
       traits: [{
-        title: '',
-        description: ''
-      },{
-        title: '',
-        description: ''
-      },{
-        title: '',
-        description: ''
-      },{
-        title: '',
-        description: ''
-      },{
-        title: '',
-        description: ''
-      }],
+        title: 'Darkvision',
+        description: 'Accustomed to life underground, you have superior vision in dark and dim conditions. You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can\u0027t discern color in darkness, only shades of gray. '
+        },{
+        title: 'Gnome Cunning',
+        description: 'You have advantage on all Intelligence, Wisdom, and Charisma saving throws against magic.'
+      }],    
       //Subraces
       subraces: [{
-        name: '',
-        abilityScoreIncease: '',
+        name: 'Forest Gnome',
+        abilityScoreIncease: 'Your Dexterity score increases by 1. ',
         traits: [{
-          title: '',
-          description: '.'
+          title: 'Natural Illusionist',
+          description: 'You know the minor illusion cantrip. Intelligence is your spellcasting ability for it.'
+          },{
+          title: 'Speak with Small Beasts',
+          description: 'Through sounds and gestures, you can communicate simple ideas with Small or smaller beasts. Forest gnom es love animals and often keep squirrels, badgers, rabbits, moles, woodpeckers, and other creatures as beloved pets.'
           }]
         },{
-        name: '',
-        abilityScoreIncease: '',
+        name: 'Rock Gnome',
+        abilityScoreIncease: 'Your Constitution score increases by 1.',
         traits: [{
-          title: '',
-          description: ''
+          title: 'Artificer’s Lore',
+          description: 'Whenever you make an Intelligence (History) check related to magic items, alchemical objects, or technological devices, you can add twice your proficiency bonus, instead of any proficiency bonus you normally apply.'
+          },{
+          title: 'Tinker',
+          description: 'You have proficiency with artisan’s tools (tinker’s tools). Using those tools, you can spend 1 hour and 10 gp worth of materials to construct a Tiny clockwork device (AC 5, 1 hp). The device ceases to function after 24 hours (unless you spend 1 hour repairing it to keep the device functioning), or when you use your action to dismantle it; at that time, you can reclaim the materials used to create it. You can have up to three such devices active at a time. (Clockwork Toy, Fire Starter, Music Box)'
+         }]
         }]
-      }]
     },{
+      //HALF ELF 3
       name: 'Half-Elf',
-      abilityScoreIncease: '',
-      speed: '',
-      languages: '',
+      abilityScoreIncease: 'Your Charisma score increases by 2, and two other ability scores of your choice increase by 1.',
+      speed: '30',
+      languages: 'Common,Elvish',
       traits: [{
-        title: '',
-        description: ''
+        title: 'Darkvision',
+        description: 'Thanks to your elf blood, you have superior vision in dark and dim conditions. You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can’t discern color in darkness, only shades of gray.'
       },{
-        title: '',
-        description: ''
+        title: 'Fey Ancestry',
+        description: 'You have advantage on saving throws against being charmed, and magic can’t put you to sleep.'
       },{
-        title: '',
-        description: ''
-      },{
-        title: '',
-        description: ''
-      },{
-        title: '',
-        description: ''
-      }],
-      //Subraces
-      subraces: [{
-        name: '',
-        abilityScoreIncease: '',
-        traits: [{
-          title: '',
-          description: '.'
-          }]
-        },{
-        name: '',
-        abilityScoreIncease: '',
-        traits: [{
-          title: '',
-          description: ''
-        }]
+        title: 'Skill Versatility',
+        description: 'You gain proficiency in two skills of your choice.'
       }]
     },{
       name: 'Half-Orc',
-      abilityScoreIncease: '',
-      speed: '',
-      languages: '',
+      abilityScoreIncease: 'Your Strength score increases by 2, and your Constitution score increases by 1.',
+      speed: '30',
+      languages: 'Common,Orc',
       traits: [{
-        title: '',
-        description: ''
-      },{
-        title: '',
-        description: ''
-      },{
-        title: '',
-        description: ''
-      },{
-        title: '',
-        description: ''
-      },{
-        title: '',
-        description: ''
-      }],
-      //Subraces
-      subraces: [{
-        name: '',
-        abilityScoreIncease: '',
-        traits: [{
-          title: '',
-          description: '.'
-          }]
+        title: 'Darkvision',
+        description: 'Thanks to your orc blood, you have superior vision in dark and dim conditions. You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can\u0027t discern color in darkness, only shades of gray'
         },{
-        name: '',
-        abilityScoreIncease: '',
-        traits: [{
-          title: '',
-          description: ''
-        }]
+        title: 'Menacing',
+        description: 'You gain proficiency in the Intimidation skill. '
+        },{
+        title: 'Relentless Endurance',
+        description: 'When you are reduced to 0 hit points but not killed outright, you can drop to 1 hit point instead. You can’t use this feature again until you finish a long rest.'
+        },{
+        title: 'Savage Attacks',
+        description: 'When you score a critical hit with a melee weapon attack, you can roll one of the weapon’s damage dice one additional time and add it to the extra damage of the critical hit.'        
       }]
     },{
       name: 'Tiefling',
-      abilityScoreIncease: '',
-      speed: '',
-      languages: '',
+      abilityScoreIncease: 'Your Intelligence score increases by 1, and your Charisma score increases by 2.',
+      speed: '62',
+      languages: 'Common,Infernal',
       traits: [{
-        title: '',
-        description: ''
-      },{
-        title: '',
-        description: ''
-      },{
-        title: '',
-        description: ''
-      },{
-        title: '',
-        description: ''
-      },{
-        title: '',
-        description: ''
-      }],
-      //Subraces
-      subraces: [{
-        name: '',
-        abilityScoreIncease: '',
-        traits: [{
-          title: '',
-          description: '.'
-          }]
+        title: 'Darkvision',
+        description: 'Thanks to your infernal heritage, you have superior vision in dark and dim conditions. You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can’t discern color in darkness, only shades of gray.'
         },{
-        name: '',
-        abilityScoreIncease: '',
-        traits: [{
-          title: '',
-          description: ''
-        }]
-      }]
+        title: 'Hellish Resistance',
+        description: 'You have resistance to fire damage.'
+        },{
+        title: 'Infernal Legacy',
+        description: 'You know the thaumaturgy cantrip. Once you reach 3rd level, you can cast the hellish rebuke spell once per day as a 2nd-level spell. Once you reach 5th level, you can also cast the darkness spell once per day. Charisma is your spellcasting ability for these spells.'
+      }],
     }];
 });
   
