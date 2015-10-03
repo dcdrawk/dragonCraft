@@ -623,101 +623,128 @@ angular.module('dCraftApp').service( 'ClassSrv', function(){
           description: 'Choose two skills from Acrobatics, Animal Handling, Athletics, History, Insight, Intimidation, Perception, and Survival'
         }],
       abilities: [{
-          title: '',
-          level: '',
-          description: ''
-        },{
-          title: '',
-          level: '',
-          description: ''
-        },{
-          title: '',
-          level: '',
-          description: ''
-        },{
-          title: '',
-          level: '',
-          description: ''
-        },{
-          title: '',
-          level: '',
-          description: ''
-        },{
-          title: '',
-          level: '',
-          description: ''
-        },{
-          title: '',
-          level: '',
-          description: ''
-        },{
-          title: '',
-          level: '',
-          description: ''
-        },{
-          title: '',
-          level: '',
-          description: ''
-        },{
-          title: '',
-          level: '',
-          description: ''
-        },{
-          title: '',
-          level: '',
-          description: ''
-        },{
-          title: '',
-          level: '',
-          description: ''
-        },{
-          title: '',
-          level: '',
-          description: ''
-        },{
-          title: '',
-          level: '',
-          description: ''
-        }],
-      specializations:[{
-        title: '',
-        description: '',
-        abilities: [{
-            title: '',
-            level: '',
-            description: ''
+          title: 'Fighting Style',
+          level: '1',
+          description: 'You adopt a particular style of fighting as your specialty. Choose one of the following options. You can’t take a Fighting Style option more than once, even if you later get to choose again.',
+          options: [{
+            title: 'Archery',
+            decription: 'You gain a +2 bonus to attack rolls you make with ranged weapons.'
           },{
-            title: '',
-            level: '',
-            description: ''
+            title: 'Defence',
+            decription: 'While you are wearing armor, you gain a +1 bonus to AC'
           },{
-            title: '',
-            level: '',
-            description: ''
+            title: 'Dueling',
+            decription: 'When you are wielding a melee weapon in one hand and no other weapons, you gain a +2 bonus to damage rolls with that weapon.'
           },{
-            title: '',
-            level: '',
-            description: ''
+            title: 'Great Weapon Fighting',
+            decription: 'When you roll a 1 or 2 on a damage die for an attack you make with a melee weapon that you are wielding with two hands, you can reroll the die and must use the new roll, even if the new roll is a 1 or a 2. The weapon must have the two-handed or versatile property for you to gain this benefit.'
+          },{
+            title: 'Protection',
+            decription: 'W hen a creature you can see attacks a target other than you that is within 5 feet of you, you can use your reaction to im pose disadvantage on the attack roll. You must be wielding a shield.'
+          },{
+            title: 'Two-Weapon Fighting',
+            decription: 'When you engage in two-weapon fighting, you can add your ability modifier to the damage of the second attack.'
           }]
         },{
-        title: '',
+          title: 'Second Wind',
+          level: '1',
+          description: '<p>You have a limited well of stamina that you can draw on to protect yourself from harm. On your turn, you can use a bonus action to regain hit points equal to 1d 10 + your fighter level.</p><p>Once you use this feature, you must finish a short or long rest before you can use it again.</p>'
+        },{
+          title: 'Action Surge',
+          level: '2',
+          description: '<p>Starting at 2nd level, you can push yourself beyond your normal limits for a moment. On your turn, you can take one additional action on top of your regular action and a possible bonus action.</p><p>Once you use this feature, you must finish a short or long rest before you can use it again. Starting at 17th level, you can use it twice before a rest, but only once on the same turn.</p>'
+        },{
+          title: 'Martial Archetype',
+          level: '3',
+          description: 'At 3rd level, you choose an archetype that you strive to emulate in your combat styles and techniques. Choose Champion, Battle Master, or Eldritch Knight, all detailed at the end of the class description. The archetype you choose grants you features at 3rd level and again at 7th, 10th, 15th, and 18th level.'
+        },{
+          title: 'Ability Score Improvement',
+          level: '4',
+          description: 'When you reach 4th level, and again at 6th, 8th, 12th, 14th, 16th, and 19th level, you can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can’t increase an ability score above 20 using this feature.'
+        },{
+          title: 'Extra Attack',
+          level: '',
+          description: '<p>Beginning at 5th level, you can attack twice, instead of once, whenever you take the Attack action on your turn.</p><p>The number of attacks increases to three when you reach 11th level in this class and to four when you reach 20th level in this class.</p>'
+        },{
+          title: 'Indomitable',
+          level: '',
+          description: '<p>Beginning at 9th level, you can reroll a saving throw that you fail. If you do so, you must use the new roll, and you can’t use this feature again until you finish a long rest.</p><p>You can use this feature twice between long rests starting at 13th level and three times between long rests starting at 17th level.</p>'
+        }],
+      specializations:[{
+        title: 'Champion',
         description: '',
         abilities: [{
-            title: '',
-            level: '',
-            description: ''
+            title: 'Improved Critical',
+            level: '3',
+            description: 'Beginning when you choose this archetype at 3rd level, your weapon attacks score a critical hit on a roll of 19 or 20.'
           },{
-            title: '',
-            level: '',
-            description: ''
+            title: 'Remarkable Athlete',
+            level: '7',
+            description: '<p>Starting at 7th level, you can add half your proficiency bonus (round up) to any Strength, Dexterity, or Constitution check you make that doesn’t already use your proficiency bonus.</p><p>In addition, when you make a running long jump, the distance you can cover increases by a number of feet equal to your Strength modifier.</p>'
           },{
-            title: '',
-            level: '',
-            description: ''
+            title: 'Additional Fighting Style',
+            level: '10',
+            description: 'At 10th level, you can choose a second option from the Fighting Style class feature.'
           },{
-            title: '',
-            level: '',
-            description: ''
+            title: 'Superior Critical',
+            level: '15',
+            description: 'Starting at 15th level, your weapon attacks score a critical hit on a roll of 18-20.'
+          },{
+            title: 'Survivor',
+            level: '18',
+            description: 'At 18th level, you attain the pinnacle of resilience in battle. At the start of each of your turns, you regain hit points equal to 5 + your Constitution modifier if you have no more than half of your hit points left. You don’t gain this benefit if you have 0 hit points.'
+          }]
+        },{
+        title: 'Battle Master',
+        description: 'Those who emulate the archetypal Battle Master employ martial techniques passed down through generations. To a Battle Master, combat is an academic field, sometim es including subjects beyond battle such as weaponsmithing and calligraphy. Not every fighter absorbs the lessons of history, theory, and artistry that are reflected in the Battle Master archetype, but those who do are well-rounded fighters of great skill and knowledge.',
+        abilities: [{
+            title: 'Combat Superiority',
+            level: '3',
+            description: '<p>When you choose this archetype at 3rd level, you learn maneuvers that are fueled by special dice called superiority dice.</p><p><strong>Maneuvers</strong> You learn three maneuvers of your choice, which are detailed under “Maneuvers” below. Many maneuvers enhance an attack in som e way. You can use only one maneuver per attack.</p><p>You learn two additional maneuvers of your choice at 7th, 10th, and 15th level. Each time you learn new maneuvers, you can also replace one maneuver you know with a different one.</p><p><strong>Superiority Dice</strong> You have four superiority dice, which are d8s. A superiority die is expended when you use it. You regain all of your expended superiority dice when you finish a short or long rest</p><p>You gain another superiority die at 7th level and one more at 15th level.</p><p><strong>Saving Throws</strong>Som e of your maneuvers require your target to make a saving throw to resist the maneuver’s effects. (8 + your proficiency bonus + your Strength or Dexterity modifier)</p>'
+          },{
+            title: 'Student of War',
+            level: '3',
+            description: 'At 3rd level, you gain proficiency with one type of artisan’s tools of your choice.'
+          },{
+            title: 'Know Your Enemy',
+            level: '7',
+            description: 'Starting at 7th level, if you spend at least 1 minute observing or interacting with another creature outside combat, you can learn certain information about its capabilities compared to your own. The DM tells you if the creature is your equal, superior, or inferior in regard to two of the following characteristics of your choice:<ul><li>Strength score</li><li>Dexterity score</li><li>Constitution score</li><li>Arm or Class</li><li>Current hit points</li><li>Total class levels (if any)</li><li>Fighter class levels (if any)</li></ul>'
+          },{
+            title: 'Improved Combat Superiority',
+            level: '10',
+            description: 'At 10th level, your superiority dice turn into d10s. At 18th level, they turn into dl2s.'
+          },{
+            title: 'Relentless',
+            level: '15',
+            description: 'Starting at 15th level, when you roll initiative and have no superiority dice remaining, you regain 1 superiority die.'
+          }]
+        },{
+        title: 'Eldritch Knight',
+        description: 'The archetypal Eldritch Knight com bines the martial mastery com m on to all fighters with a careful study of magic. Eldritch Knights use magical techniques similar to those practiced by wizards. They focus their study on two of the eight schools of magic: abjuration and evocation. Abjuration spells grant an Eldritch Knight additional protection in battle, and evocation spells deal damage to many foes at once, extending the fighter’s reach in combat. These knights learn a comparatively small number of spells, committing them to memory instead of keeping them in a spellbook.',
+        abilities: [{
+            title: 'Spellcasting',
+            level: '3',
+            description: '<p>W hen you reach 3rd level, you augment your martial prowess with the ability to cast spells.</p><p></p><p><strong>Cantrips.</strong> You learn two cantrips of your choice from the wizard spell list. You learn an additional wizard cantrip of your choice at 10th level.</p><p><strong>Spell Slots.</strong> To cast one of these spells, you must expend a slot of the spell’s level or higher. You regain all expended spell slots when you finish a long rest.</p><p><strong>Spells Known of 1st-Level and Higher.</strong> You know three 1st-level wizard spells of your choice, two of which you must choose from the abjuration and evocation spells on the wizard spell list. </p><p><strong>Spellcasting Ability.</strong> Intelligence is your spellcasting ability for your wizard spells, since you learn your spells through study and memorization. You use your Intelligence whenever a spell refers to your spellcasting ability. In addition, you use your Intelligence modifier when setting the saving throw DC for a wizard spell you cast and when making an attack roll with one.</p>'
+          },{
+            title: 'Weapon Bond',
+            level: '3',
+            description: '<p>At 3rd level, you learn a ritual that creates a magical bond between yourself and one weapon. You perform the ritual over the course of 1 hour, which can be done during a short rest. The weapon must be within your reach throughout the ritual, at the conclusion of which you touch the weapon and forge the bond.</p><p>Once you have bonded a weapon to yourself, you can’t be disarmed of that weapon unless you are incapacitated. If it is on the same plane of existence, you can summon that weapon as a bonus action on your turn, causing it to teleport instantly to your hand.</p><p>You can have up to two bonded weapons, but can summon only one at a time with your bonus action. If you attempt to bond with a third weapon, you must break the bond with one of the other two.</p>'
+          },{
+            title: 'War Magic',
+            level: '7',
+            description: 'Beginning at 7th level, when you use your action to cast a cantrip, you can make one w eapon attack as a bonus action.'
+          },{
+            title: 'Eldritch Strike',
+            level: '10',
+            description: 'At 10th level, you learn how to make your weapon strikes undercut a creature’s resistance to your spells. W hen you hit a creature with a weapon attack, that creature has disadvantage on the next saving throw it makes against a spell you cast before the end of your next turn.'
+          },{
+            title: 'Arcane Charge',
+            level: '15',
+            description: 'At 15th level, you gain the ability to teleport up to 30 feet to an unoccupied space you can see when you use your Action Surge. You can teleport before or after the additional action.'
+          },{
+            title: 'Improved War Magic',
+            level: '18',
+            description: 'Starting at 18th level, when you use your action to cast a spell, you can make one weapon attack as a bonus action.'
           }]
         }] 
     },{
