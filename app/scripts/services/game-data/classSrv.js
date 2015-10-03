@@ -1361,126 +1361,150 @@ angular.module('dCraftApp').service( 'ClassSrv', function(){
       name: 'Rogue',
       hitPoints: [{
           title: 'Hit Dice',
-          description: ''
+          description: '1d8 per rogue level'
         },{
           title: 'Hit Dice at 1st Level',
-          description: ''
+          description: '8 + your Constitution modifier'
         },{
           title: 'Hit Points at Higher Levels',
-          description: ''
+          description: '1d8 (or 5) + your Constitution modifier per rogue level after 1st'
         }],
       proficiencies:[{
           title: 'Armor',
-          description: ''
+          description: 'light armor'
         },{
           title: 'Weapons',
-          description: ''
+          description: 'simple weapons, hand crossbows, longswords, rapiers, shortswords'
         },{
           title: 'Tools',
-          description: ''
+          description: 'Thieves\u0027 Tools'
         },{
           title: 'Saving Throws',
-          description: ''
+          description: 'Dexterity. Intelligence'
         },{
           title: 'Skills',
-          description: ''
+          description: 'Choose four from Acrobatics, Athletics, Deception. Insight, Intimidation, Investigation, Perception, Performance. Persuasion, Sleight of Hand, and Stealth.'
         }],
       abilities: [{
-          title: '',
-          level: '',
-          description: ''
+          title: 'Expertise',
+          level: '1',
+          description: '<p>At 1st level, choose two of your skill proficiencies, or one of your skill proficiencies and your proficiency with thieves’ tools. Your proficiency bonus is doubled for any ability check you make that uses either of the chosen proficiencies.</p><p>At 6th level, you can choose two more of your proficiencies (in skills or with thieves’ tools) to gain this benefit.</p>'
         },{
-          title: '',
-          level: '',
-          description: ''
+          title: 'Sneak Attack',
+          level: '1',
+          description: '<p>Beginning at 1st level, you know how to strike subtly and exploit a foe’s distraction. Once per turn, you can deal an extra 1d6 damage to one creature you hit with an attack if you have advantage on the attack roll. The attack must use a finesse or a ranged weapon.</p><p>You don’t need advantage on the attack roll if another enemy of the target is within 5 feet of it, that enemy isn’t incapacitated, and you don’t have disadvantage on the attack roll.</p><p>The amount of the extra damage increases as you gain levels in this class, as shown in the Sneak Attack column of the Rogue table.</p>'
         },{
-          title: '',
-          level: '',
-          description: ''
+          title: 'Thieves\u0027 Cant',
+          level: '1',
+          description: '<p>During your rogue training you learned thieves’ cant, a secret mix of dialect, jargon, and code that allows you to hide m essages in seemingly normal conversation. Only another creature that knows thieves’ cant understands such messages. It takes four times longer to convey such a m essage than it does to speak the same idea plainly.</p><p>In addition, you understand a set of secret signs and symbols used to convey short, simple messages, such as whether an area is dangerous or the territory of a thieves’ guild, whether loot is nearby, or whether the people in an area are easy marks or will provide a safe house for thieves on the run.</p>'
         },{
-          title: '',
-          level: '',
-          description: ''
+          title: 'Cunning Action',
+          level: '2',
+          description: 'Starting at 2nd level, your quick thinking and agility allow you to move and act quickly. You can take a bonus action on each of your turns in combat. This action can be used only to take the Dash, Disengage, or Hide action.'
         },{
-          title: '',
-          level: '',
-          description: ''
+          title: 'Roguish Archetype',
+          level: '3',
+          description: 'At 3rd level, you choose an archetype that you emulate in the exercise of your rogue abilities: Thief, Assassin, or Arcane Trickster, all detailed at the end of the class description. Your archetype choice grants you features at 3rd level and then again at 9th, 13th, and 17th level.'
         },{
-          title: '',
-          level: '',
-          description: ''
+          title: 'Ability Score Improvement',
+          level: '4',
+          description: 'When you reach 4th level, and again at 8th, 10th, 12th, 16th, and 19th level, you can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can’t increase an ability score above 20 using this feature.'
         },{
-          title: '',
-          level: '',
-          description: ''
+          title: 'Uncanny Dodge',
+          level: '5',
+          description: 'Starting at 5th level, when an attacker that you can see hits you with an attack, you can use your reaction to halve the attack’s damage against you.'
         },{
-          title: '',
-          level: '',
-          description: ''
+          title: 'Evasion',
+          level: '7',
+          description: 'Beginning at 7th level, you can nimbly dodge out of the way of certain area effects, such as a red dragon’s fiery breath or an ice storm spell. When you are subjected to an effect that allows you to make a Dexterity saving throw to take only half damage, you instead take no damage if you succeed on the saving throw, and only half damage if you fail.'
         },{
-          title: '',
-          level: '',
-          description: ''
+          title: 'Reliable Talent',
+          level: '11',
+          description: 'By 11th level, you have refined your chosen skills until they approach perfection. Whenever you make an ability check that lets you add your proficiency bonus, you can treat a d20 roll of 9 or lower as a 10.'
         },{
-          title: '',
-          level: '',
-          description: ''
+          title: 'Blindsense',
+          level: '14',
+          description: 'Starting at 14th level, if you are able to hear, you are aware of the location of any hidden or invisible creature within 10 feet of you.'
         },{
-          title: '',
-          level: '',
-          description: ''
+          title: 'Slippery Mind',
+          level: '15',
+          description: 'By 15th level, you have acquired greater mental strength. You gain proficiency in W isdom saving throws.'
         },{
-          title: '',
-          level: '',
-          description: ''
+          title: 'Elusive',
+          level: '18',
+          description: 'Beginning at 18th level, you are so evasive that attackers rarely gain the upper hand against you. No attack roll has advantage against you while you aren’t incapacitated.'
         },{
-          title: '',
-          level: '',
-          description: ''
-        },{
-          title: '',
-          level: '',
-          description: ''
+          title: 'Stroke of Luck',
+          level: '20',
+          description: '<p>At 20th level, you have an uncanny knack for succeeding when you need to. If your attack m isses a target within range, you can turn the miss into a hit. Alternatively, if you fail an ability check, you can treat the d20 roll as a 20.</p><p>Once you use this feature, you can’t use it again until you finish a short or long rest.</p>'
         }],
       specializations:[{
-        title: '',
-        description: '',
+        title: 'Thief',
+        description: 'You hone your skills in the larcenous arts. Burglars, bandits, cutpurses, and other criminals typically follow this archetype, but so do rogues who prefer to think of themselves as professional treasure seekers, explorers, delvers, and investigators. In addition to improving your agility and stealth, you learn skills useful for delving into ancient ruins, reading unfamiliar languages, and using magic items you normally couldn’t employ.',
         abilities: [{
-            title: '',
-            level: '',
-            description: ''
+            title: 'Fast Hands',
+            level: '3',
+            description: 'Starting at 3rd level, you can use the bonus action granted by your Cunning Action to make a Dexterity (Sleight of Hand) check, use your thieves’ tools to disarm a trap or open a lock, or take the Use an Object action.'
           },{
-            title: '',
-            level: '',
-            description: ''
+            title: 'Second-Story Work',
+            level: '3',
+            description: '<p>When you choose this archetype at 3rd level, you gain the ability to climb faster than normal; climbing no longer costs you extra movement.</p><p>In addition, when you make a running jump, the distance you cover increases by a number of feet equal to your Dexterity modifier.</p>'
           },{
-            title: '',
-            level: '',
-            description: ''
+            title: 'Supreme Sneak',
+            level: '3',
+            description: 'Starting at 9th level, you have advantage on a Dexterity (Stealth) check if you move no more than half your speed on the same turn.'
           },{
-            title: '',
-            level: '',
-            description: ''
+            title: 'Use Magic Device',
+            level: '13',
+            description: 'By 13th level, you have learned enough about the workings of magic that you can improvise the use of items even when they are not intended for you. You ignore all class, race, and level requirements on the use of magic items.'
+          },{
+            title: 'Thief\u0027s Reflexes',
+            level: '17',
+            description: 'When you reach 17th level, you have becom e adept at laying ambushes and quickly escaping danger. You can take two turns during the first round of any combat. You take your first turn at your normal initiative and your'
           }]
         },{
-        title: '',
-        description: '',
+        title: 'Assassin',
+        description: 'You focus your training on the grim art of death. Those who adhere to this archetype are diverse: hired killers, spies, bounty hunters, and even specially anointed priests trained to exterminate the enemies of their deity. Stealth, poison, and disguise help you eliminate your foes with deadly efficiency.',
         abilities: [{
-            title: '',
-            level: '',
-            description: ''
+            title: 'Bonus Proficiencies',
+            level: '3',
+            description: 'When you choose this archetype at 3rd level, you gain proficiency with the disguise kit and the poisoner’s kit.'
           },{
-            title: '',
-            level: '',
-            description: ''
+            title: 'Assassinate',
+            level: '3',
+            description: 'Starting at 3rd level, you are at your deadliest when you get the drop on your enemies. You have advantage on attack rolls against any creature that hasn’t taken a turn in the combat yet. In addition, any hit you score against a creature that is surprised is a critical hit.'
           },{
-            title: '',
-            level: '',
-            description: ''
+            title: 'Infiltration Expertise',
+            level: '9',
+            description: '<p>Starting at 9th level, you can unfailingly create false identities for yourself. You must spend seven days and 25 gp to establish the history, profession, and affiliations for an identity. You can’t establish an identity that belongs to som eone else. For example, you might acquire appropriate clothing, letters of introduction, and official- looking certification to establish yourself as a member of a trading house from a remote city so you can insinuate yourself into the company of other wealthy merchants.</p><p>Thereafter, if you adopt the new identity as a disguise, other creatures believe you to be that person until given an obvious reason not to.</p>'
           },{
-            title: '',
+            title: 'Imposter',
+            level: '13',
+            description: '<p>At 13th level, you gain the ability to unerringly mimic another person’s speech, writing, and behavior. You must spend at least three hours studying these three components of the person’s behavior, listening to speech, examining handwriting, and observing mannerisms.</p><p>Your ruse is indiscernible to the casual observer. If a wary creature suspects something is amiss, you have advantage on any Charisma (Deception) check you make to avoid detection.</p>'
+          },{
+            title: 'Death Strike',
+            level: '17',
+            description: 'Starting at 17th level, you becom e a master of instant death. When you attack and hit a creature that is surprised, it must make a Constitution saving throw (DC 8 + your Dexterity modifier + your proficiency bonus). On a failed save, double the damage of your attack against the creature.'
+          }]
+        },{
+        title: 'Arcane Trickster',
+        description: 'Some rogues enhance their fine-honed skills of stealth and agility with magic, learning tricks of enchantment and illusion. These rogues include pickpockets and burglars, but also pranksters, mischie',
+        abilities: [{
+            title: 'Mage Hand Legerdemain',
+            level: '3',
+            description: '<p>Starting at 3rd level, when you cast mage hand, you can make the spectral hand invisible, and you can perform the following additional tasks with it:</p><ul><li>You can stow one object the hand is holding in a container worn or carried by another creature.</li><li>You can retrieve an object in a container worn or carried by another creature.</li><li>You can use thieves’ tools to pick locks and disarm traps at range.</li></ul><p>You can perform one of these tasks without being noticed by a creature if you succeed on a Dexterity (Sleight of Hand) check contested by the creature’s W isdom (Perception) check.</p><p>In addition, you can use the bonus action granted by your Cunning Action to control the hand.</p>'
+          },{
+            title: 'Magical Ambush',
+            level: '9',
+            description: 'Starting at 9th level, if you are hidden from a creature when you cast a spell on it, the creature has disadvantage on any saving throw it makes against the spell this turn.'
+          },{
+            title: 'Versatile Trickster',
+            level: '13',
+            description: 'At 13th level, you gain the ability to distract targets with your mage hand. As a bonus action on your turn, you can designate a creature within 5 feet of the spectral hand created by the spell. Doing so gives you advantage on attack rolls against that creature until the end of the turn.'
+          },{
+            title: 'Spell Thief',
             level: '',
-            description: ''
+            description: '<p>At 17th level, you gain the ability to magically steal the knowledge of how to cast a spell from another spellcaster.</p><p>Immediately after a creature casts a spell that targets you or includes you in its area of effect, you can use your reaction to force the creature to make a saving throw with its spellcasting ability modifier. The DC equals your spell save DC. On a failed save, you negate the spell’s effect against you, and you steal the knowledge of the spell if it is at least 1st level and of a level you can cast (it doesn’t need to be a wizard spell). For the next 8 hours, you know the spell and can cast it using your spell slots. The creature can’t cast that spell until the 8 hours have passed.</p><p>Once you use this feature, you can’t use it again until you finish a long rest.</p>'
           }]
         }]
     },{
