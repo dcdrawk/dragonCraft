@@ -869,44 +869,44 @@ angular.module('dCraftApp').service( 'ClassSrv', function(){
         description: 'Monks of the Way of the Open Hand are the ultimate masters of martial arts combat, whether armed or unarmed. They learn techniques to push and trip their opponents, manipulate ki to heal damage to their bodies, and practice advanced meditation that can protect them from harm.',
         abilities: [{
             title: 'Open Hand Technique',
-            level: '',
-            description: '<p></p><ul><li></li><li></li><li></li></ul>'
+            level: '3',
+            description: '<p>Starting when you choose this tradition at 3rd level, you can manipulate your enemy’s ki when you harness your own. Whenever you hit a creature with one of the attacks granted by your Flurry of Blows, you can im pose one of the following effects on that target:</p><ul><li>It must succeed on a Dexterity saving throw or be knocked prone.</li><li>It must make a Strength saving throw. If it fails, you can push it up to 15 feet away from you.</li><li>It can’t take reactions until the end of your next turn.</li></ul>'
           },{
             title: 'Wholeness of Body',
-            level: '',
-            description: ''
+            level: '6',
+            description: 'At 6th level, you gain the ability to heal yourself. As an action, you can regain hit points equal to three times your monk level. You must finish a long rest before you can use this feature again.'
           },{
             title: 'Tranquility',
-            level: '',
-            description: '<p></p><p></p>'
+            level: '11',
+            description: 'Beginning at 11th level, you can enter a special meditation that surrounds you with an aura of peace. At the end of a long rest, you gain the effect of a sanctuary spell that lasts until the start of your next long rest (the spell can end early as normal). The saving throw DC for the spell equals 8 + your W isdom modifier + your proficiency bonus.'
           },{
             title: 'Quivering Palm',
             level: '',
-            description: '<p></p><p></p>'
+            description: '<p>At 17th level, you gain the ability to set up lethal vibrations in som eone’s body. When you hit a creature with an unarmed strike, you can spend 3 ki points to start these imperceptible vibrations, which last for a number of days equal to your monk level. The vibrations are harmless unless you use your action to end them. To do so, you and the target must be on the same plane of existence. When you use this action, the creature must make a Constitution saving throw. If it fails, it is reduced to 0 hit points. If it succeeds, it takes 10d 10 necrotic damage.</p><p>You can have only one creature under the effect of this feature at a time. You can choose to end the vibrations harmlessly without using an action.</p>'
           }]
         },{
         title: 'Way of the Shadow',
         description: 'Monks of the Way of Shadow follow a tradition that values stealth and subterfuge. These monks might be called ninjas or shadowdancers, and they serve as spies and assassins. Som etim es the mem bers of a ninja monastery are family members, forming a clan sworn to secrecy about their arts and missions. Other monasteries are more like thieves’ guilds, hiring out their services to nobles, rich merchants, or anyone else who can pay their fees. Regardless of their methods, the heads of these monasteries expect the unquestioning obedience of their students.',
         abilities: [{
             title: 'Shadow Arts',
-            level: '',
-            description: ''
+            level: '3',
+            description: 'Starting when you choose this tradition at 3rd level, you can use your ki to duplicate the effects of certain spells. As an action, you can spend 2 ki points to cast darkness, darkvision, pass without trace, or silence, without providing material components. Additionally, you gain the minor illusion cantrip if you don’t already know it.'
           },{
             title: 'Shadow Step',
-            level: '',
-            description: ''
+            level: '6',
+            description: 'At 6th level, you gain the ability to step from one shadow into another. W hen you are in dim light or darkness, as a bonus action you can teleport up to 60 feet to an unoccupied space you can see that is also in dim light or darkness. You then have advantage on the first melee attack you make before the end of the turn.'
           },{
             title: 'Cloak of Shadows',
-            level: '',
-            description: ''
+            level: '11',
+            description: 'By 11th level, you have learned to becom e one with the shadows. When you are in an area of dim light or darkness, you can use your action to becom e invisible. You remain invisible until you make an attack, cast a spell, or are in an area of bright light.'
           },{
             title: 'Opportunist',
-            level: '',
-            description: ''
+            level: '17',
+            description: 'At 17th level, you can exploit a creature\u0027s momentary distraction when it is hit by an attack. Whenever a creature within 5 feet of you is hit by an attack made by a creature other than you, you can use your reaction to make a melee attack against that creature.'
           }]
         },{
         title: 'Way of the Four Elements',
-        description: '<p></p><p></p>',
+        description: '<p>You follow a monastic tradition that teaches you to harness the elements. W hen you focus your ki, you can align yourself with the forces of creation and bend the four elements to your will, using them as an extension of your body. Som e mem bers of this tradition dedicate themselves to a single element, but others weave the elements together.</p><p>Many monks of this tradition tattoo their bodies with representations of their ki powers, com m only imagined as coiling dragons, but also as phoenixes, fish, plants, mountains, and cresting waves.</p>',
         abilities: [{
             title: 'Disciple of the Elements',
             level: '3',
@@ -1141,7 +1141,7 @@ angular.module('dCraftApp').service( 'ClassSrv', function(){
             description: 'Starting at 15th level, the authority with which you speak your Vow of Enmity gives you greater power over your foe. W hen a creature under the effect of your Vow of Enmity makes an attack, you can use your reaction to make a melee weapon attack against that creature if it is within range.'
           },{
             title: 'Avenging Angel',
-            level: '3',
+            level: '20',
             description: '<p>At 20th level, you can assume the form of an angelic avenger. Using your action, you undergo a transformation. For 1 hour, you gain the following benefits:</p><ul><li>Wings sprout from your back and grant you a flying speed of 60 feet.</li><li>You emanate an aura of menace in a 30-foot radius. The first time any enemy creature enters the aura or starts its turn there during a battle, the creature must succeed on a W isdom saving throw or becom e frightened of you for 1 minute or until it takes any damage. Attack rolls against the frightened creature have advantage.</li></ul><p>Once you use this feature, you can’t use it again until you finish a long rest.</p>'
           }]
         }]
@@ -1171,17 +1171,43 @@ angular.module('dCraftApp').service( 'ClassSrv', function(){
           description: 'Strength, Dexterity'
         },{
           title: 'Skills',
-          description: 'Choose three from Animal Handling, Athletics, Insight, Investigation, Nature, Perception, Stealth, and Survival
-'
+          description: 'Choose three from Animal Handling, Athletics, Insight, Investigation, Nature, Perception, Stealth, and Survival'
         }],
       abilities: [{
           title: 'Favored Enemy',
-          level: '',
-          description: '<p></p><p></p><p></p>'
+          level: '1',
+          description: '<p>Beginning at 1st level, you have significant experience studying, tracking, hunting, and even talking to a certain type of enemy</p><p>You have advantage on W isdom (Survival) checks to track your favored enemies, as well as on Intelligence checks to recall information about them.</p><p></p><p>When you gain this feature, you also learn one language of your choice that is spoken by your favored enemies, if they speak one at all.</p><p>You choose one additional favored enemy, as well as an associated language, at 6th and 14th level. As you gain levels, your choices should reflect the types of monsters you have encountered on your adventures.</p>',
+        options:[{
+            title:'Abberations'
+          },{
+            title:'Beasts'
+          },{
+            title:'Celestials'
+          },{
+            title:'Constructs'
+          },{
+            title:'Dragons'
+          },{
+            title:'Elementals'
+          },{
+            title:'Fey'
+          },{
+            title:'Fiends'
+          },{
+            title:'Giants'
+          },{
+            title:'Monstrosities'
+          },{
+            title:'Oozes'
+          },{
+            title:'Plants'
+          },{
+            title:'Undead'
+          }]
         },{
           title: 'Natural Explorer',
           level: '',
-          description: '<p></p><p></p><ul><li></li><li></li><li></li><li></li><li></li><li></li></ul><p></p>',
+          description: '<p>You are particularly familiar with one type of natural environment and are adept at traveling and surviving in such regions. When you make an Intelligence or Wisdom check related to your favored terrain, your proficiency bonus is doubled if you are using a skill that you’re proficient in.</p><p>While traveling for an hour or more in your favored terrain, you gain the following benefits</p><ul><li>Difficult terrain doesn’t slow your group’s travel</li><li>Your group can’t becom e lost except by magical means.</li><li>Even when you are engaged in another activity while traveling (such as foraging, navigating, or tracking), you remain alert to danger.</li><li>If you are traveling alone, you can move stealthily at a normal pace.</li><li>When you forage, you find twice as much food as you normally would.</li><li>While tracking other creatures, you also learn their exact number, their sizes, and how long ago they passed through the area.</li></ul><p>You choose additional favored terrain types at 6th and 10th level.</p>',
           options:[{
             title:'Actic'
           },{
@@ -1195,111 +1221,140 @@ angular.module('dCraftApp').service( 'ClassSrv', function(){
           },{
             title:'Mountain'
           },{
-            title:'Swamp',
+            title:'Swamp'
           },{
-            title:'Underdark',
+            title:'Underdark'
           }]
         },{
           title: 'Fighting Style',
-          level: '',
-          description: '',
+          level: '2',
+          description: 'At 2nd level, you adopt a particular style of fighting as your specialty. Choose one of the following options. You can’t take a Fighting Style option more than once, even if you later get to choose again',
           options:[{
             title:'Arhcery',
-            description'',
+            description: 'You gain a +2 bonus to attack rolls you make with ranged weapons.',
           },{
             title:'Defence',
-            description'',
+            description: 'While you are wearing armor, you gain a +1 bonus to AC.',
           },{
             title:'Dueling',
-            description'',
+            description: 'When you are wielding a melee weapon in one hand and no other weapons, you gain a +2 bonus to damage rolls with that weapon.',
           },{
             title:'Two-Weapon Fighting',
-            description'',
+            description: 'When you engage in two-weapon fighting, you can add your ability modifier to the damage of the second attack.',
           }]
         },{
-          title: '',
-          level: '',
-          description: ''
+          title: 'Ranger Achetype',
+          level: '3',
+          description: 'At 3rd level, you choose an archetype that you strive to emulate: Hunter or Beast Master, both detailed at the end of the class description. Your choice grants you features at 3rd level and again at 7th, 11th, and 15th level.'
         },{
-          title: '',
-          level: '',
-          description: ''
+          title: 'Primal Awareness',
+          level: '3',
+          description: 'Beginning at 3rd level, you can use your action and expend one ranger spell slot to focus your awareness on the region around you. For 1 minute per level of the spell slot you expend, you can sense whether the following types of creatures are present within 1 mile of you (or within up to 6 miles if you are in your favored terrain): aberrations, celestials, dragons, elementals, fey, fiends, and undead. This feature doesn’t reveal the creatures’ location or number.'
         },{
-          title: '',
-          level: '',
-          description: ''
+          title: 'Ability Score Increase',
+          level: '4',
+          description: 'When you reach 4th level, and again at 8th, 12th, 16th, and 19th level, you can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can’t increase an ability score above 20 using this feature.'
         },{
-          title: '',
-          level: '',
-          description: ''
+          title: 'Extra Attack',
+          level: '5',
+          description: 'Beginning at 5th level, you can attack twice, instead of once, whenever you take the Attack action on your turn.'
         },{
-          title: '',
-          level: '',
-          description: ''
+          title: 'Land\u0027s Stride',
+          level: '8',
+          description: '<p>Starting at 8th level, moving through nonmagical difficult terrain costs you no extra movement. You can also pass through nonmagical plants without being slowed by them and without taking damage from them if they have thorns, spines, or a similar hazard.</p><p>In addition, you have advantage on saving throws against plants that are magically created or manipulated to impede movement, such those created by the entangle spell.</p>'
         },{
-          title: '',
-          level: '',
-          description: ''
+          title: 'Hide in Plain Sight',
+          level: '10',
+          description: '<p>Starting at 10th level, you can spend 1 minute creating camouflage for yourself. You must have access to fresh mud, dirt, plants, soot, and other naturally occurring materials with which to create your camouflage.</p><p>Once you are camouflaged in this way, you can try to hide by pressing yourself up against a solid surface, such as a tree or wall, that is at least as tall and wide as you are. You gain a +10 bonus to Dexterity (Stealth) checks as long as you remain there without moving or taking actions. Once you move or take an action or a reaction, you must camouflage yourself again to gain this benefit.</p>'
         },{
-          title: '',
-          level: '',
-          description: ''
+          title: 'Vanish',
+          level: '14',
+          description: 'Starting at 14th level, you can use the Hide action as a bonus action on your turn. Also, you can’t be tracked by nonmagical means, unless you choose to leave a trail.'
         },{
-          title: '',
-          level: '',
-          description: ''
+          title: 'Feral Senses',
+          level: '18',
+          description: '<p>At 18th level, you gain preternatural senses that help you fight creatures you can’t see. W hen you attack a creature you can’t see, your inability to see it doesn’t im pose disadvantage on your attack rolls against it.</p><p>You are also aware of the location of any invisible creature within 30 feet of you, provided that the creature isn’t hidden from you and you aren’t blinded or deafened.</p>'
         },{
-          title: '',
-          level: '',
-          description: ''
-        },{
-          title: '',
-          level: '',
-          description: ''
-        },{
-          title: '',
-          level: '',
-          description: ''
+          title: 'Foe Slayer',
+          level: '20',
+          description: 'At 20th level, you becom e an unparalleled hunter of your enemies. Once on each of your turns, you can add your W isdom modifier to the attack roll or the damage roll of an attack you make against one of your favored enemies. You can choose to use this feature before or after the roll, but before any effects of the roll are applied.'
         }],
       specializations:[{
-        title: '',
-        description: '',
+        title: 'Hunter',
+        description: 'Emulating the Hunter archetype means accepting your place as a bulwark between civilization and the terrors of the wilderness. As you walk the Hunter’s path, you learn specialized techniques for fighting the threats you face, from rampaging ogres and hordes of orcs to towering giants and terrifying dragons.',
         abilities: [{
-            title: '',
-            level: '',
-            description: ''
+            title: 'Hunter\u0027s Prey',
+            level: '3',
+            description: 'At 3rd level, you gain one of the following features of your choice.',
+            options:[{
+              title: 'Colossus Slayer',
+              description:'Your tenacity can wear down the most potent foes. When you hit a creature with a weapon attack, the creature takes an extra 1d8 damage if it’s below its hit point maximum. You can deal this extra damage only once per turn.',
+            },{
+              title:'Giant Killer',
+              description: 'When a Large or larger creature within 5 feet of you hits or m isses you with an attack, you can use your reaction to attack that creature immediately after its attack, provided that you can see the creature. ',
+            },{
+              title:'Horde breaker',
+              description: 'Once on each of your turns when you make a weapon attack, you can make another attack with the same weapon against a different creature that is within 5 feet of the original target and within range of your weapon.',
+            }]
           },{
-            title: '',
-            level: '',
-            description: ''
+            title: 'Defensive Tactics',
+            level: '7',
+            description: 'At 7th level, you gain one of the following features of your choice.',
+            options:[{
+              title:'Escape the Horde',
+              description: 'Opportunity attacks against you are made with disadvantage.',
+            },{
+              title:'Multiattack Defense',
+              description: 'When a creature hits you with an attack, you gain a +4 bonus to AC against all subsequent attacks made by that creature for the rest of the turn.',
+            },{
+              title:'Steel Will',
+              description: 'You have advantage on saving throws against being frightened.',
+            }]
           },{
-            title: '',
-            level: '',
-            description: ''
+            title: 'Multiattack',
+            level: '11',
+            description: 'At 11th level, you gain one of the following features of your choice.',
+            options:[{
+              title:'Volley',
+              description: 'You can use your action to make a ranged attack against any number of creatures within 10 feet of a point you can see within your weapon’s range. You must have ammunition for each target, as normal, and you make a separate attack roll for each target.',
+            },{
+              title:'Whirlwind Attack',
+              description: 'You can use your action to make a melee attack against any number of creatures within 5 feet of you, with a separate attack roll for each target',
+            }]            
           },{
-            title: '',
-            level: '',
-            description: ''
+            title: 'Superior Hunter\u0027 Defense',
+            level: '15',
+            description: 'At 15th level, you gain one of the following features of your choice.',
+            options:[{
+              title:'Evasion',
+              description: 'You can nimbly dodge out of the way of certain area effects, such as a red dragon’s fiery breath or a lightning bolt spell. W hen you are subjected to an effect that allows you to make a Dexterity saving throw to take only half damage, you instead take no damage if you succeed on the saving throw, and only half damage if you fail.',
+            },{
+              title:'Stand Against the Tide',
+              description: 'When a hostile creature misses you with a melee attack, you can use your reaction to force that creature to repeat the same attack against another creature (other than itself) of your choice.',
+            },{
+              title:'Uncanny Dodge',
+              description: 'When an attacker that you can see hits you with an attack, you can use your reaction to halve the attack’s damage against you.',
+            }]
           }]
         },{
-        title: '',
-        description: '',
+        title: 'Beast Master',
+        description: 'The Beast Master archetype em bodies a friendship between the civilized races and the beasts of the world. United in focus, beast and ranger work as one to fight the monstrous foes that threaten civilization and the wilderness alike. Emulating the Beast Master archetype means committing yourself to this ideal, working in partnership with an animal as its companion and friend.',
         abilities: [{
-            title: '',
+            title: 'Ranger\u0027s Companion',
             level: '',
-            description: ''
+            description: '<p>At 3rd level, you gain a beast companion that accom panies you on your adventures and is trained to fight alongside you. Add your proficiency bonus to the beast’s AC, attack rolls, and damage rolls, as well as to any saving throws and skills it is proficient in. Its hit point maximum equals its normal maximum or four times your ranger level, whichever is higher.</p><p>The beast obeys your commands as best as it can. It takes its turn on your initiative, though it doesn’t take an action unless you command it to.</p><p>While traveling through your favored terrain with only the beast, you can move stealthily at a normal pace.</p><p>If the beast dies, you can obtain another one by spending 8 hours magically bonding with another beast that isn’t hostile to you, either the same type of beast as before or a different one.</p>'
           },{
-            title: '',
-            level: '',
-            description: ''
+            title: 'Exceptional Training',
+            level: '7',
+            description: 'Beginning at 7th level, on any of your turns when your beast companion doesn’t attack, you can use a bonus action to command the beast to take the Dash, Disengage, Dodge, or Help action on its turn.'
           },{
-            title: '',
-            level: '',
-            description: ''
+            title: 'Bestial Fury',
+            level: '11',
+            description: 'Starting at 11th level, your beast companion can make two attacks when you com mand it to use the Attack action'
           },{
-            title: '',
-            level: '',
-            description: ''
+            title: 'Share Spells',
+            level: '15',
+            description: 'Beginning at 15th level, when you cast a spell targeting yourself, you can also affect your beast companion with the spell if the beast is within 30 feet of you.'
           }]
         }] 
     },{
