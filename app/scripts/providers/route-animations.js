@@ -1,3 +1,5 @@
+'use strict';
+ /* jshint ignore:start */
 var app = angular.module('ngRouteAnimationManager', ['ngAnimate']);
 
 
@@ -61,3 +63,4 @@ app.directive('routeAnimationManager', function() {
     template: '<div class="view-animate-container" ng-class="RouteAnimationManager.animationClass.name"><div ng-transclude></div></div>'
   }
 });
+/* jshint ignore:end */

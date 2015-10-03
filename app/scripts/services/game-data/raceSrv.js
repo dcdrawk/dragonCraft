@@ -112,7 +112,7 @@ angular.module('dCraftApp').service( 'RaceSrv', function(){
         description: 'You have advantage on saving throws against being frightened.'
       },{
         title: 'Halfling Nimbleness',
-        description: 'You can move through the space of any creature that is of a size larger than yours''
+        description: 'You can move through the space of any creature that is of a size larger than yours'
       }],
       //Subraces
       subraces: [{

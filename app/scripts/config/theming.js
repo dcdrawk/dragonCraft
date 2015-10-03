@@ -1,3 +1,4 @@
+'use strict';
 angular.module('dCraftApp')
   .config(function($mdThemingProvider) {
     $mdThemingProvider.theme('default')

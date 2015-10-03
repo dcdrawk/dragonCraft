@@ -1,3 +1,4 @@
+'use strict';
 angular.module('dCraftApp').service( 'ClassSrv', function(){  
   //Functions
 //  this.getClasses = function (){
@@ -6,29 +7,1610 @@ angular.module('dCraftApp').service( 'ClassSrv', function(){
   
   //Data
   this.classes = [{
-      name: 'Barbarian'  
+      name: 'Barbarian',
+      hitPoints: [{
+          title: 'Hit Dice',
+          description: ''
+        },{
+          title: 'Hit Dice at 1st Level',
+          description: ''
+        },{
+          title: 'Hit Points at Higher Levels',
+          description: ''
+        }],
+      proficiencies:[{
+          title: 'Armor',
+          description: ''
+        },{
+          title: 'Weapons',
+          description: ''
+        },{
+          title: 'Saving Throws',
+          description: ''
+        },{
+          title: 'Skills',
+          description: ''
+        }],
+      abilities: [{
+          title: '',
+          level: '',
+          description: ''
+        },{
+          title: '',
+          level: '',
+          description: ''
+        },{
+          title: '',
+          level: '',
+          description: ''
+        },{
+          title: '',
+          level: '',
+          description: ''
+        },{
+          title: '',
+          level: '',
+          description: ''
+        },{
+          title: '',
+          level: '',
+          description: ''
+        },{
+          title: '',
+          level: '',
+          description: ''
+        },{
+          title: '',
+          level: '',
+          description: ''
+        },{
+          title: '',
+          level: '',
+          description: ''
+        },{
+          title: '',
+          level: '',
+          description: ''
+        },{
+          title: '',
+          level: '',
+          description: ''
+        },{
+          title: '',
+          level: '',
+          description: ''
+        },{
+          title: '',
+          level: '',
+          description: ''
+        },{
+          title: '',
+          level: '',
+          description: ''
+        }],
+      specializations:[{
+        title: '',
+        description: '',
+        abilities: [{
+            title: '',
+            description: ''
+          },{
+            title: '',
+            description: ''
+          },{
+            title: '',
+            description: ''
+          },{
+            title: '',
+            description: ''
+          }]
+        },{
+        title: '',
+        description: '',
+        abilities: [{
+            title: '',
+            description: ''
+          },{
+            title: '',
+            description: ''
+          },{
+            title: '',
+            description: ''
+          },{
+            title: '',
+            description: ''
+          }]
+        }]    
     },{
-      name: 'Bard'  
+      name: 'Bard',
+      hitPoints: [{
+          title: 'Hit Dice',
+          description: ''
+        },{
+          title: 'Hit Dice at 1st Level',
+          description: ''
+        },{
+          title: 'Hit Points at Higher Levels',
+          description: ''
+        }],
+      proficiencies:[{
+          title: 'Armor',
+          description: ''
+        },{
+          title: 'Weapons',
+          description: ''
+        },{
+          title: 'Saving Throws',
+          description: ''
+        },{
+          title: 'Skills',
+          description: ''
+        }],
+      abilities: [{
+          title: '',
+          level: '',
+          description: ''
+        },{
+          title: '',
+          level: '',
+          description: ''
+        },{
+          title: '',
+          level: '',
+          description: ''
+        },{
+          title: '',
+          level: '',
+          description: ''
+        },{
+          title: '',
+          level: '',
+          description: ''
+        },{
+          title: '',
+          level: '',
+          description: ''
+        },{
+          title: '',
+          level: '',
+          description: ''
+        },{
+          title: '',
+          level: '',
+          description: ''
+        },{
+          title: '',
+          level: '',
+          description: ''
+        },{
+          title: '',
+          level: '',
+          description: ''
+        },{
+          title: '',
+          level: '',
+          description: ''
+        },{
+          title: '',
+          level: '',
+          description: ''
+        },{
+          title: '',
+          level: '',
+          description: ''
+        },{
+          title: '',
+          level: '',
+          description: ''
+        }],
+      specializations:[{
+        title: '',
+        description: '',
+        abilities: [{
+            title: '',
+            description: ''
+          },{
+            title: '',
+            description: ''
+          },{
+            title: '',
+            description: ''
+          },{
+            title: '',
+            description: ''
+          }]
+        },{
+        title: '',
+        description: '',
+        abilities: [{
+            title: '',
+            description: ''
+          },{
+            title: '',
+            description: ''
+          },{
+            title: '',
+            description: ''
+          },{
+            title: '',
+            description: ''
+          }]
+        }]
     },{
-      name: 'Cleric'  
+      name: 'Cleric',hitPoints: [{
+          title: 'Hit Dice',
+          description: ''
+        },{
+          title: 'Hit Dice at 1st Level',
+          description: ''
+        },{
+          title: 'Hit Points at Higher Levels',
+          description: ''
+        }],
+      proficiencies:[{
+          title: 'Armor',
+          description: ''
+        },{
+          title: 'Weapons',
+          description: ''
+        },{
+          title: 'Saving Throws',
+          description: ''
+        },{
+          title: 'Skills',
+          description: ''
+        }],
+      abilities: [{
+          title: '',
+          level: '',
+          description: ''
+        },{
+          title: '',
+          level: '',
+          description: ''
+        },{
+          title: '',
+          level: '',
+          description: ''
+        },{
+          title: '',
+          level: '',
+          description: ''
+        },{
+          title: '',
+          level: '',
+          description: ''
+        },{
+          title: '',
+          level: '',
+          description: ''
+        },{
+          title: '',
+          level: '',
+          description: ''
+        },{
+          title: '',
+          level: '',
+          description: ''
+        },{
+          title: '',
+          level: '',
+          description: ''
+        },{
+          title: '',
+          level: '',
+          description: ''
+        },{
+          title: '',
+          level: '',
+          description: ''
+        },{
+          title: '',
+          level: '',
+          description: ''
+        },{
+          title: '',
+          level: '',
+          description: ''
+        },{
+          title: '',
+          level: '',
+          description: ''
+        }],
+      specializations:[{
+        title: '',
+        description: '',
+        abilities: [{
+            title: '',
+            description: ''
+          },{
+            title: '',
+            description: ''
+          },{
+            title: '',
+            description: ''
+          },{
+            title: '',
+            description: ''
+          }]
+        },{
+        title: '',
+        description: '',
+        abilities: [{
+            title: '',
+            description: ''
+          },{
+            title: '',
+            description: ''
+          },{
+            title: '',
+            description: ''
+          },{
+            title: '',
+            description: ''
+          }]
+        }] 
     },{
-      name: 'Druid'  
+      name: 'Druid',
+      hitPoints: [{
+          title: 'Hit Dice',
+          description: ''
+        },{
+          title: 'Hit Dice at 1st Level',
+          description: ''
+        },{
+          title: 'Hit Points at Higher Levels',
+          description: ''
+        }],
+      proficiencies:[{
+          title: 'Armor',
+          description: ''
+        },{
+          title: 'Weapons',
+          description: ''
+        },{
+          title: 'Saving Throws',
+          description: ''
+        },{
+          title: 'Skills',
+          description: ''
+        }],
+      abilities: [{
+          title: '',
+          level: '',
+          description: ''
+        },{
+          title: '',
+          level: '',
+          description: ''
+        },{
+          title: '',
+          level: '',
+          description: ''
+        },{
+          title: '',
+          level: '',
+          description: ''
+        },{
+          title: '',
+          level: '',
+          description: ''
+        },{
+          title: '',
+          level: '',
+          description: ''
+        },{
+          title: '',
+          level: '',
+          description: ''
+        },{
+          title: '',
+          level: '',
+          description: ''
+        },{
+          title: '',
+          level: '',
+          description: ''
+        },{
+          title: '',
+          level: '',
+          description: ''
+        },{
+          title: '',
+          level: '',
+          description: ''
+        },{
+          title: '',
+          level: '',
+          description: ''
+        },{
+          title: '',
+          level: '',
+          description: ''
+        },{
+          title: '',
+          level: '',
+          description: ''
+        }],
+      specializations:[{
+        title: '',
+        description: '',
+        abilities: [{
+            title: '',
+            description: ''
+          },{
+            title: '',
+            description: ''
+          },{
+            title: '',
+            description: ''
+          },{
+            title: '',
+            description: ''
+          }]
+        },{
+        title: '',
+        description: '',
+        abilities: [{
+            title: '',
+            description: ''
+          },{
+            title: '',
+            description: ''
+          },{
+            title: '',
+            description: ''
+          },{
+            title: '',
+            description: ''
+          }]
+        }],
+      hitPoints: [{
+          title: 'Hit Dice',
+          description: ''
+        },{
+          title: 'Hit Dice at 1st Level',
+          description: ''
+        },{
+          title: 'Hit Points at Higher Levels',
+          description: ''
+        }],
+      proficiencies:[{
+          title: 'Armor',
+          description: ''
+        },{
+          title: 'Weapons',
+          description: ''
+        },{
+          title: 'Saving Throws',
+          description: ''
+        },{
+          title: 'Skills',
+          description: ''
+        }],
+      abilities: [{
+          title: '',
+          level: '',
+          description: ''
+        },{
+          title: '',
+          level: '',
+          description: ''
+        },{
+          title: '',
+          level: '',
+          description: ''
+        },{
+          title: '',
+          level: '',
+          description: ''
+        },{
+          title: '',
+          level: '',
+          description: ''
+        },{
+          title: '',
+          level: '',
+          description: ''
+        },{
+          title: '',
+          level: '',
+          description: ''
+        },{
+          title: '',
+          level: '',
+          description: ''
+        },{
+          title: '',
+          level: '',
+          description: ''
+        },{
+          title: '',
+          level: '',
+          description: ''
+        },{
+          title: '',
+          level: '',
+          description: ''
+        },{
+          title: '',
+          level: '',
+          description: ''
+        },{
+          title: '',
+          level: '',
+          description: ''
+        },{
+          title: '',
+          level: '',
+          description: ''
+        }],
+      specializations:[{
+        title: '',
+        description: '',
+        abilities: [{
+            title: '',
+            description: ''
+          },{
+            title: '',
+            description: ''
+          },{
+            title: '',
+            description: ''
+          },{
+            title: '',
+            description: ''
+          }]
+        },{
+        title: '',
+        description: '',
+        abilities: [{
+            title: '',
+            description: ''
+          },{
+            title: '',
+            description: ''
+          },{
+            title: '',
+            description: ''
+          },{
+            title: '',
+            description: ''
+          }]
+        }],
+      hitPoints: [{
+          title: 'Hit Dice',
+          description: ''
+        },{
+          title: 'Hit Dice at 1st Level',
+          description: ''
+        },{
+          title: 'Hit Points at Higher Levels',
+          description: ''
+        }],
+      proficiencies:[{
+          title: 'Armor',
+          description: ''
+        },{
+          title: 'Weapons',
+          description: ''
+        },{
+          title: 'Saving Throws',
+          description: ''
+        },{
+          title: 'Skills',
+          description: ''
+        }],
+      abilities: [{
+          title: '',
+          level: '',
+          description: ''
+        },{
+          title: '',
+          level: '',
+          description: ''
+        },{
+          title: '',
+          level: '',
+          description: ''
+        },{
+          title: '',
+          level: '',
+          description: ''
+        },{
+          title: '',
+          level: '',
+          description: ''
+        },{
+          title: '',
+          level: '',
+          description: ''
+        },{
+          title: '',
+          level: '',
+          description: ''
+        },{
+          title: '',
+          level: '',
+          description: ''
+        },{
+          title: '',
+          level: '',
+          description: ''
+        },{
+          title: '',
+          level: '',
+          description: ''
+        },{
+          title: '',
+          level: '',
+          description: ''
+        },{
+          title: '',
+          level: '',
+          description: ''
+        },{
+          title: '',
+          level: '',
+          description: ''
+        },{
+          title: '',
+          level: '',
+          description: ''
+        }],
+      specializations:[{
+        title: '',
+        description: '',
+        abilities: [{
+            title: '',
+            description: ''
+          },{
+            title: '',
+            description: ''
+          },{
+            title: '',
+            description: ''
+          },{
+            title: '',
+            description: ''
+          }]
+        },{
+        title: '',
+        description: '',
+        abilities: [{
+            title: '',
+            description: ''
+          },{
+            title: '',
+            description: ''
+          },{
+            title: '',
+            description: ''
+          },{
+            title: '',
+            description: ''
+          }]
+        }]
     },{
-      name: 'Fighter'  
+      name: 'Fighter',
+      hitPoints: [{
+          title: 'Hit Dice',
+          description: ''
+        },{
+          title: 'Hit Dice at 1st Level',
+          description: ''
+        },{
+          title: 'Hit Points at Higher Levels',
+          description: ''
+        }],
+      proficiencies:[{
+          title: 'Armor',
+          description: ''
+        },{
+          title: 'Weapons',
+          description: ''
+        },{
+          title: 'Saving Throws',
+          description: ''
+        },{
+          title: 'Skills',
+          description: ''
+        }],
+      abilities: [{
+          title: '',
+          level: '',
+          description: ''
+        },{
+          title: '',
+          level: '',
+          description: ''
+        },{
+          title: '',
+          level: '',
+          description: ''
+        },{
+          title: '',
+          level: '',
+          description: ''
+        },{
+          title: '',
+          level: '',
+          description: ''
+        },{
+          title: '',
+          level: '',
+          description: ''
+        },{
+          title: '',
+          level: '',
+          description: ''
+        },{
+          title: '',
+          level: '',
+          description: ''
+        },{
+          title: '',
+          level: '',
+          description: ''
+        },{
+          title: '',
+          level: '',
+          description: ''
+        },{
+          title: '',
+          level: '',
+          description: ''
+        },{
+          title: '',
+          level: '',
+          description: ''
+        },{
+          title: '',
+          level: '',
+          description: ''
+        },{
+          title: '',
+          level: '',
+          description: ''
+        }],
+      specializations:[{
+        title: '',
+        description: '',
+        abilities: [{
+            title: '',
+            description: ''
+          },{
+            title: '',
+            description: ''
+          },{
+            title: '',
+            description: ''
+          },{
+            title: '',
+            description: ''
+          }]
+        },{
+        title: '',
+        description: '',
+        abilities: [{
+            title: '',
+            description: ''
+          },{
+            title: '',
+            description: ''
+          },{
+            title: '',
+            description: ''
+          },{
+            title: '',
+            description: ''
+          }]
+        }] 
     },{
-      name: 'Monk'  
+      name: 'Monk',
+      hitPoints: [{
+          title: 'Hit Dice',
+          description: ''
+        },{
+          title: 'Hit Dice at 1st Level',
+          description: ''
+        },{
+          title: 'Hit Points at Higher Levels',
+          description: ''
+        }],
+      proficiencies:[{
+          title: 'Armor',
+          description: ''
+        },{
+          title: 'Weapons',
+          description: ''
+        },{
+          title: 'Saving Throws',
+          description: ''
+        },{
+          title: 'Skills',
+          description: ''
+        }],
+      abilities: [{
+          title: '',
+          level: '',
+          description: ''
+        },{
+          title: '',
+          level: '',
+          description: ''
+        },{
+          title: '',
+          level: '',
+          description: ''
+        },{
+          title: '',
+          level: '',
+          description: ''
+        },{
+          title: '',
+          level: '',
+          description: ''
+        },{
+          title: '',
+          level: '',
+          description: ''
+        },{
+          title: '',
+          level: '',
+          description: ''
+        },{
+          title: '',
+          level: '',
+          description: ''
+        },{
+          title: '',
+          level: '',
+          description: ''
+        },{
+          title: '',
+          level: '',
+          description: ''
+        },{
+          title: '',
+          level: '',
+          description: ''
+        },{
+          title: '',
+          level: '',
+          description: ''
+        },{
+          title: '',
+          level: '',
+          description: ''
+        },{
+          title: '',
+          level: '',
+          description: ''
+        }],
+      specializations:[{
+        title: '',
+        description: '',
+        abilities: [{
+            title: '',
+            description: ''
+          },{
+            title: '',
+            description: ''
+          },{
+            title: '',
+            description: ''
+          },{
+            title: '',
+            description: ''
+          }]
+        },{
+        title: '',
+        description: '',
+        abilities: [{
+            title: '',
+            description: ''
+          },{
+            title: '',
+            description: ''
+          },{
+            title: '',
+            description: ''
+          },{
+            title: '',
+            description: ''
+          }]
+        }]
     },{
-      name: 'Paladin'  
+      name: 'Paladin',
+      hitPoints: [{
+          title: 'Hit Dice',
+          description: ''
+        },{
+          title: 'Hit Dice at 1st Level',
+          description: ''
+        },{
+          title: 'Hit Points at Higher Levels',
+          description: ''
+        }],
+      proficiencies:[{
+          title: 'Armor',
+          description: ''
+        },{
+          title: 'Weapons',
+          description: ''
+        },{
+          title: 'Saving Throws',
+          description: ''
+        },{
+          title: 'Skills',
+          description: ''
+        }],
+      abilities: [{
+          title: '',
+          level: '',
+          description: ''
+        },{
+          title: '',
+          level: '',
+          description: ''
+        },{
+          title: '',
+          level: '',
+          description: ''
+        },{
+          title: '',
+          level: '',
+          description: ''
+        },{
+          title: '',
+          level: '',
+          description: ''
+        },{
+          title: '',
+          level: '',
+          description: ''
+        },{
+          title: '',
+          level: '',
+          description: ''
+        },{
+          title: '',
+          level: '',
+          description: ''
+        },{
+          title: '',
+          level: '',
+          description: ''
+        },{
+          title: '',
+          level: '',
+          description: ''
+        },{
+          title: '',
+          level: '',
+          description: ''
+        },{
+          title: '',
+          level: '',
+          description: ''
+        },{
+          title: '',
+          level: '',
+          description: ''
+        },{
+          title: '',
+          level: '',
+          description: ''
+        }],
+      specializations:[{
+        title: '',
+        description: '',
+        abilities: [{
+            title: '',
+            description: ''
+          },{
+            title: '',
+            description: ''
+          },{
+            title: '',
+            description: ''
+          },{
+            title: '',
+            description: ''
+          }]
+        },{
+        title: '',
+        description: '',
+        abilities: [{
+            title: '',
+            description: ''
+          },{
+            title: '',
+            description: ''
+          },{
+            title: '',
+            description: ''
+          },{
+            title: '',
+            description: ''
+          }]
+        }]
     },{
-      name: 'Ranger'  
+      name: 'Ranger',
+      hitPoints: [{
+          title: 'Hit Dice',
+          description: ''
+        },{
+          title: 'Hit Dice at 1st Level',
+          description: ''
+        },{
+          title: 'Hit Points at Higher Levels',
+          description: ''
+        }],
+      proficiencies:[{
+          title: 'Armor',
+          description: ''
+        },{
+          title: 'Weapons',
+          description: ''
+        },{
+          title: 'Saving Throws',
+          description: ''
+        },{
+          title: 'Skills',
+          description: ''
+        }],
+      abilities: [{
+          title: '',
+          level: '',
+          description: ''
+        },{
+          title: '',
+          level: '',
+          description: ''
+        },{
+          title: '',
+          level: '',
+          description: ''
+        },{
+          title: '',
+          level: '',
+          description: ''
+        },{
+          title: '',
+          level: '',
+          description: ''
+        },{
+          title: '',
+          level: '',
+          description: ''
+        },{
+          title: '',
+          level: '',
+          description: ''
+        },{
+          title: '',
+          level: '',
+          description: ''
+        },{
+          title: '',
+          level: '',
+          description: ''
+        },{
+          title: '',
+          level: '',
+          description: ''
+        },{
+          title: '',
+          level: '',
+          description: ''
+        },{
+          title: '',
+          level: '',
+          description: ''
+        },{
+          title: '',
+          level: '',
+          description: ''
+        },{
+          title: '',
+          level: '',
+          description: ''
+        }],
+      specializations:[{
+        title: '',
+        description: '',
+        abilities: [{
+            title: '',
+            description: ''
+          },{
+            title: '',
+            description: ''
+          },{
+            title: '',
+            description: ''
+          },{
+            title: '',
+            description: ''
+          }]
+        },{
+        title: '',
+        description: '',
+        abilities: [{
+            title: '',
+            description: ''
+          },{
+            title: '',
+            description: ''
+          },{
+            title: '',
+            description: ''
+          },{
+            title: '',
+            description: ''
+          }]
+        }] 
     },{
-      name: 'Rogue'  
+      name: 'Rogue',
+      hitPoints: [{
+          title: 'Hit Dice',
+          description: ''
+        },{
+          title: 'Hit Dice at 1st Level',
+          description: ''
+        },{
+          title: 'Hit Points at Higher Levels',
+          description: ''
+        }],
+      proficiencies:[{
+          title: 'Armor',
+          description: ''
+        },{
+          title: 'Weapons',
+          description: ''
+        },{
+          title: 'Saving Throws',
+          description: ''
+        },{
+          title: 'Skills',
+          description: ''
+        }],
+      abilities: [{
+          title: '',
+          level: '',
+          description: ''
+        },{
+          title: '',
+          level: '',
+          description: ''
+        },{
+          title: '',
+          level: '',
+          description: ''
+        },{
+          title: '',
+          level: '',
+          description: ''
+        },{
+          title: '',
+          level: '',
+          description: ''
+        },{
+          title: '',
+          level: '',
+          description: ''
+        },{
+          title: '',
+          level: '',
+          description: ''
+        },{
+          title: '',
+          level: '',
+          description: ''
+        },{
+          title: '',
+          level: '',
+          description: ''
+        },{
+          title: '',
+          level: '',
+          description: ''
+        },{
+          title: '',
+          level: '',
+          description: ''
+        },{
+          title: '',
+          level: '',
+          description: ''
+        },{
+          title: '',
+          level: '',
+          description: ''
+        },{
+          title: '',
+          level: '',
+          description: ''
+        }],
+      specializations:[{
+        title: '',
+        description: '',
+        abilities: [{
+            title: '',
+            description: ''
+          },{
+            title: '',
+            description: ''
+          },{
+            title: '',
+            description: ''
+          },{
+            title: '',
+            description: ''
+          }]
+        },{
+        title: '',
+        description: '',
+        abilities: [{
+            title: '',
+            description: ''
+          },{
+            title: '',
+            description: ''
+          },{
+            title: '',
+            description: ''
+          },{
+            title: '',
+            description: ''
+          }]
+        }]
     },{
-      name: 'Sorcerer'  
+      name: 'Sorcerer',
+      hitPoints: [{
+          title: 'Hit Dice',
+          description: ''
+        },{
+          title: 'Hit Dice at 1st Level',
+          description: ''
+        },{
+          title: 'Hit Points at Higher Levels',
+          description: ''
+        }],
+      proficiencies:[{
+          title: 'Armor',
+          description: ''
+        },{
+          title: 'Weapons',
+          description: ''
+        },{
+          title: 'Saving Throws',
+          description: ''
+        },{
+          title: 'Skills',
+          description: ''
+        }],
+      abilities: [{
+          title: '',
+          level: '',
+          description: ''
+        },{
+          title: '',
+          level: '',
+          description: ''
+        },{
+          title: '',
+          level: '',
+          description: ''
+        },{
+          title: '',
+          level: '',
+          description: ''
+        },{
+          title: '',
+          level: '',
+          description: ''
+        },{
+          title: '',
+          level: '',
+          description: ''
+        },{
+          title: '',
+          level: '',
+          description: ''
+        },{
+          title: '',
+          level: '',
+          description: ''
+        },{
+          title: '',
+          level: '',
+          description: ''
+        },{
+          title: '',
+          level: '',
+          description: ''
+        },{
+          title: '',
+          level: '',
+          description: ''
+        },{
+          title: '',
+          level: '',
+          description: ''
+        },{
+          title: '',
+          level: '',
+          description: ''
+        },{
+          title: '',
+          level: '',
+          description: ''
+        }],
+      specializations:[{
+        title: '',
+        description: '',
+        abilities: [{
+            title: '',
+            description: ''
+          },{
+            title: '',
+            description: ''
+          },{
+            title: '',
+            description: ''
+          },{
+            title: '',
+            description: ''
+          }]
+        },{
+        title: '',
+        description: '',
+        abilities: [{
+            title: '',
+            description: ''
+          },{
+            title: '',
+            description: ''
+          },{
+            title: '',
+            description: ''
+          },{
+            title: '',
+            description: ''
+          }]
+        }] 
     },{
-      name: 'Warlock'  
+      name: 'Warlock',
+      hitPoints: [{
+          title: 'Hit Dice',
+          description: ''
+        },{
+          title: 'Hit Dice at 1st Level',
+          description: ''
+        },{
+          title: 'Hit Points at Higher Levels',
+          description: ''
+        }],
+      proficiencies:[{
+          title: 'Armor',
+          description: ''
+        },{
+          title: 'Weapons',
+          description: ''
+        },{
+          title: 'Saving Throws',
+          description: ''
+        },{
+          title: 'Skills',
+          description: ''
+        }],
+      abilities: [{
+          title: '',
+          level: '',
+          description: ''
+        },{
+          title: '',
+          level: '',
+          description: ''
+        },{
+          title: '',
+          level: '',
+          description: ''
+        },{
+          title: '',
+          level: '',
+          description: ''
+        },{
+          title: '',
+          level: '',
+          description: ''
+        },{
+          title: '',
+          level: '',
+          description: ''
+        },{
+          title: '',
+          level: '',
+          description: ''
+        },{
+          title: '',
+          level: '',
+          description: ''
+        },{
+          title: '',
+          level: '',
+          description: ''
+        },{
+          title: '',
+          level: '',
+          description: ''
+        },{
+          title: '',
+          level: '',
+          description: ''
+        },{
+          title: '',
+          level: '',
+          description: ''
+        },{
+          title: '',
+          level: '',
+          description: ''
+        },{
+          title: '',
+          level: '',
+          description: ''
+        }],
+      specializations:[{
+        title: '',
+        description: '',
+        abilities: [{
+            title: '',
+            description: ''
+          },{
+            title: '',
+            description: ''
+          },{
+            title: '',
+            description: ''
+          },{
+            title: '',
+            description: ''
+          }]
+        },{
+        title: '',
+        description: '',
+        abilities: [{
+            title: '',
+            description: ''
+          },{
+            title: '',
+            description: ''
+          },{
+            title: '',
+            description: ''
+          },{
+            title: '',
+            description: ''
+          }]
+        }]
     },{
-      name: 'Wizard'  
+      name: 'Wizard',
+      hitPoints: [{
+          title: 'Hit Dice',
+          description: ''
+        },{
+          title: 'Hit Dice at 1st Level',
+          description: ''
+        },{
+          title: 'Hit Points at Higher Levels',
+          description: ''
+        }],
+      proficiencies:[{
+          title: 'Armor',
+          description: ''
+        },{
+          title: 'Weapons',
+          description: ''
+        },{
+          title: 'Saving Throws',
+          description: ''
+        },{
+          title: 'Skills',
+          description: ''
+        }],
+      abilities: [{
+          title: '',
+          level: '',
+          description: ''
+        },{
+          title: '',
+          level: '',
+          description: ''
+        },{
+          title: '',
+          level: '',
+          description: ''
+        },{
+          title: '',
+          level: '',
+          description: ''
+        },{
+          title: '',
+          level: '',
+          description: ''
+        },{
+          title: '',
+          level: '',
+          description: ''
+        },{
+          title: '',
+          level: '',
+          description: ''
+        },{
+          title: '',
+          level: '',
+          description: ''
+        },{
+          title: '',
+          level: '',
+          description: ''
+        },{
+          title: '',
+          level: '',
+          description: ''
+        },{
+          title: '',
+          level: '',
+          description: ''
+        },{
+          title: '',
+          level: '',
+          description: ''
+        },{
+          title: '',
+          level: '',
+          description: ''
+        },{
+          title: '',
+          level: '',
+          description: ''
+        }],
+      specializations:[{
+        title: '',
+        description: '',
+        abilities: [{
+            title: '',
+            description: ''
+          },{
+            title: '',
+            description: ''
+          },{
+            title: '',
+            description: ''
+          },{
+            title: '',
+            description: ''
+          }]
+        },{
+        title: '',
+        description: '',
+        abilities: [{
+            title: '',
+            description: ''
+          },{
+            title: '',
+            description: ''
+          },{
+            title: '',
+            description: ''
+          },{
+            title: '',
+            description: ''
+          }]
+        }]
     }];
 });
   

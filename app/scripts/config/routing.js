@@ -1,3 +1,4 @@
+'use strict';
 angular.module('dCraftApp')
 .config(['$routeProvider', 'RouteAnimationManagerProvider', function($routeProvider, RouteAnimationManagerProvider) {
     $routeProvider
@@ -315,4 +316,4 @@ angular.module('dCraftApp')
       });
       
       RouteAnimationManagerProvider.setDefaultAnimation('fade');
-  }])
+  }]);

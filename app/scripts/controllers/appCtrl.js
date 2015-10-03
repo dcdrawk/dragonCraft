@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('dCraftApp')
-.controller('AppCtrl', function($scope, $rootScope, $location, $timeout, $mdSidenav, $mdUtil, $log, $mdDialog, $anchorScroll, transitionSrv) {
+.controller('AppCtrl', function($scope, $rootScope, $location, $timeout, $mdSidenav, $mdUtil, $log, $mdDialog, $anchorScroll) {
     /**
      * Build handler to open/close a SideNav; when animation finishes
      * report completion in console

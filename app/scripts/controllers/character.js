@@ -20,6 +20,7 @@ angular.module('dCraftApp')
 //      });
     //console.log(ClassSrv.classes);
     //Define the DB
+    console.log(RaceSrv.races);
     var db = new Dexie("test-db-2");
     db.version(1).stores({
       charClasses: 'name',
@@ -52,7 +53,7 @@ angular.module('dCraftApp')
         //$rootScope.updateSubrace(race);
       }).catch(function (error) {
       // Handle error
-        console.log(error);
+        //console.log(error);
       });
       db.close();
     }

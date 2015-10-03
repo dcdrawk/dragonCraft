@@ -8,6 +8,7 @@
  *
  * Main module of the application.
  */
+/* jshint ignore:start */
 angular
   .module('dCraftApp', [
     'ngAnimate',
@@ -20,9 +21,8 @@ angular
     'ngMessages',
     'angularScreenfull',
     'ngRouteAnimationManager'
-  ])
+  ])  
   
-  /* jshint ignore:start */
   .run(function($rootScope, $location, transitionSrv){
     console.log('running!');
     
@@ -47,7 +47,6 @@ angular
 //    });
     
     $rootScope.$on('$locationChangeSuccess', function(event, current, next) {
-      console.log('success!!!');
       if($location.path() == '/'){
         $rootScope.home = true;
       } else {
