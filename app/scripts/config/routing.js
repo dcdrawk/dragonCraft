@@ -13,6 +13,17 @@ angular.module('dCraftApp')
           }
         }
       })
+      .when('/test', {
+        templateUrl: 'views/test.html',
+        controller: 'TestCtrl',
+        controllerAs: 'test',
+        data: {
+          animationConf: {
+            newcharacter: 'slide-down',
+            character: 'slide-right',
+          }
+        }
+      })
       .when('/about', {
         templateUrl: 'views/about.html',
         controller: 'AboutCtrl',
