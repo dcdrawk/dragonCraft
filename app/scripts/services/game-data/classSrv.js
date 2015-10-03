@@ -1149,42 +1149,73 @@ angular.module('dCraftApp').service( 'ClassSrv', function(){
       name: 'Ranger',
       hitPoints: [{
           title: 'Hit Dice',
-          description: ''
+          description: '1d 10 per ranger level'
         },{
           title: 'Hit Dice at 1st Level',
-          description: ''
+          description: ' 10 + your Constitution modifier '
         },{
           title: 'Hit Points at Higher Levels',
-          description: ''
+          description: ' 1d 10 (or 6) + your Constitution modifier per ranger level after 1st'
         }],
       proficiencies:[{
           title: 'Armor',
-          description: ''
+          description: 'light armor, medium armor, shields '
         },{
           title: 'Weapons',
-          description: ''
+          description: 'Simple weapons, martial weapons '
         },{
           title: 'Tools',
           description: ''
         },{
           title: 'Saving Throws',
-          description: ''
+          description: 'Strength, Dexterity'
         },{
           title: 'Skills',
-          description: ''
+          description: 'Choose three from Animal Handling, Athletics, Insight, Investigation, Nature, Perception, Stealth, and Survival
+'
         }],
       abilities: [{
-          title: '',
+          title: 'Favored Enemy',
           level: '',
-          description: ''
+          description: '<p></p><p></p><p></p>'
         },{
-          title: '',
+          title: 'Natural Explorer',
           level: '',
-          description: ''
+          description: '<p></p><p></p><ul><li></li><li></li><li></li><li></li><li></li><li></li></ul><p></p>',
+          options:[{
+            title:'Actic'
+          },{
+            title:'Coast'
+          },{
+            title:'Desert'
+          },{
+            title:'Forest'
+          },{
+            title:'Grassland'
+          },{
+            title:'Mountain'
+          },{
+            title:'Swamp',
+          },{
+            title:'Underdark',
+          }]
         },{
-          title: '',
+          title: 'Fighting Style',
           level: '',
-          description: ''
+          description: '',
+          options:[{
+            title:'Arhcery',
+            description'',
+          },{
+            title:'Defence',
+            description'',
+          },{
+            title:'Dueling',
+            description'',
+          },{
+            title:'Two-Weapon Fighting',
+            description'',
+          }]
         },{
           title: '',
           level: '',
