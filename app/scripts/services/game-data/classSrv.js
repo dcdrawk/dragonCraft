@@ -20,10 +20,10 @@ angular.module('dCraftApp').service( 'ClassSrv', function(){
         }],
       proficiencies:[{
           title: 'Armor',
-          description: ' Light armor,medium armor,shields'
+          description: ' Light armor, medium armor, shields'
         },{
           title: 'Weapons',
-          description: 'Simple weapons,martial weapons'
+          description: 'Simple weapons, martial weapons'
         },{
           title: 'Tools',
           description: ''
@@ -246,114 +246,98 @@ angular.module('dCraftApp').service( 'ClassSrv', function(){
     },{
       name: 'Cleric',hitPoints: [{
           title: 'Hit Dice',
-          description: ''
+          description: '1d8 per cleric level '
         },{
           title: 'Hit Dice at 1st Level',
-          description: ''
+          description: '8 + your Constitution modifier '
         },{
           title: 'Hit Points at Higher Levels',
-          description: ''
+          description: '1d8 (or 5) + your Constitution modifier per cleric level after 1st'
         }],
       proficiencies:[{
           title: 'Armor',
-          description: ''
+          description: 'light armor, medium armor, shields '
         },{
           title: 'Weapons',
+          description: 'simple weapons'
+        },{
+          title: 'Tools',
           description: ''
         },{
           title: 'Saving Throws',
-          description: ''
+          description: 'Wisdom, Charisma '
         },{
           title: 'Skills',
-          description: ''
+          description: 'Choose two from History, Insight, Medicine, Persuasion, and Religion'
         }],
       abilities: [{
-          title: '',
-          level: '',
-          description: ''
+          title: 'Divine Domain',
+          level: '0',
+          description: '<p>Choose one domain related to your deity: Knowledge, Life, Light, Nature, Tempest, Trickery, or War. Each domain is detailed at the end of the class description, and each one provides examples of gods associated with it. Your choice grants you domain spells and other features when you choose it at 1st level. It also grants you additional ways to use Channel Divinity when you gain that feature at 2nd level, and additional benefits at 6th, 8th, and 17th levels.</p><p>Each domain has a list of spells—its domain spells— that you gain at the cleric levels noted in the domain description. Once you gain a domain spell, you always have it prepared, and it doesn’t count against the number of spells you can prepare each day.</p><p>If you have a domain spell that doesn’t appear on the cleric spell list, the spell is nonetheless a cleric spell for you.</p>'
         },{
-          title: '',
-          level: '',
-          description: ''
+          title: 'Channel Divinity',
+          level: '2',
+          description: 'At 2nd level, you gain the ability to channel divine energy directly from your deity, using that energy to fuel magical effects. You start with two such effects: Turn Undead and an effect determined by your domain. Some domains grant you additional effects as you advance in levels, as noted in the domain description. When you use your Channel Divinity, you choose which effect to create. You must then finish a short or long rest to use your Channel Divinity again. Som e Channel Divinity effects require saving throws. When you use such an effect from this class, the DC equals your cleric spell save DC. Beginning at 6th level, you can use your Channel Divinity twice between rests, and beginning at 18th level, you can use it three times between rests. When you finish a short or long rest, you regain your expended uses.
+'
         },{
-          title: '',
-          level: '',
-          description: ''
+          title: 'Channel Divinity: Turn Undead',
+          level: '4',
+          description: '<p>As an action, you present your holy symbol and speak a prayer censuring the undead. Each undead that can see or hear you within 30 feet of you must make a W isdom saving throw. If the creature fails its saving throw, it is turned for 1 minute or until it takes any damage.</p><p>A turned creature must spend its turns trying to move as far away from you as it can, and it can’t willingly move to a space within 30 feet of you. It also can’t take reactions. For its action, it can use only the Dash action or try to escape from an effect that prevents it from moving. If there’s nowhere to move, the creature can use the Dodge action.</p>'
         },{
-          title: '',
-          level: '',
-          description: ''
+          title: 'Ability Score Improvement',
+          level: '4',
+          description: 'When you reach 4th level, and again at 8th, 12th, 16th, and 19th level, you can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can’t increase an ability score above 20 using this feature.'
         },{
-          title: '',
-          level: '',
-          description: ''
+          title: 'Destroy Undead',
+          level: '5',
+          description: 'Starting at 5th level, when an undead fails its saving throw against your Turn Undead feature, the creature is instantly destroyed if its challenge rating is at or below a certain threshold, as shown in the Destroy Undead table.'
         },{
-          title: '',
-          level: '',
-          description: ''
-        },{
-          title: '',
-          level: '',
-          description: ''
-        },{
-          title: '',
-          level: '',
-          description: ''
-        },{
-          title: '',
-          level: '',
-          description: ''
-        },{
-          title: '',
-          level: '',
-          description: ''
-        },{
-          title: '',
-          level: '',
-          description: ''
-        },{
-          title: '',
-          level: '',
-          description: ''
-        },{
-          title: '',
-          level: '',
-          description: ''
-        },{
-          title: '',
-          level: '',
-          description: ''
+          title: 'Divine Intervention',
+          level: '10',
+          description: '<p>Beginning at 10th level, you can call on your deity to intervene on your behalf when your need is great.</p><p>Imploring your deity’s aid requires you to use your action. Describe the assistance you seek, and roll percentile dice. If you roll a number equal to or lower than your cleric level, your deity intervenes. The DM chooses the nature of the intervention; the effect of any cleric spell or cleric domain spell would be appropriate.</p><p>If your deity intervenes, you can’t use this feature again for 7 days. Otherwise, you can use it again after you finish a long rest.</p><p>At 20th level, your call for intervention succeeds automatically, no roll required.</p>'
         }],
       specializations:[{
-        title: '',
-        description: '',
+        title: 'Knowledge Domain',
+        description: 'The gods of knowledge—including Oghma, Boccob, Gilean, Aureon, and Thoth—value learning and understanding above all. Som e teach that knowledge is to be gathered and shared in libraries and universities, or promote the practical knowledge of craft and invention. Som e deities hoard knowledge and keep its secrets to themselves. And som e promise their followers that they will gain tremendous power if they unlock the secrets of the multiverse. Followers of these gods study esoteric lore, collect old tomes, delve into the secret places of the earth, and learn all they can. Som e gods of knowledge promote the practical knowledge of craft and invention, including smith deities like Gond, Reorx, Onatar, Moradin, Hephaestus, and Goibhniu.',
         abilities: [{
-            title: '',
-            description: ''
+            title: 'Blessings of Knowledge',
+            level: '1',
+            description: '<p>At 1st level, you learn two languages of your choice. You also becom e proficient in your choice of two of the following skills: Arcana, History, Nature, or Religion.</p><p>Your proficiency bonus is doubled for any ability check you make that uses either of those skills.</p>'
           },{
-            title: '',
-            description: ''
+            title: 'Channel Divinity: Knowledge of the Ages',
+            level: '2',
+            description: 'Starting at 2nd level, you can use your Channel Divinity to tap into a divine well of knowledge. As an action, you choose one skill or tool. For 10 minutes, you have proficiency with the chosen skill or tool.'
           },{
-            title: '',
-            description: ''
+            title: 'Channel Divinity: Read Thoughts',
+            level: '6',
+            description: '<p>At 6th level, you can use your Channel Divinity to read a creature’s thoughts. You can then use your access to the creature’s mind to command it.</p><p>As an action, choose one creature that you can see within 60 feet of you. That creature must make a W isdom saving throw. If the creature succeeds on the saving throw, you can’t use this feature on it again until you finish a long rest.</p><p>If the creature fails its save, you can read its surface thoughts (those foremost in its mind, reflecting its current emotions and what it is actively thinking about) when it is within 60 feet of you. This effect lasts for 1 minute.</p><p>During that time, you can use your action to end this effect and cast the suggestion spell on the creature without expending a spell slot. The target automatically fails its saving throw against the spell.</p>'
           },{
-            title: '',
-            description: ''
+            title: 'Potent Spellcasting',
+            level: '8',
+            description: 'Starting at 8th level, you add your W isdom modifier to the damage you deal with any cleric cantrip.'
+          },{
+            title: 'Visions of the Past',
+            level: '8',
+            description: '<p>Starting at 17th level, you can call up visions of the past that relate to an object you hold or your immediate surroundings. You spend at least 1 minute in meditation and prayer, then receive dreamlike, shadowy glimpses of recent events. You can meditate in this way for a number of minutes equal to your Wisdom score and must maintain concentration during that time, as if you were casting a spell.</p><p>Once you use this feature, you can’t use it again until you finish a short or long rest.<p>'
           }]
         },{
         title: '',
         description: '',
         abilities: [{
             title: '',
+            level: '',
             description: ''
           },{
             title: '',
+            level: '',
             description: ''
           },{
             title: '',
+            level: '',
             description: ''
           },{
             title: '',
+            level: '',
             description: ''
           }]
         }] 
@@ -376,117 +360,7 @@ angular.module('dCraftApp').service( 'ClassSrv', function(){
           title: 'Weapons',
           description: ''
         },{
-          title: 'Saving Throws',
-          description: ''
-        },{
-          title: 'Skills',
-          description: ''
-        }],
-      abilities: [{
-          title: '',
-          level: '',
-          description: ''
-        },{
-          title: '',
-          level: '',
-          description: ''
-        },{
-          title: '',
-          level: '',
-          description: ''
-        },{
-          title: '',
-          level: '',
-          description: ''
-        },{
-          title: '',
-          level: '',
-          description: ''
-        },{
-          title: '',
-          level: '',
-          description: ''
-        },{
-          title: '',
-          level: '',
-          description: ''
-        },{
-          title: '',
-          level: '',
-          description: ''
-        },{
-          title: '',
-          level: '',
-          description: ''
-        },{
-          title: '',
-          level: '',
-          description: ''
-        },{
-          title: '',
-          level: '',
-          description: ''
-        },{
-          title: '',
-          level: '',
-          description: ''
-        },{
-          title: '',
-          level: '',
-          description: ''
-        },{
-          title: '',
-          level: '',
-          description: ''
-        }],
-      specializations:[{
-        title: '',
-        description: '',
-        abilities: [{
-            title: '',
-            description: ''
-          },{
-            title: '',
-            description: ''
-          },{
-            title: '',
-            description: ''
-          },{
-            title: '',
-            description: ''
-          }]
-        },{
-        title: '',
-        description: '',
-        abilities: [{
-            title: '',
-            description: ''
-          },{
-            title: '',
-            description: ''
-          },{
-            title: '',
-            description: ''
-          },{
-            title: '',
-            description: ''
-          }]
-        }],
-      hitPoints: [{
-          title: 'Hit Dice',
-          description: ''
-        },{
-          title: 'Hit Dice at 1st Level',
-          description: ''
-        },{
-          title: 'Hit Points at Higher Levels',
-          description: ''
-        }],
-      proficiencies:[{
-          title: 'Armor',
-          description: ''
-        },{
-          title: 'Weapons',
+          title: 'Tools',
           description: ''
         },{
           title: 'Saving Throws',
@@ -600,6 +474,133 @@ angular.module('dCraftApp').service( 'ClassSrv', function(){
           description: ''
         },{
           title: 'Weapons',
+          description: ''
+        },{
+          title: 'Tools',
+          description: ''
+        },{
+          title: 'Saving Throws',
+          description: ''
+        },{
+          title: 'Skills',
+          description: ''
+        }],
+      abilities: [{
+          title: '',
+          level: '',
+          description: ''
+        },{
+          title: '',
+          level: '',
+          description: ''
+        },{
+          title: '',
+          level: '',
+          description: ''
+        },{
+          title: '',
+          level: '',
+          description: ''
+        },{
+          title: '',
+          level: '',
+          description: ''
+        },{
+          title: '',
+          level: '',
+          description: ''
+        },{
+          title: '',
+          level: '',
+          description: ''
+        },{
+          title: '',
+          level: '',
+          description: ''
+        },{
+          title: '',
+          level: '',
+          description: ''
+        },{
+          title: '',
+          level: '',
+          description: ''
+        },{
+          title: '',
+          level: '',
+          description: ''
+        },{
+          title: '',
+          level: '',
+          description: ''
+        },{
+          title: '',
+          level: '',
+          description: ''
+        },{
+          title: '',
+          level: '',
+          description: ''
+        }],
+      specializations:[{
+        title: '',
+        description: '',
+        abilities: [{
+            title: '',
+            level: '',
+            description: ''
+          },{
+            title: '',
+            level: '',
+            description: ''
+          },{
+            title: '',
+            level: '',
+            description: ''
+          },{
+            title: '',
+            level: '',
+            description: ''
+          }]
+        },{
+        title: '',
+        description: '',
+        abilities: [{
+            title: '',
+            level: '',
+            description: ''
+          },{
+            title: '',
+            level: '',
+            description: ''
+          },{
+            title: '',
+            level: '',
+            description: ''
+          },{
+            title: '',
+            level: '',
+            description: ''
+          }]
+        }],
+      hitPoints: [{
+          title: 'Hit Dice',
+          description: ''
+        },{
+          title: 'Hit Dice at 1st Level',
+          description: ''
+        },{
+          title: 'Hit Points at Higher Levels',
+          description: ''
+        }],
+      proficiencies:[{
+          title: 'Armor',
+          description: ''
+        },{
+          title: 'Weapons',
+          description: ''
+        },{
+          title: 'Tools',
           description: ''
         },{
           title: 'Saving Throws',
@@ -717,6 +718,9 @@ angular.module('dCraftApp').service( 'ClassSrv', function(){
           title: 'Weapons',
           description: ''
         },{
+          title: 'Tools',
+          description: ''
+        },{
           title: 'Saving Throws',
           description: ''
         },{
@@ -785,15 +789,19 @@ angular.module('dCraftApp').service( 'ClassSrv', function(){
         description: '',
         abilities: [{
             title: '',
+            level: '',
             description: ''
           },{
             title: '',
+            level: '',
             description: ''
           },{
             title: '',
+            level: '',
             description: ''
           },{
             title: '',
+            level: '',
             description: ''
           }]
         },{
@@ -801,15 +809,19 @@ angular.module('dCraftApp').service( 'ClassSrv', function(){
         description: '',
         abilities: [{
             title: '',
+            level: '',
             description: ''
           },{
             title: '',
+            level: '',
             description: ''
           },{
             title: '',
+            level: '',
             description: ''
           },{
             title: '',
+            level: '',
             description: ''
           }]
         }] 
@@ -832,6 +844,9 @@ angular.module('dCraftApp').service( 'ClassSrv', function(){
           title: 'Weapons',
           description: ''
         },{
+          title: 'Tools',
+          description: ''
+        },{
           title: 'Saving Throws',
           description: ''
         },{
@@ -900,15 +915,19 @@ angular.module('dCraftApp').service( 'ClassSrv', function(){
         description: '',
         abilities: [{
             title: '',
+            level: '',
             description: ''
           },{
             title: '',
+            level: '',
             description: ''
           },{
             title: '',
+            level: '',
             description: ''
           },{
             title: '',
+            level: '',
             description: ''
           }]
         },{
@@ -916,15 +935,19 @@ angular.module('dCraftApp').service( 'ClassSrv', function(){
         description: '',
         abilities: [{
             title: '',
+            level: '',
             description: ''
           },{
             title: '',
+            level: '',
             description: ''
           },{
             title: '',
+            level: '',
             description: ''
           },{
             title: '',
+            level: '',
             description: ''
           }]
         }]
@@ -945,6 +968,9 @@ angular.module('dCraftApp').service( 'ClassSrv', function(){
           description: ''
         },{
           title: 'Weapons',
+          description: ''
+        },{
+          title: 'Tools',
           description: ''
         },{
           title: 'Saving Throws',
@@ -1062,6 +1088,9 @@ angular.module('dCraftApp').service( 'ClassSrv', function(){
           title: 'Weapons',
           description: ''
         },{
+          title: 'Tools',
+          description: ''
+        },{
           title: 'Saving Throws',
           description: ''
         },{
@@ -1130,15 +1159,19 @@ angular.module('dCraftApp').service( 'ClassSrv', function(){
         description: '',
         abilities: [{
             title: '',
+            level: '',
             description: ''
           },{
             title: '',
+            level: '',
             description: ''
           },{
             title: '',
+            level: '',
             description: ''
           },{
             title: '',
+            level: '',
             description: ''
           }]
         },{
@@ -1146,15 +1179,19 @@ angular.module('dCraftApp').service( 'ClassSrv', function(){
         description: '',
         abilities: [{
             title: '',
+            level: '',
             description: ''
           },{
             title: '',
+            level: '',
             description: ''
           },{
             title: '',
+            level: '',
             description: ''
           },{
             title: '',
+            level: '',
             description: ''
           }]
         }] 
@@ -1175,6 +1212,9 @@ angular.module('dCraftApp').service( 'ClassSrv', function(){
           description: ''
         },{
           title: 'Weapons',
+          description: ''
+        },{
+          title: 'Tools',
           description: ''
         },{
           title: 'Saving Throws',
@@ -1292,6 +1332,9 @@ angular.module('dCraftApp').service( 'ClassSrv', function(){
           title: 'Weapons',
           description: ''
         },{
+          title: 'Tools',
+          description: ''
+        },{
           title: 'Saving Throws',
           description: ''
         },{
@@ -1360,15 +1403,19 @@ angular.module('dCraftApp').service( 'ClassSrv', function(){
         description: '',
         abilities: [{
             title: '',
+            level: '',
             description: ''
           },{
             title: '',
+            level: '',
             description: ''
           },{
             title: '',
+            level: '',
             description: ''
           },{
             title: '',
+            level: '',
             description: ''
           }]
         },{
@@ -1376,15 +1423,19 @@ angular.module('dCraftApp').service( 'ClassSrv', function(){
         description: '',
         abilities: [{
             title: '',
+            level: '',
             description: ''
           },{
             title: '',
+            level: '',
             description: ''
           },{
             title: '',
+            level: '',
             description: ''
           },{
             title: '',
+            level: '',
             description: ''
           }]
         }] 
@@ -1407,6 +1458,9 @@ angular.module('dCraftApp').service( 'ClassSrv', function(){
           title: 'Weapons',
           description: ''
         },{
+          title: 'Tools',
+          description: ''
+        },{
           title: 'Saving Throws',
           description: ''
         },{
@@ -1475,15 +1529,19 @@ angular.module('dCraftApp').service( 'ClassSrv', function(){
         description: '',
         abilities: [{
             title: '',
+            level: '',
             description: ''
           },{
             title: '',
+            level: '',
             description: ''
           },{
             title: '',
+            level: '',
             description: ''
           },{
             title: '',
+            level: '',
             description: ''
           }]
         },{
@@ -1491,15 +1549,19 @@ angular.module('dCraftApp').service( 'ClassSrv', function(){
         description: '',
         abilities: [{
             title: '',
+            level: '',
             description: ''
           },{
             title: '',
+            level: '',
             description: ''
           },{
             title: '',
+            level: '',
             description: ''
           },{
             title: '',
+            level: '',
             description: ''
           }]
         }]
@@ -1522,6 +1584,9 @@ angular.module('dCraftApp').service( 'ClassSrv', function(){
           title: 'Weapons',
           description: ''
         },{
+          title: 'Tools',
+          description: ''
+        },{
           title: 'Saving Throws',
           description: ''
         },{
@@ -1590,15 +1655,19 @@ angular.module('dCraftApp').service( 'ClassSrv', function(){
         description: '',
         abilities: [{
             title: '',
+            level: '',
             description: ''
           },{
             title: '',
+            level: '',
             description: ''
           },{
             title: '',
+            level: '',
             description: ''
           },{
             title: '',
+            level: '',
             description: ''
           }]
         },{
@@ -1606,15 +1675,19 @@ angular.module('dCraftApp').service( 'ClassSrv', function(){
         description: '',
         abilities: [{
             title: '',
+            level: '',
             description: ''
           },{
             title: '',
+            level: '',
             description: ''
           },{
             title: '',
+            level: '',
             description: ''
           },{
             title: '',
+            level: '',
             description: ''
           }]
         }]
