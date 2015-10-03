@@ -1511,126 +1511,155 @@ angular.module('dCraftApp').service( 'ClassSrv', function(){
       name: 'Sorcerer',
       hitPoints: [{
           title: 'Hit Dice',
-          description: ''
+          description: '1d6 per sorcerer level '
         },{
           title: 'Hit Dice at 1st Level',
-          description: ''
+          description: '6 + your Constitution modifier'
         },{
           title: 'Hit Points at Higher Levels',
-          description: ''
+          description: '1d6 (or 4) + your Constitution modifier per sorcerer level after 1st'
         }],
       proficiencies:[{
           title: 'Armor',
           description: ''
         },{
           title: 'Weapons',
-          description: ''
+          description: 'Daggers, darts, slings, quarterstaffs, light crossbows'
         },{
           title: 'Tools',
           description: ''
         },{
           title: 'Saving Throws',
-          description: ''
+          description: 'Constitution, Charisma'
         },{
           title: 'Skills',
-          description: ''
+          description: 'Choose two from Arcana, Deception, Insight, Intimidation, Persuasion, and Religion'
         }],
       abilities: [{
-          title: '',
-          level: '',
-          description: ''
+          title: 'Sorcerous Origin',
+          level: '1',
+          description: '<p>Choose a sorcerous origin, which describes the source of your innate magical power: Draconic Bloodline or Wild Magic, both detailed at the end of the class description.</p><p>Your choice grants you features when you choose it at 1st level and again at 6th, 14th, and 18th level.</p>'
         },{
-          title: '',
-          level: '',
-          description: ''
+          title: 'Font of Magic',
+          level: '2',
+          description: 'At 2nd level, you tap into a deep wellspring of magic within yourself. This wellspring is represented by sorcery points, which allow you to create a variety of magical effects.'
         },{
-          title: '',
-          level: '',
-          description: ''
-        },{
-          title: '',
-          level: '',
-          description: ''
-        },{
-          title: '',
-          level: '',
-          description: ''
-        },{
-          title: '',
-          level: '',
-          description: ''
-        },{
-          title: '',
-          level: '',
-          description: ''
-        },{
-          title: '',
-          level: '',
-          description: ''
-        },{
-          title: '',
-          level: '',
-          description: ''
-        },{
-          title: '',
-          level: '',
-          description: ''
-        },{
-          title: '',
-          level: '',
-          description: ''
-        },{
-          title: '',
-          level: '',
-          description: ''
-        },{
-          title: '',
-          level: '',
-          description: ''
-        },{
-          title: '',
-          level: '',
-          description: ''
-        }],
-      specializations:[{
-        title: '',
-        description: '',
-        abilities: [{
-            title: '',
-            level: '',
-            description: ''
+          title: 'Metamagic',
+          level: '3',
+          description: '<p>At 3rd level, you gain the ability to twist your spells to suit your needs. You gain two of the following Metamagic options of your choice. You gain another one at 10th and 17th level.</p><p>You can use only one Metamagic option on a spell when you cast it, unless otherwise noted.</p>',
+          options: [{
+            title:'Careful Spell',
+            description:'When you cast a spell that forces other creatures to make a saving throw, you can protect som e of those creatures from the spell’s full force. To do so, you spend 1 sorcery point and choose a number of those creatures up to your Charisma modifier (minimum of one creature). A chosen creature automatically succeeds on its saving throw against the spell.'
           },{
-            title: '',
-            level: '',
-            description: ''
+            title:'Distant Spell',
+            description:'<p>When you cast a spell that has a range of 5 feet or greater, you can spend 1 sorcery point to double the range of the spell.</p><p>When you cast a spell that has a range of touch, you can spend 1 sorcery point to make the range of the spell 30 feet.</p>'
           },{
-            title: '',
-            level: '',
-            description: ''
+            title:'Empowered Spell',
+            description:'<p>When you roll damage for a spell, you can spend 1 sorcery point to reroll a number of the damage dice up to your Charisma modifier (minimum of one). You must use the new rolls.</p><p>You can use Empowered Spell even if you have already used a different Metamagic option during the casting of the spell.</p>'
           },{
-            title: '',
-            level: '',
-            description: ''
+            title:'Extend Spell',
+            description:'When you cast a spell that has a duration of 1 minute or longer, you can spend 1 sorcery point to double its duration, to a maximum duration of 24 hours.
+'
+          },{
+            title:'Heightened Spell',
+            description:'When you cast a spell that forces a creature to make a saving throw to resist its effects, you can spend 3 sorcery points to give one target of the spell disadvantage on its first saving throw made against the spell.'
+          },{
+            title:'Quickened Spell',
+            description:'When you cast a spell that has a casting time of 1 action, you can spend 2 sorcery points to change the casting time to 1 bonus action for this casting.'
+          },{
+            title:'Subtle Spell',
+            description:'When you cast a spell, you can spend 1 sorcery point to cast it without any somatic or verbal components.'
+          },{
+            title:'Twinned Spell',
+            description:'When you cast a spell that targets only one creature and doesn’t have a range of self, you can spend a number of sorcery points equal to the spell’s level to target a second creature in range with the same spell (1 sorcery point if the spell is a cantrip).'
           }]
         },{
-        title: '',
-        description: '',
+          title: 'Ability Score Improvement',
+          level: '4',
+          description: 'W hen you reach 4th level, and again at 8th, 12th, 16th, and 19th level, you can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can’t increase an ability score above 20 using this feature'
+        },{
+          title: 'Sorcerous Restoration',
+          level: '20',
+          description: 'At 20th level, you regain 4 expended sorcery points whenever you finish a short rest.'
+        }],
+      specializations:[{
+        title: 'Draconic Bloodline',
+        description: 'Your innate magic com es from draconic magic that was mingled with your blood or that of your ancestors. Most often, sorcerers with this origin trace their descent back to a mighty sorcerer of ancient times who made a bargain with a dragon or who might even have claimed a dragon parent. Som e of these bloodlines are well established in the world, but most are obscure. Any given sorcerer could be the first of a new bloodline, as a result of a pact or som e other exceptional circumstance.',
         abilities: [{
-            title: '',
+            title: 'Dragon Ancestor',
             level: '',
-            description: ''
+            description: '<p>At 1st level, you choose one type of dragon as your ancestor. The damage type associated with each dragon is used by features you gain later.</p><p>You can speak, read, and write Draconic. Additionally, whenever you make a Charisma check when interacting with dragons, your proficiency bonus is doubled if it applies to the check.</p>',
+            options: [{
+              title:'Black',
+              description:'Acid'
+            },{
+              title:'Blue',
+              description:'Lightning'
+            },{
+              title:'Brass',
+              description:'Fire'
+            },{
+              title:'Bronze',
+              description:'Lightning'
+            },{
+              title:'Copper',
+              description:'Acid'
+            },{
+              title:'Gold',
+              description:'Fire'
+            },{
+              title:'Green',
+              description:'Poison'
+            },{
+              title:'Red',
+              description:'Fire'
+            },{
+              title:'Silver',
+              description:'Cold'
+            },{
+              title:'White',
+              description:'Cold'
+            }]
           },{
-            title: '',
-            level: '',
-            description: ''
+            title: 'Draconic Resilience',
+            level: '1',
+            description: '<p>As magic flows through your body, it causes physical traits of your dragon ancestors to emerge. At 1st level, your hit point maximum increases by 1 and increases by 1 again whenever you gain a level in this class.</p><p>Additionally, parts of your skin are covered by a thin sheen of dragon-like scales. When you aren’t wearing armor, your AC equals 13 + your Dexterity modifier.</p>'
           },{
-            title: '',
-            level: '',
-            description: ''
+            title: 'Elemental Affinity',
+            level: '6',
+            description: 'Starting at 6th level, when you cast a spell that deals damage of the type associated with your draconic ancestry, add your Charisma modifier to that damage. At the same time, you can spend 1 sorcery point to gain resistance to that damage type for 1 hour.'
           },{
-            title: '',
-            level: '',
-            description: ''
+            title: 'Dragon Wings',
+            level: '14',
+            description: '<p>At 14th level, you gain the ability to sprout a pair of dragon wings from your back, gaining a flying speed equal to your current speed. You can create these wings as a bonus action on your turn. They last until you dismiss them as a bonus action on your turn.</p><p>You can’t manifest your wings while wearing armor unless the armor is made to accommodate them, and clothing not made to accommodate your wings might be destroyed when you manifest them.</p>'
+          },{
+            title: 'Draconic Presence',
+            level: '18',
+            description: 'Beginning at 18th level, you can channel the dread presence of your dragon ancestor, causing those around you to becom e awestruck or frightened. As an action, you can spend 5 sorcery points to draw on this power and exude an aura of awe or fear (your choice) to a distance of 60 feet. For 1 minute or until you lose your concentration (as if you were casting a concentration spell), each hostile creature that starts its turn in this aura must succeed on a Wisdom saving throw or be charmed (if you chose awe) or frightened (if you chose fear) until the aura ends. A creature that succeeds on this saving throw is immune to your aura for 24 hours.'
+          }]
+        },{
+        title: 'Wild Magic',
+        description: 'Your innate magic com es from the wild forces of chaos that underlie the order of creation. You might have endured exposure to som e form of raw magic, perhaps through a planar portal leading to Limbo, the Elemental Planes, or the mysterious Far Realm. Perhaps you were blessed by a powerful fey creature or marked by a demon. Or your magic could be a fluke of your birth, with no apparent cause or reason. However it came to be, this chaotic magic churns within you, waiting for any outlet.',
+        abilities: [{
+            title: 'Wild Magic Surge',
+            level: '1',
+            description: 'Starting when you choose this origin at 1st level, your spellcasting can unleash surges of untamed magic. Immediately after you cast a sorcerer spell of 1st level or higher, the DM can have you roll a d20. If you roll a 1, roll on the Wild Magic Surge table (Players Handbook, p104) to create a random magical effect.'
+          },{
+            title: 'Tides of Chaos',
+            level: '1',
+            description: '<p>Starting at 1st level, you can manipulate the forces of chance and chaos to gain advantage on one attack roll, ability check, or saving throw. Once you do so, you must finish a long rest before you can use this feature again.</p><p>Any time before you regain the use of this feature, the DM can have you roll on the Wild Magic Surge table immediately after you cast a sorcerer spell of 1st level or higher. You then regain the use of this feature.</p>'
+          },{
+            title: 'Bend Luck',
+            level: '6',
+            description: 'Starting at 6th level, you have the ability to twist fate using your wild magic. W hen another creature you can see makes an attack roll, an ability check, or a saving throw, you can use your reaction and spend 2 sorcery points to roll 1d4 and apply the number rolled as a bonus or penalty (your choice) to the creature’s roll. You can do so after the creature rolls but before any effects of the roll occur.'
+          },{
+            title: 'Controlled Chaos',
+            level: '14',
+            description: 'At 14th level, you gain a modicum of control over the surges of your wild magic. Whenever you roll on the Wild Magic Surge table, you can roll twice and use either number.'
+          },{
+            title: 'Spell Bombardment',
+            level: '18',
+            description: 'Beginning at 18th level, the harmful energy of your spells intensifies. When you roll damage for a spell and roll the highest number possible on any of the dice, choose one of those dice, roll it again and add that roll to the damage. You can use the feature only once per turn.'
           }]
         }] 
     },{
