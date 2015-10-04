@@ -240,7 +240,8 @@ angular.module('dCraftApp').service( 'ClassSrv', function(){
           }]
         }]
     },{
-      name: 'Cleric',hitPoints: [{
+      name: 'Cleric',
+      hitPoints: [{
           title: 'Hit Dice',
           description: '1d8 per cleric level '
         },{
@@ -1019,16 +1020,16 @@ angular.module('dCraftApp').service( 'ClassSrv', function(){
           description: 'At 2nd level, you adopt a style of fighting as your specialty. Choose one of the following options. You can’t take a Fighting Style option more than once, even if you later get to choose again.',
           options: [{
             title: 'Defense',
-            description 'While you are wearing armor, you gain a +1 bonus to AC.'
+            description:'While you are wearing armor, you gain a +1 bonus to AC.'
           },{
             title: 'Dueling',
-            description 'When you are wielding a melee weapon in one hand and no other weapons, you gain a +2 bonus to damage rolls with that weapon.'
+            description:'When you are wielding a melee weapon in one hand and no other weapons, you gain a +2 bonus to damage rolls with that weapon.'
           },{
             title: 'Great Weapon Fighting',
-            description 'When you roll a 1 or 2 on a damage die for an attack you make with a melee weapon that you are wielding with two hands, you can reroll the die and must use the new roll. The weapon must have the two-handed or versatile property for you to gain this benefit.'
+            description:'When you roll a 1 or 2 on a damage die for an attack you make with a melee weapon that you are wielding with two hands, you can reroll the die and must use the new roll. The weapon must have the two-handed or versatile property for you to gain this benefit.'
           },{
             title: 'Protection',
-            description 'When a creature you can see attacks a target other than you that is within 5 feet of you, you can use your reaction to im pose disadvantage on the attack roll. You must be wielding a shield.'
+            description:'When a creature you can see attacks a target other than you that is within 5 feet of you, you can use your reaction to im pose disadvantage on the attack roll. You must be wielding a shield.'
           }]
         },{
           title: 'Divine Smite',
@@ -1105,8 +1106,7 @@ angular.module('dCraftApp').service( 'ClassSrv', function(){
           },{
             title: 'Aura of Warding',
             level: '7',
-            description: '<p>Beginning at 7th level, ancient magic lies so heavily upon you that it forms an eldritch ward. You and friendly creatures within 10 feet of you have resistance to damage from spells.</p><p>At 18th level, the range of this aura increases to 30 feet.
-</p>'
+            description: '<p>Beginning at 7th level, ancient magic lies so heavily upon you that it forms an eldritch ward. You and friendly creatures within 10 feet of you have resistance to damage from spells.</p><p>At 18th level, the range of this aura increases to 30 feet.</p>'
           },{
             title: 'Undying Sentinel',
             level: '15',
@@ -1554,8 +1554,7 @@ angular.module('dCraftApp').service( 'ClassSrv', function(){
             description:'<p>When you roll damage for a spell, you can spend 1 sorcery point to reroll a number of the damage dice up to your Charisma modifier (minimum of one). You must use the new rolls.</p><p>You can use Empowered Spell even if you have already used a different Metamagic option during the casting of the spell.</p>'
           },{
             title:'Extend Spell',
-            description:'When you cast a spell that has a duration of 1 minute or longer, you can spend 1 sorcery point to double its duration, to a maximum duration of 24 hours.
-'
+            description:'When you cast a spell that has a duration of 1 minute or longer, you can spend 1 sorcery point to double its duration, to a maximum duration of 24 hours.'
           },{
             title:'Heightened Spell',
             description:'When you cast a spell that forces a creature to make a saving throw to resist its effects, you can spend 3 sorcery points to give one target of the spell disadvantage on its first saving throw made against the spell.'
@@ -1701,8 +1700,7 @@ angular.module('dCraftApp').service( 'ClassSrv', function(){
           },{
             title:'Armor of Shadows',
             level: '2',
-            description:'You can cast mage armor on yourself at will, without expending a spell slot or material components.
-'
+            description:'You can cast mage armor on yourself at will, without expending a spell slot or material components.'
           },{
             title:'Ascendant Step',
             level: '9',
@@ -2025,7 +2023,8 @@ angular.module('dCraftApp').service( 'ClassSrv', function(){
             title: 'Durable Summons',
             level: '14',
             description: 'Starting at 14th level, any creature that you summon or create with a conjuration spell has 30 temporary hit points.'
-          },{
+          }]
+        },{
         title: 'School of Divination',
         description: 'The counsel of a diviner is sought by royalty and com m oners alike, for all seek a clearer understanding of the past, present, and future. As a diviner, you strive to part the veils of space, time, and consciousness so that you can see clearly. You work to master spells of discernment, remote viewing, supernatural knowledge, and foresight.',
         abilities: [{
@@ -2048,7 +2047,8 @@ angular.module('dCraftApp').service( 'ClassSrv', function(){
             title: 'Greater Portent',
             level: '14',
             description: 'Starting at 14th level, the visions in your dreams intensify and paint a more accurate picture in your mind of what is to come. You roll three d20s for your Portent feature, rather than two.'
-          },{
+          }]
+        },{
         title: 'School of Enchantment',
         description: 'As a member of the School of Enchantment, you have honed your ability to magically entrance and beguile other people and monsters. Som e enchanters are peacemakers who bewitch the violent to lay down their arms and charm the cruel into showing mercy. Others are tyrants who magically bind the unwilling into their service. Most enchanters fall somewhere in between.',
         abilities: [{
@@ -2071,7 +2071,8 @@ angular.module('dCraftApp').service( 'ClassSrv', function(){
             title: 'Alter Memories',
             level: '14',
             description: '<p>At 14th level, you gain the ability to make a creature unaware of your magical influence on it. W hen you cast an enchantment spell to charm one or more creatures, you can alter one creature’s understanding so that it remains unaware of being charmed.</p><p>Additionally, once before the spell expires, you can use your action to try to make the chosen creature forget som e of the time it spent charmed. The creature must succeed on an Intelligence saving throw against your wizard spell save DC or lose a number of hours of its mem ories equal to 1 + your Charisma modifier (minimum 1). You can make the creature forget less time, and the amount of time can’t exceed the duration of your enchantment spell.</p>'
-          },{
+          }]
+        },{
         title: 'School of Evocation',
         description: 'You focus your study on magic that creates powerful elemental effects such as bitter cold, searing flame, rolling thunder, crackling lightning, and burning acid. Som e evokers find employment in military forces, serving as artillery to blast enemy armies from afar. Others use their spectacular power to protect the weak, while som e seek their own gain as bandits, adventurers, or aspiring tyrants.',
         abilities: [{
@@ -2094,7 +2095,8 @@ angular.module('dCraftApp').service( 'ClassSrv', function(){
             title: 'Overchannel',
             level: '14',
             description: '<p>Starting at 14th level, you can increase the power of your simpler spells. W hen you cast a wizard spell of 5th level or lower that deals damage, you can deal maximum damage with that spell. </p><p>The first time you do so, you suffer no adverse effect. If you use this feature again before you finish a long rest, you take 2d12 necrotic damage for each level of the spell, immediately after you cast it. Each time you use this feature again before finishing a long rest, the necrotic damage per spell level increases by 1d12. This damage ignores resistance and immunity.</p>'
-          },{
+          }]
+        },{
         title: 'School of Illusion',
         description: 'You focus your studies on magic that dazzles the senses, befuddles the mind, and tricks even the wisest folk. Your magic is subtle, but the illusions crafted by your keen mind make the impossible seem real. Som e illusionists—including many gnome w izards—are benign tricksters who use their spells to entertain. Others are more sinister masters of deception, using their illusions to frighten and fool others for their personal gain.',
         abilities: [{
@@ -2117,7 +2119,8 @@ angular.module('dCraftApp').service( 'ClassSrv', function(){
             title: 'Illusory Reality',
             level: '14',
             description: '<p>By 14th level, you have learned the secret of weaving shadow magic into your illusions to give them a sem i- reality. W hen you cast an illusion spell of 1st level or higher, you can choose one inanimate, nonmagical object that is part of the illusion and make that object real. You can do this on your turn as a bonus action while the spell is ongoing. The object remains real for 1 minute. For example, you can create an illusion of a bridge over a chasm and then make it real long enough for your allies to cross.</p><p>The object can’t deal damage or otherwise directly harm anyone.</p>'
-          },{
+          }]
+        },{
         title: 'School of Necromancy',
         description: '<p>The School of Necromancy explores the cosm ic forces of life, death, and undeath. As you focus your studies in this tradition, you learn to manipulate the energy that animates all living things. As you progress, you learn to sap the life force from a creature as your magic destroys its body, transforming that vital energy into magical power you can manipulate.</p><p>Most people see necromancers as menacing, or even villainous, due to the close association with death. Not all necromancers are evil, but the forces they manipulate are considered taboo by many societies.</p>',
         abilities: [{
@@ -2140,7 +2143,8 @@ angular.module('dCraftApp').service( 'ClassSrv', function(){
             title: 'Command Undead',
             level: '14',
             description: '<p>Starting at 14th level, you can use magic to bring undead under your control, even those created by other wizards. As an action, you can choose one undead that you can see within 60 feet of you. That creature must make a Charisma saving throw against your wizard spell save DC. If it succeeds, you can’t use this feature on it again. If it fails, it becom es friendly to you and obeys your com m ands until you use this feature again.</p><p>Intelligent undead are harder to control in this way. If the target has an Intelligence of 8 or higher, it has advantage on the saving throw. If it fails the saving throw and has an Intelligence of 12 or higher, it can repeat the saving throw at the end of every hour until it succeeds and breaks free.</p>'
-          },{
+          }]
+        },{
         title: 'School of Transmutation',
         description: '<p>You are a student of spells that modify energy and matter. To you, the world is not a fixed thing, but eminently mutable, and you delight in being an agent of change. You wield the raw stuff of creation and learn to alter both physical forms and mental qualities. Your magic gives you the tools to become a smith on reality’s forge.</p><p>Som e transmuters are tinkerers and pranksters, turning people into toads and transforming copper into silver for fun and occasional profit. Others pursue their magical studies with deadly seriousness, seeking the power of the gods to make and destroy worlds.</p>',
         abilities: [{
@@ -2150,8 +2154,7 @@ angular.module('dCraftApp').service( 'ClassSrv', function(){
           },{
             title: 'Minor Alchemy',
             level: '2',
-            description: 'Starting at 2nd level when you select this school, you can temporarily alter the physical properties of one nonmagical object, changing it from one substance into another. You perform a special alchemical procedure on one object com posed entirely of wood, stone (but not a gemstone), iron, copper, or silver, transforming it into a different one of those materials. For each 10 minutes you spend performing the procedure, you can transform up to 1 cubic foot of material. After 1 hour, or until you lose your concentration (as if you were concentrating on a spell), the material reverts to its original substance.
-'
+            description: 'Starting at 2nd level when you select this school, you can temporarily alter the physical properties of one nonmagical object, changing it from one substance into another. You perform a special alchemical procedure on one object com posed entirely of wood, stone (but not a gemstone), iron, copper, or silver, transforming it into a different one of those materials. For each 10 minutes you spend performing the procedure, you can transform up to 1 cubic foot of material. After 1 hour, or until you lose your concentration (as if you were concentrating on a spell), the material reverts to its original substance.'
           },{
             title: 'Transmuter\u0027s Stone',
             level: '6',
