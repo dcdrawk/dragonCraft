@@ -1,10 +1,6 @@
 'use strict';
 angular.module('dCraftApp').service( 'ClassSrv', function(){  
-  //Functions
-//  this.getClasses = function (){
-//    return Classes;
-//  }
-  
+
   //Data
   this.classes = [{
       name: 'Barbarian',
@@ -1666,126 +1662,264 @@ angular.module('dCraftApp').service( 'ClassSrv', function(){
       name: 'Warlock',
       hitPoints: [{
           title: 'Hit Dice',
-          description: ''
+          description: '1d8 per warlock level'
         },{
           title: 'Hit Dice at 1st Level',
-          description: ''
+          description: '8 + your Constitution modifier'
         },{
           title: 'Hit Points at Higher Levels',
-          description: ''
+          description: '1d8 (or 5) + y our Constitution modifier per warlock level after 1st'
         }],
       proficiencies:[{
           title: 'Armor',
-          description: ''
+          description: 'light armor'
         },{
           title: 'Weapons',
-          description: ''
+          description: 'Simple weapons'
         },{
           title: 'Tools',
           description: ''
         },{
           title: 'Saving Throws',
-          description: ''
+          description: 'Wisdom, Charisma'
         },{
           title: 'Skills',
-          description: ''
+          description: 'Choose two skills from Arcana, Deception, History, Intimidation, Investigation, Nature, and Religion'
         }],
       abilities: [{
-          title: '',
-          level: '',
+          title: 'Otherworldly Patron',
+          level: '1',
+          description: 'At 1st level, you have struck a bargain with an otherworldly being of your choice: the Archfey, the Fiend, or the Great Old One, each of which is detailed at the end of the class description. Your choice grants you features at 1st level and again at 6th, 10th, and 14th level.'
+        },{
+          title: 'Eldritch Invocations',
+          level: '2',
+          description: '<p></p><p></p><p></p>',
+          options: [{
+            title:'Agonizing Blast',
+            level: '2',
+            description:''
+          },{
+            title:'Armor of Shadows',
+            level: '2',
+            description:''
+          },{
+            title:'Ascendant Step',
+            level: '9',
+            description:''
+          },{
+            title:'Beast Speech',
+            level: '2',
+            description:''
+          },{
+            title:'Beguiling Influence',
+            level: '7',
+            description:''
+          },{
+            title:'Bewitching Whispers',
+            level:'7',
+            description:''
+          },{
+            title:'Book of Ancient Secrets',
+            level:'',
+            description:''
+          },{
+            title:'Chains of Carceri',
+            level:'',
+            description:''
+          },{
+            title:'',
+            level:'',
+            description:''
+          },{
+            title:'',
+            level:'',
+            description:''
+          },{
+            title:'',
+            level:'',
+            description:''
+          },{
+            title:'',
+            level:'',
+            description:''
+          },{
+            title:'',
+            level:'',
+            description:''
+          },{
+            title:'',
+            level:'',
+            description:''
+          },{
+            title:'',
+            level:'',
+            description:''
+          },{
+            title:'',
+            level:'',
+            description:''
+          },{
+            title:'',
+            level:'',
+            description:''
+          },{
+            title:'',
+            level:'',
+            description:''
+          },{
+            title:'',
+            level:'',
+            description:''
+          },{
+            title:'',
+            level:'',
+            description:''
+          },{
+            title:'',
+            level:'',
+            description:''
+          },{
+            title:'',
+            level:'',
+            description:''
+          },{
+            title:'',
+            level:'',
+            description:''
+          },{
+            title:'',
+            description:''
+          },{
+            title:'',
+            level:'',
+            description:''
+          },{
+            title:'',
+            level:'',
+            description:''
+          },{
+            title:'',
+            level:'',
+            description:''
+          },{
+            title:'',
+            level:'',
+            description:''
+          },{
+            title:'',
+            level:'',
+            description:''
+          },{
+            title:'',
+            level:'',
+            description:''
+          },{
+            title:'',
+            level:'',
+            description:''
+          },{
+            title:'',
+            level:'',
+            description:''
+          }]
+        },{
+          title: 'Pact Boon',
+          level: '3',
+          description: '',
+          options: [{
+            title:'Pact of the Chain',
+            description:''
+          },{
+            title:'Pact of the Blade',
+            description:''
+          },{
+            title:'Pact of the Tome',
+            description:''
+          }]
+        },{
+          title: 'Ability Score Improvement',
+          level: '4',
           description: ''
         },{
-          title: '',
-          level: '',
-          description: ''
+          title: 'Mystic Arcanum',
+          level: '11',
+          description: '<p></p><p></p>'
         },{
-          title: '',
-          level: '',
-          description: ''
-        },{
-          title: '',
-          level: '',
-          description: ''
-        },{
-          title: '',
-          level: '',
-          description: ''
-        },{
-          title: '',
-          level: '',
-          description: ''
-        },{
-          title: '',
-          level: '',
-          description: ''
-        },{
-          title: '',
-          level: '',
-          description: ''
-        },{
-          title: '',
-          level: '',
-          description: ''
-        },{
-          title: '',
-          level: '',
-          description: ''
-        },{
-          title: '',
-          level: '',
-          description: ''
-        },{
-          title: '',
-          level: '',
-          description: ''
-        },{
-          title: '',
-          level: '',
-          description: ''
-        },{
-          title: '',
-          level: '',
+          title: 'Eldritch Master',
+          level: '20',
           description: ''
         }],
       specializations:[{
-        title: '',
-        description: '',
+        title: 'The Archfey',
+        description: 'Your patron is a lord or lady of the fey, a creature of legend who holds secrets that were forgotten before the mortal races were born. This being’s motivations are often inscrutable, and som etim es whimsical, and might involve a striving for greater magical power or the settling of age-old grudges. Beings of this sort include the Prince of Frost; the Queen of Air and Darkness, ruler of the Gloaming Court; Titania of the Summer Court; her consort Oberon, the Green Lord; Hyrsam, the Prince of Fools; and ancient hags.',
         abilities: [{
-            title: '',
-            level: '',
+            title: 'Expanded Spell List',
+            level: '1',
             description: ''
           },{
-            title: '',
-            level: '',
+            title: 'Fey Presence',
+            level: '1',
+            description: '<p></p><p></p>'
+          },{
+            title: 'Misty Escape',
+            level: '6',
+            description: '<p></p><p></p>'
+          },{
+            title: 'Beguilding Defenses',
+            level: '10',
             description: ''
           },{
-            title: '',
-            level: '',
-            description: ''
-          },{
-            title: '',
-            level: '',
-            description: ''
+            title: 'Dark Delirium',
+            level: '14',
+            description: '<p></p><p></p><p></p>'
           }]
         },{
-        title: '',
+        title: 'The Fiend',
         description: '',
         abilities: [{
-            title: '',
+            title: 'Expanded Spell List',
             level: '',
             description: ''
           },{
-            title: '',
+            title: 'Dark One\u0027s Blessing',
             level: '',
             description: ''
           },{
-            title: '',
+            title: 'Dark One\u0027s Own Luck',
+            level: '',
+            description: '<p></p><p></p>'
+          },{
+            title: 'Fiendish Resilience',
             level: '',
             description: ''
           },{
-            title: '',
+            title: 'Hurl Through Hell',
             level: '',
+            description: '<p></p><p></p><p></p>'
+          }]
+        },{
+        title: 'The Great Old One',
+        description: '<p></p><p></p>',
+        abilities: [{
+            title: 'Expanded Spell List',
+            level: '1',
             description: ''
+          },{
+            title: 'Awakened Mind',
+            level: '1',
+            description: ''
+          },{
+            title: 'Entropic Ward',
+            level: '6',
+            description: '<p></p><p></p>'
+          },{
+            title: 'Thought Shield',
+            level: '10',
+            description: ''
+          },{
+            title: 'Create Thrall',
+            level: '14',
+            description: '<p></p><p></p>'
           }]
         }]
     },{
