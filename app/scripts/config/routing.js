@@ -3,8 +3,17 @@ angular.module('dCraftApp')
 .config(['$routeProvider', 'RouteAnimationManagerProvider', function($routeProvider, RouteAnimationManagerProvider) {
     $routeProvider
       .when('/', {
+//        templateUrl: 'views/main.html',
+//        controller: 'MainCtrl',
+//        controllerAs: 'main',
+//        data: {
+//          animationConf: {
+//            newcharacter: 'slide-down',
+//            character: 'slide-right',
+//          }
+//        }
         templateUrl: 'views/main.html',
-        controller: 'MainCtrl',
+        controller: 'characterListCtrl',
         controllerAs: 'main',
         data: {
           animationConf: {
@@ -15,8 +24,8 @@ angular.module('dCraftApp')
       })
       .when('/test', {
         templateUrl: 'views/test.html',
-        controller: 'TestCtrl',
-        controllerAs: 'test',
+        controller: 'navCtrl',
+        controllerAs: 'nav',
         data: {
           animationConf: {
             newcharacter: 'slide-down',
@@ -24,14 +33,9 @@ angular.module('dCraftApp')
           }
         }
       })
-      .when('/about', {
-        templateUrl: 'views/about.html',
-        controller: 'AboutCtrl',
-        controllerAs: 'about'
-      })
       .when('/new-character', {
         templateUrl: 'views/new-character.html',
-        controller: 'NewCharCtrl',
+        controller: 'newCharacterCtrl',
         controllerAs: 'newChar',
         data: {
           animationConf: {
@@ -43,8 +47,8 @@ angular.module('dCraftApp')
       //Character Navigation
       .when('/character', {
         templateUrl: 'views/character/home.html',
-        controller: 'CharacterCtrl',
-        controllerAs: 'character',
+        controller: 'navCtrl',
+        controllerAs: 'nav',
         data: {
           animationConf: {
             root: 'slide-left',
@@ -60,8 +64,8 @@ angular.module('dCraftApp')
       //Profile info
       .when('/character/profile', {
         templateUrl: 'views/character/profile/index.html',
-        controller: 'CharacterCtrl',
-        controllerAs: 'character',
+        controller: 'navCtrl',
+        controllerAs: 'nav',
         data: {
           animationConf: {
             character: 'slide-left',

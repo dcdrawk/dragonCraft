@@ -1,5 +1,5 @@
 'use strict';
-angular.module('dCraftApp').service( 'ClassSrv', function(){  
+angular.module('dCraftApp').service('classSrv', function(){  
 
   //Data
   this.classes = [{
@@ -33,7 +33,7 @@ angular.module('dCraftApp').service( 'ClassSrv', function(){
       abilities: [{
           title: 'Rage',
           level: '0',
-          description: '<p>In battle, you fight with primal ferocity. On your turn, you can enter a rage as a bonus action.</p><p>While raging, you gain the following benefits if you aren’t wearing heavy armor:</p><ul><li>You have advantage on Strength checks and Strength saving throws.</li><li>When you make a melee weapon attack using Strength, you gain a bonus to the damage roll that increases as you gain levels as a barbarian, as shown in the Rage Damage colum n of the Barbarian table.</li><li>You have resistance to bludgeoning, piercing, and slashing damage.</li></ul><p>If you are able to cast spells, you can’t cast them or concentrate on them while raging.</p><p>Your rage lasts for 1 minute. It ends early if you are knocked unconscious or if your turn ends and you haven’t attacked a hostile creature since your last turn or taken damage since then. You can also end your rage on your turn as a bonus action.</p><p>Once you have raged the number of times shown for your barbarian level in the Rages colum n of the Barbarian table, you must finish a long rest before you can rage again.</p>'
+          description: '<p>In battle, you fight with primal ferocity. On your turn, you can enter a rage as a bonus action.</p><p>While raging, you gain the following benefits if you aren’t wearing heavy armor:</p><ul><li>You have advantage on Strength checks and Strength saving throws.</li><li>When you make a melee weapon attack using Strength, you gain a bonus to the damage roll that increases as you gain levels as a barbarian, as shown in the Rage Damage column of the Barbarian table.</li><li>You have resistance to bludgeoning, piercing, and slashing damage.</li></ul><p>If you are able to cast spells, you can’t cast them or concentrate on them while raging.</p><p>Your rage lasts for 1 minute. It ends early if you are knocked unconscious or if your turn ends and you haven’t attacked a hostile creature since your last turn or taken damage since then. You can also end your rage on your turn as a bonus action.</p><p>Once you have raged the number of times shown for your barbarian level in the Rages column of the Barbarian table, you must finish a long rest before you can rage again.</p>'
         },{
           title: 'Unarmored Defence',
           level: '0',
@@ -1667,7 +1667,7 @@ angular.module('dCraftApp').service( 'ClassSrv', function(){
           description: '8 + your Constitution modifier'
         },{
           title: 'Hit Points at Higher Levels',
-          description: '1d8 (or 5) + y our Constitution modifier per warlock level after 1st'
+          description: '1d8 (or 5) + your Constitution modifier per warlock level after 1st'
         }],
       proficiencies:[{
           title: 'Armor',
@@ -1892,7 +1892,7 @@ angular.module('dCraftApp').service( 'ClassSrv', function(){
           },{
             title: 'Dark One\u0027s Own Luck',
             level: '6',
-            description: '<p>Starting at 6th level, you can call on your patron to alter fate in your favor. When you make an ability check or a saving throw, you can use this feature to add a d 10 to your roll. You can do so after seeing the initial roll but before any of the roll’s effects occur.</p><p>Once you use this feature, you can’t use it again until you finish a short or long rest.</p>'
+            description: '<p>Starting at 6th level, you can call on your patron to alter fate in your favor. When you make an ability check or a saving throw, you can use this feature to add a d10 to your roll. You can do so after seeing the initial roll but before any of the roll’s effects occur.</p><p>Once you use this feature, you can’t use it again until you finish a short or long rest.</p>'
           },{
             title: 'Fiendish Resilience',
             level: '10',

@@ -1,5 +1,5 @@
 'use strict';
-angular.module('dCraftApp').service('FeatsSrv', function(){
+angular.module('dCraftApp').service('featsSrv', function(){
   //Feats
   this.feats = [{
     name:'Alert',

@@ -1,4 +1,4 @@
-angular.module('dCraftApp').service( 'RaceSrv', function(){  
+angular.module('dCraftApp').service('raceSrv', function(){  
   //Data
   this.races = [{
       name: 'Dwarf',

@@ -1,5 +1,5 @@
 'use strict';
-angular.module('dCraftApp').service( 'BackgroundSrv', function(){  
+angular.module('dCraftApp').service( 'backgroundSrv', function(){  
 
   //Alignments
   this.alignments = [{
