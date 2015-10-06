@@ -78,6 +78,9 @@ md-list-item h4 {
 md-list-item .disabled {
   opacity: .5; }
 
+md-list-item .md-no-style {
+  padding: 0px 8px; }
+
 #characterList md-list-item {
   background-color: transparent;
   transition: all 400ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
@@ -133,6 +136,27 @@ md-card {
   border-bottom: 1px solid rgba(0, 0, 0, 0.1); }
   .trait h4 {
     margin: 12px 0; }
+
+.feature {
+  margin-bottom: 12px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1); }
+  .feature:last-child {
+    border-bottom: 0; }
+  .feature h4 {
+    margin: 12px 0; }
+
+.description h4:first-child {
+  margin-top: 0; }
+
+.sub-title {
+  background-color: #009688;
+  color: #fff; }
+
+section {
+  border-bottom: 3px solid #26A69A;
+  margin-bottom: 12px; }
+  section:last-child {
+    border-bottom: 0; }
 
 /* Page items */
 .page-settings {
