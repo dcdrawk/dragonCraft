@@ -152,26 +152,46 @@ main {
   0% {
     transform: translateX(0px); }
   100% {
-    transform: translateX(-62px); } }
+    transform: translateX(-62px);
+    animation-play-state: paused; } }
 
 @keyframes show-back {
   0% {
     transform: translateX(-62px); }
   100% {
-    transform: translateX(0px); } }
+    transform: translateX(0px);
+    animation-play-state: paused; } }
 
-.toolbar-left.showback {
+@keyframes hide-button {
+  0% {
+    opacity: 1; }
+  100% {
+    opacity: 0;
+    visibility: hidden; } }
+
+@keyframes show-button {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1;
+    visibility: visible; } }
+
+.showback {
   animation: show-back 0.7s;
-  animation-timing-function: cubic-bezier(0.465, 0.183, 0.153, 0.946); }
-  .toolbar-left.showback #back {
-    animation: fade-in 0.7s;
-    animation-timing-function: cubic-bezier(0.465, 0.183, 0.153, 0.946); }
+  animation-timing-function: cubic-bezier(0.465, 0.183, 0.153, 0.946);
+  animation-fill-mode: forwards; }
+  .showback #back {
+    animation: show-button 0.7s;
+    animation-timing-function: cubic-bezier(0.465, 0.183, 0.153, 0.946);
+    animation-fill-mode: forwards; }
 
-.toolbar-left.hideback {
+.hideback {
   animation: hide-back 0.7s;
-  animation-timing-function: cubic-bezier(0.465, 0.183, 0.153, 0.946); }
-  .toolbar-left.hideback #back {
-    animation: fade-out 0.7s;
-    animation-timing-function: cubic-bezier(0.465, 0.183, 0.153, 0.946); }
+  animation-timing-function: cubic-bezier(0.465, 0.183, 0.153, 0.946);
+  animation-fill-mode: forwards; }
+  .hideback #back {
+    animation: hide-button 0.7s;
+    animation-timing-function: cubic-bezier(0.465, 0.183, 0.153, 0.946);
+    animation-fill-mode: forwards; }
 
 /*# sourceMappingURL=animations.css.map */
