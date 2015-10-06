@@ -6,10 +6,10 @@ angular.module('dCraftApp').controller('newCharacterCtrl', function ($scope, rac
   
   //Update Subraces
   $scope.updateSubraces = function(race){
-    for(var key of $scope.races){
-      if(race === key.name){
-        $scope.subraces = key.subraces;        
-        console.log($scope.subraces);
+    for(var i in $scope.races){
+      if(race === $scope.races[i].name){
+        $scope.subraces = $scope.races[i].subraces;        
+        //console.log($scope.subraces);
       }
     }
   };
