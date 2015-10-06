@@ -8,10 +8,10 @@ angular.module('dCraftApp').controller('basicCtrl', function($scope, characterSr
   console.log($scope.character);
   //Update Subraces
   $scope.updateSubraces = function(race){
-    for(var key of $scope.races){
-      if(race === key.name){
+    for(var i in $scope.races){
+      if(race === $scope.races[i].name){
         $scope.subraces = key.subraces;        
-        console.log($scope.subraces);
+        //console.log($scope.subraces);
       }
     }
   };
