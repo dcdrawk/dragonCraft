@@ -1,15 +1,15 @@
 <!-- Title -->
 <div id="top" class="page-title md-primary">
   <div class="container md-padding">
-    <h2>{{selectedCharacter.name}} - Basic Info</h2>
-    <h3>Level {{selectedCharacter.level}} {{selectedCharacter.race}} {{selectedCharacter.class}}</h3>
+    <h2>{{character.name}} - Basic Info</h2>
+    <h3>Level {{character.level}} {{character.race}} {{character.class}}</h3>
   </div>
 </div>
 <!-- testtt -->
 <!-- Content -->
 <div class="content-wrapper">
   <div class="container md-padding">
-  <md-button class="lock-button md-icon-button md-fab md-accent" ng-controller="AppCtrl" ng-click="$mdOpenMenu($event)" id="more">
+  <md-button class="lock-button md-icon-button md-fab md-accent" ng-controller="AppCtrl" ng-click="$mdOpenMenu($event)" id="more"  aria-label="Lock Page">
     <i ng-if="lockBasic" md-menu-origin class="material-icons">lock</i>
     <i ng-if="!lockBasic" md-menu-origin class="material-icons">lock_open</i>
   </md-button>
@@ -42,7 +42,7 @@
     </md-menu-content>
   </md-menu>
 -->
-    <p flex>Basic information about your character. Provides the foundation for the rest of your character.</p>
+    <p flex>Basic information about your character.</p>
     
     </div>
     
@@ -50,14 +50,14 @@
       <!-- Name -->
       <md-input-container flex-gt-sm="50" flex-sm="100">
         <label>Name</label>
-        <input type="text" ng-model="char.name" ng-disabled="lockBasic" ng-change="updateChar(char.id, 'name', char.name)">
+        <input type="text" ng-model="character.name" ng-change="updateCharacter(character.id, 'name', character.name)" value="character.name">
       </md-input-container>
 
       <!-- Race -->
       <md-input-container flex-gt-sm="50" flex-sm="100">
         <label>Race</label>
-        <md-select name="race" ng-model="char.race" ng-change="updateChar(char.id, 'race', char.race); updateSubrace(char.race)" ng-disabled="lockBasic">
-          <md-option ng-repeat="race in raceArray" value="{{race.name}}" >{{race.name}}</md-option>
+        <md-select name="race" ng-model="character.race" ng-change="updateCharacter(character.id, 'race', character.race); updateSubraces(character.race)" ng-disabled="lockBasic">
+          <md-option ng-repeat="race in races" value="{{race.name}}" >{{race.name}}</md-option>
           <md-option ng-click="showDialog($event, 'race')" value="custom">Add Custom Race...</md-option>
         </md-select>
       </md-input-container>
@@ -65,17 +65,17 @@
       <!-- Subrace -->
       <md-input-container flex-gt-sm="50" flex-sm="100">
         <label>Subrace</label>
-        <md-select name="race" ng-model="char.subrace" ng-change="updateChar(char.id, 'subrace', char.subrace)" ng-disabled="lockBasic">
-          <md-option ng-repeat="subrace in subraceArray" value="{{subrace}}" >{{subrace}}</md-option>
-          <md-option ng-click="showDialog($event, 'subrace')" value="custom">Add Custom Subrace...</md-option>
+        <md-select name="race" ng-model="character.subrace" ng-change="updateCharacter(character.id, 'subrace', character.subrace)" ng-disabled="lockBasic" ng-init="updateSubraces(character.race)">
+          <md-option ng-repeat="subrace in subraces" value="{{subrace.name}}" >{{subrace.name}}</md-option>
+          <md-option ng-click="showDialog($event, 'subrace')" value="custom.name">Add Custom Subrace...</md-option>
         </md-select>
       </md-input-container>
 
       <!-- Class -->
       <md-input-container flex-gt-sm="50" flex-sm="100">
         <label>Class</label>
-        <md-select name="race" ng-model="char.class" ng-change="updateChar(char.id, 'class', char.class)" ng-disabled="lockBasic">
-          <md-option ng-repeat="class in classArray" value="{{class}}" >{{class}}</md-option>
+        <md-select name="race" ng-model="character.class" ng-change="updateCharacter(character.id, 'class', character.class)" ng-disabled="lockBasic">
+          <md-option ng-repeat="class in classes" value="{{class.name}}" >{{class.name}}</md-option>
           <md-option ng-click="showDialog($event, 'class')" value="custom">Add Custom Class...</md-option>
         </md-select>
       </md-input-container>

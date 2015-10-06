@@ -4,6 +4,7 @@ angular.module('dCraftApp').controller('newCharacterCtrl', function ($scope, rac
   $scope.classes = classSrv.classes;
   $scope.subraces = {};
   
+  //Update Subraces
   $scope.updateSubraces = function(race){
     for(var key of $scope.races){
       if(race === key.name){

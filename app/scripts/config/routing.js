@@ -81,8 +81,8 @@ angular.module('dCraftApp')
       })
       .when('/character/profile/basic-info', {
         templateUrl: 'views/character/profile/basic.html',
-        controller: 'CharacterCtrl',
-        controllerAs: 'character',
+        controller: 'basicCtrl',
+        controllerAs: 'basic',
         data: {
           animationConf: {
             profile: 'slide-left',
@@ -92,7 +92,7 @@ angular.module('dCraftApp')
       })
       .when('/character/profile/appearance', {
         templateUrl: 'views/character/profile/appearance.html',
-        controller: 'AppearanceCtrl',
+        controller: 'appearanceCtrl',
         controllerAs: 'appearance',
         data: {
           animationConf: {

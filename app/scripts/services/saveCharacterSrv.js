@@ -37,12 +37,14 @@ angular.module('dCraftApp').service('saveCharacterSrv', function(){
   };
   
   //Update Character
-  this.updateCharacter = function(id, field, value){
+  this.updateCharacter = function(id, field, value){    
     var characters = storage.getObj('characters');
     for(var i in characters){
-      if(id === characters[i].id){
+      if(id === parseInt(characters[i].id)){
         characters[i][field] = value;
+        storage.setObj('selectedCharacter', characters[i]);
         characters = storage.setObj('characters', characters);
+        return;
       }
     }
   }

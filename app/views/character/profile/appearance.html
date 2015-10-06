@@ -1,8 +1,8 @@
 <!-- Title -->
 <div id="top" class="page-title">
   <div class="container md-padding">
-    <h2>{{selectedCharacter.name}} - Appearance</h2>
-    <h3>Level {{selectedCharacter.level}} {{selectedCharacter.race}} {{selectedCharacter.class}}</h3>
+    <h2>{{character.name}} - Appearance</h2>
+    <h3>Level {{character.level}} {{character.race}} {{character.class}}</h3>
   </div>
 </div>
 
@@ -13,19 +13,19 @@
     <!-- Height -->
     <md-input-container>
       <label>Height</label>
-      <input type="text" ng-model="char.height" ng-disabled="lockAppearance" ng-change="updateChar(char.id, 'height', char.height)">
+      <input type="text" ng-model="character.height" ng-disabled="lockAppearance" ng-change="updateCharacter(character.id, 'height', character.height)">
     </md-input-container>
     
     <!-- Weight -->
     <md-input-container>
       <label>Weight</label>
-      <input type="text" ng-model="char.weight" ng-disabled="lockAppearance" ng-change="updateChar(char.id, 'weight', char.weight)">
+      <input type="text" ng-model="character.weight" ng-disabled="lockAppearance" ng-change="updateCharacter(character.id, 'weight', character.weight)">
     </md-input-container>
     
     <!-- Description -->
     <md-input-container>
       <label>Description</label>
-      <textarea type="text" ng-model="char.description" ng-disabled="lockAppearance" ng-change="updateChar(char.id, 'description', char.description)"></textarea>
+      <textarea type="text" ng-model="character.description" ng-disabled="lockAppearance" ng-change="updateCharacter(character.id, 'description', character.description)"></textarea>
     </md-input-container>
   </div>
 </div>
