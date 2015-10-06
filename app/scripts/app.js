@@ -23,7 +23,7 @@ angular
     'ngRouteAnimationManager'
   ])  
   
-  .run(function($rootScope, $location, transitionSrv){
+  .run(function($rootScope, $location){
     console.log('running!');
     
     //set up the local storage for the selected Character
