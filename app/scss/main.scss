@@ -1,6 +1,7 @@
 //Variables
 $font-stack: open sans, sans-serif;
 $blue-500: #2196F3;
+$teal-400: #26A69A;
 $white: #fff;
 
 //Body
@@ -34,6 +35,10 @@ body{
 .page-title{
   background-color: $blue-500;
   color:$white;
+//  .container{
+//    padding-left: 16px;
+//    padding-right: 16px;
+//  }
 }
 .main{
   overflow-x:hidden;
@@ -110,6 +115,9 @@ md-list-item{
   .disabled{
     opacity: .5;
   }
+  .md-no-style{
+    padding:0px 8px;
+  }
   
 }
 
@@ -181,6 +189,36 @@ md-card{
   border-bottom:1px solid rgba(0,0,0,.1);
   h4{
     margin:12px 0;
+  }
+}
+
+//View Elements
+.feature{
+  margin-bottom:12px;
+  border-bottom:1px solid rgba(0,0,0,.1);
+  &:last-child{
+    border-bottom:0;
+  }
+  h4{
+    margin:12px 0;
+  }
+}
+.description{
+  h4{
+    &:first-child{
+      margin-top:0;
+    }
+  }
+}
+.sub-title{
+  background-color: #009688;
+  color: #fff;
+}
+section{
+  border-bottom:3px solid $teal-400;
+  margin-bottom:12px;
+  &:last-child{
+    border-bottom:0;
   }
 }
 

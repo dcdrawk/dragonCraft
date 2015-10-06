@@ -25,11 +25,11 @@ angular.module('dCraftApp').service( 'backgroundSrv', function(){
     description:'Methodically take what they want, within the limits of a code of tradition, loyalty, or order. Devils, blue dragons, and hobgoblins are lawful evil.'
   },{
     title:'Neutral Evil',
-    description:'The alignment of those who do whatever they can get away with, without com passion or qualms.'
+    description:'The alignment of those who do whatever they can get away with, without compassion or qualms.'
   },{
     title:'Chaotic Evil',
     description:'Act with arbitrary violence, spurred by their greed, hatred, or bloodlust.'
-  }]
+  }];
   
   //Languages
   this.standardLanguages = ['Common', 'Dwarvish', 'Elvish', 'Giant', 'Gnomish', 'Goblin', 'Halfling', 'Orc'];
@@ -40,12 +40,12 @@ angular.module('dCraftApp').service( 'backgroundSrv', function(){
   this.backgrounds = [{
     name: 'Acolyte',
     description: '<p>You have spent your life in the service of a temple to a specific god or pantheon of gods. You act as an intermediary between the realm of the holy and the mortal world, performing sacred rites and offering sacrifices in order to conduct worshipers into the presence of the divine. You are not necessarily a cleric-perform ing sacred rites is not the same thing as channeling divine power.</p><p>Choose a god, a pantheon of gods, or some other quasi-divine being from among those listed in appendix B or those specified by your DM, and work with your DM to detail the nature of your religious service. Were you a lesser functionary in a temple, raised from childhood to assist the priests in the sacred rites? Or were you a high priest who suddenly experienced a call to serve your god in a different way? Perhaps you were the leader of a small cult outside of any established temple structure, or even an occult group that served a fiendish master that you now deny.</p>',
-    skillProficiencies: 'Insight, Religion ',
+    skillProficiencies: 'Insight, Religion',
     languages: 'Two of your choice',
     equipment: 'A holy symbol (a gift to you when you entered the priesthood), a prayer book or prayer wheel, 5 sticks of incense, vestments, a set of common clothes, and a belt pouch containing 15 gp',
     feature: {
       title: 'Shelter of the Faithful',
-      description: '<p>As an acolyte, you command the respect of those who share your faith, and you can perform the religious cerem onies of your deity. You and your adventuring companions can expect to receive free healing and care at a temple, shrine, or other established presence of your faith, though you must provide any material components needed for spells. Those who share your religion will support you (but only you) at a modest lifestyle.</p><p>You might also have ties to a specific temple dedicated to your chosen deity or pantheon, and you have a residence there. This could be the temple where you used to serve, if you remain on good terms with it, or a temple where you have found a new home. W hile near your temple, you can call upon the priests for assistance, provided the assistance you ask for is not hazardous and you remain in good standing with your temple.</p>'
+      description: '<p>As an acolyte, you command the respect of those who share your faith, and you can perform the religious cerem onies of your deity. You and your adventuring companions can expect to receive free healing and care at a temple, shrine, or other established presence of your faith, though you must provide any material components needed for spells. Those who share your religion will support you (but only you) at a modest lifestyle.</p><p>You might also have ties to a specific temple dedicated to your chosen deity or pantheon, and you have a residence there. This could be the temple where you used to serve, if you remain on good terms with it, or a temple where you have found a new home. While near your temple, you can call upon the priests for assistance, provided the assistance you ask for is not hazardous and you remain in good standing with your temple.</p>'
     }
   },{
     name: 'Charlatan',
@@ -83,7 +83,7 @@ angular.module('dCraftApp').service( 'backgroundSrv', function(){
     equipment: 'A musical instrument (one of your choice), the favor of an admirer (love letter, lock of hair, or trinket), a costume, and a belt pouch containing 15 gp',
     feature: {
       title: 'By Popular Demand',
-      description: 'You can always find a place to perform, usually in an inn or tavern but possibly with a circus, at a theater, or even in a noble’s court. At such a place, you receive free lodging and food of a modest or comfortable standard (depending on the quality of the establishment), as long as you perform each night. In addition, your performance makes you something of a local figure. W hen strangers recognize you in a town where you have performed, they typically take a liking to you.'
+      description: 'You can always find a place to perform, usually in an inn or tavern but possibly with a circus, at a theater, or even in a noble’s court. At such a place, you receive free lodging and food of a modest or comfortable standard (depending on the quality of the establishment), as long as you perform each night. In addition, your performance makes you something of a local figure. When strangers recognize you in a town where you have performed, they typically take a liking to you.'
     },
     special: {
       title: 'Entertainer Routines',
@@ -167,7 +167,7 @@ angular.module('dCraftApp').service( 'backgroundSrv', function(){
     equipment: 'A bottle of black ink, a quill, a small knife, a letter from a dead colleague posing a question you have not yet been able to answer, a set of common clothes, and a belt pouch containing 10 gp',
     feature: {
       title: 'Researcher',
-      description: 'When you attempt to learn or recall a piece of lore, if you do not know that information, you often know where and from whom you can obtain it. Usually, this information com es from a library, scriptorium, university, or a sage or other learned person or creature. Your DM might rule that the knowledge you seek is secreted away in an almost inaccessible place, or that it simply cannot be found. Unearthing the deepest secrets of the multiverse can require an adventure or even a whole campaign.'
+      description: 'When you attempt to learn or recall a piece of lore, if you do not know that information, you often know where and from whom you can obtain it. Usually, this information comes from a library, scriptorium, university, or a sage or other learned person or creature. Your DM might rule that the knowledge you seek is secreted away in an almost inaccessible place, or that it simply cannot be found. Unearthing the deepest secrets of the multiverse can require an adventure or even a whole campaign.'
     },
     special: {
       title: 'Speciality',
@@ -175,7 +175,7 @@ angular.module('dCraftApp').service( 'backgroundSrv', function(){
     }
   },{
     name: 'Sailor',
-    description: '<p>You sailed on a seagoing vessel for years. In that time, you faced down mighty storms, monsters of the deep, and those who wanted to sink your craft to the bottomless depths. Your first love is the distant line of the horizon, but the time has come to try your hand at something new.</p><p>Discuss the nature of the ship you previously sailed with your Dungeon Master. W as it a merchant ship, a naval vessel, a ship of discovery, or a pirate ship? How famous (or infamous) is it? Is it widely traveled? Is it still sailing, or is it missing and presumed lost with all hands?</p><p>What were your duties on board—boatswain, captain, navigator, cook, or some other position? W ho were the captain and first mate? Did you leave your ship on good terms with your fellows, or on the run?</p>',
+    description: '<p>You sailed on a seagoing vessel for years. In that time, you faced down mighty storms, monsters of the deep, and those who wanted to sink your craft to the bottomless depths. Your first love is the distant line of the horizon, but the time has come to try your hand at something new.</p><p>Discuss the nature of the ship you previously sailed with your Dungeon Master. Was it a merchant ship, a naval vessel, a ship of discovery, or a pirate ship? How famous (or infamous) is it? Is it widely traveled? Is it still sailing, or is it missing and presumed lost with all hands?</p><p>What were your duties on board-boatswain, captain, navigator, cook, or some other position? Who were the captain and first mate? Did you leave your ship on good terms with your fellows, or on the run?</p>',
     skillProficiencies: 'Athletics, Perception',
     toolProficiencies: 'Navigator’s tools, vehicles (water)',
     equipment: 'A belaying pin (club), 50 feet of silk rope, a lucky charm such as a rabbit foot or a small stone with a hole in the center (or you may roll for a random trinket on the Trinkets table in chapter 5), a set of common clothes, and a belt pouch containing 10 gp',
@@ -205,7 +205,7 @@ angular.module('dCraftApp').service( 'backgroundSrv', function(){
     equipment: 'A small knife, a map of the city you grew up in, a pet mouse, a token to remember your parents by, a set of common clothes, and a belt pouch containing 10 gp',
     feature: {
       title: 'City Secrets',
-      description: 'You know the secret patterns and flow to cities and can find passages through the urban sprawl that others would miss. W hen you are not in combat, you (and companions you lead) can travel between any two locations in the city twice as fast as your speed would normally allow.'
+      description: 'You know the secret patterns and flow to cities and can find passages through the urban sprawl that others would miss. When you are not in combat, you (and companions you lead) can travel between any two locations in the city twice as fast as your speed would normally allow.'
     }
   }];
 });

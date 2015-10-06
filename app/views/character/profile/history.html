@@ -1,8 +1,8 @@
 <!-- Title -->
 <div id="top" class="page-title">
   <div class="container md-padding">
-    <h2>{{selectedCharacter.name}} - History</h2>
-    <h3>Level {{selectedCharacter.level}} {{selectedCharacter.race}} {{selectedCharacter.class}}</h3>
+    <h2>{{character.name}} - History</h2>
+    <h3>Level {{character.level}} {{character.race}} {{character.class}}</h3>
   </div>
 </div>
 
@@ -10,37 +10,92 @@
 <div class="content-wrapper">
   <div class="container md-padding">
   
+    <!-- Alignment -->
+    <section id="alignment">
+      <md-input-container>
+        <label>Alignment</label>
+        <md-select name="alignment" ng-model="character.alignment" ng-change="updateCharacter(character.id, 'alignment', character.alignment); getAlignmentDescription(character.alignment);" ng-init="getAlignmentDescription(character.alignment)">
+          <md-option ng-repeat="alignment in alignments track by $index" value="{{alignment.title}}">{{alignment.title}}</md-option>
+        </md-select>
+      </md-input-container>
+
+      <div class="description" ng-if="character.alignment">
+        <h4>Description</h4>
+        <p>{{alignmentDescription}}</p>
+      </div>
+    </section>
+    
     <!-- Background -->
-    <md-input-container>
-      <label>Background</label>
-      <md-select name="background" ng-model="char.background" ng-change="updateChar(char.id, 'background', char.background);">
-        <md-option ng-repeat="background in backgroundArray" value="{{background.name}}" >{{background.name}}</md-option>
-        <md-option ng-click="showDialog($event, 'background')" value="custom">Add Custom Background...</md-option>
-      </md-select>
-    </md-input-container>
-    
+    <section id="background">
+      <md-input-container>
+        <label>Background</label>
+        <md-select name="background" ng-model="character.background" ng-change="updateCharacter(character.id, 'background', character.background); getBackgroundInfo(character.background);">
+          <md-option ng-repeat="background in backgrounds" value="{{background.name}}" ng-init="getBackgroundInfo(character.background)">{{background.name}}</md-option>
+  <!--        <md-option ng-click="showDialog($event, 'background')" value="custom">Add Custom Background...</md-option>-->
+        </md-select>
+      </md-input-container>
+      <div class="description" ng-if="backgroundInfo">        
+        <div class="feature">
+          <h4>Description</h4>
+          <p ng-bind-html="backgroundInfo.description"></p>
+        </div>
+        
+        <div class="feature" ng-if="backgroundInfo.skillProficiencies">
+          <h4>Skills</h4>
+          <p ng-bind-html="backgroundInfo.skillProficiencies"></p>
+        </div>
+        
+        <div class="feature" ng-if="backgroundInfo.languages">
+          <h4>Languages</h4>
+          <p ng-bind-html="backgroundInfo.languages"></p>
+        </div>
+        
+        <div class="feature" ng-if="backgroundInfo.toolProficiencies">
+          <h4>Tools</h4>
+          <p ng-bind-html="backgroundInfo.toolProficiencies"></p>
+        </div>
+        
+        <div class="feature" ng-if="backgroundInfo.equipment">
+          <h4>Equipment</h4>
+          <p ng-bind-html="backgroundInfo.equipment"></p>
+        </div>
+        
+        <div class="feature" ng-if="backgroundInfo.special">
+          <h4>{{backgroundInfo.special.title}}</h4>
+          <p ng-bind-html="backgroundInfo.special.description"></p>
+        </div> 
+        
+        <div class="feature" ng-if="backgroundInfo.feature">
+          <h4>{{backgroundInfo.feature.title}}</h4>
+          <p ng-bind-html="backgroundInfo.feature.description"></p>
+        </div>
+      </div>   
+    </section>
     <!-- Personality -->
-    <md-input-container>
-      <label>Personality Traits</label>
-      <textarea type="text" ng-model="char.personality" ng-disabled="lockAppearance" ng-change="updateChar(char.id, 'personality', char.personality)"></textarea>
-    </md-input-container>
+    <section id="personality">
+      <md-input-container>
+        <label>Personality Traits</label>
+        <textarea type="text" ng-model="character.personality" ng-disabled="lock.history" ng-change="updateCharacter(character.id, 'personality', character.personality)"></textarea>
+      </md-input-container>
+
+      <!-- Ideals -->
+      <md-input-container>
+        <label>Ideals</label>
+        <textarea type="text" ng-model="character.ideals" ng-disabled="lock.history" ng-change="updateCharacter(character.id, 'ideals', character.ideals)"></textarea>
+      </md-input-container>
+
+      <!-- Height -->
+      <md-input-container>
+        <label>Bonds</label>
+        <textarea type="text" ng-model="character.bonds" ng-disabled="lock.history" ng-change="updateCharacter(character.id, 'bonds', character.bonds)"></textarea>
+      </md-input-container>
+
+      <!-- Height -->
+      <md-input-container>
+        <label>Flaws</label>
+        <textarea type="text" ng-model="character.flaws" ng-disabled="lock.history" ng-change="updateCharacter(character.id, 'flaws', character.flaws)"></textarea>
+      </md-input-container>
+    </section>
     
-    <!-- Ideals -->
-    <md-input-container>
-      <label>Ideals</label>
-      <input type="text" ng-model="char.ideals" ng-disabled="lockAppearance" ng-change="updateChar(char.id, 'ideals', char.ideals)">
-    </md-input-container>
-    
-    <!-- Height -->
-    <md-input-container>
-      <label>Bonds</label>
-      <input type="text" ng-model="char.bonds" ng-disabled="lockAppearance" ng-change="updateChar(char.id, 'bonds', char.bonds)">
-    </md-input-container>
-    
-    <!-- Height -->
-    <md-input-container>
-      <label>Flaws</label>
-      <input type="text" ng-model="char.flaws" ng-disabled="lockAppearance" ng-change="updateChar(char.id, 'flaws', char.flaws)">
-    </md-input-container>
   </div>
 </div>

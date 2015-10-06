@@ -103,7 +103,7 @@ angular.module('dCraftApp')
       })
       .when('/character/profile/history', {
         templateUrl: 'views/character/profile/history.html',
-        controller: 'HistoryCtrl',
+        controller: 'historyCtrl',
         controllerAs: 'history',
         data: {
           animationConf: {
@@ -114,8 +114,8 @@ angular.module('dCraftApp')
       })
       .when('/character/profile/class-features', {
         templateUrl: 'views/character/profile/proficiency.html',
-        controller: 'CharacterCtrl',
-        controllerAs: 'character',
+        controller: 'classCtrl',
+        controllerAs: 'controller',
         data: {
           animationConf: {
             profile: 'slide-left',
@@ -125,7 +125,7 @@ angular.module('dCraftApp')
       })
       .when('/character/profile/racial-traits', {
         templateUrl: 'views/character/profile/traits.html',
-        controller: 'TraitsCtrl',
+        controller: 'traitsCtrl',
         controllerAs: 'traits',
         data: {
           animationConf: {
@@ -136,8 +136,8 @@ angular.module('dCraftApp')
       })
       .when('/character/profile/feats', {
         templateUrl: 'views/character/profile/feats.html',
-        controller: 'CharacterCtrl',
-        controllerAs: 'character',
+        controller: 'featsCtrl',
+        controllerAs: 'feats',
         data: {
           animationConf: {
             profile: 'slide-left',

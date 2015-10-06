@@ -63,7 +63,7 @@
       </md-input-container>
 
       <!-- Subrace -->
-      <md-input-container flex-gt-sm="50" flex-sm="100">
+      <md-input-container flex-gt-sm="50" flex-sm="100" ng-if="subraces.length > 0">
         <label>Subrace</label>
         <md-select name="race" ng-model="character.subrace" ng-change="updateCharacter(character.id, 'subrace', character.subrace)" ng-disabled="lockBasic" ng-init="updateSubraces(character.race)">
           <md-option ng-repeat="subrace in subraces" value="{{subrace.name}}" >{{subrace.name}}</md-option>
