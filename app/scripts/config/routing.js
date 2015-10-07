@@ -24,8 +24,8 @@ angular.module('dCraftApp')
       })
       .when('/test', {
         templateUrl: 'views/test.html',
-        controller: 'navCtrl',
-        controllerAs: 'nav',
+        controller: 'testCtrl',
+        controllerAs: 'test',
         data: {
           animationConf: {
             newcharacter: 'slide-down',
