@@ -36,8 +36,8 @@ module.exports = function(config) {
       'bower_components/ng-messages/angular-messages.js',
       'bower_components/screenfull/dist/screenfull.js',
       'bower_components/angular-screenfull/dist/angular-screenfull.js',
-      'bower_components/angular-mocks/angular-mocks.js',
       'bower_components/angular-indexedDB/angular-indexed-db.js',
+      'bower_components/angular-mocks/angular-mocks.js',
       // endbower
       "app/scripts/**/*.js",
       "test/mock/**/*.js",

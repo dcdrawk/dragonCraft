@@ -36,7 +36,7 @@ angular
       .upgradeDatabase(2, function(event, db, tx){
         db.createObjectStore('peoplePhones', {keyPath: 'person_ssn'});      
       })
-      .upgradeDatabase(4, function(event, db, tx){
+      .upgradeDatabase(5, function(event, db, tx){
       console.log(event);
       console.log(db);
       console.log(tx);
