@@ -6,7 +6,27 @@ angular.module('dCraftApp').controller('testCtrl', function($scope, $indexedDB) 
   
   $scope.objects = [];
 
-    $indexedDB.openStore('people', (store) =>
+//    $indexedDB.openStore('people', (store) =>
+//
+////      store.insert({"ssn": "444-555-333-111","name": "Jane Doe", "age": 57}).then(function(e){
+////        console.log('loool');
+////        store.getAll().then(function(people) {  
+////        // Update scope
+////          $scope.objects = people;
+////          console.log('HERE DA PEEPOLE');
+////          console.log($scope.objects);
+////        });
+////      
+////      }).then(function(){
+//      
+//      
+//      store.upsert({"ssn": "444-555-333-111","name": "Jane asdffdsafdd", "age": 58}).then(function(e){
+//        console.log('updaten!');
+//      console.log(e);
+//      }));
+  
+  
+      $indexedDB.openStore('test', (store) =>
 
 //      store.insert({"ssn": "444-555-333-111","name": "Jane Doe", "age": 57}).then(function(e){
 //        console.log('loool');
@@ -19,9 +39,9 @@ angular.module('dCraftApp').controller('testCtrl', function($scope, $indexedDB) 
 //      
 //      }).then(function(){
       
-      
-      store.upsert({"ssn": "444-555-333-111","name": "Jane dsada", "age": 57}).then(function(e){
-        console.log('updaten!');
+      store.insert({"balls": "Joeyjoejoe's","size": "Huge", "color": "purple"}).then(function(e){
+        console.log('ballsballsballs');
+        console.log(e);
       }));
 
 //  );

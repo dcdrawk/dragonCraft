@@ -24,17 +24,46 @@ angular
     'indexedDB'
   ])  
   .config(function ($indexedDBProvider) {
-    console.log('index db stuffs!');
+    //console.log(db);
     $indexedDBProvider
       .connection('myIndexedDB')
       .upgradeDatabase(1, function(event, db, tx){
         var objStore = db.createObjectStore('people', {keyPath: 'ssn'});
         objStore.createIndex('name_idx', 'name', {unique: false});
         objStore.createIndex('age_idx', 'age', {unique: false});
+      
       })
       .upgradeDatabase(2, function(event, db, tx){
-        db.createObjectStore('peoplePhones', {keyPath: 'person_ssn'});
+        db.createObjectStore('peoplePhones', {keyPath: 'person_ssn'});      
+      })
+      .upgradeDatabase(4, function(event, db, tx){
+      console.log(event);
+      console.log(db);
+      console.log(tx);
+//        var ballStore = db.createObjectStore('test', {keyPath: 'balls'});      
+//        ballStore.createIndex('size_idx', 'size', {unique: false});
+//        ballStore.createIndex('color_idx', 'color', {unique: false});
+//        db.createIndex('shape_idx', 'shape', {unique: false});
       });
+  
+    var request = indexedDB.open("myIndexedDB", 5);
+    request.onsuccess = function (evt) {
+        var db = request.result;                                                            
+    };
+
+    request.onerror = function (evt) {
+        console.log("IndexedDB error: " + evt.target.errorCode);
+    };
+  
+    request.onupgradeneeded = function (evt) {
+      console.log('upgrade needed mang');
+      
+      //console.log(evt.currentTarget.transaction.objectStore('test'));
+      
+      var objectStore = evt.currentTarget.transaction.objectStore('test');
+      objectStore.createIndex('shape_idx', 'shape', {unique: false});
+      
+    };
   })
   .run(function($rootScope, $location){
     console.log('running!');
