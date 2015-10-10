@@ -21,52 +21,52 @@ angular
     'ngMessages',
     'angularScreenfull',
     'ngRouteAnimationManager',
-    'indexedDB'
+    'indexedDB',
+    'oc.lazyLoad'
   ])  
-  .config(function ($indexedDBProvider) {
-    //console.log(db);
-    $indexedDBProvider
-      .connection('myIndexedDB')
-      .upgradeDatabase(1, function(event, db, tx){
-        var objStore = db.createObjectStore('people', {keyPath: 'ssn'});
-        objStore.createIndex('name_idx', 'name', {unique: false});
-        objStore.createIndex('age_idx', 'age', {unique: false});
-      
-      })
-      .upgradeDatabase(2, function(event, db, tx){
-        db.createObjectStore('peoplePhones', {keyPath: 'person_ssn'});      
-      })
-      .upgradeDatabase(5, function(event, db, tx){
-      console.log(event);
-      console.log(db);
-      console.log(tx);
-//        var ballStore = db.createObjectStore('test', {keyPath: 'balls'});      
-//        ballStore.createIndex('size_idx', 'size', {unique: false});
-//        ballStore.createIndex('color_idx', 'color', {unique: false});
-//        db.createIndex('shape_idx', 'shape', {unique: false});
-      });
-  
-    var request = indexedDB.open("myIndexedDB", 5);
-    request.onsuccess = function (evt) {
-        var db = request.result;                                                            
-    };
-
-    request.onerror = function (evt) {
-        console.log("IndexedDB error: " + evt.target.errorCode);
-    };
-  
-    request.onupgradeneeded = function (evt) {
-      console.log('upgrade needed mang');
-      
-      //console.log(evt.currentTarget.transaction.objectStore('test'));
-      
-      var objectStore = evt.currentTarget.transaction.objectStore('test');
-      objectStore.createIndex('shape_idx', 'shape', {unique: false});
-      
-    };
-  })
+//  .config(function ($indexedDBProvider) {
+//    //console.log(db);
+//    $indexedDBProvider
+//      .connection('myIndexedDB')
+//      .upgradeDatabase(1, function(event, db, tx){
+//        var objStore = db.createObjectStore('people', {keyPath: 'ssn'});
+//        objStore.createIndex('name_idx', 'name', {unique: false});
+//        objStore.createIndex('age_idx', 'age', {unique: false});
+//      
+//      })
+//      .upgradeDatabase(2, function(event, db, tx){
+//        db.createObjectStore('peoplePhones', {keyPath: 'person_ssn'});      
+//      })
+//      .upgradeDatabase(5, function(event, db, tx){
+//      console.log(event);
+//      console.log(db);
+//      console.log(tx);
+////        var ballStore = db.createObjectStore('test', {keyPath: 'balls'});      
+////        ballStore.createIndex('size_idx', 'size', {unique: false});
+////        ballStore.createIndex('color_idx', 'color', {unique: false});
+////        db.createIndex('shape_idx', 'shape', {unique: false});
+//      });
+//  
+//    var request = indexedDB.open("myIndexedDB", 5);
+//    request.onsuccess = function (evt) {
+//        var db = request.result;                                                            
+//    };
+//
+//    request.onerror = function (evt) {
+//        console.log("IndexedDB error: " + evt.target.errorCode);
+//    };
+//  
+//    request.onupgradeneeded = function (evt) {
+//      console.log('upgrade needed mang');
+//      
+//      //console.log(evt.currentTarget.transaction.objectStore('test'));
+//      
+//      var objectStore = evt.currentTarget.transaction.objectStore('test');
+//      objectStore.createIndex('shape_idx', 'shape', {unique: false});
+//      
+//    };
+//  })
   .run(function($rootScope, $location){
-    console.log('running!');
     
     //set up the local storage for the selected Character
     var myStorage = localStorage;
@@ -97,8 +97,8 @@ angular
     //var enter = document.getElementsByClassName('ng-enter');
     
     $rootScope.$on('$locationChangeSuccess', function(event, current, next) {
-      var enter = document.getElementsByClassName('ng-enter');
-       console.log(enter);
+      //var enter = document.getElementsByClassName('ng-enter');
+      //console.log(enter);
       
       mainContent.scrollTop = 0;
       if($location.path() == '/'){

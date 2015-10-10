@@ -11,7 +11,7 @@ angular.module('dCraftApp').service('characterSrv', function(){
   this.getCharacterList = function(){
     console.log('returning characters');
     return characters;
-  }
+  };
   
   //Select Character
   this.selectCharacter = function(id){
@@ -21,16 +21,16 @@ angular.module('dCraftApp').service('characterSrv', function(){
         storage.setObj('selectedCharacter', characters[i]);
       }
     }
-  }
+  };
   
   //Get Selected Character
   this.getSelectedCharacter = function(){
     return storage.getObj('selectedCharacter');
-  }
+  };
   
   //Update Selected Character
   this.updateSelectedCharacter = function(){
     
     return storage.getObj('selectedCharacter');
-  }
+  };
 });

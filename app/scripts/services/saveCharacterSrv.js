@@ -47,6 +47,6 @@ angular.module('dCraftApp').service('saveCharacterSrv', function(){
         return;
       }
     }
-  }
+  };
   
 });
