@@ -26,10 +26,18 @@ main{
     &.ng-enter{
       animation: slide-in-left .65s;
       animation-timing-function: $ease-in-out;
+      animation-fill-mode: forwards;
       h2, h3, .content-wrapper .container{
         animation: fade-in .65s;
         animation-timing-function: $ease-in-out;
+        animation-fill-mode: forwards;
       }
+//      .input-group{
+//        //opacity:0;
+//        animation: fade-in .65s;
+//        animation-timing-function: $ease-in-out;
+//        animation-fill-mode: forwards;
+//      }
     }
     
     &.ng-leave {
@@ -52,6 +60,11 @@ main{
         animation: fade-in .65s;
         animation-timing-function: $ease-in-out;
       }
+//      .input-group{
+//        animation: fade-in .65s;
+//        animation-delay: 2s;
+//        animation-timing-function: $ease-in-out;
+//      }
     }
     &.ng-leave {
       animation: slide-out-right .65s;
@@ -149,7 +162,7 @@ main{
   0% {
     opacity: 0;
     transform: translateY(25%);
-    transform-origin: left;
+    transform-origin: top;
   }
   100% {
     opacity: 1;
@@ -159,10 +172,12 @@ main{
 
 @keyframes slide-out-up {
   0% {
+    opacity: 1;
     transform: translateY(0%);
-    transform-origin: left;
+    transform-origin: top;
   }
   100% {
+    opacity: 0;
     transform: translateY(-25%);
   }
 }
@@ -170,7 +185,7 @@ main{
   0% {  
     opacity: 0;
     transform: translateY(-25%);
-    transform-origin: left;
+    transform-origin: top;
   }
   100% {
     opacity: 1;
@@ -182,7 +197,7 @@ main{
   0% {
     opacity: 1;
     transform: translateY(0%);
-    transform-origin: left;
+    transform-origin: top;
   }
   100% {
     opacity: 0;

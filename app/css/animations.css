@@ -16,10 +16,12 @@ main {
 
 .slide-left .view-content.ng-enter {
   animation: slide-in-left 0.65s;
-  animation-timing-function: cubic-bezier(0.465, 0.183, 0.153, 0.946); }
+  animation-timing-function: cubic-bezier(0.465, 0.183, 0.153, 0.946);
+  animation-fill-mode: forwards; }
   .slide-left .view-content.ng-enter h2, .slide-left .view-content.ng-enter h3, .slide-left .view-content.ng-enter .content-wrapper .container {
     animation: fade-in 0.65s;
-    animation-timing-function: cubic-bezier(0.465, 0.183, 0.153, 0.946); }
+    animation-timing-function: cubic-bezier(0.465, 0.183, 0.153, 0.946);
+    animation-fill-mode: forwards; }
 
 .slide-left .view-content.ng-leave {
   animation: slide-out-left 0.65s;
@@ -98,23 +100,25 @@ main {
   0% {
     opacity: 0;
     transform: translateY(25%);
-    transform-origin: left; }
+    transform-origin: top; }
   100% {
     opacity: 1;
     transform: translateY(0%); } }
 
 @keyframes slide-out-up {
   0% {
+    opacity: 1;
     transform: translateY(0%);
-    transform-origin: left; }
+    transform-origin: top; }
   100% {
+    opacity: 0;
     transform: translateY(-25%); } }
 
 @keyframes slide-in-down {
   0% {
     opacity: 0;
     transform: translateY(-25%);
-    transform-origin: left; }
+    transform-origin: top; }
   100% {
     opacity: 1;
     transform: translateY(0%); } }
@@ -123,7 +127,7 @@ main {
   0% {
     opacity: 1;
     transform: translateY(0%);
-    transform-origin: left; }
+    transform-origin: top; }
   100% {
     opacity: 0;
     transform: translateY(25%); } }

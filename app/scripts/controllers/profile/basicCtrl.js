@@ -1,7 +1,16 @@
 'use strict';
-angular.module('dCraftApp').controller('basicCtrl', function($scope, characterSrv, saveCharacterSrv, raceSrv, classSrv){
-  $scope.races = raceSrv.races;
-  $scope.classes = classSrv.classes;
+angular.module('dCraftApp').controller('basicCtrl', function($scope, characterSrv, saveCharacterSrv, databaseSrv, $timeout){
+  
+//  $timeout(function(){
+    databaseSrv.getClassNames().then(function(classNames){
+      $scope.classes = classNames;
+    });
+
+    databaseSrv.getRaceNames().then(function(raceNames){
+      $scope.races = raceNames;
+    });
+    
+//  }, 500)
   
   $scope.character = characterSrv.getSelectedCharacter();
   

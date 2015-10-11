@@ -1,4 +1,4 @@
-<h3>testing</h3>
+<h3>testingdsa</h3>
 <div ng-repeat="race in races">
   <p>{{race.name}}</p>
 </div>
@@ -17,4 +17,10 @@
       <div ng-bind-html="ability.description"></div>
     </div>
   </div>
+  
+</div>
+<div id="dbtest" ng-controller="databaseAdminCtrl">dsadads
+  <md-button class="md-raised md-primary" ng-click="clearDatabase()">Clear Database</md-button>
+  <md-button class="md-raised md-accent" ng-click="repopulateDatabase()">Repopulate Database</md-button>
+  <md-button class="md-raised md-warn" ng-click="deleteDatabase()">Delete Database</md-button>
 </div>

@@ -9,44 +9,17 @@
 <!-- Content -->
 <div class="content-wrapper">
   <div class="container md-padding">
-  <md-button class="lock-button md-icon-button md-fab md-accent" ng-controller="AppCtrl" ng-click="$mdOpenMenu($event)" id="more"  aria-label="Lock Page">
-    <i ng-if="lockBasic" md-menu-origin class="material-icons">lock</i>
-    <i ng-if="!lockBasic" md-menu-origin class="material-icons">lock_open</i>
-  </md-button>
-  <div layout="row" class="section-description">
-    
-    <!-- Menu -->
-<!--
-    <md-menu class="page-settings"  ng-controller="AppCtrl" >
-    <md-button class="md-icon-button md-raised" ng-controller="AppCtrl" ng-click="$mdOpenMenu($event)" id="more">
-      <i md-menu-origin class="material-icons">settings</i>
+    <md-button class="lock-button md-icon-button md-fab md-accent" ng-controller="AppCtrl" ng-click="$mdOpenMenu($event)" id="more"  aria-label="Lock Page">
+      <i ng-if="lockBasic" md-menu-origin class="material-icons">lock</i>
+      <i ng-if="!lockBasic" md-menu-origin class="material-icons">lock_open</i>
     </md-button>
+    <div layout="row" class="section-description">
     
-    <md-menu-content class="page-settings-content" width="4" >
-
-      <md-menu-item>
-        <md-button md-no-ink ng-click="lockPage('basic')" ng-if="!lockBasic">
-          <md-icon>
-            <i class="material-icons" md-menu-align-target>lock</i>
-          </md-icon>
-          Lock Page
-        </md-button>
-        <md-button md-no-ink ng-click="unlockPage('basic')" ng-if="lockBasic">
-          <md-icon>
-            <i class="material-icons" md-menu-align-target>lock_open</i>
-          </md-icon>
-          Unlock Page
-        </md-button>
-      </md-menu-item>
-
-    </md-menu-content>
-  </md-menu>
--->
-    <p flex>Basic information about your character.</p>
+      <p flex>Basic information about your character.</p>
     
     </div>
     
-    <div layout="row" layout-wrap>
+    <div layout="row" layout-wrap class="input-group">
       <!-- Name -->
       <md-input-container flex-gt-sm="50" flex-sm="100">
         <label>Name</label>
@@ -57,7 +30,7 @@
       <md-input-container flex-gt-sm="50" flex-sm="100">
         <label>Race</label>
         <md-select name="race" ng-model="character.race" ng-change="updateCharacter(character.id, 'race', character.race); updateSubraces(character.race)" ng-disabled="lockBasic">
-          <md-option ng-repeat="race in races" value="{{race.name}}" >{{race.name}}</md-option>
+          <md-option ng-repeat="race in races" value="{{race}}" >{{race}}</md-option>
           <md-option ng-click="showDialog($event, 'race')" value="custom">Add Custom Race...</md-option>
         </md-select>
       </md-input-container>
@@ -75,7 +48,7 @@
       <md-input-container flex-gt-sm="50" flex-sm="100">
         <label>Class</label>
         <md-select name="race" ng-model="character.class" ng-change="updateCharacter(character.id, 'class', character.class)" ng-disabled="lockBasic">
-          <md-option ng-repeat="class in classes" value="{{class.name}}" >{{class.name}}</md-option>
+          <md-option ng-repeat="class in classes" value="{{class}}" >{{class}}</md-option>
           <md-option ng-click="showDialog($event, 'class')" value="custom">Add Custom Class...</md-option>
         </md-select>
       </md-input-container>

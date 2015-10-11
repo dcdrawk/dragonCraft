@@ -568,7 +568,7 @@ angular.module('dCraftApp').service('classSrv', function(){
           }]
         },{
         title: 'Circle of the Moon',
-        description: '<p></p><p></p>',
+        description: '<p>Druids of the Circle of the M oon are fierce guardians of the wilds. Their order gathers under the full moon to share news and trade warnings. They haunt the deepest parts of the wilderness, where they might go for weeks on end before crossing paths with another humanoid creature, let alone another druid.</p><p>Changeable as the moon, a druid of this circle might prowl as a great cat one night, soar over the treetops as an eagle the next day, and crash through the undergrowth in bear form to drive off a trespassing monster. The wild is in the druid\u0027s blood.</p>',
         abilities: [{
             title: 'Combat Wild Shape',
             level: '2',
@@ -669,7 +669,7 @@ angular.module('dCraftApp').service('classSrv', function(){
         }],
       specializations:[{
         title: 'Champion',
-        description: '',
+        description: 'The archetypal Champion focuses on the development of raw physical power honed to deadly perfection. Those who model themselves on this archetype combine rigorous training with physical excellence to deal devastating blows.',
         abilities: [{
             title: 'Improved Critical',
             level: '3',

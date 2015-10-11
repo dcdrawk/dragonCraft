@@ -3,6 +3,9 @@
     <h2>Settings</h2>
   </div>
 </div>
-<div class="container">
-  <md-button ng-click="deleteDB()">Clear Saved Data</md-button>
+
+<div id="db-controlls" ng-controller="databaseAdminCtrl">
+  <md-button class="md-raised md-primary" ng-click="clearDatabase()">Clear Database</md-button>
+  <md-button class="md-raised md-accent" ng-click="repopulateDatabase()">Repopulate Database</md-button>
+  <md-button class="md-raised md-warn" ng-click="deleteDatabase()">Delete Database</md-button>
 </div>

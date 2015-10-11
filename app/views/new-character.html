@@ -3,6 +3,7 @@
     <h2>New Character</h2>
   </div>
 </div>
+
 <div class="content-wrapper">
   <div class="container md-padding">
     <p>Let's get started by filling out some basic information about your character. You can edit this information later.</p>
@@ -18,7 +19,7 @@
       <md-input-container>
         <label>Race</label>
         <md-select name="race" ng-model="newChar.race" ng-model="size" ng-change="updateSubraces(newChar.race)" required>
-          <md-option ng-repeat="race in races" value="{{race.name}}" >{{race.name}}</md-option>
+          <md-option ng-repeat="race in races" value="{{race}}" >{{race}}</md-option>
           <md-option ng-click="showDialog($event, 'race')" value="custom">Add Custom Race...</md-option>
         </md-select>
         
@@ -38,7 +39,7 @@
       <md-input-container>
         <label>Class</label>
         <md-select name="class" ng-model="newChar.class" ng-model="size" required>
-          <md-option ng-repeat="class in classes" value="{{class.name}}">{{class.name}}</md-option>
+          <md-option ng-repeat="class in classes" value="{{class}}">{{class}}</md-option>
           <md-option ng-click="showDialog($event, 'class')" value="custom">Add Custom Class...</md-option>
         </md-select>
         

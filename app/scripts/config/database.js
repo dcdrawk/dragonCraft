@@ -2,7 +2,7 @@
 angular.module('dCraftApp')
 .config(function ($indexedDBProvider) {
   $indexedDBProvider
-    .connection('myIndexedDB')
+    .connection('dragonCraftDB')
 //    .upgradeDatabase(1, function(event, db, tx){
 //      console.log(event);
 //      console.log(db);
@@ -30,7 +30,7 @@ angular.module('dCraftApp')
       backgroundStore.createIndex('languages_idx', 'languages', {unique: false});
       backgroundStore.createIndex('specials_idx', 'special', {unique: false});
       backgroundStore.createIndex('features_idx', 'feature', {unique: false});
-      backgroundStore.createIndex('equipment_idx', 'description', {unique: false});
+      backgroundStore.createIndex('equipment_idx', 'equipment', {unique: false});
       
       //--Languages--
       var languagesStore = db.createObjectStore('languages', {keyPath: 'name'});
@@ -57,23 +57,22 @@ angular.module('dCraftApp')
     
       //--Features--
       var featsStore = db.createObjectStore('feats', {keyPath: 'name'});
-      featuresStore.createIndex('description_idx', 'description', {unique: false});
+      featsStore.createIndex('description_idx', 'description', {unique: false});
       
       //--Races--
       var raceStore = db.createObjectStore('races', {keyPath: 'name'});
       raceStore.createIndex('description_idx', 'description', {unique: false});
       raceStore.createIndex('abilityScoreIncrease_idx', 'abilityScoreIncrease', {unique: false});
       raceStore.createIndex('speed_idx', 'speed', {unique: false});
-      raceStore.createIndex('languages_idx', 'description', {unique: false});
-      raceStore.createIndex('traits_idx', 'description', {unique: false});
+      raceStore.createIndex('languages_idx', 'languages', {unique: false});
+      raceStore.createIndex('traits_idx', 'traits', {unique: false});
     
       //--Subraces--
       var subraceStore = db.createObjectStore('subraces', {keyPath: 'name'});
+      subraceStore.createIndex('race_idx', 'race', {unique: false});
       subraceStore.createIndex('description_idx', 'description', {unique: false});
       subraceStore.createIndex('abilityScoreIncrease_idx', 'abilityScoreIncrease', {unique: false});
-      subraceStore.createIndex('speed_idx', 'speed', {unique: false});
-      subraceStore.createIndex('languages_idx', 'description', {unique: false});
-      subraceStore.createIndex('traits_idx', 'description', {unique: false});
+      subraceStore.createIndex('traits_idx', 'traits', {unique: false});
     
     
     

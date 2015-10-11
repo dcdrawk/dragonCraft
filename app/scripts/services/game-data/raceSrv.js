@@ -2,7 +2,7 @@ angular.module('dCraftApp').service('raceSrv', function(){
   //Data
   this.races = [{
       name: 'Dwarf',
-      abilityScoreIncease: 'Your Constitution score increases by 2',
+      abilityScoreIncrease: 'Your Constitution score increases by 2',
       speed: '30',
       languages: 'Common,Dwarvish',
       traits: [{
@@ -24,14 +24,14 @@ angular.module('dCraftApp').service('raceSrv', function(){
       //Subraces
       subraces: [{
         name: 'Hill Dwarf',
-        abilityScoreIncease: 'Your Wisdom score increases by 1.',
+        abilityScoreIncrease: 'Your Wisdom score increases by 1.',
         traits: [{
           title: 'Dwarven Toughness',
           description: 'Your hit point maximum increases by 1, and it increases by 1 every time you gain a level.'
           }]
         },{
         name: 'Mountain Dwarf',
-        abilityScoreIncease: 'Your Strength score increases by 2.',
+        abilityScoreIncrease: 'Your Strength score increases by 2.',
         traits: [{
           title: 'Dwarven Toughness',
           description: 'You have proficiency with light and medium armor.'
@@ -39,7 +39,7 @@ angular.module('dCraftApp').service('raceSrv', function(){
         }]
       },{
       name: 'Elf',
-      abilityScoreIncease: 'Your Dexterity score increases by 2.',
+      abilityScoreIncrease: 'Your Dexterity score increases by 2.',
       speed: '30',
       languages: 'Common,Elvish',
       traits: [{
@@ -58,7 +58,7 @@ angular.module('dCraftApp').service('raceSrv', function(){
       //Subraces
       subraces: [{
         name: 'High Elf',
-        abilityScoreIncease: 'Your Intelligence score increases by 1.',
+        abilityScoreIncrease: 'Your Intelligence score increases by 1.',
         traits: [{
           title: 'Elf Weapon Training',
           description: 'You have proficiency with the longsword, shortsword, shortbow, and longbow.'
@@ -71,7 +71,7 @@ angular.module('dCraftApp').service('raceSrv', function(){
           }]
         },{
         name: 'Wood Elf',
-        abilityScoreIncease: 'Your Wisdom score increases by 1.',
+        abilityScoreIncrease: 'Your Wisdom score increases by 1.',
         traits: [{
           title: 'Elf Weapon Training',
           description: ' You have proficiency with the longsword, shortsword, shortbow, and longbow.'
@@ -84,7 +84,7 @@ angular.module('dCraftApp').service('raceSrv', function(){
           }]
         },{
         name: 'Dark Elf (Drow)',
-        abilityScoreIncease: 'Your Charisma score increases by 1.',
+        abilityScoreIncrease: 'Your Charisma score increases by 1.',
         traits: [{
           title: 'Superior Darkvision',
           description: 'Your darkvision has a radius of 120 feet. '
@@ -101,7 +101,7 @@ angular.module('dCraftApp').service('raceSrv', function(){
       }]
     },{
       name: 'Halfling',
-      abilityScoreIncease: 'Your Dexterity score increases by 2.',
+      abilityScoreIncrease: 'Your Dexterity score increases by 2.',
       speed: '25',
       languages: 'Common,Halfling',
       traits: [{
@@ -117,14 +117,14 @@ angular.module('dCraftApp').service('raceSrv', function(){
       //Subraces
       subraces: [{
         name: 'Lightfoot',
-        abilityScoreIncease: 'Your Charisma score increases by 1.',
+        abilityScoreIncrease: 'Your Charisma score increases by 1.',
         traits: [{
           title: 'Naturally Stealthy',
           description: 'You can attempt to hide even when you are obscured only by a creature that is at least one size larger than you.'
           }]
         },{
         name: 'Stout',
-        abilityScoreIncease: 'Your Constitution score increases by 1.',
+        abilityScoreIncrease: 'Your Constitution score increases by 1.',
         traits: [{
           title: 'Stout Resilience',
           description: 'You have advantage on saving throws against poison, and you have resistance against poison damage.'
@@ -132,10 +132,10 @@ angular.module('dCraftApp').service('raceSrv', function(){
       }]
     },{
       name: 'Human',
-      abilityScoreIncease: 'Your ability scores each increase by 1.',
+      abilityScoreIncrease: 'Your ability scores each increase by 1.',
       speed: '30',
       languages: 'Common',
-      traits: [],
+      //traits: [],
       //Subraces
       subraces: [{
         name: 'Calishite'
@@ -150,7 +150,7 @@ angular.module('dCraftApp').service('raceSrv', function(){
       },{
         name: 'Rashemi',
       },{
-        name: 'Shou ',
+        name: 'Shou',
       },{
         name: 'Tethyrian',
       },{
@@ -158,7 +158,7 @@ angular.module('dCraftApp').service('raceSrv', function(){
       }]
     },{
       name: 'Dragonborn',
-      abilityScoreIncease: 'Your Strength score increases by 2, and your Charisma score increases by 1.',
+      abilityScoreIncrease: 'Your Strength score increases by 2, and your Charisma score increases by 1.',
       speed: '30',
       languages: 'Common,Draconic',
       traits: [{
@@ -262,7 +262,7 @@ angular.module('dCraftApp').service('raceSrv', function(){
         }]
     },{
       name: 'Gnome',
-      abilityScoreIncease: 'Your Intelligence score increases by 2. ',
+      abilityScoreIncrease: 'Your Intelligence score increases by 2. ',
       speed: '25',
       languages: 'Common, Gnomish',
       traits: [{
@@ -275,7 +275,7 @@ angular.module('dCraftApp').service('raceSrv', function(){
       //Subraces
       subraces: [{
         name: 'Forest Gnome',
-        abilityScoreIncease: 'Your Dexterity score increases by 1. ',
+        abilityScoreIncrease: 'Your Dexterity score increases by 1. ',
         traits: [{
           title: 'Natural Illusionist',
           description: 'You know the minor illusion cantrip. Intelligence is your spellcasting ability for it.'
@@ -285,7 +285,7 @@ angular.module('dCraftApp').service('raceSrv', function(){
           }]
         },{
         name: 'Rock Gnome',
-        abilityScoreIncease: 'Your Constitution score increases by 1.',
+        abilityScoreIncrease: 'Your Constitution score increases by 1.',
         traits: [{
           title: 'Artificer’s Lore',
           description: 'Whenever you make an Intelligence (History) check related to magic items, alchemical objects, or technological devices, you can add twice your proficiency bonus, instead of any proficiency bonus you normally apply.'
@@ -297,7 +297,7 @@ angular.module('dCraftApp').service('raceSrv', function(){
     },{
       //HALF ELF 3
       name: 'Half-Elf',
-      abilityScoreIncease: 'Your Charisma score increases by 2, and two other ability scores of your choice increase by 1.',
+      abilityScoreIncrease: 'Your Charisma score increases by 2, and two other ability scores of your choice increase by 1.',
       speed: '30',
       languages: 'Common,Elvish',
       traits: [{
@@ -312,7 +312,7 @@ angular.module('dCraftApp').service('raceSrv', function(){
       }]
     },{
       name: 'Half-Orc',
-      abilityScoreIncease: 'Your Strength score increases by 2, and your Constitution score increases by 1.',
+      abilityScoreIncrease: 'Your Strength score increases by 2, and your Constitution score increases by 1.',
       speed: '30',
       languages: 'Common,Orc',
       traits: [{
@@ -330,7 +330,7 @@ angular.module('dCraftApp').service('raceSrv', function(){
       }]
     },{
       name: 'Tiefling',
-      abilityScoreIncease: 'Your Intelligence score increases by 1, and your Charisma score increases by 2.',
+      abilityScoreIncrease: 'Your Intelligence score increases by 1, and your Charisma score increases by 2.',
       speed: '62',
       languages: 'Common,Infernal',
       traits: [{
