@@ -15,7 +15,7 @@
       <md-input-container>
         <label>Alignment</label>
         <md-select name="alignment" ng-model="character.alignment" ng-change="updateCharacter(character.id, 'alignment', character.alignment); getAlignmentDescription(character.alignment);" ng-init="getAlignmentDescription(character.alignment)">
-          <md-option ng-repeat="alignment in alignments track by $index" value="{{alignment.title}}">{{alignment.title}}</md-option>
+          <md-option ng-repeat="alignment in alignments track by $index" value="{{alignment.name}}">{{alignment.name}}</md-option>
         </md-select>
       </md-input-container>
 

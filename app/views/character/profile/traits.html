@@ -24,20 +24,20 @@
     <div id="race-traits" class="md-padding" ng-init="getRaceInfo(character.race, character.subrace)">
       <div class="feature">
         <h4>Ability Score Increase</h4>
-        <p>{{selectedRace.abilityScoreIncease}}</p>      
+        <p>{{raceInfo.abilityScoreIncrease}}</p>      
       </div>
 
       <div class="feature">
         <h4>Speed</h4>
-        <p>{{selectedRace.speed}}</p>
+        <p>{{raceInfo.speed}}</p>
       </div>
 
       <div class="feature">
         <h4>Languages</h4>
-        <p>{{selectedRace.languages}}</p>
+        <p>{{raceInfo.languages}}</p>
       </div>
 
-      <div class="feature" ng-repeat="trait in selectedRace.traits">
+      <div class="feature" ng-repeat="trait in raceInfo.traits">
         <h4>{{trait.title}}</h4>
         <p>{{trait.description}}</p>
       </div>
@@ -46,15 +46,15 @@
     <div class="sub-title md-padding">
         <h3>{{character.subrace}} Traits</h3>
     </div>
-    <div id="subrace-traits"  class="md-padding" ng-if="selectedRace.subraces && selectedRace.subraces[0].abilityScoreIncease">
+    <div id="subrace-traits"  class="md-padding">
       
       
       <div class="feature">
       <h4>Ability Score Increase</h4>
-      <p>{{selectedSubrace.abilityScoreIncease}}</p>      
+      <p>{{subraceInfo.abilityScoreIncrease}}</p>      
       </div>
         
-      <div class="feature" ng-repeat="trait in selectedSubrace.traits">
+      <div class="feature" ng-repeat="trait in subraceInfo.traits">
         <h4>{{trait.title}}</h4>
         <p>{{trait.description}}</p>      
       </div>

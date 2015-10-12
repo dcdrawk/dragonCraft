@@ -146,6 +146,7 @@ angular.module('dCraftApp').service('databaseAdminSrv', function(raceSrv, classS
     for(i in raceSrv.races){      
       races.push({"name":raceSrv.races[i].name,
                   "description":raceSrv.races[i].description,
+                  "abilityScoreIncrease":raceSrv.races[i].abilityScoreIncrease,
                   "speed":raceSrv.races[i].speed,
                   "languages":raceSrv.races[i].languages,
                   "traits":raceSrv.races[i].traits                  

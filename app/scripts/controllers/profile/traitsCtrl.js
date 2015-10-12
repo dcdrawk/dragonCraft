@@ -1,29 +1,15 @@
 'use strict';
-angular.module('dCraftApp').controller('traitsCtrl', function($scope, characterSrv, raceSrv){
+angular.module('dCraftApp').controller('traitsCtrl', function($scope, characterSrv, databaseSrv){
   $scope.character = characterSrv.getSelectedCharacter();
-  $scope.races = raceSrv.races;
   
-  $scope.getRaceInfo = function(race, subrace){
-    for(var i in $scope.races){
-      if($scope.races[i].name === race){
-        $scope.selectedRace = $scope.races[i];
-      }
-    }
-    if(subrace && $scope.selectedRace.subraces[0].abilityScoreIncease){
-      for(var i in $scope.selectedRace.subraces){
-        if($scope.selectedRace.subraces[i].name === subrace){
-          $scope.selectedSubrace = $scope.selectedRace.subraces[i];
-        }
-      }
-    }    
-  }
+  databaseSrv.getRaceTraits($scope.character.race).then(function(raceInfo){
+    $scope.raceInfo = raceInfo[0];
+    console.log($scope.raceInfo);
+  });
   
-  $scope.getSubraceInfo = function(race, subrace){
-    for(var i in $scope.races){
-      if($scope.races[i].name === race){
-        $scope.selectedRace = $scope.races[i];
-      }
-    }
-  }
+  databaseSrv.getSubraceTraits($scope.character.subrace).then(function(subraceInfo){
+    $scope.subraceInfo = subraceInfo[0];
+    console.log($scope.subraceInfo);
+  });
   
 });

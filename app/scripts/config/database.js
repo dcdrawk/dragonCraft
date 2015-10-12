@@ -73,43 +73,5 @@ angular.module('dCraftApp')
       subraceStore.createIndex('description_idx', 'description', {unique: false});
       subraceStore.createIndex('abilityScoreIncrease_idx', 'abilityScoreIncrease', {unique: false});
       subraceStore.createIndex('traits_idx', 'traits', {unique: false});
-    
-    
-    
     });
-//    .upgradeDatabase(8, function(event, db, tx){
-//      db.createObjectStore('peoplePhones', {keyPath: 'person_ssn'});      
-//    });
-
-//  var req = indexedDB.deleteDatabase('');
-//  req.onsuccess = function () {
-//      console.log("Deleted database successfully");
-//  };
-//  req.onerror = function () {
-//      console.log("Couldn't delete database");
-//  };
-//  req.onblocked = function () {
-//      console.log("Couldn't delete database due to the operation being blocked");
-//  };
-
-
-//  var request = indexedDB.open("myIndexedDB", 5);
-//  
-//  request.onsuccess = function (evt) {
-//      var db = request.result;                                                            
-//  };
-//
-//  request.onerror = function (evt) {
-//      console.log("IndexedDB error: " + evt.target.errorCode);
-//  };
-//
-//  request.onupgradeneeded = function (evt) {
-//    console.log('upgrade needed mang');
-//
-//    //console.log(evt.currentTarget.transaction.objectStore('test'));
-//
-//    //var objectStore = evt.currentTarget.transaction.objectStore('test');
-//    //objectStore.createIndex('shape_idx', 'shape', {unique: false});
-//
-//  };
 });

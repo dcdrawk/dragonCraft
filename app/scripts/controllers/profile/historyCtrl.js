@@ -1,8 +1,16 @@
 'use strict';
-angular.module('dCraftApp').controller('historyCtrl', function($scope, characterSrv, saveCharacterSrv, backgroundSrv){
-  $scope.alignments = backgroundSrv.alignments;
-  $scope.backgrounds = backgroundSrv.backgrounds;
+angular.module('dCraftApp').controller('historyCtrl', function($scope, characterSrv, saveCharacterSrv, databaseSrv){
+  
   $scope.character = characterSrv.getSelectedCharacter();
+  
+  databaseSrv.getBackgrounds().then(function(backgrounds){
+    $scope.backgrounds = backgrounds;
+  });
+  
+  databaseSrv.getAlignments().then(function(alignments){
+    $scope.alignments = alignments;
+    $scope.getAlignmentDescription($scope.character.alignment);
+  });
   
   //Update Character
   $scope.updateCharacter = function(id, field, value){
@@ -12,7 +20,7 @@ angular.module('dCraftApp').controller('historyCtrl', function($scope, character
   //Get Alignment Description
   $scope.getAlignmentDescription = function(alignment){
     for(var i in $scope.alignments){
-      if($scope.alignments[i].title === alignment){
+      if($scope.alignments[i].name === alignment){
         $scope.alignmentDescription = $scope.alignments[i].description;
       }
     }

@@ -3,9 +3,34 @@
 angular.module('dCraftApp').service('databaseSrv', function($indexedDB, $q){
   var self = this;
   
+  //Alignments
+  this.getAlignments = function(){
+    var deferred = $q.defer();
+    $indexedDB.openStore('alignments', function(alignmentsStore){
+      alignmentsStore.getAll().then(function(e){
+        self.alignments = e;
+        deferred.resolve(self.alignments);
+      });
+    });
+    return deferred.promise;    
+  };
+  
+  //Backgrounds
+  this.getBackgrounds = function(){
+    var deferred = $q.defer();
+    $indexedDB.openStore('backgrounds', function(store){
+      store.getAll().then(function(e){
+        self.backgrounds = e;
+        deferred.resolve(self.backgrounds);
+      });
+    });
+    return deferred.promise;    
+  };
+  
+  
+  
   //Classes
   this.getClassNames = function(){
-    console.log($indexedDB);
     var deferred = $q.defer();
     $indexedDB.openStore('classes', function(classesStore){
       classesStore.getAllKeys().then(function(e){
@@ -18,7 +43,7 @@ angular.module('dCraftApp').service('databaseSrv', function($indexedDB, $q){
   };
   
   
-  //Races
+  //Race Names
   this.getRaceNames = function(){
     var deferred = $q.defer();
     $indexedDB.openStore('races', function(racesStore){
@@ -31,7 +56,21 @@ angular.module('dCraftApp').service('databaseSrv', function($indexedDB, $q){
     return deferred.promise;    
   };
   
-  //Subraces
+  //Race Traits
+  this.getRaceTraits = function(race){    
+    var deferred = $q.defer();
+    $indexedDB.openStore('races', function(racesStore){      
+      var find = racesStore.query();
+      find = find.$eq(race);
+      racesStore.eachWhere(find).then(function(e){
+        self.raceInfo = e;
+        deferred.resolve(self.raceInfo);
+      });
+    });
+    return deferred.promise;    
+  };
+  
+  //Subrace Names
   this.getSubraceNames = function(race){
     var deferred = $q.defer();
     $indexedDB.openStore('subraces', function(subracesStore){
@@ -47,6 +86,20 @@ angular.module('dCraftApp').service('databaseSrv', function($indexedDB, $q){
       });
     });
     //$indexedDB.closeDatabase();
+    return deferred.promise;    
+  };
+  
+  //Subrace Traits
+  this.getSubraceTraits = function(subrace){    
+    var deferred = $q.defer();
+    $indexedDB.openStore('subraces', function(store){      
+      var find = store.query();
+      find = find.$eq(subrace);
+      store.eachWhere(find).then(function(e){
+        self.subraceInfo = e;
+        deferred.resolve(self.subraceInfo);
+      });
+    });
     return deferred.promise;    
   };
   
