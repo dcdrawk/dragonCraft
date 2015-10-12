@@ -29,7 +29,7 @@ angular.module('dCraftApp').service('databaseSrv', function($indexedDB, $q){
   
   
   
-  //Classes
+  //Class Names
   this.getClassNames = function(){
     var deferred = $q.defer();
     $indexedDB.openStore('classes', function(classesStore){
@@ -42,6 +42,21 @@ angular.module('dCraftApp').service('databaseSrv', function($indexedDB, $q){
     return deferred.promise;    
   };
   
+  //Class Info (hit points, proficiency);
+  this.getClassInfo = function(className){
+    var deferred = $q.defer();
+    
+    $indexedDB.openStore('classes', function(classesStore){
+      var find = classesStore.query();
+      find = find.$eq(className);
+      classesStore.eachWhere(find).then(function(e){
+        self.classNames = e;
+        deferred.resolve(self.classNames);
+      });
+    });
+    //$indexedDB.closeDatabase();
+    return deferred.promise;    
+  };
   
   //Race Names
   this.getRaceNames = function(){

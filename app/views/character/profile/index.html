@@ -10,7 +10,6 @@
 <!-- Content -->
 <div class="content-wrapper">
   <div class="container">
-    <md-button ng-controller="AppCtrl" class="md-primary md-raised" ng-click="go('/character/profile/history')">New Character</md-button>
     <!--  Character Home Nav -->
     <md-list id="homeNav" class="animate-test">
       <md-list-item class="md-3-line" ng-click="go('/character/profile/basic-info')">
@@ -45,7 +44,7 @@
         <md-divider ng-if="!$last"></md-divider>
       </md-list-item>
       
-      <md-list-item class="md-3-line" ng-click="go('/character/profile/class-features')">
+      <md-list-item class="md-3-line" ng-click="go('/character/profile/class-info')">
         <div class="md-list-item-text">
           <h3>Class Features</h3>
           <h4>Hit Points, Proficiency</h4>

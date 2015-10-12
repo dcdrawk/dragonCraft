@@ -16,9 +16,6 @@ body {
   max-width: 1200px;
   margin: auto; }
 
-.content-wrapper .container {
-  background-color: #fff; }
-
 .page-title {
   background-color: #2196F3;
   color: #fff; }
@@ -27,6 +24,9 @@ body {
   overflow-x: hidden;
   position: relative;
   height: calc(100vh - 64px) !important; }
+
+#main-content {
+  background-color: #fff; }
 
 .mb-page {
   background-color: #fff; }
@@ -149,11 +149,10 @@ md-card {
   margin-top: 0; }
 
 .sub-title {
-  background-color: #009688;
+  background-color: #3F51B5;
   color: #fff; }
 
 section {
-  border-bottom: 3px solid #26A69A;
   margin-bottom: 12px; }
   section:last-child {
     border-bottom: 0; }
@@ -168,6 +167,9 @@ section {
 
 .page-settings-content button {
   max-height: 48px !important; }
+
+md-select-value, .bold {
+  font-weight: 700; }
 
 @media screen and (max-width: 600px) {
   .lock-button {

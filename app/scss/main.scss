@@ -1,6 +1,7 @@
 //Variables
 $font-stack: open sans, sans-serif;
 $blue-500: #2196F3;
+$indigo-500: #3F51B5;
 $teal-400: #26A69A;
 $white: #fff;
 
@@ -29,7 +30,7 @@ body{
 }
 .content-wrapper{
   .container{
-    background-color:$white;
+    //background-color:$white;
   }
 }
 .page-title{
@@ -44,6 +45,9 @@ body{
   overflow-x:hidden;
   position:relative;
   height:calc(100vh - 64px)!important;
+}
+#main-content{
+  background-color:$white;
 }
 .mb-page{
   background-color:$white;
@@ -211,11 +215,11 @@ md-card{
   }
 }
 .sub-title{
-  background-color: #009688;
+  background-color: $indigo-500;
   color: #fff;
 }
 section{
-  border-bottom:3px solid $teal-400;
+  //border-bottom:3px solid $teal-400;
   margin-bottom:12px;
   &:last-child{
     border-bottom:0;
@@ -234,7 +238,9 @@ section{
 .page-settings-content button{
   max-height: 48px!important;
 }
-
+md-select-value, .bold{
+  font-weight:700;
+}
 //Responsive
 @media screen and (max-width: 600px) {  
   .lock-button{

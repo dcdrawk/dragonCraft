@@ -73,7 +73,7 @@ angular.module('dCraftApp')
             appearance: 'slide-right',
             history: 'slide-right',
             racialtraits: 'slide-right',
-            classfeatures: 'slide-right',
+            classinfo: 'slide-right',
             feats: 'slide-right',
             fallback: 'fade'
           }
@@ -112,9 +112,9 @@ angular.module('dCraftApp')
           }
         }
       })
-      .when('/character/profile/class-features', {
-        templateUrl: 'views/character/profile/proficiency.html',
-        controller: 'classCtrl',
+      .when('/character/profile/class-info', {
+        templateUrl: 'views/character/profile/class-info.html',
+        controller: 'classInfoCtrl',
         controllerAs: 'controller',
         data: {
           animationConf: {

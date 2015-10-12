@@ -8,13 +8,20 @@
 
 <!-- Content -->
 <div class="content-wrapper">
+  
+  <div class="sub-title md-padding">
+    <div class="container">
+      <h3>Alignment</h3>
+    </div>
+  </div>
+  
   <div class="container md-padding">
   
     <!-- Alignment -->
     <section id="alignment">
       <md-input-container>
-        <label>Alignment</label>
-        <md-select name="alignment" ng-model="character.alignment" ng-change="updateCharacter(character.id, 'alignment', character.alignment); getAlignmentDescription(character.alignment);" ng-init="getAlignmentDescription(character.alignment)">
+<!--        <label>Alignment</label>-->
+        <md-select placeholder="Select Alignment" name="alignment" ng-model="character.alignment" ng-change="updateCharacter(character.id, 'alignment', character.alignment); getAlignmentDescription(character.alignment);" ng-init="getAlignmentDescription(character.alignment)">
           <md-option ng-repeat="alignment in alignments track by $index" value="{{alignment.name}}">{{alignment.name}}</md-option>
         </md-select>
       </md-input-container>
@@ -24,12 +31,19 @@
         <p>{{alignmentDescription}}</p>
       </div>
     </section>
-    
+  </div>
+  
+  <div class="sub-title md-padding">
+    <div class="container">
+      <h3>Background</h3>
+    </div>
+  </div>
+  <div class="container md-padding">
     <!-- Background -->
     <section id="background">
       <md-input-container>
-        <label>Background</label>
-        <md-select name="background" ng-model="character.background" ng-change="updateCharacter(character.id, 'background', character.background); getBackgroundInfo(character.background);">
+<!--        <label>Background</label>-->
+        <md-select placeholder="Select Background" name="background" ng-model="character.background" ng-change="updateCharacter(character.id, 'background', character.background); getBackgroundInfo(character.background);">
           <md-option ng-repeat="background in backgrounds" value="{{background.name}}" ng-init="getBackgroundInfo(character.background)">{{background.name}}</md-option>
   <!--        <md-option ng-click="showDialog($event, 'background')" value="custom">Add Custom Background...</md-option>-->
         </md-select>
@@ -71,6 +85,14 @@
         </div>
       </div>   
     </section>
+  </div>
+  
+  <div class="sub-title md-padding">
+    <div class="container">
+      <h3>Personality</h3>
+    </div>
+  </div>
+  <div class="container md-padding">
     <!-- Personality -->
     <section id="personality">
       <md-input-container>
