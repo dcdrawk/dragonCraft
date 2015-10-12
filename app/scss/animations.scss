@@ -27,7 +27,7 @@ main{
       animation: slide-in-left .65s;
       animation-timing-function: $ease-in-out;
       animation-fill-mode: forwards;
-      h2, h3, .content-wrapper .container{
+      h2, h3, .content-wrapper, .container{
         animation: fade-in .65s;
         animation-timing-function: $ease-in-out;
         animation-fill-mode: forwards;
@@ -43,7 +43,7 @@ main{
     &.ng-leave {
       animation: slide-out-left .65s;
       animation-timing-function: $ease-in-out;
-      h2, h3, .content-wrapper .container{
+      h2, h3, .content-wrapper, .container{
         animation: fade-out .65s;
         animation-timing-function: $ease-in-out;
       }
@@ -56,7 +56,7 @@ main{
     &.ng-enter{
       animation: slide-in-right .65s;
       animation-timing-function: $ease-in-out;
-      h2, h3, .content-wrapper .container{
+      h2, h3, .content-wrapper, .container{
         animation: fade-in .65s;
         animation-timing-function: $ease-in-out;
       }
@@ -69,7 +69,7 @@ main{
     &.ng-leave {
       animation: slide-out-right .65s;
       animation-timing-function: $ease-in-out;
-      h2, h3, .content-wrapper .container{
+      h2, h3, .content-wrapper, .container{
         animation: fade-out .65s;
         animation-timing-function: $ease-in-out;
       }

@@ -1,5 +1,6 @@
 'use strict';
 angular.module('dCraftApp').controller('basicCtrl', function($scope, characterSrv, saveCharacterSrv, databaseSrv){
+  $scope.character = characterSrv.getSelectedCharacter();
   
     databaseSrv.getClassNames().then(function(classNames){
       $scope.classes = classNames;
@@ -7,19 +8,19 @@ angular.module('dCraftApp').controller('basicCtrl', function($scope, characterSr
 
     databaseSrv.getRaceNames().then(function(raceNames){
       $scope.races = raceNames;
+      $scope.updateSubraces($scope.character.race);
     });
   
-  $scope.character = characterSrv.getSelectedCharacter();
+    databaseSrv.getSubraceNames($scope.character.race).then(function(subraceNames){
+      $scope.subraces = subraceNames;
+    });
   
   console.log($scope.character);
   //Update Subraces
   $scope.updateSubraces = function(race){
-    for(var i in $scope.races){
-      if(race === $scope.races[i].name){
-        $scope.subraces = $scope.races[i].subraces;        
-        //console.log($scope.subraces);
-      }
-    }
+    databaseSrv.getSubraceNames(race).then(function(subraceNames){
+      $scope.subraces = subraceNames;
+    });
   };
   
   //Update Character

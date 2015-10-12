@@ -17,7 +17,7 @@ angular.module('dCraftApp').service('databaseAdminSrv', function(raceSrv, classS
   var subraces = [];
   
   this.checkMetadata = function(){
-    console.log($indexedDB);
+    //console.log($indexedDB);
     $indexedDB.openStore('metadata', function(metadataStore){
       var find = metadataStore.query();
       find = find.$eq('initialized');

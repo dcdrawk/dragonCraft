@@ -17,7 +17,7 @@ body {
   margin: auto; }
 
 .page-title {
-  background-color: #2196F3;
+  background-color: #1976D2;
   color: #fff; }
 
 .main {
@@ -34,20 +34,20 @@ body {
 .section-description {
   margin-top: 12px; }
 
-md-toolbar .toolbar-left h2 {
-  display: inline-block;
-  margin: 18px 0;
-  vertical-align: middle; }
-
-md-toolbar .toolbar-left #back {
-  min-height: 48px;
-  min-width: 48px;
-  margin-left: 0px; }
-  md-toolbar .toolbar-left #back i {
+md-toolbar {
+  background-color: #1565C0; }
+  md-toolbar .toolbar-left h2 {
+    display: inline-block;
+    margin: 18px 0;
     vertical-align: middle; }
-
-md-toolbar md-menu-content i {
-  margin-top: 6px; }
+  md-toolbar .toolbar-left #back {
+    min-height: 48px;
+    min-width: 48px;
+    margin-left: 0px; }
+    md-toolbar .toolbar-left #back i {
+      vertical-align: middle; }
+  md-toolbar md-menu-content i {
+    margin-top: 6px; }
 
 .md-button {
   font-size: 16px;
@@ -149,7 +149,7 @@ md-card {
   margin-top: 0; }
 
 .sub-title {
-  background-color: #3F51B5;
+  background-color: #303F9F;
   color: #fff; }
 
 section {

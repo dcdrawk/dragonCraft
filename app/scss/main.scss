@@ -1,7 +1,10 @@
 //Variables
 $font-stack: open sans, sans-serif;
 $blue-500: #2196F3;
+$blue-700: #1976D2;
+$blue-900: #1565C0;
 $indigo-500: #3F51B5;
+$indigo-700: #303F9F;
 $teal-400: #26A69A;
 $white: #fff;
 
@@ -34,7 +37,7 @@ body{
   }
 }
 .page-title{
-  background-color: $blue-500;
+  background-color: $blue-700;
   color:$white;
 //  .container{
 //    padding-left: 16px;
@@ -58,6 +61,7 @@ body{
 
 //Menu
 md-toolbar{
+  background-color:$blue-900;
   .toolbar-left{
     h2{    
       display: inline-block;
@@ -215,7 +219,7 @@ md-card{
   }
 }
 .sub-title{
-  background-color: $indigo-500;
+  background-color: $indigo-700;
   color: #fff;
 }
 section{

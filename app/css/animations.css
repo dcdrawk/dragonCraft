@@ -18,7 +18,7 @@ main {
   animation: slide-in-left 0.65s;
   animation-timing-function: cubic-bezier(0.465, 0.183, 0.153, 0.946);
   animation-fill-mode: forwards; }
-  .slide-left .view-content.ng-enter h2, .slide-left .view-content.ng-enter h3, .slide-left .view-content.ng-enter .content-wrapper .container {
+  .slide-left .view-content.ng-enter h2, .slide-left .view-content.ng-enter h3, .slide-left .view-content.ng-enter .content-wrapper, .slide-left .view-content.ng-enter .container {
     animation: fade-in 0.65s;
     animation-timing-function: cubic-bezier(0.465, 0.183, 0.153, 0.946);
     animation-fill-mode: forwards; }
@@ -26,21 +26,21 @@ main {
 .slide-left .view-content.ng-leave {
   animation: slide-out-left 0.65s;
   animation-timing-function: cubic-bezier(0.465, 0.183, 0.153, 0.946); }
-  .slide-left .view-content.ng-leave h2, .slide-left .view-content.ng-leave h3, .slide-left .view-content.ng-leave .content-wrapper .container {
+  .slide-left .view-content.ng-leave h2, .slide-left .view-content.ng-leave h3, .slide-left .view-content.ng-leave .content-wrapper, .slide-left .view-content.ng-leave .container {
     animation: fade-out 0.65s;
     animation-timing-function: cubic-bezier(0.465, 0.183, 0.153, 0.946); }
 
 .slide-right .view-content.ng-enter {
   animation: slide-in-right 0.65s;
   animation-timing-function: cubic-bezier(0.465, 0.183, 0.153, 0.946); }
-  .slide-right .view-content.ng-enter h2, .slide-right .view-content.ng-enter h3, .slide-right .view-content.ng-enter .content-wrapper .container {
+  .slide-right .view-content.ng-enter h2, .slide-right .view-content.ng-enter h3, .slide-right .view-content.ng-enter .content-wrapper, .slide-right .view-content.ng-enter .container {
     animation: fade-in 0.65s;
     animation-timing-function: cubic-bezier(0.465, 0.183, 0.153, 0.946); }
 
 .slide-right .view-content.ng-leave {
   animation: slide-out-right 0.65s;
   animation-timing-function: cubic-bezier(0.465, 0.183, 0.153, 0.946); }
-  .slide-right .view-content.ng-leave h2, .slide-right .view-content.ng-leave h3, .slide-right .view-content.ng-leave .content-wrapper .container {
+  .slide-right .view-content.ng-leave h2, .slide-right .view-content.ng-leave h3, .slide-right .view-content.ng-leave .content-wrapper, .slide-right .view-content.ng-leave .container {
     animation: fade-out 0.65s;
     animation-timing-function: cubic-bezier(0.465, 0.183, 0.153, 0.946); }
 

@@ -15,13 +15,15 @@
 -->
 
 <div class="content-wrapper">
-  <div class="container">
-
-    <div class="sub-title md-padding">
+  <div class="sub-title md-padding">
+    <div class="container">
       <h3>{{character.race}} Traits</h3>
     </div>
+  </div>
+  
+  <div class="container md-padding">    
     
-    <div id="race-traits" class="md-padding" ng-init="getRaceInfo(character.race, character.subrace)">
+    <div id="race-traits" ng-init="getRaceInfo(character.race, character.subrace)">
       <div class="feature">
         <h4>Ability Score Increase</h4>
         <p>{{raceInfo.abilityScoreIncrease}}</p>      
@@ -41,12 +43,17 @@
         <h4>{{trait.title}}</h4>
         <p>{{trait.description}}</p>
       </div>
-    </div>
+    </div>    
     
-    <div class="sub-title md-padding">
-        <h3>{{character.subrace}} Traits</h3>
+  </div>
+  
+  <div class="sub-title md-padding">
+    <div class="container">
+      <h3>{{character.subrace}} Traits</h3>
     </div>
-    <div id="subrace-traits"  class="md-padding">
+  </div>
+  <div class="container md-padding">
+    <div id="subrace-traits">
       
       
       <div class="feature">
@@ -62,5 +69,5 @@
     
   
   
-  </div>
+  
 </div>
