@@ -24,6 +24,26 @@ module.exports = function (grunt) {
     app: require('./bower.json').appPath || 'app',
     dist: 'dist'
   };
+  
+  grunt.loadNpmTasks('grunt-sass');
+  grunt.loadNpmTasks('grunt-contrib-watch');
+  
+//    require('load-grunt-tasks')(grunt); // npm install --save-dev load-grunt-tasks
+//  
+//  grunt.initConfig({
+//    sass: {
+//      options: {
+//        sourceMap: true
+//      },
+//      dist: {
+//        files: {
+//          'main.css': 'app/scss/main.scss'
+//        }
+//      }
+//    }
+//  });
+//
+//  grunt.registerTask('default', ['sass']);
 
   // Define the configuration for all the tasks
   grunt.initConfig({
@@ -31,6 +51,41 @@ module.exports = function (grunt) {
     // Project settings
     yeoman: appConfig,
 
+    // Grunt-sass 
+    sass: {
+      app: {
+        // Takes every file that ends with .scss from the scss 
+        // directory and compile them into the css directory. 
+        // Also changes the extension from .scss into .css. 
+        // Note: file name that begins with _ are ignored automatically
+        files: [{
+          expand: true,
+          cwd: '<%= yeoman.app %>/scss',
+          src: ['*.scss'],
+          dest: '<%= yeoman.app %>/css',
+          ext: '.css'
+        }]
+      },
+      dist: {
+        // Takes every file that ends with .scss from the scss 
+        // directory and compile them into the css directory. 
+        // Also changes the extension from .scss into .css. 
+        // Note: file name that begins with _ are ignored automatically
+        files: [{
+          expand: true,
+          cwd: '<%= yeoman.app %>/scss',
+          src: ['*.scss'],
+          dest: 'dist/css',
+          ext: '.css'
+        }]
+      },
+      options: {
+        sourceMap: true, 
+        outputStyle: 'nested', 
+        imagePath: "../",
+      }
+    },
+    
     // Watches files for changes and runs tasks based on the changed files
     watch: {
       bower: {
@@ -64,7 +119,25 @@ module.exports = function (grunt) {
           '.tmp/styles/{,*/}*.css',
           '<%= yeoman.app %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}'
         ]
+//      },
+//      css: {
+//        files: '**/*.scss',
+//        tasks: ['sass']
+      },
+      sass: {
+        // Watches all Sass or Scss files within the scss folder and one level down. 
+        // If you want to watch all scss files instead, use the "**/*" globbing pattern
+        files: ['<%= yeoman.app %>/scss/{,*/}*.{scss,sass}'],
+        // runs the task `sass` whenever any watched file changes 
+        tasks: ['sass']
+      },
+      options: {
+        // Sets livereload to true for livereload to work 
+        // (livereload is not covered in this article)
+        livereload: true,
+        spawn: false
       }
+      
     },
 
     // The actual grunt server settings
@@ -127,7 +200,8 @@ module.exports = function (grunt) {
       all: {
         src: [
           'Gruntfile.js',
-          '<%= yeoman.app %>/scripts/{,*/}*.js'
+          '<%= yeoman.app %>/scripts/{,*/}*.js',
+          '!<%= yeoman.app %>/scripts/{,*/}*.min.js'
         ]
       },
       test: {
@@ -400,7 +474,19 @@ module.exports = function (grunt) {
         configFile: 'test/karma.conf.js',
         singleRun: true
       }
-    }
+    },
+    
+    //SASS
+//    sass: {
+//      options: {
+//        sourceMap: true
+//      },
+//      app: {
+//        files: {
+//          'main.css': '<%= yeoman.app %>/scss/main.scss'
+//        }
+//      }
+//    }
   });
 
 
@@ -415,6 +501,7 @@ module.exports = function (grunt) {
       'concurrent:server',
       'autoprefixer:server',
       'connect:livereload',
+      'sass:app',
       'watch'
     ]);
   });
@@ -442,8 +529,9 @@ module.exports = function (grunt) {
     'ngtemplates',
     'concat',
     'ngAnnotate',
+    'sass:dist',
     'copy:dist',
-    'cdnify',
+    //'cdnify',
     'cssmin',
     'uglify',
     'filerev',
@@ -456,4 +544,22 @@ module.exports = function (grunt) {
     'test',
     'build'
   ]);
+  
+  grunt.registerTask('scss', ['sass']);
+//  require('load-grunt-tasks')(grunt); // npm install --save-dev load-grunt-tasks
+//  
+//  grunt.initConfig({
+//    sass: {
+//      options: {
+//        sourceMap: true
+//      },
+//      dist: {
+//        files: {
+//          'main.css': 'app/scss/main.scss'
+//        }
+//      }
+//    }
+//  });
+//
+//  grunt.registerTask('default', ['sass']);
 };

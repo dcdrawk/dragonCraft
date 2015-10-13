@@ -21,12 +21,15 @@ angular.module('dCraftApp')
     //
     // Define the database
     //
-    var db = new Dexie("test-database");
+    var db = new Dexie("test-db-2");
     db.version(1).stores({
-        charClasses: 'name,description',
-        characters: 'name,race,subrace,class,level,gender',
+        charClasses: 'name',
+        characters: 'id++,name,race,subrace,class,level,gender,height,weight,description',
+        charHistory: 'id++,background,personality,ideals,bonds,flaws',
         race:'id++,name,subraces',
         gender:'name',
+        alignments: 'name',
+        backgrounds: 'name,skills,tools,feat,featInfo'
         // ...add more stores (tables) here...
     });
 
@@ -37,16 +40,38 @@ angular.module('dCraftApp')
     
     // Get Races
     $rootScope.getRaces = function(){
+      console.log('GETTING RACES');
+      
+      console.log(db.race);
       $rootScope.raceArray = [];
       
       //for each race in the table
       db.race.each(function(race) {
+        console.log('races');
         //push each into an array
         $rootScope.raceArray.push({name:race["name"], subraces:race["subraces"]});
       }).then(function (result) {
         //after the loop, update the race
         raceList = $rootScope.raceArray;
         //console.log(raceList);
+      });
+    }
+    
+    // Set race traits    
+    $rootScope.setRaceTraits = function(race){
+      console.log('setting traits');
+      db.race.where("name").equalsIgnoreCase(race).each(function(theRace) {
+        $scope.char.traits = theRace.traits;
+        console.log($scope.char.traits);
+      });
+    }
+    
+    // Set subrace traits    
+    $rootScope.setSubraceTraits = function(subrace){
+      console.log('setting traits');
+      db.race.where("subrace").equalsIgnoreCase(subrace).each(function(theRace) {
+        $scope.char.traits = theRace.traits;
+        console.log($scope.char.traits);
       });
     }
     
@@ -72,24 +97,36 @@ angular.module('dCraftApp')
       });
     }
     
+    
+    
     // Call the get functions
     $rootScope.getRaces();
     $rootScope.getClasses();
     $rootScope.getGenders();
     
     //add Character to database
-    $scope.addCharacter = function(name, race, subrace, charClass, level, gender){
+    $scope.addCharacter = function(name, race, subrace, charClass, level, gender, traits){
+      console.log('Adding Character' + name + ' ' + race + ' ' + subrace + ' ' + charClass + ' ' + level + ' ' + gender + ' ')
       db.characters.add({name: name, race: race, subrace: subrace, class: charClass, level: level, gender: gender});
+      //db.charHistory.add({background: '', personality: '', ideals: '', bonds: '', flaws: ''});
       $rootScope.characterList = [];
     }
     
     //update subrace select
     $rootScope.updateSubrace = function(selectedRace){
-      for (var index in raceList) {
-        if(raceList[index].name == selectedRace && raceList[index].subraces){
-          $rootScope.subraceArray = raceList[index].subraces.split(',');
+      $rootScope.subraceArray = [];
+      db.race.where("name").equalsIgnoreCase(selectedRace).each(function(theRace) {
+        console.log('the race:')
+        console.log(theRace.subraces);
+        if(theRace.subraces !== 'None'){        
+          for (var index in theRace.subraces){
+            $rootScope.subraceArray.push(theRace.subraces[index].name);
+            console.log($rootScope.subraceArray);
+          }
+        } else {
+          $rootScope.subraceArray.push('n/a');
         }
-      }
+      });
     }
     
     //set some initial values
@@ -99,7 +136,8 @@ angular.module('dCraftApp')
       race: '',
       subrace: '',
       level: 1,
-      gender: ''
+      gender: '',
+      traits: ''
     }
     
     //show the 'add custom' dialog

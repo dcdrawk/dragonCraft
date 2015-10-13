@@ -1,0 +1,35 @@
+Stores:
+	alignments
+		name (primary)
+		description
+	backgrounds
+		name (primary)
+		description
+		abilityScoreIncrease
+		tools
+		languages
+		special
+		feature
+	classes
+		name (primary)
+		description
+		hitpoints
+		skillProficiencies
+		toolProficiencies
+		savingThrows
+		abilities
+	equipment
+		name
+		description
+		type
+		weight
+	races
+		name (primary)
+		description
+		abilityscoreImprovement
+		speed
+		languages
+		traits		
+	spells
+	
+	

@@ -1,15 +1,109 @@
-<!-- Title -->
-<div id="top" class="page-title">
-  <div class="container md-padding">
-    <h2>{{selectedCharacter.name}} - Feats</h2>
-    <h3>Level {{selectedCharacter.level}} {{selectedCharacter.race}} {{selectedCharacter.class}}</h3>
-  </div>
-</div>
-
 <!-- Content -->
-<div class="content-wrapper">
-  <div class="container md-padding">
-  
-  
-  </div>
-</div>
+
+    <md-tabs md-dynamic-height class="md-accent" md-selected="data.selectedIndex"  md-align-tabs="top">
+    <md-tab id="tab1">
+        <md-tab-label>My Feats <i class="material-icons">folder_special</i></md-tab-label>
+          <md-tab-body>
+          <!-- Title -->
+            <div id="top" class="page-title">
+              <div class="container md-padding">
+                <h2>{{character.name}} - Feats</h2>
+                <h3>Level {{character.level}} {{character.race}} {{character.class}}</h3>
+              </div>
+            </div>
+            
+            <!-- Feats -->
+          <div class="container md-padding add-list">
+            <v-accordion class="vAccordion--default" multiple>
+              <v-pane ng-repeat="feat in characterFeats track by $index" layout="row" layout-wrap>
+                <div class="add-icon" flex="10">
+                  <i class="material-icons isSelected" ng-click="removeFeat(feat)">remove_circle</i>
+                </div>
+                <v-pane-header flex="90">{{feat.name}}</v-pane-header>
+
+                <v-pane-content flex="100">
+                  <p ng-bind-html="feat.description"></p>
+                </v-pane-content>
+                
+              </v-pane>              
+            </v-accordion>
+          </div>
+            
+          </md-tab-body>
+      </md-tab>
+      
+      <md-tab id="tab2">
+        
+        <md-tab-label>All Feats <i class="material-icons">playlist_add</i></md-tab-label>
+        <md-tab-body>
+          <div id="top" class="page-title">
+            <div class="container md-padding">
+              <h2>All Feats</h2>
+            </div>
+          </div>
+          <div class="container md-padding">
+            <md-input-container>
+              <label>Search Feats</label>
+              <input type="text" ng-model="query" ng-change="featsSearch(query)" ng-model-options="{ debounce: 500 }" >
+            </md-input-container>
+            <p ng-if="featsSearchResults.length === 0 && query.length > 0">No results found for {{query}}</p>
+          </div>
+<!--
+          <md-autocomplete
+          md-selected-item="autocomplete.selectedItem"
+          md-search-text-change="ctrl.searchTextChange(autocomplete.searchText)"
+          md-search-text="ctrl.searchText"
+          md-items="item in ctrl.querySearch(ctrl.searchText)"
+          md-item-text="item.display"
+          md-min-length="1"
+          placeholder="Search Feats">
+            <md-item-template>
+              <span md-highlight-text="ctrl.searchText" md-highlight-flags="^i">{{item.display}}</span>
+            </md-item-template>
+            <md-not-found>
+              No matches found for "{{ctrl.searchText}}".
+            </md-not-found>
+          </md-autocomplete>
+-->
+          
+          <!-- Feats -->
+<!--          {{featsSearchResults.length}}-->
+          <div class="container md-padding add-list">
+            <v-accordion ng-if="query.length === 0" class="vAccordion--default" multiple>
+                <v-pane ng-repeat="feat in feats track by $index" layout="row" layout-wrap>
+                  <div class="add-icon" flex="10">
+                    <i ng-if="!feat.isSelected || feat.isSelected == false" class="material-icons" ng-click="addFeat(feat)">check_box_outline_blank</i>
+                    <i ng-if="feat.isSelected == true" class="material-icons isSelected" ng-click="removeFeat(feat)">check_box</i>
+                  </div>
+                  <v-pane-header flex="90">{{feat.name}}</v-pane-header>
+
+                  <v-pane-content flex="100">
+                    <p ng-bind-html="feat.description"></p>
+                  </v-pane-content>
+
+                </v-pane>
+            </v-accordion>
+            
+            <!-- Search Results -->
+            <v-accordion ng-if="query.length > 0" class="vAccordion--default" multiple>
+                <v-pane ng-repeat="feat in featsSearchResults track by $index" layout="row" layout-wrap>
+                  <div class="add-icon" flex="10">
+                    <i ng-if="!feat.isSelected || feat.isSelected == false" class="material-icons" ng-click="addFeat(feat)">check_box_outline_blank</i>
+                    <i ng-if="feat.isSelected == true" class="material-icons isSelected" ng-click="removeFeat(feat)">check_box</i>
+                  </div>
+                  <v-pane-header flex="90">{{feat.name}}</v-pane-header>
+
+                  <v-pane-content flex="100">
+                    <p ng-bind-html="feat.description"></p>
+                  </v-pane-content>
+
+                </v-pane>
+              
+            </v-accordion>
+          </div>
+          
+          </div>
+        
+        </md-tab-body>
+      </md-tab>
+    </md-tabs>

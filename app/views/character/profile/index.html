@@ -10,13 +10,12 @@
 <!-- Content -->
 <div class="content-wrapper">
   <div class="container">
-  
     <!--  Character Home Nav -->
     <md-list id="homeNav" class="animate-test">
       <md-list-item class="md-3-line" ng-click="go('/character/profile/basic-info')">
         <div class="md-list-item-text">
           <h3>Basic Info</h3>
-          <h4>Name, Level, Race, Class, Alignment, Gender</h4>
+          <h4>Name, Race, Class, Level, Experience</h4>
         </div>        
         <md-divider ng-if="!$last"></md-divider>
       </md-list-item>
@@ -24,7 +23,7 @@
       <md-list-item class="md-3-line" ng-click="go('/character/profile/appearance')">
         <div class="md-list-item-text">
           <h3>Appearance</h3>
-          <h4>Description, Height, Weight</h4>
+          <h4>Height, Weight, Description</h4>
         </div>        
         <md-divider ng-if="!$last"></md-divider>
       </md-list-item>
@@ -32,26 +31,27 @@
       <md-list-item class="md-3-line" ng-click="go('/character/profile/history')">
         <div class="md-list-item-text">
           <h3>History</h3>
-          <h4>Backgrond, Ideals, Bonds, Flaws, Past</h4>
+          <h4>Alignment, Background, Ideals, Bonds, Flaws, Languages</h4>
         </div>        
         <md-divider ng-if="!$last"></md-divider>
       </md-list-item>
       
-      <md-list-item class="md-3-line" ng-click="go('/character/profile/proficiency')">
+      <md-list-item class="md-3-line"  ng-click="go('/character/profile/racial-traits')">
         <div class="md-list-item-text">
-          <h3>Proficiency</h3>
-          <h4>Proficiency Bonus, Weapons, Armor, Tools, Equipment, Saving Throws, Skills</h4>
+          <h3>Racial Traits</h3>
+          <h4>Ability Score Increase, Speed, Special Abilities</h4>
         </div>        
         <md-divider ng-if="!$last"></md-divider>
       </md-list-item>
       
-      <md-list-item class="md-3-line"  ng-click="go('/character/profile/traits')">
+      <md-list-item class="md-3-line" ng-click="go('/character/profile/class-info')">
         <div class="md-list-item-text">
-          <h3>Traits</h3>
-          <h4>Racial Traits, Class Traits</h4>
+          <h3>Class Features</h3>
+          <h4>Hit Points, Proficiency</h4>
         </div>        
         <md-divider ng-if="!$last"></md-divider>
       </md-list-item>
+      
       
       <md-list-item class="md-3-line"  ng-click="go('/character/profile/feats')">
         <div class="md-list-item-text">

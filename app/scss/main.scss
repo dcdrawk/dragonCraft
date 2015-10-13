@@ -1,0 +1,367 @@
+//Variables
+$font-stack: open sans, sans-serif;
+$blue-300: #64B5F6;
+$blue-500: #2196F3;
+$blue-700: #1976D2;
+$blue-900: #1565C0;
+$indigo-300: #7986CB;
+$indigo-500: #3F51B5;
+$indigo-700: #303F9F;
+$teal-400: #26A69A;
+$white: #fff;
+
+//Body
+body{
+  padding: 0;
+  font-family:$font-stack;
+}
+// Misc
+.hide{
+  display:none;
+}
+[ng\:cloak], [ng-cloak], .ng-cloak {
+  display: none !important;
+}
+// Fullscreen
+.fullscreen {
+    width: 100%;
+    height: 100%;
+}
+
+//View content
+.container{
+  max-width:1200px;
+  margin:auto;
+}
+.content-wrapper{
+  .container{
+    //background-color:$white;
+  }
+}
+.page-title{
+  background-color: $blue-700;
+  color:$white;
+//  .container{
+//    padding-left: 16px;
+//    padding-right: 16px;
+//  }
+}
+.main{
+  overflow-x:hidden;
+  position:relative;
+  height:calc(100vh - 64px)!important;
+}
+#main-content{
+  background-color:$white;
+}
+.mb-page{
+  background-color:$white;
+}
+.section-description{
+  margin-top:12px;
+}
+
+//Menu
+md-toolbar{
+  background-color:$blue-900;
+  .toolbar-left{
+    h2{    
+      display: inline-block;
+      margin: 18px 0;
+      vertical-align: middle;
+    }
+    #back{
+      min-height: 48px;
+      min-width: 48px;
+      margin-left: 0px;
+      i{
+        vertical-align: middle;
+      }
+    }
+  }
+  md-menu-content{
+    i{
+      margin-top:6px;
+    }
+  }
+}
+
+//Buttons
+.md-button{
+  font-size:16px;
+  padding:0 12px;
+  span{
+    vertical-align: middle;
+  }
+  .btn-icon{
+    margin-left:6px;
+  }
+  &.lock-button{
+    top: -42px;
+    float: right;
+    margin: 0 12px -55px 0!important;
+    &:hover{
+      background-color:rgb(0,151,167)!important;
+    }
+  }
+}
+
+//List Items
+md-list{
+  &#homeNav{
+    padding:0;
+  }
+}
+md-list-item{
+  .md-list-item-text{
+    padding: 16px 0 8px 0!important;
+  }
+  h3{
+    font-weight: 600!important;
+  }
+  h4{
+    line-height: 1em!important;
+  }
+  .disabled{
+    opacity: .5;
+  }
+  .md-no-style{
+    padding:0px 8px;
+  }
+  
+}
+
+//Character List Page
+#characterList{
+  md-list-item{
+    background-color:rgba(0,0,0,0);
+    transition: all 400ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    cursor:pointer;
+    &:hover{
+      background-color:rgba(0,0,0,.05);
+      transition: all .5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+  }
+} 
+md-progress-circular{
+  margin:48px 0 48px 0;
+}
+
+md-card{
+  -webkit-user-select: none;  /* Chrome all / Safari all */
+  -moz-user-select: none;     /* Firefox all */
+  -ms-user-select: none;      /* IE 10+ */
+  user-select: none;          /* Likely future */ 
+  background-color:rgba(0,0,0,.05)!important;
+  cursor:pointer;
+  padding:0!important;
+  md-card-content{
+    padding:0;
+  }
+  .card-icon{
+    font-size:32px;
+    margin:auto 12px auto 12px;
+    padding:12px;
+    background-color:rgba(0,0,0,.1);
+    border-radius: 50%;
+  }
+  &.char-card{
+    h3{
+      margin-bottom:6px;
+    }
+    p{
+      margin-top:6px;
+    }
+  }
+  &[md-ink-ripple]{
+    position: relative;
+  }
+  &:focus{
+    outline: none!important;
+  }  
+}
+.add-new{
+  h3{
+    text-align: center;
+  }
+  i{
+    margin-left:12px;
+  }
+}
+
+//Dialog
+.sub-text{
+  font-size:12px;
+  margin-bottom:0;
+}
+.trait{
+  margin-bottom:12px;
+  border-bottom:1px solid rgba(0,0,0,.1);
+  h4{
+    margin:12px 0;
+  }
+}
+
+//View Elements
+.feature{
+  margin-bottom:12px;
+  border-bottom:1px solid rgba(0,0,0,.1);
+  &:last-child{
+    border-bottom:0;
+  }
+  h4{
+    margin:12px 0;
+  }
+}
+.description{
+  h4{
+    &:first-child{
+      margin-top:0;
+    }
+  }
+}
+.sub-title{
+  background-color: $indigo-700;
+  color: #fff;
+}
+section{
+  //border-bottom:3px solid $teal-400;
+  margin-bottom:12px;
+  &:last-child{
+    border-bottom:0;
+  }
+}
+
+//Tabs
+md-tabs{
+  border-radius:0;
+  md-pagination-wrapper{
+    max-width: 1200px;
+    margin: auto;
+    position: relative;
+  }
+  md-tab-item{
+    span{
+      vertical-align: middle;
+    }
+    i{
+      margin-left:6px;
+    }
+  }
+  md-ink-bar{
+    background:$indigo-300!important;
+  }
+}
+
+//Descriptions
+//.description{
+//  height:60px;
+//  overflow: hidden;
+//  &:before{
+//    position: absolute;
+//    content: '';
+//    height: 60px;
+//    width: 100%;
+//    background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, 0) 50%, #FFFFFF 100%);
+//  }
+//}
+
+//vAccordion
+v-accordion{
+  v-pane{
+    i{
+      color:rgba(0,0,0,.25);
+      text-align: center;
+    }
+    .isSelected{
+      color:$indigo-500;
+    }
+    v-pane-header{
+      display:inline-block;
+      border-bottom: 1px solid #D8D8D8!important;
+      &:hover{
+        color:$blue-700!important;
+      }
+      &:focus{
+        color:$blue-700!important;
+        span{
+          color:$blue-700!important;
+        }
+      }
+      &::after{
+        background-color:$blue-700!important;
+      }
+      &::before{
+        background-color:$blue-700!important;
+      }      
+      span{
+        vertical-align: middle;
+        font-size: 20px;
+      }
+    }
+    &.ng-leave-active{
+      opacity:0;
+    }
+    
+    v-pane-content{
+      padding-left:10%;
+      p{
+        &:first-child{          
+          margin-top:0;
+        }
+        &:last-child{
+          margin-bottom:0;
+        }
+      }
+    }
+  }  
+}
+
+
+//Settings
+/* Page items */
+.page-settings{
+  margin:auto 12px auto auto;
+}
+.page-settings-content i{
+  vertical-align: baseline;
+  margin-top:0!important;
+}
+.page-settings-content button{
+  max-height: 48px!important;
+}
+md-select-value, .bold{
+  font-weight:700;
+}
+.add-icon{
+  text-align: center;
+  i{
+    outline: none;
+    cursor:pointer;    
+  }
+}
+.add-list{
+  padding-left:0;
+  ul{
+    -webkit-padding-start: 20px;
+    -moz-padding-start: 20px;
+  }
+}
+//Responsive
+@media screen and (max-width: 600px) {  
+  .lock-button{
+    top:-35px;
+  }
+}
+
+//Landscape Screens
+@media screen and (max-width: 600px) and (orientation: landscape) {
+  md-toolbar, .md-toolbar-tools{
+    height:48px;
+    min-height: 48px;
+    margin:0;
+    md-menu{
+      padding:0;
+    }
+  }
+}

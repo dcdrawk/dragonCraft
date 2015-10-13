@@ -42,7 +42,7 @@
     </md-card>
 -->
     
-    <md-card md-ink-ripple ng-if="showCharacters" class="char-card" ng-repeat="character in characterList" ng-click="selectCharacter(character.id)">
+    <md-card md-ink-ripple class="char-card" ng-repeat="character in characterList" ng-click="selectCharacter(character.id); go('/character')">
       <md-card-content layout="row">
         <i class="card-icon material-icons">person</i>
         <div class="charInfo">
@@ -52,14 +52,18 @@
       </md-card-content>
     </md-card>
     
-    <md-card md-ink-ripple ng-if="showCharacters" class="add-new" ng-click="go('/new-character')">
+<!--
+    <md-card md-ink-ripple class="add-new" ng-click="go('/new-character')">
       <md-card-content layout="row">
           <h3 flex="100">New Character<i class="material-icons">person_add</i></h3>
           
       </md-card-content>
     </md-card>
+-->
+    
+    <md-button ng-controller="AppCtrl" class="md-primary md-raised" ng-click="go('/new-character')">New Character</md-button>
     <div class="md-padding">
-      <p>Build 0.1.05</p>
+      <p>Build 0.1.11</p>
     </div>
   </div>
 </div>

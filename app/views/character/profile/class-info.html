@@ -1,0 +1,40 @@
+<!-- Title -->
+<div id="top" class="page-title">
+  <div class="container md-padding">
+    <h2>{{character.name}} - Class Info</h2>
+    <h3>Level {{character.level}} {{character.race}} {{character.class}}</h3>
+  </div>
+</div>
+
+<!-- Content -->
+<div class="content-wrapper">
+  <div class="sub-title md-padding">
+    <div class="container">
+      <h3>Hit Points</h3>
+    </div>
+  </div>
+
+  <div class="content-wrapper">
+    <div class="container md-padding">     
+      <div class="feature" ng-repeat="item in classInfo.hitpoints">
+        <h4>{{item.title}}</h4>
+        <p>{{item.description}}</p>      
+      </div>
+    </div>
+  </div>
+
+  <div class="sub-title md-padding">
+    <div class="container">
+      <h3>Proficiency</h3>
+    </div>
+  </div>
+
+  <div class="content-wrapper">
+    <div class="container md-padding">         
+      <div class="feature" ng-repeat="item in classInfo.proficiency">
+        <h4>{{item.title}}</h4>
+        <p>{{item.description}}</p>      
+      </div>  
+    </div>
+  </div>
+</div>

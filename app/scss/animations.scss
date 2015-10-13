@@ -1,0 +1,332 @@
+$ease-in-out: cubic-bezier(0.465, 0.183, 0.153, 0.946);
+main{
+  max-height: 100%;
+}
+.view-content, .view-animate{
+  position: absolute;
+  width:100%;
+}
+.view-animate-container {
+  position:relative;
+}
+.show-overflow{
+  overflow:visible;
+}
+.hide-overflow{
+  overflow:hidden;
+}
+//.ng-enter, .ng-leave{
+//  .main &{
+//    overflow-y: hidden;
+//  }
+//}
+//Slide Left
+.slide-left{
+  .view-content{  
+    &.ng-enter{
+      animation: slide-in-left .65s;
+      animation-timing-function: $ease-in-out;
+      animation-fill-mode: forwards;
+      h2, h3, .content-wrapper, .container{
+        animation: fade-in .65s;
+        animation-timing-function: $ease-in-out;
+        animation-fill-mode: forwards;
+      }
+//      .input-group{
+//        //opacity:0;
+//        animation: fade-in .65s;
+//        animation-timing-function: $ease-in-out;
+//        animation-fill-mode: forwards;
+//      }
+    }
+    
+    &.ng-leave {
+      animation: slide-out-left .65s;
+      animation-timing-function: $ease-in-out;
+      h2, h3, .content-wrapper, .container{
+        animation: fade-out .65s;
+        animation-timing-function: $ease-in-out;
+      }
+    }
+  }
+}
+//Slide Right
+.slide-right{  
+  .view-content{
+    &.ng-enter{
+      animation: slide-in-right .65s;
+      animation-timing-function: $ease-in-out;
+      h2, h3, .content-wrapper, .container{
+        animation: fade-in .65s;
+        animation-timing-function: $ease-in-out;
+      }
+//      .input-group{
+//        animation: fade-in .65s;
+//        animation-delay: 2s;
+//        animation-timing-function: $ease-in-out;
+//      }
+    }
+    &.ng-leave {
+      animation: slide-out-right .65s;
+      animation-timing-function: $ease-in-out;
+      h2, h3, .content-wrapper, .container{
+        animation: fade-out .65s;
+        animation-timing-function: $ease-in-out;
+      }
+    }
+  }
+}
+//Slide Up
+.slide-up{  
+  .view-content{
+    &.ng-enter{
+      animation: slide-in-up .65s;
+      animation-timing-function: $ease-in-out;
+    }
+    &.ng-leave {
+      animation: slide-out-up .65s;
+      animation-timing-function: $ease-in-out;
+    }
+  }
+}
+//Slide Down
+.slide-down{  
+  .view-content{
+    &.ng-enter{
+    animation: slide-in-down .65s;
+    animation-timing-function: $ease-in-out;
+    }
+    &.ng-leave {
+      animation: slide-out-down .65s;
+      animation-timing-function: $ease-in-out;
+    }
+  }
+}
+//Fade
+.fade{  
+  .view-content{
+    &.ng-enter{
+      animation: fade-in .65s;
+      animation-timing-function: $ease-in-out;
+    }
+    &.ng-leave {
+      animation: fade-out .65s;
+      animation-timing-function: $ease-in-out;
+    }
+  }
+}
+
+//Animation Keyframes
+@keyframes slide-in-left {
+  0% {
+    transform: translateX(100%);
+    transform-origin: left;
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+@keyframes slide-out-left {
+  0% {
+    transform: translateX(0%);
+    transform-origin: left;
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes slide-in-right {
+  0% {
+    transform: translateX(-100%);
+    transform-origin: left;
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+@keyframes slide-out-right {
+  0% {
+    transform: translateX(0%);
+    transform-origin: left;
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+//Slide up/down
+@keyframes slide-in-up {
+  0% {
+    opacity: 0;
+    transform: translateY(25%);
+    transform-origin: top;
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
+
+@keyframes slide-out-up {
+  0% {
+    opacity: 1;
+    transform: translateY(0%);
+    transform-origin: top;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-25%);
+  }
+}
+@keyframes slide-in-down {
+  0% {  
+    opacity: 0;
+    transform: translateY(-25%);
+    transform-origin: top;
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
+
+@keyframes slide-out-down {
+  0% {
+    opacity: 1;
+    transform: translateY(0%);
+    transform-origin: top;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(25%);
+  }
+}
+
+@keyframes hinge {
+  0% {
+    transform: rotate(-120deg);
+    transform-origin: top left;
+  }
+  100% {
+    transform: rotate(0deg) translateY(200%);
+    transform-origin: top left;
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+//    width:48px;
+//    transform: scaleX(0);
+  }
+  100% {
+    opacity: 1;
+//    width:48px;
+//    transform: scaleX(1);
+  }
+}
+
+@keyframes fade-out {
+  0% {
+    opacity: 1;
+//    width:48px;
+//    transform: scaleX(1);
+  }
+  100% {
+    opacity: 0;
+//    width:0px;
+//    transform: scaleX(0);
+  }
+}
+@keyframes hide-back {
+  0% {
+    transform: translateX(0px);
+  }
+  100% {
+    transform: translateX(-62px);
+    animation-play-state: paused;
+  }
+}
+@keyframes show-back {
+  0% {
+    transform: translateX(-62px);
+  }
+  100% {
+    transform: translateX(0px);
+    animation-play-state: paused;
+  }
+}
+
+@keyframes hide-button {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+@keyframes show-button {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+//Back Button
+//#back{
+//  width:0px;
+//  &.ng-animate{
+//    transition:all .7s $ease-in-out;
+////    animation: fade-in .7s;
+//    animation: show-back .7s;
+//    animation-timing-function: $ease-in-out;
+//  }
+//  &.ng-hide{
+//    transition:all .7s $ease-in-out;
+//    animation: fade-out .7s;
+//    animation-timing-function: $ease-in-out;
+//  }
+//}
+//.toolbar-left{  
+//  position:relative;
+//h2{
+  
+  .showback{
+    animation: show-back .7s;
+    animation-timing-function: $ease-in-out;
+    animation-fill-mode: forwards;
+    #back{
+      animation: show-button .7s;
+      animation-timing-function: $ease-in-out;
+      animation-fill-mode: forwards;
+    }
+  }
+  .hideback{
+    animation: hide-back .7s;
+    animation-timing-function: $ease-in-out;
+    animation-fill-mode: forwards;
+    #back{      
+      animation: hide-button .7s;
+      animation-timing-function: $ease-in-out;
+      animation-fill-mode: forwards;
+    }
+  }
+//}
+//  #back{
+//    &.ng-animate{
+//      animation: fade-in .8s;
+//      animation-timing-function: $ease-in-out;
+//    }
+//    &.ng-hide{
+//      animation: fade-out .8s;
+//      animation-timing-function: $ease-in-out;
+//    }
+//  }
+//}

@@ -1,0 +1,201 @@
+main {
+  max-height: 100%; }
+
+.view-content, .view-animate {
+  position: absolute;
+  width: 100%; }
+
+.view-animate-container {
+  position: relative; }
+
+.show-overflow {
+  overflow: visible; }
+
+.hide-overflow {
+  overflow: hidden; }
+
+.slide-left .view-content.ng-enter {
+  animation: slide-in-left 0.65s;
+  animation-timing-function: cubic-bezier(0.465, 0.183, 0.153, 0.946);
+  animation-fill-mode: forwards; }
+  .slide-left .view-content.ng-enter h2, .slide-left .view-content.ng-enter h3, .slide-left .view-content.ng-enter .content-wrapper, .slide-left .view-content.ng-enter .container {
+    animation: fade-in 0.65s;
+    animation-timing-function: cubic-bezier(0.465, 0.183, 0.153, 0.946);
+    animation-fill-mode: forwards; }
+
+.slide-left .view-content.ng-leave {
+  animation: slide-out-left 0.65s;
+  animation-timing-function: cubic-bezier(0.465, 0.183, 0.153, 0.946); }
+  .slide-left .view-content.ng-leave h2, .slide-left .view-content.ng-leave h3, .slide-left .view-content.ng-leave .content-wrapper, .slide-left .view-content.ng-leave .container {
+    animation: fade-out 0.65s;
+    animation-timing-function: cubic-bezier(0.465, 0.183, 0.153, 0.946); }
+
+.slide-right .view-content.ng-enter {
+  animation: slide-in-right 0.65s;
+  animation-timing-function: cubic-bezier(0.465, 0.183, 0.153, 0.946); }
+  .slide-right .view-content.ng-enter h2, .slide-right .view-content.ng-enter h3, .slide-right .view-content.ng-enter .content-wrapper, .slide-right .view-content.ng-enter .container {
+    animation: fade-in 0.65s;
+    animation-timing-function: cubic-bezier(0.465, 0.183, 0.153, 0.946); }
+
+.slide-right .view-content.ng-leave {
+  animation: slide-out-right 0.65s;
+  animation-timing-function: cubic-bezier(0.465, 0.183, 0.153, 0.946); }
+  .slide-right .view-content.ng-leave h2, .slide-right .view-content.ng-leave h3, .slide-right .view-content.ng-leave .content-wrapper, .slide-right .view-content.ng-leave .container {
+    animation: fade-out 0.65s;
+    animation-timing-function: cubic-bezier(0.465, 0.183, 0.153, 0.946); }
+
+.slide-up .view-content.ng-enter {
+  animation: slide-in-up 0.65s;
+  animation-timing-function: cubic-bezier(0.465, 0.183, 0.153, 0.946); }
+
+.slide-up .view-content.ng-leave {
+  animation: slide-out-up 0.65s;
+  animation-timing-function: cubic-bezier(0.465, 0.183, 0.153, 0.946); }
+
+.slide-down .view-content.ng-enter {
+  animation: slide-in-down 0.65s;
+  animation-timing-function: cubic-bezier(0.465, 0.183, 0.153, 0.946); }
+
+.slide-down .view-content.ng-leave {
+  animation: slide-out-down 0.65s;
+  animation-timing-function: cubic-bezier(0.465, 0.183, 0.153, 0.946); }
+
+.fade .view-content.ng-enter {
+  animation: fade-in 0.65s;
+  animation-timing-function: cubic-bezier(0.465, 0.183, 0.153, 0.946); }
+
+.fade .view-content.ng-leave {
+  animation: fade-out 0.65s;
+  animation-timing-function: cubic-bezier(0.465, 0.183, 0.153, 0.946); }
+
+@keyframes slide-in-left {
+  0% {
+    transform: translateX(100%);
+    transform-origin: left; }
+  100% {
+    transform: translateX(0%); } }
+
+@keyframes slide-out-left {
+  0% {
+    transform: translateX(0%);
+    transform-origin: left; }
+  100% {
+    transform: translateX(-100%); } }
+
+@keyframes slide-in-right {
+  0% {
+    transform: translateX(-100%);
+    transform-origin: left; }
+  100% {
+    transform: translateX(0%); } }
+
+@keyframes slide-out-right {
+  0% {
+    transform: translateX(0%);
+    transform-origin: left; }
+  100% {
+    transform: translateX(100%); } }
+
+@keyframes slide-in-up {
+  0% {
+    opacity: 0;
+    transform: translateY(25%);
+    transform-origin: top; }
+  100% {
+    opacity: 1;
+    transform: translateY(0%); } }
+
+@keyframes slide-out-up {
+  0% {
+    opacity: 1;
+    transform: translateY(0%);
+    transform-origin: top; }
+  100% {
+    opacity: 0;
+    transform: translateY(-25%); } }
+
+@keyframes slide-in-down {
+  0% {
+    opacity: 0;
+    transform: translateY(-25%);
+    transform-origin: top; }
+  100% {
+    opacity: 1;
+    transform: translateY(0%); } }
+
+@keyframes slide-out-down {
+  0% {
+    opacity: 1;
+    transform: translateY(0%);
+    transform-origin: top; }
+  100% {
+    opacity: 0;
+    transform: translateY(25%); } }
+
+@keyframes hinge {
+  0% {
+    transform: rotate(-120deg);
+    transform-origin: top left; }
+  100% {
+    transform: rotate(0deg) translateY(200%);
+    transform-origin: top left; } }
+
+@keyframes fade-in {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
+@keyframes fade-out {
+  0% {
+    opacity: 1; }
+  100% {
+    opacity: 0; } }
+
+@keyframes hide-back {
+  0% {
+    transform: translateX(0px); }
+  100% {
+    transform: translateX(-62px);
+    animation-play-state: paused; } }
+
+@keyframes show-back {
+  0% {
+    transform: translateX(-62px); }
+  100% {
+    transform: translateX(0px);
+    animation-play-state: paused; } }
+
+@keyframes hide-button {
+  0% {
+    opacity: 1; }
+  100% {
+    opacity: 0;
+    visibility: hidden; } }
+
+@keyframes show-button {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1;
+    visibility: visible; } }
+
+.showback {
+  animation: show-back 0.7s;
+  animation-timing-function: cubic-bezier(0.465, 0.183, 0.153, 0.946);
+  animation-fill-mode: forwards; }
+  .showback #back {
+    animation: show-button 0.7s;
+    animation-timing-function: cubic-bezier(0.465, 0.183, 0.153, 0.946);
+    animation-fill-mode: forwards; }
+
+.hideback {
+  animation: hide-back 0.7s;
+  animation-timing-function: cubic-bezier(0.465, 0.183, 0.153, 0.946);
+  animation-fill-mode: forwards; }
+  .hideback #back {
+    animation: hide-button 0.7s;
+    animation-timing-function: cubic-bezier(0.465, 0.183, 0.153, 0.946);
+    animation-fill-mode: forwards; }
+
+/*# sourceMappingURL=animations.css.map */

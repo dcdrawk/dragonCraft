@@ -23,7 +23,7 @@ angular.module('dCraftApp')
     // Define your database
     //
     // Code here will be linted with ignored by JSHint.
-    var db = new Dexie("test-database");
+    var db = new Dexie('test-db-2');
     db.version(1).stores({
         characters: 'name,class'
     });

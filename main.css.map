@@ -1,0 +1,10 @@
+{
+	"version": 3,
+	"file": "main.css",
+	"sources": [
+		"app/scss/main.scss"
+	],
+	"sourcesContent": [],
+	"mappings": "AAAA,IAAI,CAAA;EACF,KAAK,EAAC,GAAG,CAAA,UAAU;EACnB,OAAO,EAAC,IAAK,GAFV",
+	"names": []
+}
