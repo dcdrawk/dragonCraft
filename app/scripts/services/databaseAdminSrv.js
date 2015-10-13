@@ -15,6 +15,7 @@ angular.module('dCraftApp').service('databaseAdminSrv', function(raceSrv, classS
   var classSpecializations = [];
   var races = [];
   var subraces = [];
+  var feats = [];
   
   this.checkMetadata = function(){
     //console.log($indexedDB);
@@ -173,7 +174,22 @@ angular.module('dCraftApp').service('databaseAdminSrv', function(raceSrv, classS
         //console.log(e);
       });
     });
+    
+    //Feats
+    for(i in featsSrv.feats){
+      feats.push({"name":featsSrv.feats[i].name,
+                  "description":featsSrv.feats[i].description
+                 });
+    }
+    $indexedDB.openStore('feats', function(subracesStore){
+      subracesStore.upsert(feats).then(function(e){
+        console.log('upserting feats');
+      });
+    });
+    
     $indexedDB.closeDatabase();
+    
+    
   };
   
   this.clearData = function(){   

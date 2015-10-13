@@ -1,8 +1,10 @@
 //Variables
 $font-stack: open sans, sans-serif;
+$blue-300: #64B5F6;
 $blue-500: #2196F3;
 $blue-700: #1976D2;
 $blue-900: #1565C0;
+$indigo-300: #7986CB;
 $indigo-500: #3F51B5;
 $indigo-700: #303F9F;
 $teal-400: #26A69A;
@@ -230,6 +232,92 @@ section{
   }
 }
 
+//Tabs
+md-tabs{
+  border-radius:0;
+  md-pagination-wrapper{
+    max-width: 1200px;
+    margin: auto;
+    position: relative;
+  }
+  md-tab-item{
+    span{
+      vertical-align: middle;
+    }
+    i{
+      margin-left:6px;
+    }
+  }
+  md-ink-bar{
+    background:$indigo-300!important;
+  }
+}
+
+//Descriptions
+//.description{
+//  height:60px;
+//  overflow: hidden;
+//  &:before{
+//    position: absolute;
+//    content: '';
+//    height: 60px;
+//    width: 100%;
+//    background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, 0) 50%, #FFFFFF 100%);
+//  }
+//}
+
+//vAccordion
+v-accordion{
+  v-pane{
+    i{
+      color:rgba(0,0,0,.25);
+      text-align: center;
+    }
+    .isSelected{
+      color:$indigo-500;
+    }
+    v-pane-header{
+      display:inline-block;
+      border-bottom: 1px solid #D8D8D8!important;
+      &:hover{
+        color:$blue-700!important;
+      }
+      &:focus{
+        color:$blue-700!important;
+        span{
+          color:$blue-700!important;
+        }
+      }
+      &::after{
+        background-color:$blue-700!important;
+      }
+      &::before{
+        background-color:$blue-700!important;
+      }      
+      span{
+        vertical-align: middle;
+        font-size: 20px;
+      }
+    }
+    &.ng-leave-active{
+      opacity:0;
+    }
+    
+    v-pane-content{
+      padding-left:10%;
+      p{
+        &:first-child{          
+          margin-top:0;
+        }
+        &:last-child{
+          margin-bottom:0;
+        }
+      }
+    }
+  }  
+}
+
+
 //Settings
 /* Page items */
 .page-settings{
@@ -244,6 +332,20 @@ section{
 }
 md-select-value, .bold{
   font-weight:700;
+}
+.add-icon{
+  text-align: center;
+  i{
+    outline: none;
+    cursor:pointer;    
+  }
+}
+.add-list{
+  padding-left:0;
+  ul{
+    -webkit-padding-start: 20px;
+    -moz-padding-start: 20px;
+  }
 }
 //Responsive
 @media screen and (max-width: 600px) {  

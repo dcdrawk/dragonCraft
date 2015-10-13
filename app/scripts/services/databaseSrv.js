@@ -118,4 +118,19 @@ angular.module('dCraftApp').service('databaseSrv', function($indexedDB, $q){
     return deferred.promise;    
   };
   
+  
+  //Feats
+  this.getFeats = function(subrace){
+    var deferred = $q.defer();
+    $indexedDB.openStore('feats', function(store){     
+    store.getAll().then(function(e){
+      console.log(e)
+        self.feats = e;
+        deferred.resolve(self.feats);
+      });
+    });    
+    return deferred.promise;
+  };
+  
+  
 });

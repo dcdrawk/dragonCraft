@@ -157,6 +157,53 @@ section {
   section:last-child {
     border-bottom: 0; }
 
+md-tabs {
+  border-radius: 0; }
+  md-tabs md-pagination-wrapper {
+    max-width: 1200px;
+    margin: auto;
+    position: relative; }
+  md-tabs md-tab-item span {
+    vertical-align: middle; }
+  md-tabs md-tab-item i {
+    margin-left: 6px; }
+  md-tabs md-ink-bar {
+    background: #7986CB !important; }
+
+v-accordion v-pane i {
+  color: rgba(0, 0, 0, 0.25);
+  text-align: center; }
+
+v-accordion v-pane .isSelected {
+  color: #3F51B5; }
+
+v-accordion v-pane v-pane-header {
+  display: inline-block;
+  border-bottom: 1px solid #D8D8D8 !important; }
+  v-accordion v-pane v-pane-header:hover {
+    color: #1976D2 !important; }
+  v-accordion v-pane v-pane-header:focus {
+    color: #1976D2 !important; }
+    v-accordion v-pane v-pane-header:focus span {
+      color: #1976D2 !important; }
+  v-accordion v-pane v-pane-header::after {
+    background-color: #1976D2 !important; }
+  v-accordion v-pane v-pane-header::before {
+    background-color: #1976D2 !important; }
+  v-accordion v-pane v-pane-header span {
+    vertical-align: middle;
+    font-size: 20px; }
+
+v-accordion v-pane.ng-leave-active {
+  opacity: 0; }
+
+v-accordion v-pane v-pane-content {
+  padding-left: 10%; }
+  v-accordion v-pane v-pane-content p:first-child {
+    margin-top: 0; }
+  v-accordion v-pane v-pane-content p:last-child {
+    margin-bottom: 0; }
+
 /* Page items */
 .page-settings {
   margin: auto 12px auto auto; }
@@ -170,6 +217,18 @@ section {
 
 md-select-value, .bold {
   font-weight: 700; }
+
+.add-icon {
+  text-align: center; }
+  .add-icon i {
+    outline: none;
+    cursor: pointer; }
+
+.add-list {
+  padding-left: 0; }
+  .add-list ul {
+    -webkit-padding-start: 20px;
+    -moz-padding-start: 20px; }
 
 @media screen and (max-width: 600px) {
   .lock-button {

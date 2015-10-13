@@ -26,6 +26,6 @@ angular.module('dCraftApp').controller('basicCtrl', function($scope, characterSr
   //Update Character
   $scope.updateCharacter = function(id, field, value){
     saveCharacterSrv.updateCharacter(id, field, value);
-  }
+  };
   
 });

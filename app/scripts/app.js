@@ -22,7 +22,8 @@ angular
     'angularScreenfull',
     'ngRouteAnimationManager',
     'indexedDB',
-    'oc.lazyLoad'
+    'oc.lazyLoad',
+    'vAccordion'
   ])  
 //  .config(function ($indexedDBProvider) {
 //    //console.log(db);
