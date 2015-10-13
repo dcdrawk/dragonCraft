@@ -75,11 +75,11 @@ md-list-item h3 {
 md-list-item h4 {
   line-height: 1em !important; }
 
-md-list-item .disabled {
-  opacity: .5; }
-
 md-list-item .md-no-style {
   padding: 0px 8px; }
+
+.disabled {
+  opacity: .35; }
 
 #characterList md-list-item {
   background-color: transparent;
