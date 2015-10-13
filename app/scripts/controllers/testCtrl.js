@@ -12,9 +12,9 @@ angular.module('dCraftApp').controller('testCtrl', function($scope, $indexedDB, 
 //    databaseSrv.initializeDatabase();
 //    //databaseSrv;
 //  });
-  $scope.clearDatabase = function(){
-    databaseSrv.clearData();
-  };
+//  $scope.clearDatabase = function(){
+//    databaseSrv.clearData();
+//  };
   
   
 //      $indexedDB.openStore('test', function(store){
