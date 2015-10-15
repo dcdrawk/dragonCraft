@@ -21,7 +21,7 @@ angular.module('dCraftApp').controller('newCharacterCtrl', function ($scope, dat
     });
   };
   
-  //Add new character and change location back to the index page
+  //Add new character and change location back to the home page
   $scope.addNewCharacter = function(character){
     saveCharacterSrv.addNewCharacter(character).then(function(characters){
       $location.path( '/' );

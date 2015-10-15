@@ -9,7 +9,6 @@ angular.module('dCraftApp').service('saveCharacterSrv', function($q, $location){
   
   //Check to see if save data exists
   if(!storage.getObj('characters')){
-    console.log('No save data exists, setting up...');
     storage.setObj('characters', []);
   }
   
@@ -30,21 +29,8 @@ angular.module('dCraftApp').service('saveCharacterSrv', function($q, $location){
     }
     characters.push(character);
     storage.setObj('characters', characters);
-    //$location.path( '/' );
     deferred.resolve(characters);
     return deferred.promise;  
-  };
-  
-  //Alignments
-  this.getAlignments = function(){
-    var deferred = $q.defer();
-    $indexedDB.openStore('alignments', function(alignmentsStore){
-      alignmentsStore.getAll().then(function(e){
-        self.alignments = e;
-        deferred.resolve(self.alignments);
-      });
-    });
-    return deferred.promise;    
   };
   
   //Delete All Characters
