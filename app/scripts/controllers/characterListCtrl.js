@@ -1,7 +1,9 @@
 'use strict';
 angular.module('dCraftApp').controller('characterListCtrl', function($scope, characterSrv, $ocLazyLoad, $injector){
-  $scope.characterList = characterSrv.getCharacterList();
   
+  $scope.characterList = characterSrv.getCharacterList();    
+//  console.log('character list:');
+//  console.log($scope.characterList);
   $scope.selectCharacter = function(id){
     characterSrv.selectCharacter(id);
   };

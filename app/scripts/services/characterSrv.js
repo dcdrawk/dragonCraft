@@ -9,7 +9,7 @@ angular.module('dCraftApp').service('characterSrv', function(){
   
   //Get Character List
   this.getCharacterList = function(){
-    console.log('returning characters');
+    characters = storage.getObj('characters');
     return characters;
   };
   
