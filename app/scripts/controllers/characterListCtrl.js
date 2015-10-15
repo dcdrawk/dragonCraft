@@ -6,7 +6,7 @@ angular.module('dCraftApp').controller('characterListCtrl', function($scope, cha
     characterSrv.selectCharacter(id);
   };
   
-  $ocLazyLoad.load('/dist/scripts/services/databaseAdminSrv.js').then(function(e){
+  $ocLazyLoad.load('dragonCraft/dist/scripts/services/databaseAdminSrv.js').then(function(e){
     var databaseSrv = $injector.get('databaseAdminSrv');
     databaseSrv.checkMetadata();
   });
