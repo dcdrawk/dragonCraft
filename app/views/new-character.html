@@ -18,9 +18,9 @@
 
       <md-input-container>
         <label>Race</label>
-        <md-select name="race" ng-model="newChar.race" ng-model="size" ng-change="updateSubraces(newChar.race)" required>
+        <md-select name="race" ng-model="newChar.race" ng-change="updateSubraces(newChar.race)" required>
           <md-option ng-repeat="race in races" value="{{race}}" >{{race}}</md-option>
-          <md-option ng-click="showDialog($event, 'race')" value="custom">Add Custom Race...</md-option>
+<!--          <md-option ng-click="showDialog($event, 'race')" value="custom">Add Custom Race...</md-option>-->
         </md-select>
         
         <div ng-messages="newCharacter.race.$error" ng-if="newCharacter.race.$dirty">
@@ -30,20 +30,43 @@
 
       <md-input-container ng-if="newChar.race && subraces.length > 1">
         <label>Subrace</label>
-        <md-select ng-model="newChar.subrace" ng-model="size">
+        <md-select ng-model="newChar.subrace">
           <md-option ng-repeat="subrace in subraces" value="{{subrace.name}}">{{subrace.name}}</md-option>
-          <md-option ng-click="showDialog($event, 'subrace')" value="custom">Add Custom Subrace...</md-option>
+<!--          <md-option ng-click="showDialog($event, 'subrace')" value="custom">Add Custom Subrace...</md-option>-->
         </md-select>
       </md-input-container>
 
       <md-input-container>
         <label>Class</label>
-        <md-select name="class" ng-model="newChar.class" ng-model="size" required>
+        <md-select name="class" ng-model="newChar.class" required>
           <md-option ng-repeat="class in classes" value="{{class}}">{{class}}</md-option>
-          <md-option ng-click="showDialog($event, 'class')" value="custom">Add Custom Class...</md-option>
+<!--          <md-option ng-click="showDialog($event, 'class')" value="custom">Add Custom Class...</md-option>-->
         </md-select>
         
         <div ng-messages="newCharacter.class.$error" ng-if="newCharacter.class.$dirty">
+          <div ng-message="required">This is required.</div>
+        </div>
+      </md-input-container>
+      
+      <md-input-container>
+        <label>Alignment</label>
+        <md-select name="alignment" ng-model="newChar.alignment" required>
+          <md-option ng-repeat="alignment in alignments" value="{{alignment.name}}">{{alignment.name}}</md-option>
+        </md-select>
+        
+        <div ng-messages="newCharacter.alignment.$error" ng-if="newCharacter.alignment.$dirty">
+          <div ng-message="required">This is required.</div>
+        </div>
+      </md-input-container>
+      
+      <md-input-container>
+        <label>Background</label>
+        <md-select name="background" ng-model="newChar.background" required>
+          <md-option ng-repeat="background in backgrounds" value="{{background.name}}">{{background.name}}</md-option>
+<!--          <md-option ng-click="showDialog($event, 'class')" value="custom">Add Custom Class...</md-option>-->
+        </md-select>
+        
+        <div ng-messages="newCharacter.background.$error" ng-if="newCharacter.background.$dirty">
           <div ng-message="required">This is required.</div>
         </div>
       </md-input-container>
