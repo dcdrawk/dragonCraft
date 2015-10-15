@@ -1,5 +1,5 @@
 'use strict';
-angular.module('dCraftApp').controller('newCharacterCtrl', function ($scope, databaseSrv, saveCharacterSrv) {
+angular.module('dCraftApp').controller('newCharacterCtrl', function ($scope, databaseSrv, saveCharacterSrv, $location) {
   
   databaseSrv.getClassNames().then(function(classNames){
     $scope.classes = classNames;
@@ -21,7 +21,10 @@ angular.module('dCraftApp').controller('newCharacterCtrl', function ($scope, dat
     });
   };
   
+  //Add new character and change location back to the index page
   $scope.addNewCharacter = function(character){
-    saveCharacterSrv.addNewCharacter(character);
+    saveCharacterSrv.addNewCharacter(character).then(function(characters){
+      $location.path( '/' );
+    });
   };
 });
