@@ -67,7 +67,7 @@ angular
 //      
 //    };
 //  })
-  .run(function($rootScope, $location){
+  .run(function($rootScope, $location, $timeout){
     
     //set up the local storage for the selected Character
     var myStorage = localStorage;
@@ -95,13 +95,18 @@ angular
 //    });
     
     var mainContent = document.getElementById('main-content');
-    //var enter = document.getElementsByClassName('ng-enter');
+    var enter = document.getElementsByClassName('ng-enter');
     
+  
+  
     $rootScope.$on('$locationChangeSuccess', function(event, current, next) {
       //var enter = document.getElementsByClassName('ng-enter');
-      //console.log(enter);
-      
-      mainContent.scrollTop = 0;
+      $timeout(function(){
+        var enter = document.getElementsByClassName('ng-enter');
+        console.log(enter);
+        enter[0].scrollTop = 0;
+        
+      }, 10)
       if($location.path() == '/'){
         $rootScope.home = true;
       } else {

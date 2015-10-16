@@ -41,7 +41,7 @@ angular.module('dCraftApp')
 
     //Scrolls to a hash element
     $rootScope.scrollTo = function ( hash ) {
-      $anchorScroll(hash);
+      //$anchorScroll(hash);
     };  
     
     //Toolbar menu code:
