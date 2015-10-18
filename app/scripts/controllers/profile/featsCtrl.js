@@ -41,7 +41,7 @@ angular.module('dCraftApp')
       $scope.feats = feats;
       $scope.updateFeats();
       $scope.loading = false;
-    }, 500);  
+    }, 700);  
     //$scope.feats = angular.copy(feats);
    // $scope.updateFeats();
   });

@@ -182,11 +182,11 @@ v-accordion v-pane v-pane-header {
   display: inline-block;
   border-bottom: 1px solid #D8D8D8 !important; }
   v-accordion v-pane v-pane-header:hover {
-    color: #1976D2 !important; }
+    color: #1976D2; }
   v-accordion v-pane v-pane-header:focus {
-    color: #1976D2 !important; }
+    color: #1976D2; }
     v-accordion v-pane v-pane-header:focus span {
-      color: #1976D2 !important; }
+      color: #1976D2; }
   v-accordion v-pane v-pane-header::after {
     background-color: #1976D2 !important; }
   v-accordion v-pane v-pane-header::before {

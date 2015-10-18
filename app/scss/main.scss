@@ -281,12 +281,12 @@ v-accordion{
       display:inline-block;
       border-bottom: 1px solid #D8D8D8!important;
       &:hover{
-        color:$blue-700!important;
+        color:$blue-700;
       }
       &:focus{
-        color:$blue-700!important;
+        color:$blue-700;
         span{
-          color:$blue-700!important;
+          color:$blue-700;
         }
       }
       &::after{

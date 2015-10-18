@@ -19,7 +19,7 @@
           </div>
           
           
-          <section id="all-feats" ng-if="!loading">
+          <section id="all-feats" ng-show="!loading" class="fade">
             
             <!-- Feats Search -->
             <div class="container md-padding">
@@ -35,8 +35,8 @@
               <v-accordion ng-if="query.length === 0" class="vAccordion--default" multiple>
                   <v-pane ng-repeat="feat in feats track by $index" layout="row" layout-wrap>
                     <div class="add-icon" flex="10">
-                      <i ng-if="!feat.isSelected || feat.isSelected == false" class="material-icons" ng-click="addFeat(feat)">check_box_outline_blank</i>
-                      <i ng-if="feat.isSelected == true" class="material-icons isSelected" ng-click="removeFeat(feat)">check_box</i>
+                      <i ng-if="!feat.isSelected || feat.isSelected == false" class="material-icons" ng-click="addFeat(feat)">add</i>
+                      <i ng-if="feat.isSelected == true" class="material-icons isSelected" ng-click="removeFeat(feat)">add</i>
                     </div>
                     <v-pane-header flex="90">{{feat.name}}</v-pane-header>
 
@@ -51,8 +51,8 @@
               <v-accordion ng-if="query.length > 0" class="vAccordion--default" multiple>
                   <v-pane ng-repeat="feat in featsSearchResults track by $index" layout="row" layout-wrap>
                     <div class="add-icon" flex="10">
-                      <i ng-if="!feat.isSelected || feat.isSelected == false" class="material-icons" ng-click="addFeat(feat)">check_box_outline_blank</i>
-                      <i ng-if="feat.isSelected == true" class="material-icons isSelected" ng-click="removeFeat(feat)">check_box</i>
+                      <i ng-if="!feat.isSelected || feat.isSelected == false" class="material-icons" ng-click="addFeat(feat)">add</i>
+                      <i ng-if="feat.isSelected == true" class="material-icons isSelected" ng-click="removeFeat(feat)">add</i>
                     </div>
                     <v-pane-header flex="90">{{feat.name}}</v-pane-header>
 
