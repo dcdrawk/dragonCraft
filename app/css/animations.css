@@ -4,7 +4,9 @@ main {
 
 .view-content, .view-animate {
   position: absolute;
-  width: 100%; }
+  width: 100%;
+  overflow: auto;
+  height: calc(100vh - 64px) !important; }
 
 .view-animate-container {
   position: relative; }

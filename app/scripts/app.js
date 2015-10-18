@@ -102,8 +102,8 @@ angular
     $rootScope.$on('$locationChangeSuccess', function(event, current, next) {
       var enter = document.getElementsByClassName('ng-enter');
       
-      $anchorScroll('top');
 //      $timeout(function(){
+//      $anchorScroll('top');
 //        var test = document.getElementById('test');
 //        var enter = document.getElementsByClassName('ng-enter')[0];
 //        

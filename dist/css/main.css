@@ -21,8 +21,9 @@ body {
   color: #fff; }
 
 .main {
-  overflow-x: hidden;
-  position: relative;
+  overflow: hidden;
+  position: fixed;
+  width: 100%;
   height: calc(100vh - 64px) !important; }
 
 #main-content {
