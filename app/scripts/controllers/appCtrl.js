@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('dCraftApp')
-.controller('AppCtrl', function($scope, $rootScope, $location, $timeout, $mdSidenav, $mdUtil, $log, $mdDialog, $anchorScroll) {
+.controller('AppCtrl', function($scope, $rootScope, $location, $timeout, $mdSidenav, $mdUtil, $log, $mdDialog) {
     /**
      * Build handler to open/close a SideNav; when animation finishes
      * report completion in console
@@ -40,9 +40,9 @@ angular.module('dCraftApp')
     };
 
     //Scrolls to a hash element
-    $rootScope.scrollTo = function ( hash ) {
-      //$anchorScroll(hash);
-    };  
+//    $rootScope.scrollTo = function ( hash ) {
+//      //$anchorScroll(hash);
+//    };  
     
     //Toolbar menu code:
     var originatorEv;

@@ -71,19 +71,20 @@
     </md-sidenav>
     
     
+<!--
     <div route-animation-manager>
       <md-content id="main-content" ng-view class="view-content main" autoscroll="true" flex>
-<!--          <div ></div>-->
+          <div ></div>
       </md-content>
     </div>
-    
-<!--
-    <md-content id="main-content" class="main" flex>
-      <div route-animation-manager>
-        <div ng-view class="view-content [onload: string;] [autoscroll: string;]"></div>
-      </div>
-    </md-content>
 -->
+<!--    <md-content id="main-content" class="main" flex>-->
+      <div id="main-content" class="main" autoscroll="true">
+        <div route-animation-manager>
+          <div id="test" ng-view class="view-content" autoscroll="true"></div>
+        </div>
+      </div>
+<!--    </md-content>-->
 
 
     <!-- build:js(.) scripts/vendor.js -->

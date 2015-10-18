@@ -24,7 +24,7 @@ angular
     'indexedDB',
     'oc.lazyLoad',
     'vAccordion'
-  ])  
+  ])
 //  .config(function ($indexedDBProvider) {
 //    //console.log(db);
 //    $indexedDBProvider
@@ -67,7 +67,7 @@ angular
 //      
 //    };
 //  })
-  .run(function($rootScope, $location, $timeout){
+  .run(function($rootScope, $location, $timeout, $anchorScroll){
     
     //set up the local storage for the selected Character
     var myStorage = localStorage;
@@ -94,19 +94,26 @@ angular
 //       document.body.scrollTop = document.documentElement.scrollTop = 0;
 //    });
     
-    var mainContent = document.getElementById('main-content');
-    var enter = document.getElementsByClassName('ng-enter');
+   // var mainContent = document.getElementById('main-content');
+  //  var enter = document.getElementsByClassName('ng-enter');
     
   
   
     $rootScope.$on('$locationChangeSuccess', function(event, current, next) {
-      //var enter = document.getElementsByClassName('ng-enter');
-      $timeout(function(){
-        var enter = document.getElementsByClassName('ng-enter');
-        console.log(enter);
-        enter[0].scrollTop = 0;
-        
-      }, 10)
+      var enter = document.getElementsByClassName('ng-enter');
+      
+      $anchorScroll('top');
+//      $timeout(function(){
+//        var test = document.getElementById('test');
+//        var enter = document.getElementsByClassName('ng-enter')[0];
+//        
+////        for(var i in enter){
+////          console.log(enter[i].HTMLCollection);
+////        }
+//        console.log(enter);
+//        enter.scrollTop = 0;
+//        
+//      }, 50);
       if($location.path() == '/'){
         $rootScope.home = true;
       } else {
