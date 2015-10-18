@@ -33,14 +33,15 @@ angular.module('dCraftApp')
   } else {
     $scope.characterFeats = [];//$scope.character.feats;
   }
+  $scope.loading = true;
   
   databaseSrv.getFeats().then(function(feats){
-    //$scope.feats = feats;
-    
+    //$scope.feats = feats;    
     $timeout(function(){
       $scope.feats = feats;
       $scope.updateFeats();
-    }, 1000);  
+      $scope.loading = false;
+    }, 500);  
     //$scope.feats = angular.copy(feats);
    // $scope.updateFeats();
   });

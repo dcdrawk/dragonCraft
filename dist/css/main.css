@@ -91,7 +91,7 @@ md-list-item .md-no-style {
     transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94); }
 
 md-progress-circular {
-  margin: 48px 0 48px 0; }
+  margin: 48px auto; }
 
 md-card {
   -webkit-user-select: none;
