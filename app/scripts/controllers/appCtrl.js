@@ -28,13 +28,13 @@ angular.module('dCraftApp')
     };
     
     //Go function
-    $rootScope.go = function ( path ) {
+    $scope.go = function ( path ) {
       $location.path( path );
       //$rootScope.scrollTo('top');
     };
     
     //back function
-    $rootScope.goBack = function () {
+    $scope.goBack = function () {
       window.history.back();
       //$rootScope.scrollTo('top');
     };
@@ -51,16 +51,16 @@ angular.module('dCraftApp')
       $mdOpenMenu(ev);
     };
     
-    this.announceClick = function(index) {
-      $mdDialog.show(
-        $mdDialog.alert()
-          .title('You clicked!')
-          .content('You clicked the menu item at index ' + index)
-          .ok('Nice')
-          .targetEvent(originatorEv)
-      );
-      originatorEv = null;
-    };
+//    this.announceClick = function(index) {
+//      $mdDialog.show(
+//        $mdDialog.alert()
+//          .title('You clicked!')
+//          .content('You clicked the menu item at index ' + index)
+//          .ok('Nice')
+//          .targetEvent(originatorEv)
+//      );
+//      originatorEv = null;
+//    };
     
     //Top-right Menu Items
     $scope.menu = [{
@@ -73,7 +73,17 @@ angular.module('dCraftApp')
       icon:'settings',
       href:'/settings'
     }];
-    
+  
+    $scope.$on('$locationChangeStart', function(event) {
+      console.log('change start');
+      if($scope.modalOpen === true){
+        event.preventDefault();
+        $scope.modalOpen = false;
+        $mdDialog.cancel();
+      }
+      //event.preventDefault();
+    });
+  
 //    $scope.$on('$locationChangeStart', function(event, next, current) {
 //      console.log('Location change start!');
 //      var curPath = current.slice( current.lastIndexOf('/')+1, current.length );
@@ -87,7 +97,60 @@ angular.module('dCraftApp')
 //        $scope.overflow = 'show-overflow';
 //      }, 700);
 //    });
-       
+  
+  //Show Feat Info
+  //Dialog
+  $scope.showFeatInfo = function(ev, feat) {
+    $scope.modalOpen = true;
+    console.log(feat);
+    $mdDialog.show({
+      controller: DialogController,
+      templateUrl: 'views/templates/dialog/feat-info.html',
+      parent: angular.element(document.body),
+      targetEvent: ev,
+      clickOutsideToClose:true,
+      locals: {
+        feat: feat
+      }
+    })
+    .then(function(answer) {
+      $scope.status = 'You said the information was "' + answer + '".';
+    }, function() {
+      $scope.status = 'You cancelled the dialog.';
+    });
+  };
+  
+  //Dialog
+  $scope.showAdvanced = function(ev) {
+    $scope.modalOpen = true;
+    $mdDialog.show({
+      controller: DialogController,
+      templateUrl: 'views/templates/dialog/custom-race.html',
+      parent: angular.element(document.body),
+      targetEvent: ev,
+      clickOutsideToClose:true
+    })
+    .then(function(answer) {
+      $scope.status = 'You said the information was "' + answer + '".';
+    }, function() {
+      $scope.status = 'You cancelled the dialog.';
+    });
+  };
+     //Dialog Controller
+    function DialogController($scope, $mdDialog, feat) {
+      $scope.feat = feat;
+      $scope.hide = function() {
+        $mdDialog.hide();
+      };
+      $scope.cancel = function(selection) {
+        $mdDialog.cancel();
+      };
+      $scope.answer = function(answer) {
+        $mdDialog.hide(answer);
+      };
+    }
+      
+      
   })  
 
   .controller('LeftCtrl', function ($scope, $timeout, $mdSidenav, $log) {
@@ -97,4 +160,5 @@ angular.module('dCraftApp')
           $log.debug('close LEFT is done');
         });
     };
+    
   });

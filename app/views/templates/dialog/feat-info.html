@@ -1,0 +1,37 @@
+<md-dialog aria-label="Add Custom Race" class="size-md">
+  
+  <!-- Toolbar -->
+  <md-toolbar>
+    <div class="md-toolbar-tools">
+      <h2>Feat Info</h2>
+      <span flex></span>
+      <md-button class="md-icon-button" ng-click="cancel('race')">
+        <i class="material-icons">close</i>
+      </md-button>
+    </div>
+  </md-toolbar>
+  <div id="top" class="page-title md-primary">
+    <div class="container md-padding">
+      <h2>{{feat.name}}</h2>
+    </div>
+  </div>
+  <!-- Content -->
+  <md-dialog-content style="max-width:800px;max-height:810px; ">
+    
+<!--    <h3>{{feat.name}}</h3>-->
+    <div ng-bind-html="feat.description"></div>
+  </md-dialog-content>
+  
+  <!-- Bottom Buttons -->
+  <div class="md-actions" layout="row">
+    <md-button ng-click="cancel('race')">
+     Back
+    </md-button>
+<!--
+    <md-button ng-click="addCustomRace(customRace.name, customRace.description, customRace.subraces)">
+      Confirm
+    </md-button>
+-->
+  </div>
+  
+</md-dialog>

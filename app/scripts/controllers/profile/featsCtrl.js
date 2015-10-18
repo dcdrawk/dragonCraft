@@ -1,26 +1,6 @@
 'use strict';
-angular.module('dCraftApp')
-//  .filter('custom', function() {
-//  return function(input, search) {
-//    console.log('custom filter!!');
-//    console.log(input);
-//    console.log(search);
-//    if (!input) return input;
-//    if (!search) return input;
-//    var expected = ('' + search).toLowerCase();
-//    var result = {};
-//    angular.forEach(input, function(value, key) {
-//      var actual = ('' + value).toLowerCase();
-//      if (actual.indexOf(expected) !== -1) {
-//        result[key] = value;
-//      }
-//    });
-//    console.log(result);
-//    return result;
-//  }
-//})
-  
-  .controller('featsCtrl', function($scope, characterSrv, saveCharacterSrv, databaseSrv, $timeout, $filter){
+angular.module('dCraftApp')  
+  .controller('featsCtrl', function($scope, characterSrv, saveCharacterSrv, databaseSrv, $timeout, $filter, featInfoSrv, $mdDialog){
   
   //$scope.searchText = 'ac';
   $scope.character = characterSrv.getSelectedCharacter();
@@ -36,14 +16,11 @@ angular.module('dCraftApp')
   $scope.loading = true;
   
   databaseSrv.getFeats().then(function(feats){
-    //$scope.feats = feats;    
     $timeout(function(){
       $scope.feats = feats;
       $scope.updateFeats();
       $scope.loading = false;
-    }, 700);  
-    //$scope.feats = angular.copy(feats);
-   // $scope.updateFeats();
+    }, 700);
   });
   
   //Update selected
@@ -81,8 +58,6 @@ angular.module('dCraftApp')
         $scope.characterFeats.splice(i, 1);
       }
     }
-    //$scope.$digest();
-    //console.log($scope.characterFeats);
     $scope.updateCharacter($scope.character.id, 'feats', $scope.characterFeats);
     $scope.updateFeats();
   };
@@ -100,6 +75,12 @@ angular.module('dCraftApp')
         $scope.featsSearchResults.push($scope.feats[i]);
       }
     }
-  }
+  };
+  
+  $scope.selectFeat = function(feat){
+    featInfoSrv.selectedFeat = feat;
+  };
+  
+  
    
 });

@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="css/material-icons.css">
     <!-- endbuild -->
   </head>
-  <body ng-app="dCraftApp" ngsf-fullscreen ng-cloak>
+  <body ng-app="dCraftApp" ngsf-fullscreen ng-cloak ng-controller="AppCtrl">
     <!--[if lte IE 8]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
@@ -26,12 +26,12 @@
     <md-toolbar>
       <div class="md-toolbar-tools container">
         <div ng-cloak class="toolbar-left" flex="80" ng-init="$root.loading = false" ng-class="{hideback: home, showback: !home}">
-          <md-button ng-cloak ng-controller="AppCtrl" ng-click="goBack()" id="back" ><i class="material-icons">keyboard_arrow_left</i></md-button>
+          <md-button ng-cloak ng-click="goBack()" id="back" ><i class="material-icons">keyboard_arrow_left</i></md-button>
           <h2>DragonCraft 5e</h2>
         </div>
         <span flex></span>
-        <md-menu ng-controller="AppCtrl" md-position-mode="target-right target" >
-          <md-button class="md-icon-button" ng-controller="AppCtrl" ng-click="$mdOpenMenu($event)" id="more">
+        <md-menu md-position-mode="target-right target" >
+          <md-button class="md-icon-button" ng-click="$mdOpenMenu($event)" id="more">
             <i class="material-icons">more_vert</i>
           </md-button>
           <md-menu-content width="4" >
@@ -63,10 +63,9 @@
       <md-toolbar class="md-theme-indigo">
         <h1 class="md-toolbar-tools">Menu</h1>
       </md-toolbar>
-      <md-content ng-controller="AppCtrl">
+      <md-content>
         <md-button ng-click="go('/')">Characters</md-button>
-        <md-button ng-click="go('admin')">Admin</md-button>
-        
+        <md-button ng-click="go('admin')">Admin</md-button>        
       </md-content>
     </md-sidenav>
     
@@ -146,6 +145,8 @@
     <script src="scripts/services/saveCharacterSrv.js"></script>
     <script src="scripts/services/databaseAdminSrv.js"></script>
     <script src="scripts/services/databaseSrv.js"></script>
+    
+    <script src="scripts/services/featInfoSrv.js"></script>
     <!-- endbuild -->
   </body>
 </html>

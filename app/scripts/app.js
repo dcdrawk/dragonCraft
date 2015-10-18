@@ -94,6 +94,7 @@ angular
 //       document.body.scrollTop = document.documentElement.scrollTop = 0;
 //    });
     
+    
    // var mainContent = document.getElementById('main-content');
   //  var enter = document.getElementsByClassName('ng-enter');
     

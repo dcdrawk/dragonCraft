@@ -202,7 +202,19 @@ md-card{
     margin:12px 0;
   }
 }
-
+md-dialog{
+  &.size-md{
+    width:480px;
+  }
+  md-dialog-content{
+    padding:12px;
+  }
+  p{
+    &:first-child{
+      margin-top:0;
+    }
+  }
+}
 //View Elements
 .feature{
   margin-bottom:12px;
@@ -363,6 +375,17 @@ md-select-value, .bold{
     margin:0;
     md-menu{
       padding:0;
+    }
+  }
+}
+@media screen and (max-width: 600px) {
+  md-dialog{
+    max-width: 100%;
+    width: 100%;
+    max-height: 100vh;
+    height: 100vh;
+    &.size-md{
+      width: 100%;
     }
   }
 }
