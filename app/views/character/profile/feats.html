@@ -1,5 +1,5 @@
 <!-- Content -->
-<md-tabs md-dynamic-height class="md-accent" md-selected="data.selectedIndex"  md-align-tabs="top">
+<md-tabs md-dynamic-height class="md-accent" md-selected="selectedTab"  md-align-tabs="top" md-swipe-content> 
   <md-tab id="tab2">
     <md-tab-label>All Feats <i class="material-icons">playlist_add</i></md-tab-label>
     <md-tab-body>
@@ -8,32 +8,38 @@
           <h2>All Feats</h2>
         </div>
       </div>
-      <md-button ng-click="showFeatInfo();">Show Dialog</md-button>
       <!-- Progress Circle -->
       <div ng-if="loading" layout="row" layout-sm="column" layout-align="space-around">
         <md-progress-circular md-mode="indeterminate"></md-progress-circular>
       </div>
 
-
       <section id="all-feats" ng-show="!loading" class="fade">
 
         <!-- Feats Search -->
         <div class="container md-padding">
+<!--
           <md-input-container>
             <label>Search Feats</label>
-            <input type="text" ng-model="query" ng-change="featsSearch(query)" ng-model-options="{ debounce: 250 }" >
+            <input type="text" ng-model="query" ng-change="featsSearch(query)" ng-model-options="{debounce: 500}">
           </md-input-container>
-          <p ng-if="featsSearchResults.length === 0 && query.length > 0">No results found for {{query}}</p>
+-->
+            
+          <md-autocomplete placeholder="Search Feats" md-items="item in getMatches(searchText)" md-search-text="query" md-search-text-change="featsSearch(query)"></md-autocomplete> 
         </div>
 
         <!-- Feats List -->
-        <div class="container md-padding add-list">
-          
-          <md-list-item ng-repeat="feat in feats track by $index">
-            <md-checkbox ng-model="message.selected"></md-checkbox>
+        <div class="container add-list">
+         
+<!--
+          <md-list-item  ng-repeat="feat in feats" ng-click="showFeatInfo($event, feat)">
             <p>{{feat.name}}</p>
-            <md-icon ng-click="showFeatInfo($event, feat)" class="md-secondary material-icons" ng-click="doSecondaryAction($event)" aria-label="Chat">info_outline</md-icon>
-<!--            <i class="material-icons">info</i>-->
+            <md-checkbox ng-model="feat.isSelected" ng-click="selectFeat(feat); $event.stopPropagation()"></md-checkbox>
+          </md-list-item>
+-->
+          
+          <md-list-item  ng-repeat="feat in feats track by feat.name">
+            <p flex ng-click="showFeatInfo($event, feat)">{{feat.name}}</p>
+            <md-checkbox ng-model="feat.isSelected" ng-click="selectFeat($event, feat);"></md-checkbox>
           </md-list-item>
           
 <!--
@@ -76,7 +82,7 @@
     </md-tab-body>
   </md-tab>
 
-  <md-tab id="tab1">
+  <md-tab id="tab1" md-selected="selectedTab">
     <md-tab-label>My Feats <i class="material-icons">folder_special</i></md-tab-label>
       <md-tab-body>
       <!-- Title -->
@@ -88,7 +94,14 @@
         </div>
 
         <!-- Feats -->
-      <div class="container md-padding add-list">
+      <div class="container add-list">
+        <p ng-if="characterFeats.length === 0">It appears that your character doesn't have any traits selected. <span class="link" ng-click="firstTab()"> Go add some!</span></p>
+        
+        <md-list-item ng-repeat="feat in characterFeats | orderBy:'name' track by $index " ng-click="showFeatInfo($event, feat)">
+          <p>{{feat.name}}</p>
+          <md-checkbox ng-model="feat.isSelected" ng-click="selectFeat(feat);$event.stopPropagation()"></md-checkbox>
+        </md-list-item>
+<!--
         <v-accordion class="vAccordion--default" multiple>
           <v-pane ng-repeat="feat in characterFeats track by $index" layout="row" layout-wrap>
             <div class="add-icon" flex="10">
@@ -102,6 +115,7 @@
 
           </v-pane>              
         </v-accordion>
+-->
       </div>
 
       </md-tab-body>

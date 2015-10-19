@@ -74,15 +74,16 @@ angular.module('dCraftApp')
       href:'/settings'
     }];
   
-    $scope.$on('$locationChangeStart', function(event) {
-      console.log('change start');
-      if($scope.modalOpen === true){
-        event.preventDefault();
-        $scope.modalOpen = false;
-        $mdDialog.cancel();
-      }
-      //event.preventDefault();
-    });
+//    $scope.$on('$locationChangeStart', function(event) {
+//      console.log('change start');
+//      console.log($scope.modalOpen);
+//      if($scope.modalOpen === true){
+//        event.preventDefault();
+//        $scope.modalOpen = false;
+//        $mdDialog.cancel();
+//      }
+//      //event.preventDefault();
+//    });
   
 //    $scope.$on('$locationChangeStart', function(event, next, current) {
 //      console.log('Location change start!');
@@ -132,22 +133,42 @@ angular.module('dCraftApp')
     })
     .then(function(answer) {
       $scope.status = 'You said the information was "' + answer + '".';
+      $scope.modalOpen = false;
+      console.log('answer!');
     }, function() {
+      console.log('cancel!');
       $scope.status = 'You cancelled the dialog.';
+      $scope.modalOpen = false;
     });
   };
      //Dialog Controller
     function DialogController($scope, $mdDialog, feat) {
+      $scope.modalOpen = true;
       $scope.feat = feat;
       $scope.hide = function() {
         $mdDialog.hide();
+        $scope.modalOpen = false;
       };
       $scope.cancel = function(selection) {
+        console.log('cancel!');
         $mdDialog.cancel();
+        $scope.modalOpen = false;
       };
       $scope.answer = function(answer) {
         $mdDialog.hide(answer);
+        $scope.modalOpen = false;
       };
+      
+      $scope.$on('$locationChangeStart', function(event) {
+        console.log('change start');
+        console.log($scope.modalOpen);
+        if($scope.modalOpen === true){
+          event.preventDefault();
+          $scope.modalOpen = false;
+          $mdDialog.cancel();
+        }
+        //event.preventDefault();
+      });
     }
       
       

@@ -6,6 +6,7 @@ $blue-700: #1976D2;
 $blue-900: #1565C0;
 $indigo-300: #7986CB;
 $indigo-500: #3F51B5;
+$indigo-600: #3949AB;
 $indigo-700: #303F9F;
 $teal-400: #26A69A;
 $white: #fff;
@@ -22,6 +23,12 @@ body{
 }
 [ng\:cloak], [ng-cloak], .ng-cloak {
   display: none !important;
+}
+:focus{
+    outline: none!important;
+}
+.link{
+  border-bottom:2px solid rgba(0,0,0,.35);
 }
 // Fullscreen
 .fullscreen {
@@ -46,6 +53,12 @@ body{
 //    padding-left: 16px;
 //    padding-right: 16px;
 //  }
+  h2{
+    margin:0;
+  }
+  h3{
+    margin-bottom: 0;
+  }
 }
 .main{
   overflow:hidden;
@@ -125,8 +138,8 @@ md-list-item{
     line-height: 1em!important;
   }
   .md-no-style{
-    padding:0px 8px;
-  }  
+    padding:0px;
+  }
 }
 .disabled{
   opacity: .35;
@@ -177,9 +190,9 @@ md-card{
   &[md-ink-ripple]{
     position: relative;
   }
-  &:focus{
-    outline: none!important;
-  }  
+//  &:focus{
+//    outline: none!important;
+//  }  
 }
 .add-new{
   h3{
@@ -214,6 +227,9 @@ md-dialog{
       margin-top:0;
     }
   }
+  h2{
+    margin:10px 0;
+  }
 }
 //View Elements
 .feature{
@@ -234,8 +250,11 @@ md-dialog{
   }
 }
 .sub-title{
-  background-color: $indigo-700;
+  background-color: $indigo-600;
   color: #fff;
+  h3{
+    margin:0;
+  }
 }
 section{
   //border-bottom:3px solid $teal-400;
@@ -343,9 +362,9 @@ v-accordion{
 .page-settings-content button{
   max-height: 48px!important;
 }
-md-select-value, .bold{
-  font-weight:700;
-}
+//md-select-value, .bold{
+//  font-weight:700;
+//}
 .add-icon{
   text-align: center;
   i{
@@ -358,6 +377,9 @@ md-select-value, .bold{
   ul{
     -webkit-padding-start: 20px;
     -moz-padding-start: 20px;
+  }
+  p{
+    padding:13px;
   }
 }
 //Responsive
