@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('dCraftApp').service('saveCharacterSrv', function(){
+angular.module('dCraftApp').service('saveCharacterSrv', function($q, $location){
   
   var storage = localStorage;
   var newArray = [];
@@ -9,12 +9,12 @@ angular.module('dCraftApp').service('saveCharacterSrv', function(){
   
   //Check to see if save data exists
   if(!storage.getObj('characters')){
-    console.log('No save data exists, setting up...');
     storage.setObj('characters', []);
   }
   
   //Add New Character
   this.addNewCharacter = function(character){
+    var deferred = $q.defer();
     var characters = storage.getObj('characters');
     //Add a unique id to the character...
     if(characters.length === 0){
@@ -27,8 +27,10 @@ angular.module('dCraftApp').service('saveCharacterSrv', function(){
       }
       character.id = parseInt(lastID) + 1;
     }
-    characters.push(character);    
+    characters.push(character);
     storage.setObj('characters', characters);
+    deferred.resolve(characters);
+    return deferred.promise;  
   };
   
   //Delete All Characters
